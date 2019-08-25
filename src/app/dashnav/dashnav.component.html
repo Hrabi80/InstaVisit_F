@@ -1,0 +1,73 @@
+
+<!-- Angular Material -->
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport 
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false" >
+    <mat-toolbar >InstaVisit</mat-toolbar>
+    <mat-nav-list>
+        <a mat-list-item routerLink="/dashboard/loc">
+          <i class="material-icons prefix">person_pin</i>
+          &nbsp; Edit profile
+        </a>
+        <a mat-list-item routerLink="/dashboard/loc">
+          <i class="material-icons prefix">notifications_active</i>
+          &nbsp; Notifications
+        </a>
+      <a mat-list-item routerLink="/dashboard/newHL">
+        <i class="material-icons prefix">beach_access</i>
+        &nbsp; Nv à louer
+      </a>
+      <a mat-list-item routerLink="/dashboard/newHV">
+          <i class="material-icons prefix">border_color</i>
+          &nbsp; Nv à vendre
+      </a>
+      <a mat-list-item routerLink="/dashboard/loc">
+          <i class="material-icons prefix">edit_location</i>
+          &nbsp; Localisation
+      </a>
+      <a mat-list-item routerLink="/dashboard/loc">
+        <i class="material-icons prefix">list</i>
+        &nbsp; Liste M à louer
+      </a>
+      <a mat-list-item routerLink="/dashboard/loc">
+        <i class="material-icons prefix">list</i>
+        &nbsp; Liste M à vendre
+      </a>
+      <a mat-list-item routerLink="/dashboard/loc">
+        <i class="material-icons prefix">message</i>
+        &nbsp; messages
+      </a>
+      <a mat-list-item routerLink="/dashboard/loc">
+        <i class="material-icons prefix">mail</i>
+        &nbsp; mail list
+     </a>
+      <a mat-list-item routerLink="/dashboard/loc">
+        <i class="material-icons prefix"></i>
+        &nbsp; Deadline
+      </a>
+      
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+      >
+        <mat-icon aria-label="Side nav toggle icon" >menu</mat-icon>
+      </button>
+      <button class="waves-effect waves-light btn red" (click)="logout()">
+        <i class="material-icons left">exit_to_app</i>button</button>
+
+      
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
+

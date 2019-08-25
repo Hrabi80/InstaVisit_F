@@ -1,0 +1,84 @@
+ 
+ 
+ 
+ <!-- Modal Structure -->
+ <div id="modal1" class="modal">
+   <div class="modal-content">
+     <h4>Modal Header</h4>
+     <p>A bunch of text</p>
+   </div>
+   <div class="modal-footer">
+     <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+   </div>
+ </div>
+
+ 
+       
+<div class="container">
+    <br>
+    <br>
+    <form class="col s12" [formGroup]="form" action="">
+ <mat-card>
+        <mat-card-content>
+                <div class="row">
+                       <!--<form class="col s12"> --> 
+                          <div class="row">
+                            <div class="input-field col s6">
+                              <i class="material-icons prefix">location_city</i>
+                              <input id="icon_prefix" type="text" class="validate" formControlName="city" required>
+                              <label for="icon_prefix">New location</label>
+                            </div>
+                            <div class="input-field col s6">
+                              <i class="material-icons prefix">account_balance</i>
+                              <input id="icon_telephone" type="text" class="validate" formControlName="gov" required>
+                              <label for="icon_telephone">government</label>
+                            </div>
+                          </div>
+                        </div>
+                      
+        </mat-card-content>
+        <mat-card-actions align="end">
+          <button mat-flat-button (click)="AddLoc()"  name="action">Add location</button>
+        </mat-card-actions>
+          
+        
+ </mat-card> </form> 
+
+    <!-- Modal Trigger -->
+
+<br> <br> <br> <br>
+<ul class="collection">
+        <li class="collection-item avatar">
+          <i class="material-icons circle">public</i>
+          <span class="title">Korba</span>
+          <p>Nabeul<br>
+            
+          </p>
+          <a href="#!" class="secondary-content"><i class="material-icons">delete_sweep</i></a>
+        </li>
+        <li class="collection-item avatar">
+          <i class="material-icons circle">public</i>
+          <span class="title">Manar</span>
+          <p>Tunis <br>
+         
+          </p>
+          <a href="#!" class="secondary-content"><i class="material-icons">delete_sweep</i></a>
+        </li>
+        <li class="collection-item avatar">
+                <i class="material-icons circle">public</i>
+          <span class="title">Charguia II</span>
+          <p>Carthage <br>
+             Second Line
+          </p>
+          <a href="#!" class="secondary-content"><i class="material-icons">delete_sweep</i></a>
+        </li>
+        <li class="collection-item avatar">
+                <i class="material-icons circle">public</i>
+          <span class="title">Hay Ghazela</span>
+          <p>Ariana <br>
+             
+          </p>
+          <a href="#!" class="secondary-content"><i class="material-icons ">delete_sweep</i></a>
+        </li>
+      </ul>
+    </div>

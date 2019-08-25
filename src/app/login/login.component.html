@@ -1,0 +1,39 @@
+
+
+
+<br><br><br>
+
+    <br><br><br><br><br>
+    <div class="row">
+    <form class="col s12" (submit)="login($event)" >
+    <mat-card>
+        <mat-card-title>
+            <img src="assets/img/Nada.jpg">
+            <br><br>
+        </mat-card-title>
+       <mat-card-content>
+
+
+          <div class="row">
+              <div class="input-field form-field col s12">
+                <input type="email" class="validate" name="username" required="required"  [(ngModel)]="username">
+                <label for="username">username</label>
+              </div>
+            </div>
+          <div class="row">
+              <div class="input-field form-field col s12">
+                <input type="password" class="validate" name="password" required="required" [(ngModel)]="password">
+                <label for="password">Password</label>
+              </div>
+            </div>
+
+            
+         </mat-card-content>
+            <mat-card-actions> 
+                <div class="form-field"> 
+                   <button type="submit" class="btn waves-effect waves-light btn yellow" style="align:center; color:black" >Login</button>
+                </div>  
+            </mat-card-actions> 
+      </mat-card>            
+    </form> 
+  </div>

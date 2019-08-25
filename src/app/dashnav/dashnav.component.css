@@ -1,0 +1,49 @@
+.sidenav-container {
+  height: 100%;
+  background-color: rgb(241, 247, 248);
+  
+}
+
+.sidenav {
+  width: 200px;
+  background-color:rgb(86,95,104);
+  color: azure;
+}
+.mat-list-item{
+  color: blanchedalmond;
+}
+
+
+.sidenav .mat-toolbar {
+  background: inherit;
+  background-color: rgb(100,138,237);
+  color: azure;
+
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: rgb(102,128,204);
+  
+
+
+}
+
+img{
+  border-radius: 50%;
+  height: 58px;
+  width: 58px;
+  
+  margin-top: 28px;
+  position: absolute;
+  border: 1px solid #eee;
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
+  transform: translate(-50%, -50%);
+}
+.waves-effect{
+  left: 90%;
+  height: 37px;
+  width: 40px;
+}

@@ -1,0 +1,79 @@
+<br><br>
+<div class="container">
+    <div class="row">
+        <form class="col s12" [formGroup]="form" action="">
+    <mat-card>
+        <mat-card-content>
+ 
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="first_name" type="text" class="validate"  formControlName="adress" required>
+          <label for="first_name">Adresse</label>
+        </div> 
+        <div class="input-field col s6"> <br>
+            
+            
+            <select formControlName="loc" id="location"> 
+                <option value="" disabled selected>Choisit la localisation</option>
+                <option *ngFor="let loc of locs" [value]="loc.City">{{loc.City}}</option>
+                </select> 
+                <label for="pet-select">City:</label>
+        </div>
+      </div>
+      
+      <div class="row">
+          <div class="input-field col s6">
+            <input id="first_name" type="text" class="validate"  formControlName="surface" required>
+            <label for="first_name">Surface en m²</label>
+          </div>
+          <div class="input-field col s5">
+              <input id="first_name" type="text" class="validate"  formControlName="Tx" required>
+              <label for="first_name">Nb des chambres</label>
+          </div>
+      </div>
+      <div class="row">
+          <div class="input-field col s6">
+            <input id="first_name" type="text" class="validate"  formControlName="price" required>
+            <label for="first_name">Prix</label>
+          </div>
+      </div>
+      <div class="row">
+          <div class="input-field col s12">
+            <textarea id="textarea1" class="materialize-textarea" data-length="120" formControlName="description" required>
+
+            </textarea>
+            <label for="textarea1">Description</label>
+          </div>
+        </div>
+        <!--
+        <div class="row">
+            <div class="input-field col s12">
+                <input placeholder="Date Limite" class="validate" type="date"   
+                id="date_limite" formControlName="date_limite"> 
+        <label for="textarea1"></label>
+      </div>
+    </div>-->
+    <div class="row">
+    <div class="file-field input-field">
+      <div class="btn blue">
+        <span>Upload</span>
+        <input type="file" multiple>
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text" placeholder="Choisit l'image principale">
+      </div>
+    </div>
+  </div>  
+    
+</mat-card-content>
+<mat-card-actions>
+    <button class="waves-effect waves-light btn yellow" (click)="newHV()" name="action">
+      Ajouter</button>
+</mat-card-actions>
+            
+
+</mat-card>
+</form>
+</div>
+</div>
+<br><br>

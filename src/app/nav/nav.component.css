@@ -1,0 +1,141 @@
+nav{
+    background-color: rgb(255, 255, 255);
+    height: 78px;
+    line-height: 78px;
+    
+}
+nav .nav-wrapper a{
+    color: rgb(63, 63, 68);
+}
+
+
+
+
+
+
+/* LOGO */
+#fh5co-logo {
+    position: relative;
+    z-index: 2;
+    font-size: 28px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    font-weight: 700;
+    float: left;
+    padding-left: 40px; }
+  #fh5co-logo i {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 16px;
+    color: #44C662;
+    background: rgba(0, 0, 0, 0.06);
+    padding: 10px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%; }
+  #fh5co-logo a {
+    color: rgb(68, 146, 198); }
+  #fh5co-logo a:hover, #fh5co-logo a:focus {
+    color: rgb(28, 28, 39) !important; }
+  #fh5co-logo span {
+    font-weight: 300; }
+  
+  #fh5co-menu-wrap {
+    position: relative;
+    z-index: 2;
+    display: block;
+    float: right;
+    margin-top: 15px; }
+  #fh5co-menu-wrap .sf-menu a {
+    padding: 1em .75em; }
+  
+  #fh5co-primary-menu > li > ul li.active > a {
+    color: #44C662 !important; }
+  #fh5co-primary-menu > li > .sf-with-ul:after {
+    border: none !important;
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: absolute;
+    float: right;
+    margin-right: -0px;
+    top: 50%;
+    font-size: 12px;
+    margin-top: -7px;
+    content: "\e922";
+    color: rgba(0, 0, 0, 0.5); }
+  #fh5co-primary-menu > li > ul li {
+    position: relative; }
+  #fh5co-primary-menu > li > ul li > .sf-with-ul:after {
+    border: none !important;
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: absolute;
+    float: right;
+    margin-right: 10px;
+    top: 20px;
+    font-size: 12px;
+    content: "\e924";
+    color: rgba(0, 0, 0, 0.5); }
+  
+  #fh5co-primary-menu .fh5co-sub-menu {
+    padding: 10px 7px 10px;
+    background: #fff;
+    left: 0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    -ms-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    -o-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); }
+  #fh5co-primary-menu .fh5co-sub-menu > li > .fh5co-sub-menu {
+    left: 100%; }
+  
+  #fh5co-primary-menu .fh5co-sub-menu:before {
+    position: absolute;
+    top: -9px;
+    left: 20px;
+    width: 0;
+    height: 0;
+    content: ''; }
+  
+  #fh5co-primary-menu .fh5co-sub-menu:after {
+    position: absolute;
+    top: -8px;
+    left: 21px;
+    width: 0;
+    height: 0;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #fff;
+    border-bottom: 8px solid white;
+    border-left: 8px solid transparent;
+    content: ''; }
+  
+  #fh5co-primary-menu .fh5co-sub-menu .fh5co-sub-menu:before {
+    top: 6px;
+    left: 100%; }
+  
+  #fh5co-primary-menu .fh5co-sub-menu .fh5co-sub-menu:after {
+    top: 7px;
+    right: 100%;
+    border: none !important; }
