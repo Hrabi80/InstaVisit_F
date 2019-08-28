@@ -21,6 +21,6 @@ export class HouseVService{
   
 
     AddHV(data){
-        return this._http.post(this._url + '/AddHouse', data);
+        return this._http.post(this._url + '/AddHouse', data , {reportProgress:true , observe:'events'});
     }
 }

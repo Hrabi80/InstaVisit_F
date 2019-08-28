@@ -29,6 +29,11 @@ import { LocationComponent } from './location/location.component';
 import { NewHLComponent } from './new-hl/new-hl.component';
 import { NewHVComponent } from './new-hv/new-hv.component';
 import { LoginComponent } from './login/login.component';
+import { NVDataTableComponent } from './nv-data-table/nv-data-table.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { UploadComponent } from './upload/upload.component';
 
 
 
@@ -44,7 +49,9 @@ import { LoginComponent } from './login/login.component';
     LocationComponent,
     NewHLComponent,
     NewHVComponent,
-    LoginComponent
+    LoginComponent,
+    NVDataTableComponent,
+    UploadComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +62,7 @@ import { LoginComponent } from './login/login.component';
     BrowserAnimationsModule,
     MatButtonModule, MatCheckboxModule, LayoutModule, 
     MatToolbarModule, MatSidenavModule, MatIconModule,
-    MatListModule,MatCardModule,
+    MatListModule,MatCardModule, MatTableModule, MatPaginatorModule, MatSortModule,
   ],
   providers: [
     LocalisationService,

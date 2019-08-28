@@ -10,6 +10,8 @@ import {LocationComponent} from './location/location.component';
 import {NewHLComponent} from './new-hl/new-hl.component';
 import {NewHVComponent} from './new-hv/new-hv.component';
 import {LoginComponent} from './login/login.component';
+import { NVDataTableComponent } from './nv-data-table/nv-data-table.component';
+import { UploadComponent } from './upload/upload.component';
 
 const routes: Routes = [
   {
@@ -56,6 +58,14 @@ const routes: Routes = [
       {
         path: 'newHV',
         component: NewHVComponent,   
+      },
+      {
+        path: 'HvData_Table',
+        component: NVDataTableComponent,   
+      },
+      {
+        path: 'Upload',
+        component: UploadComponent,   
       },
     ],
     canActivate: [AuthGuard] 

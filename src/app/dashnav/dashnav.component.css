@@ -1,22 +1,23 @@
 .sidenav-container {
   height: 100%;
-  background-color: rgb(241, 247, 248);
+  background-color: #e4eaec;
   
 }
 
 .sidenav {
   width: 200px;
-  background-color:rgb(86,95,104);
-  color: azure;
+  background-color:#526069;
+  color: #e4eaec;
 }
 .mat-list-item{
-  color: blanchedalmond;
+  color: #e4eaec;
+  font-style: oblique;
 }
 
 
 .sidenav .mat-toolbar {
   background: inherit;
-  background-color: rgb(100,138,237);
+  background-color: #3a7981;
   color: azure;
 
 }
@@ -25,7 +26,7 @@
   position: sticky;
   top: 0;
   z-index: 1;
-  background-color: rgb(102,128,204);
+  background-color: #0bb2d4;
   
 
 

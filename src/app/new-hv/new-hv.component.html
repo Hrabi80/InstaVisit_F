@@ -57,12 +57,13 @@
     <div class="file-field input-field">
       <div class="btn blue">
         <span>Upload</span>
-        <input type="file" multiple>
+        <input type="file" (change)="onFileChanged($event)">
       </div>
       <div class="file-path-wrapper">
         <input class="file-path validate" type="text" placeholder="Choisit l'image principale">
       </div>
     </div>
+          
   </div>  
     
 </mat-card-content>
@@ -73,7 +74,7 @@
             
 
 </mat-card>
-</form>
+</form> 
 </div>
 </div>
 <br><br>
