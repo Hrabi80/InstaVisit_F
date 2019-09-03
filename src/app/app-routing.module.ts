@@ -12,26 +12,40 @@ import {NewHVComponent} from './new-hv/new-hv.component';
 import {LoginComponent} from './login/login.component';
 import { NVDataTableComponent } from './nv-data-table/nv-data-table.component';
 import { UploadComponent } from './upload/upload.component';
+import { GalleryComponent } from './gallery/gallery.component';
+import { LouerComponent } from './louer/louer.component';
+import { VenteComponent } from './vente/vente.component';
+import { AllComponent } from './all/all.component';
 
 const routes: Routes = [
   {
     path: 'nav',
     component: NavComponent,
     children: [
-  {
-    path: 'welcome',
-    component: WelcomeComponent,   
-  },
-  {
-    path: 'details',
-    component: DetailsComponent,   
-  },
-  
-  {
-    path: 'about',
-    component: AboutComponent,
-
-  },
+      {
+         path: 'welcome',
+         component: WelcomeComponent,   
+      },
+      {
+         path: 'details',
+         component: DetailsComponent,   
+       },  
+       {
+         path: 'about',
+         component: AboutComponent,
+       },
+       {
+          path: 'searchlouer',
+          component: LouerComponent,
+        },
+        {
+          path: 'searchvente',
+          component: VenteComponent,
+        },
+        {
+          path: 'all',
+          component: AllComponent,
+        },
      ],
   },
   {

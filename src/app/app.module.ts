@@ -14,7 +14,6 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { NavComponent } from './nav/nav.component';
 import { AboutComponent } from './about/about.component';
 import { DetailsComponent } from './details/details.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
@@ -34,7 +33,17 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { UploadComponent } from './upload/upload.component';
-
+import { NgxImageGalleryModule } from 'ngx-image-gallery';
+import { NgxGalleryModule } from 'ngx-gallery';
+import { GalleryComponent } from './gallery/gallery.component';
+import { LouerComponent } from './louer/louer.component';
+import { VenteComponent } from './vente/vente.component';
+import { GalleryModule } from  '@ngx-gallery/core';
+import { LightboxModule } from  '@ngx-gallery/lightbox';
+import 'hammerjs'; 
+import 'mousetrap';
+import { AllComponent } from './all/all.component';
+import { InfoComponent } from './info/info.component';
 
 
 @NgModule({
@@ -44,22 +53,32 @@ import { UploadComponent } from './upload/upload.component';
     NavComponent,
     AboutComponent,
     DetailsComponent,
-    DashboardComponent,
     DashnavComponent,
     LocationComponent,
     NewHLComponent,
     NewHVComponent,
     LoginComponent,
     NVDataTableComponent,
-    UploadComponent
+    UploadComponent,
+    GalleryComponent,
+    LouerComponent,
+    VenteComponent,
+    AllComponent,
+    InfoComponent
   ],
   imports: [
     BrowserModule,
+    GalleryModule,
+   // GalleryModule.forRoot(),
+    LightboxModule,
+    GalleryModule.withConfig({  }),
     AppRoutingModule,
     HttpClientModule,
     FormsModule, 
     ReactiveFormsModule , 
     BrowserAnimationsModule,
+    NgxGalleryModule,
+    NgxImageGalleryModule,
     MatButtonModule, MatCheckboxModule, LayoutModule, 
     MatToolbarModule, MatSidenavModule, MatIconModule,
     MatListModule,MatCardModule, MatTableModule, MatPaginatorModule, MatSortModule,

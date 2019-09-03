@@ -15,8 +15,11 @@ export class HouseVService{
         private _http: HttpClient,
     ){}
 
-    getLocs(){
-        return this._http.get(this._url+'/allLoc');
+    getData(){
+        return this._http.get<{message:string, house:any}>(this._url+'/getData');
+        console.log(this._http.get(this._url+'/getData'));
+        console.log();
+       console.log("gggggKKKKK");
     }
   
 

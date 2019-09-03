@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
+import { HouseVService } from '../_services/HouseV.service';
 
 // TODO: Replace this with your own data model type
 export interface NVDataTableItem {
@@ -15,26 +16,11 @@ export interface NVDataTableItem {
 
 // TODO: replace this with real data from your application
 const EXAMPLE_DATA: NVDataTableItem[] = [
+
   {id: 1, name: 'korba', adress: '14 Rue Tunis', surface: 500 ,price: 50.000},
   {id: 2, name: 'Ariana' , adress: '14 Rue Tunis', surface: 500 ,price: 75.000},
   {id: 3, name: 'Sousse' , adress: '69 Rue Ibn Haithame', surface: 500 ,price: 200.000},
   {id: 4, name: 'Sousse' , adress: 'dds Rue sqdqd', surface: 500 ,price: 100.000},
-  {id: 5, name: 'Mahdia' , adress: 'ds sds sds', surface: 500 ,price: 50.000},
-  {id: 6, name: 'Tunis', adress: '14 Rue Tunis', surface: 500 ,price: 150.000},
-  {id: 7, name: 'Tunis' , adress: '14 Rue Tunis', surface: 500 ,price: 100.000},
-  {id: 8, name: 'Tunis', adress: '14 Rue Tunis', surface: 500 ,price: 50.000},
-  {id: 9, name: 'Mahdia', adress: '14 Rue Tunis', surface: 500 ,price: 50.000},
-  {id: 10, name: 'Mahdia', adress: '14 Rue Tunis', surface: 500 ,price: 50.000},
-  {id: 11, name: 'Sousse', adress: '14 Rue Tunis', surface: 500 ,price: 50.000},
-  {id: 12, name: 'Sousse', adress: '14 Rue Tunis', surface: 500 ,price: 50.000},
-  {id: 13, name: 'Monastir', adress: '14 Rue Tunis', surface: 500 ,price: 50.000},
-  {id: 14, name: 'Tunis', adress: '14 Rue Tunis', surface: 500 ,price: 50.000},
-  {id: 15, name: 'Manouba', adress: '14 Rue Tunis', surface: 500 ,price: 50.000},
-  {id: 16, name: 'Manouba', adress: '14 Rue Tunis', surface: 500 ,price: 50.000},
-  {id: 17, name: 'Manouba', adress: '14 Rue Tunis', surface: 500 ,price: 50.000},
-  {id: 18, name: 'Manouba', adress: '14 Rue Tunis', surface: 500 ,price: 50.000},
-  {id: 19, name: 'Manouba', adress: '14 Rue Tunis', surface: 500 ,price: 50.000},
-  {id: 20, name: 'Tunis', adress: '15 ...', surface: 330 ,price: 95.000},
 ];
 
 /**
@@ -43,11 +29,11 @@ const EXAMPLE_DATA: NVDataTableItem[] = [
  * (including sorting, pagination, and filtering).
  */
 export class NVDataTableDataSource extends DataSource<NVDataTableItem> {
-  data: NVDataTableItem[] = EXAMPLE_DATA;
+  data: NVDataTableItem[];
   paginator: MatPaginator;
   sort: MatSort;
 
-  constructor() {
+  constructor(private _service: HouseVService,) {
     super();
   }
 
@@ -59,6 +45,9 @@ export class NVDataTableDataSource extends DataSource<NVDataTableItem> {
   connect(): Observable<NVDataTableItem[]> {
     // Combine everything that affects the rendered data into one update
     // stream for the data-table to consume.
+    
+  //    return this._service.getData();
+   
     const dataMutations = [
       observableOf(this.data),
       this.paginator.page,

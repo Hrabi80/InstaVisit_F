@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
 import { NVDataTableDataSource, NVDataTableItem } from './nv-data-table-datasource';
+import { HouseVService } from '../_services/HouseV.service';
 
 @Component({
   selector: 'app-nv-data-table',
@@ -12,19 +13,34 @@ import { NVDataTableDataSource, NVDataTableItem } from './nv-data-table-datasour
 export class NVDataTableComponent implements AfterViewInit, OnInit {
   @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: false}) sort: MatSort;
-  @ViewChild(MatTable, {static: false}) table: MatTable<NVDataTableItem>;
-  dataSource: NVDataTableDataSource;
+ // @ViewChild(MatTable, {static: false}) table: MatTable<NVDataTableItem>;
+  public apps: NVDataTableItem[] = new Array();
+//  dataSource:NVDataTableDataSource(NVDataTableItem); 
+ // public apps: NVDataTableItem[] = [];
+   
 
+    dataSource = new NVDataTableDataSource(this._service);
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['id', 'name','adress','surface','price','addIMG','ss'];
-
+  constructor(private _service: HouseVService,
+             // private matTable:NVDataTableDataSource
+           
+             ){}
+            
   ngOnInit() {
-    this.dataSource = new NVDataTableDataSource();
+   return this._service.getData().subscribe((app:any) => {
+     console.log(app);
+     this.dataSource.data = app.house as any[];
+    // this.dataSource = new NVDataTableDataSource(app);
+   });
+   //{ this.apps;});
+  //this.dataSource = new NVDataTableDataSource(this.apps);//= res["0"]["data"]);
   }
+ 
 
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
-    this.table.dataSource = this.dataSource;
+   // this.table.dataSource = this.dataSource;
   }
 }
