@@ -28,7 +28,7 @@ const EXAMPLE_DATA: NVDataTableItem[] = [
  * encapsulate all logic for fetching and manipulating the displayed data
  * (including sorting, pagination, and filtering).
  */
-export class NVDataTableDataSource extends DataSource<NVDataTableItem> {
+export class NVDataTableDataSource extends DataSource<any> {
   data: NVDataTableItem[];
   paginator: MatPaginator;
   sort: MatSort;
@@ -46,7 +46,7 @@ export class NVDataTableDataSource extends DataSource<NVDataTableItem> {
     // Combine everything that affects the rendered data into one update
     // stream for the data-table to consume.
     
-  //    return this._service.getData();
+    // return this._service.getData();
    
     const dataMutations = [
       observableOf(this.data),

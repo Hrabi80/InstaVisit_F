@@ -1,8 +1,8 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { environment } from "src/environments/environment";
-
-
+import { Observable }   from 'rxjs/Observable';
+import { NVDataTableItem} from '../nv-data-table/nv-data-table-datasource';
 
 @Injectable()
 export class HouseVService{
@@ -15,11 +15,9 @@ export class HouseVService{
         private _http: HttpClient,
     ){}
 
-    getData(){
-        return this._http.get<{message:string, house:any}>(this._url+'/getData');
+    getData():Observable<NVDataTableItem[]>{
+        return this._http.get<NVDataTableItem[]>(this._url+'/getData');
         console.log(this._http.get(this._url+'/getData'));
-        console.log();
-       console.log("gggggKKKKK");
     }
   
 
