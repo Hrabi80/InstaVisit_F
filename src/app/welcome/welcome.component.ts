@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { VoutputService } from '../_services/Voutput.service';
 
 @Component({
   selector: 'app-welcome',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
-
-  constructor() { }
+  FirOutput: any=[];
+  constructor(private _service: VoutputService,) { }
 
   ngOnInit() {
+    this._service.getData()
+        .subscribe((res) => {
+            console.log(res);
+            this.FirOutput = res;
+            
+        });
   }
 
 }

@@ -18,36 +18,7 @@ import { VenteComponent } from './vente/vente.component';
 import { AllComponent } from './all/all.component';
 
 const routes: Routes = [
-  {
-    path: 'nav',
-    component: NavComponent,
-    children: [
-      {
-         path: 'welcome',
-         component: WelcomeComponent,   
-      },
-      {
-         path: 'details',
-         component: DetailsComponent,   
-       },  
-       {
-         path: 'about',
-         component: AboutComponent,
-       },
-       {
-          path: 'searchlouer',
-          component: LouerComponent,
-        },
-        {
-          path: 'searchvente',
-          component: VenteComponent,
-        },
-        {
-          path: 'all',
-          component: AllComponent,
-        },
-     ],
-  },
+  
   {
     path: '',
     redirectTo: 'dashboard',
@@ -83,6 +54,37 @@ const routes: Routes = [
       },
     ],
     canActivate: [AuthGuard] 
+  },
+
+  {
+    path: 'nav',
+    component: NavComponent,
+    children: [
+      {
+         path: 'welcome',
+         component: WelcomeComponent,   
+      },
+      {
+         path: 'details',
+         component: DetailsComponent,   
+       },  
+       {
+         path: 'about',
+         component: AboutComponent,
+       },
+       {
+          path: 'searchlouer',
+          component: LouerComponent,
+        },
+        {
+          path: 'searchvente',
+          component: VenteComponent,
+        },
+        {
+          path: 'all',
+          component: AllComponent,
+        },
+     ],
   },
  
 ];

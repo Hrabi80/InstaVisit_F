@@ -17,6 +17,7 @@ export class NewHVComponent implements OnInit {
   SelectedIMG:File=null;
   uploadResponse:any = { status: '', message: '', filePath: '' };
   error: string;
+  opt: string;
   
   constructor(private  _fb: FormBuilder,
               private router: Router,
@@ -39,7 +40,7 @@ export class NewHVComponent implements OnInit {
 
     this.form = this._fb.group({
       adress: new FormControl(''),
-      city: new FormControl(''),
+      //city: new FormControl(''),
       description: new FormControl(''),
       Tx:new FormControl(''),
       loc:new FormControl(''),
@@ -47,6 +48,13 @@ export class NewHVComponent implements OnInit {
       surface:new FormControl(''),
       mainIMG: new FormControl(''),
     });
+  }
+  selectOption(opt: string) {
+    //getted from event
+    //getted from binding
+    console.log("opitonII",opt);
+    this.opt=opt;
+    console.log("opiton",this.opt);
   }
 
  
@@ -78,7 +86,7 @@ export class NewHVComponent implements OnInit {
     const uploadData = new FormData();
     uploadData.append('mainIMG', this.form.get('mainIMG').value)
     uploadData.append('adress', this.form.get('adress').value);
-    uploadData.append('city', this.form.get('city').value);
+    uploadData.append('city', this.opt);
     uploadData.append('description', this.form.get('description').value);
     uploadData.append('Tx', this.form.get('Tx').value);
     uploadData.append('loc', this.form.get('loc').value);
@@ -102,9 +110,6 @@ export class NewHVComponent implements OnInit {
       );
       console.log(event);
       this.router.navigateByUrl('dashboard/HvData_Table');
-      
-     
-
   }
 
 }

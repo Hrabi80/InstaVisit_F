@@ -7,6 +7,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {AuthService} from './_services/auth.service';
 import { LocalisationService } from './_services/Localisation.service';
 import { HouseVService } from './_services/HouseV.service';
+import { VoutputService } from './_services/Voutput.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -87,7 +88,7 @@ import { InfoComponent } from './info/info.component';
     LocalisationService,
     AuthService,
     HouseVService,
-    //ChatService,
+    VoutputService,
     JwtInterceptor,
     {
       provide: HTTP_INTERCEPTORS,

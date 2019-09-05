@@ -13,9 +13,9 @@
         <div class="input-field col s6"> <br>
             
             
-            <select formControlName="loc" id="location"> 
-                <option value="" disabled selected>Choisit la localisation</option>
-                <option *ngFor="let loc of locs" [value]="loc.City">{{loc.City}}</option>
+            <select formControlName="loc" id="location"  (change)="selectOption($event.target.value)" [(ngModel)]="selectedOption" > 
+                <option  disabled selected>Choisit la localisation</option>
+                <option *ngFor="let loc of locs" [value]="loc.City" >{{loc.City}}</option>
                 </select> 
                 <label for="pet-select">City:</label>
         </div>

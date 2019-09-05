@@ -15,9 +15,9 @@ export class HouseVService{
         private _http: HttpClient,
     ){}
 
-    getData():Observable<NVDataTableItem[]>{
-        return this._http.get<NVDataTableItem[]>(this._url+'/getData');
-        console.log(this._http.get(this._url+'/getData'));
+    getData()/*:Observable/*<NVDataTableItem[]>*/{
+        return this._http.get(this._url+'/allData');/*<NVDataTableItem[]>*///(this._url+'/getData');
+      //  console.log(this._http.get(this._url+'/getData'));
     }
   
 

@@ -1,138 +1,76 @@
+<!-- All OUTPUT-->
 <div class="ct">
-    <h4> Les derniers biens à louer  </h4>
-    <br>
-   <div class="row">
-     <div class="col s3">
-       <img src="assets/img/houses/Tn.jpeg">
-       Korba
-       <span>300 dt - 15.0 m²</span> <br>
-       <small> 3 piéces non-meublé-3eme etage</small>
-     </div>
-     <div class="col s3">
-         <img src="assets/img/houses/Tn.jpeg">
-         Tunis
-       <span>200 dt - 17.0 m²</span> <br>
-       <small> 2 piéces meublé-3eme etage</small>
-     </div>
-     <div class="col s3">
-         <img src="assets/img/houses/Tn.jpeg">
-         Mahdia
-       <span>500 dt - 15.0 m²</span> <br>
-       <small> 2 piéces non-meublé-</small>
-     </div>
-     <div class="col s3">
-         <img src="assets/img/houses/Tn.jpeg">
-         Tunis
-       <span>500 dt - 15.0 m²</span> <br>
-       <small> 3 piéces non-meublé</small>
-     </div>
-   </div>
-   <div class="row">
-    <div class="col s3">
-      <img src="assets/img/houses/Tn.jpeg">
-      Korba
-      <span>300 dt - 15.0 m²</span> <br>
-      <small> 3 piéces non-meublé-3eme etage</small>
-    </div>
-    <div class="col s3">
-        <img src="assets/img/houses/Tn.jpeg">
-        Tunis
-      <span>200 dt - 17.0 m²</span> <br>
-      <small> 2 piéces meublé-3eme etage</small>
-    </div>
-    <div class="col s3">
-        <img src="assets/img/houses/Tn.jpeg">
-        Mahdia
-      <span>500 dt - 15.0 m²</span> <br>
-      <small> 2 piéces non-meublé-</small>
-    </div>
-    <div class="col s3">
-        <img src="assets/img/houses/Tn.jpeg">
-        Tunis
-      <span>500 dt - 15.0 m²</span> <br>
-      <small> 3 piéces non-meublé</small>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col s3">
-      <img src="assets/img/houses/Tn.jpeg">
-      Korba
-      <span>300 dt - 15.0 m²</span> <br>
-      <small> 3 piéces non-meublé-3eme etage</small>
-    </div>
-    <div class="col s3">
-        <img src="assets/img/houses/h1.jpg">
-        Tunis
-      <span>200 dt - 17.0 m²</span> <br>
-      <small> 2 piéces non-meublé-3eme etage</small>
-    </div>
-    <div class="col s3">
-        <img src="assets/img/houses/h1.jpg">
-        Mahdia
-      <span>5000 dt - 15.0 m²</span> <br>
-      <small> 2 piéces non-meublé-</small>
-    </div>
-    <div class="col s3">
-        <img src="assets/img/houses/Tn.jpeg">
-        Tunis
-      <span>500 dt - 15.0 m²</span> <br>
-      <small> 3 piéces non-meublé</small>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col s3">
-      <img src="assets/img/houses/h4.jpeg">
-      Korba
-      <span>300 dt - 15.0 m²</span> <br>
-      <small> 3 piéces non-meublé-3eme etage</small>
-    </div>
-    <div class="col s3">
-        <img src="assets/img/houses/Tn.jpeg">
-        Tunis
-      <span>200 dt - 17.0 m²</span> <br>
-      <small> 2 piéces meublé-3eme etage</small>
-    </div>
-    <div class="col s3">
-        <img src="assets/img/houses/h2.jpeg">
-        Mahdia
-      <span>500 dt - 15.0 m²</span> <br>
-      <small> 2 piéces non-meublé-</small>
-    </div>
-    <div class="col s3">
-        <img src="assets/img/houses/h4.jpeg">
-        Tunis
-      <span>500 dt - 15.0 m²</span> <br>
-      <small> 3 piéces non-meublé</small>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col s3">
-      <img src="assets/img/houses/Tn.jpeg">
-      Korba
-      <span>300 dt - 15.0 m²</span> <br>
-      <small> 3 piéces non-meublé-3eme etage</small>
-    </div>
-    <div class="col s3">
-        <img src="assets/img/houses/Tn.jpeg">
-        Tunis
-      <span>200 dt - 17.0 m²</span> <br>
-      <small> 2 piéces meublé-3eme etage</small>
-    </div>
-    <div class="col s3">
-        <img src="assets/img/houses/Tn.jpeg">
-        Mahdia
-      <span>500 dt - 15.0 m²</span> <br>
-      <small> 2 piéces non-meublé-</small>
-    </div>
-    <div class="col s3">
-        <img src="assets/img/houses/h2.jpeg">
-        Tunis
-      <span>500 dt - 15.0 m²</span> <br>
-      <small> 3 piéces non-meublé</small>
-    </div>
-  </div>
-  
-   <a class="seeMore" routerLink="/nav/welcome"><i class="material-icons prefix">chevron_right</i>
-     Revien</a>
- </div>
+  <h4> Les derniers biens à louer  </h4>
   <br>
+  <div class="row">
+     <div *ngFor="let output of AllOutput">
+          <div class="col s3">
+            <img src="http://127.0.0.1:8000/images/houses/{{output.mainIMG}}" alt="img">
+            {{output.city}}
+            <span>{{output.price}} dt - {{output.surface}} m²</span> <br>
+            <small> {{output.RoomNB}} piéces meublé-3eme etage</small>
+          </div>
+     </div> 
+  </div>   
+</div>  
+<a class="seeMore" routerLink="/nav/welcome"><i class="material-icons prefix" >chevron_right</i>
+  Revien</a>
+<!-- All OUTPUT-->
+
+
+
+      <!-- Site footer -->
+      <footer class="site-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col s12 col m6">
+              <h6>About</h6>
+              <p class="text-justify">InstaVisit.com  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. , 
+                JavaScript, PHP, Android, SQL and Algorithm.</p>
+            </div>
+  
+            <div class="col xs6 col m3">
+              <h6>Categories</h6>
+              <ul class="footer-links">
+                <li><a href="http://scanfcode.com/category/c-language/">C</a></li>
+                <li><a href="http://scanfcode.com/category/front-end-development/">InstaVisit@gmail</a></li>
+                <li><a href="http://scanfcode.com/category/back-end-development/">22 008 080</a></li>
+                <li><a href="http://scanfcode.com/category/java-programming-language/">XXX</a></li>
+                <li><a href="http://scanfcode.com/category/android/">YYY</a></li>
+                <li><a href="http://scanfcode.com/category/templates/">ZZZ</a></li>
+              </ul>
+            </div>
+  
+            <div class="col xs6 col m3">
+              <h6>Quick Links</h6>
+              <ul class="footer-links">
+                <li><a href="http://scanfcode.com/about/">About Us</a></li>
+                <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
+                <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Browse</a></li>
+                <li><a href="http://scanfcode.com/privacy-policy/">A louer</a></li>
+                <li><a href="http://scanfcode.com/sitemap/">A Vendre</a></li>
+              </ul>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col m8 col s6 col xs 12">
+              <p class="copyright-text">Copyright &copy; 2019 All Rights Reserved by 
+           <a href="#">InstaVisit</a>.
+              </p>
+            </div>
+  
+            <div class="col m 4 col s 6 col xs 12">
+              <ul class="social-icons">
+                <li><a class="btn social" href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+                <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+              </ul>
+            </div>
+          </div>
+        </div>
+        Powered by DIGITA
+  </footer>
