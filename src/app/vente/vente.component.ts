@@ -1,29 +1,40 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter, Input } from '@angular/core';
 import { Gallery, GalleryRef } from '@ngx-gallery/core';
-
-import { GalleryItem, ImageItem } from '@ngx-gallery/core';
+import { VoutputService } from '../_services/Voutput.service';
+//import { GalleryItem, ImageItem } from '@ngx-gallery/core';
+import { FilterPipe } from '../filter.pipe';
 @Component({
   selector: 'app-vente',
   templateUrl: './vente.component.html',
-  styleUrls: ['./vente.component.css']
+  styleUrls: ['./vente.component.css'],
+  
 })
 export class VenteComponent implements OnInit {
-  $:any[];
-  images: GalleryItem[];
+  @Input() searchModel;
 
-  constructor(private gallery: Gallery) { }
+  @Output() searchModelChange: EventEmitter<any> = new EventEmitter();
+	//term: string = "";
+  
+  FirOutput: any=[];
+  constructor(
+
+    private _service: VoutputService,) { }
  
   ngOnInit() {
-   
-    this.images = [
-      new ImageItem({ src: 'assets/img/houses/h1.jpg', thumb: 'IMAGE_THUMBNAIL_URL' }),
-      new ImageItem({ src: 'assets/img/houses/h2.jpg', thumb: 'IMAGE_THUMBNAIL_URL' }),
-      new ImageItem({ src: 'assets/img/houses/h3.jpg', thumb: 'IMAGE_THUMBNAIL_URL' }),
-      new ImageItem({ src: 'assets/img/houses/h4.jpg', thumb: 'IMAGE_THUMBNAIL_URL' }),
-      new ImageItem({ src: 'assets/img/houses/h5.jpg', thumb: 'IMAGE_THUMBNAIL_URL' }),
-    ];
-   
+    this._service.getData()
+        .subscribe((res) => {
+            console.log(res);
+            this.FirOutput = res;
+        });
+       
+      
     }
  
-  }
+
+
+    
+
+
+ 
+}  
 

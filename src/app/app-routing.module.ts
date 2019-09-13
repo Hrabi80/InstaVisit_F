@@ -16,6 +16,8 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { LouerComponent } from './louer/louer.component';
 import { VenteComponent } from './vente/vente.component';
 import { AllComponent } from './all/all.component';
+import { VenteListComponent } from './vente-list/vente-list.component';
+import { OtherVenteComponent } from './other-vente/other-vente.component';
 
 const routes: Routes = [
   
@@ -84,6 +86,14 @@ const routes: Routes = [
           path: 'all',
           component: AllComponent,
         },
+        {
+          path: 'fff',
+          component: VenteListComponent,   
+       },
+       {
+        path: 'fuck',
+        component: OtherVenteComponent,   
+     },
      ],
   },
  

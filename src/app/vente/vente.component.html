@@ -1,29 +1,45 @@
+<br>
+<div class="containers">
 
-<section>
-
-	<h1>Material Design Lightbox Gallery</h1>
-	<div class="row">
-	  <div class="galeria-empresa">
-		<a class="galeria-item galeria-item-feature" href="http://lorempixel.com/600/400" data-lightbox="galeria-empresas">
-		  <img class="galeria-item-image" src="http://lorempixel.com/600/400" alt="" />
-		</a>
-  
-		<a class="galeria-item" href="http://lorempixel.com/550/300" data-lightbox="galeria-empresas">
-		  <img class="galeria-item-image" src="http://lorempixel.com/550/300" alt="" />
-		</a>
-		
-		<a class="galeria-item" href="http://lorempixel.com/700/350" data-lightbox="galeria-empresas">
-		  <img class="galeria-item-image" src="http://lorempixel.com/700/350" alt="" />
-		</a>
-		
-		<a class="galeria-item" href="http://lorempixel.com/450/350" data-lightbox="galeria-empresas">
-		  <img class="galeria-item-image" src="http://lorempixel.com/450/350" alt="" />
-		</a>
-		
-		<a class="galeria-item" href="http://lorempixel.com/600/350" data-lightbox="galeria-empresas">
-		  <img class="galeria-item-image" src="http://lorempixel.com/600/350" alt="" />
-		</a>
-  
+  <div class="row Sbox"> 
+   
+    <div class="wrap col s4 m4 l4 xl4">
+	  <div class="search">
+		 <input type="text" class="searchTerm filter-input" [(ngModel)]="term" placeholder="  Entrez un lieu"  >
 	  </div>
 	</div>
-  </section>
+
+	<div class="wrap col s3 m3 l4 xl4">
+		<div class="search">
+		   <input type="text" class="searchTerm" [(ngModel)]="termSurf" placeholder="  Surface min en m²">
+		</div>
+	</div>
+
+	<div class="wrap col s4 m4 l4 xl4">
+		<div class="search">
+		   <input type="text" class="searchTerm" [(ngModel)]="termPrice" placeholder="  Prix max en DT" >
+		   <button class="searchButton">Chercher</button>
+		</div>
+	</div>	  
+	
+  </div>
+  
+
+</div>
+ 
+
+  <div class="ct">
+	<h4> Les derniers biens à louer  </h4>
+	<br>
+	<div class="row"> 
+	   <div *ngFor="let output of FirOutput | filter:term:'city' | filter:termPrice:'adress' ">
+			<div class="col s3">
+			  <img src="http://127.0.0.1:8000/images/houses/{{output.mainIMG}}" alt="img">
+			  {{output.city }}
+			  <span>{{output.price }} dt - {{output.surface}} m²</span> <br>
+			  <small> {{output.RoomNB}} piéces meublé-3eme etage</small>
+			</div>
+	   </div> 
+	</div>   
+  </div>  
+  

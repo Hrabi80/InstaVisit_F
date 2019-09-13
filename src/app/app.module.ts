@@ -45,6 +45,9 @@ import 'hammerjs';
 import 'mousetrap';
 import { AllComponent } from './all/all.component';
 import { InfoComponent } from './info/info.component';
+import { FilterPipe } from './filter.pipe';
+import { VenteListComponent } from './vente-list/vente-list.component';
+import { OtherVenteComponent } from './other-vente/other-vente.component';
 
 
 @NgModule({
@@ -65,7 +68,10 @@ import { InfoComponent } from './info/info.component';
     LouerComponent,
     VenteComponent,
     AllComponent,
-    InfoComponent
+    InfoComponent,
+    FilterPipe,
+    VenteListComponent,
+    OtherVenteComponent
   ],
   imports: [
     BrowserModule,

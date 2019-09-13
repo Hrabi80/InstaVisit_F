@@ -1,0 +1,16 @@
+<div class="ct">
+        <h4> Les derniers biens à louer  </h4>
+        <br>
+        <div class="row">
+        <div *ngFor="let output of filteredOutput | filter: searchByKeyword: 'city'">
+         <!-- <div *ngFor="let output of FirOutput"> --> 
+                <div class="col s3">
+                  <img src="http://127.0.0.1:8000/images/houses/{{output.mainIMG}}" alt="img">
+                  {{output.city}}
+                  <span>{{output.price}} dt - {{output.surface}} m²</span> <br>
+                  <small> {{output.RoomNB}} piéces meublé-3eme etage</small>
+                </div>
+           </div> 
+        </div>   
+      </div>  
+      

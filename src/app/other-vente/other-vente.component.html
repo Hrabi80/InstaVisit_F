@@ -1,0 +1,8 @@
+
+        <br/>
+
+ 
+        <app-vente (groupFilters)="filters = $event"></app-vente>
+        <br/>
+        <app-vente-list [groupFilters]="filters"
+        [searchByKeyword]="searchText"></app-vente-list>
