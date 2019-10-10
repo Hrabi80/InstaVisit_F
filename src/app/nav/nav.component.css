@@ -13,13 +13,16 @@ nav .nav-wrapper a{
 
 
 
-
+img{
+  margin-top:-4%;
+}
 
 /* LOGO */
 #fh5co-logo {
     position: relative;
     z-index: 2;
-    font-size: 28px;
+   /* font-size: 28px;*/
+   font-size: 3px;
     text-transform: uppercase;
     margin-top: 10px;
     font-weight: 700;

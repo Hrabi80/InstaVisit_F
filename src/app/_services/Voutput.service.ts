@@ -23,6 +23,18 @@ export class VoutputService{
         //return this._http.get(this._url+'/get');
            
     }
+    getDetails(id){
+        return this._http.get(this._url+'/getDetail/'+id);
+    }
+    getStation(id){
+        return this._http.get(this._url+'/getStation/'+id);
+    }
+    getParking(id){
+        return this._http.get(this._url+'/getcar/'+id);
+    }
+    getMap(id){
+        return this._http.get(this._url+'/getMap/'+id);
+    }
     getArray(){
         return this._http.get(this._url+'/arrayData');
         //return this._http.get(this._url+'/get');

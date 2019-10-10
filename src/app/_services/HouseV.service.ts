@@ -24,4 +24,18 @@ export class HouseVService{
     AddHV(data){
         return this._http.post(this._url + '/AddHouse', data , {reportProgress:true , observe:'events'});
     }
+
+    upload(data){
+        return this._http.post(this._url + '/AddHouse', data , {reportProgress:true , observe:'events'});
+    }
+
+    AddTransport(id, data){
+        return this._http.post(this._url+'/AddTransport/'+id,data);
+    }
+    AddInfo(id, data){
+        return this._http.post(this._url+'/AddInfo/'+id,data);
+    }
+    AddMap(id, data){
+        return this._http.post(this._url+'/AddMap/'+id,data);
+    }
 }

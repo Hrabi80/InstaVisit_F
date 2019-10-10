@@ -7,7 +7,9 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {AuthService} from './_services/auth.service';
 import { LocalisationService } from './_services/Localisation.service';
 import { HouseVService } from './_services/HouseV.service';
+import { HouseLService } from './_services/HouseL.service';
 import { VoutputService } from './_services/Voutput.service';
+import { FrontService } from './_services/Front.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -48,6 +50,10 @@ import { InfoComponent } from './info/info.component';
 import { FilterPipe } from './filter.pipe';
 import { VenteListComponent } from './vente-list/vente-list.component';
 import { OtherVenteComponent } from './other-vente/other-vente.component';
+import { SearchNavComponent } from './search-nav/search-nav.component';
+import { DydetailsComponent } from './dydetails/dydetails.component';
+import { VT360Component } from './vt360/vt360.component';
+import { NewsletterComponent } from './newsletter/newsletter.component';
 
 
 @NgModule({
@@ -71,7 +77,11 @@ import { OtherVenteComponent } from './other-vente/other-vente.component';
     InfoComponent,
     FilterPipe,
     VenteListComponent,
-    OtherVenteComponent
+    OtherVenteComponent,
+    SearchNavComponent,
+    DydetailsComponent,
+    VT360Component,
+    NewsletterComponent
   ],
   imports: [
     BrowserModule,
@@ -94,7 +104,9 @@ import { OtherVenteComponent } from './other-vente/other-vente.component';
     LocalisationService,
     AuthService,
     HouseVService,
+    HouseLService,
     VoutputService,
+    FrontService,
     JwtInterceptor,
     {
       provide: HTTP_INTERCEPTORS,

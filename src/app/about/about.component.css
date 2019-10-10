@@ -22,8 +22,6 @@
 	text-align: center;
 	color: rgb(74, 76, 77);
 	margin: 0 auto;
-
-
 }
 .aboutus img{
 	border-radius: 50%;
@@ -31,24 +29,136 @@
 	width: 130px;
 	margin-left: 43px;
 	margin-top: -70px;
-	border: 5px solid #eee;
+	border: 1.2px solid rgb(161, 207, 250);
 	box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
 	
 }
 
-.i1 img{
+.i1 {
 	margin-top: 1%;
-	margin-left:40%;
+	margin-left:30%;
+}
+.i1 img {
+	margin-top: 2%;
+}
+.i2{
+	margin-top: 1%;
+	margin-left: 19%;
 }
 .i2 img {
-	margin-top: 1%;
-	margin-left: 50%;
+	margin-top: 2%;
+	
 }
-.i3{
+.i3 {
+	margin-left:38%;
+
+}
+.i3 img{
 	margin-top: 5%;
-	margin-left:42%;
+	
+}
+
+.social img{
+	border-radius: 0%;
+	height: 20px;
+	width: 20px;
+	border: none;
+	margin-left:2px;
+	cursor: pointer;
+
+}
+.aboutus span{
+	color: rgb(73, 131, 218);
+	font-style: bold;
+	font-size: 1.50em;
 }
 /* /AboutUS */
+
+
+/* NEWSLETTER */
+.newsletter{
+		
+	background-image: url("/assets/img/newsletter1.jpeg");
+	position: relative;
+	background-size: 100% 100%;
+	height: 600px;
+	color:white;
+}
+.newsletter:before{
+	
+		background-color: rgba(0, 0, 0, 0.5);
+		content: '';
+		display: block;
+		height: 100%;
+		position: absolute;
+		width: 100%;
+	  }
+
+.newsletter h3{
+	margin-left: 37%;
+    position: absolute;
+}
+.newsletter h5{
+	margin-left: 24%;
+	position: absolute;
+	margin-top: 10px;
+}
+.subs{
+	border:none;
+}
+.container .subs:after{
+	background-color: #0b2c64;
+	position: relative;
+}
+.newsletter .search-field{
+	height: 50px;
+	padding: 10px;
+	border: none;
+	outline:none;
+  }
+ .newsletter .input{
+	position: relative;
+	display:inline-block;
+	font-size:20px;
+	box-sizing: border-box;
+	transition: .5s;
+	background: #fff;
+	width: 500px;
+	height:50px;
+	border:none;
+	padding: 0 20px;
+	border-radius:25 px 0 0 25px;
+	
+ 
+  } 
+ 
+ .newsletter .Form-box{
+	 margin-left: 17%;
+	 color: #292c2f;
+ }
+ .newsletter .search-bt{
+	 height: 50px;
+	 width: 150px;
+	 background: #4d8cdd;
+	 border:none;
+	 color: rgb(255, 255, 255);
+	 /*border-radius: 25px;*/
+	 position: relative;
+   /*  border-radius: 0 25px 25px 0;*/
+	 outline:none;
+	 cursor:pointer;
+ }
+
+/* /NEWSLETTER */
+
+
+/* CONTACT */
+.contact h4{
+	text-align: center;
+	color: rgb(74, 76, 77);
+	margin: 0 auto;
+}
+/*  /CONTACT */
 span {
  
 	display: inline-block;

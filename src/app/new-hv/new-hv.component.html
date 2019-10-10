@@ -56,15 +56,27 @@
     <div class="row">
     <div class="file-field input-field">
       <div class="btn blue">
-        <span>Upload</span>
+        <span>Photo</span>
         <input type="file" (change)="onFileChanged($event)">
       </div>
       <div class="file-path-wrapper">
         <input class="file-path validate" type="text" placeholder="Choisit l'image principale">
       </div>
+    </div>  
+  </div>  
+
+  <div class="row">
+    <div class="file-field input-field">
+      <div class="btn blue">
+        <span>Cover photo</span>
+        <input type="file" (change)="onFileChanged2($event)">
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text" placeholder="Choisit la coverture photo">
+      </div>
     </div>
           
-  </div>  
+  </div> 
     
 </mat-card-content>
 <mat-card-actions>

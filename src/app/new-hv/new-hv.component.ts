@@ -47,6 +47,7 @@ export class NewHVComponent implements OnInit {
       price:new FormControl(''),
       surface:new FormControl(''),
       mainIMG: new FormControl(''),
+      cover : new FormControl,
     });
   }
   selectOption(opt: string) {
@@ -82,9 +83,35 @@ export class NewHVComponent implements OnInit {
     
       console.log(event);
   }
+
+  onFileChanged2(event:any) {
+    if (event.target.files && event.target.files[0]) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.form.get('cover').setValue(event.target.files[0]);
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
+   
+      //(res) => this.uploadResponse = res,
+      //(err) => this.error = err,
+       event => { if(event.type === HttpEventType.UploadProgress)
+        {
+            console.log('upload progress : ' + Math.round( event.loaded / event.total )*100 +'%')
+        } 
+        else if(event.type === HttpEventType.Response)
+        {
+          console.log(event);
+
+        }
+      }
+    
+      console.log(event);
+  }
   newHV(){
     const uploadData = new FormData();
-    uploadData.append('mainIMG', this.form.get('mainIMG').value)
+    uploadData.append('mainIMG', this.form.get('mainIMG').value);
+    uploadData.append('cover', this.form.get('cover').value)
     uploadData.append('adress', this.form.get('adress').value);
     uploadData.append('city', this.opt);
     uploadData.append('description', this.form.get('description').value);

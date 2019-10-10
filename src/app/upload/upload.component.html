@@ -1,34 +1,33 @@
 <br>
 <div class="container">
+    <form [formGroup]="form" action="">
     <mat-card>
         <mat-card-content>
         </mat-card-content>
-        <h3>Ajouter des photos de couverture</h3>
-        <form action="#">
+        <h3>Ajouter des photos de gallery</h3>
                 <div class="file-field input-field">
                   <div class="btn">
                     <span>1er coverture</span>
-                    <input type="file">
+                    <input type="file" (change)="onFileChanged($event)" formControlName="first">
                   </div>
                   <div class="file-path-wrapper">
-                    <input class="file-path validate" type="text">
+                    <input class="file-path validate" type="text" placeholder="Choisit la photo de coverture principale">
                   </div>
                 </div>
-              </form>
+             
 
 
-                  <form action="#">
+               
                         <div class="file-field input-field">
                           <div class="btn">
                             <span>2em coverture</span>
                             <input type="file">
                           </div>
                           <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text">
+                            <input class="file-path validate" type="text" placeholder="Choisit la 2eme image de Gallery">
                           </div>
                         </div>
-                      </form>
-                      <form action="#">
+                      
                             <div class="file-field input-field">
                               <div class="btn">
                                 <span>3em coverture</span>
@@ -38,94 +37,60 @@
                                 <input class="file-path validate" type="text">
                               </div>
                             </div>
-                          </form>
+                          
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>4em coverture</span>
+                                  <input type="file">
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text">
+                                </div>
+                              </div>
                          
-                              <form action="#">
-                                    <div class="file-field input-field">
-                                      <div class="btn">
-                                        <span>4em coverture</span>
-                                        <input type="file">
-                                      </div>
-                                      <div class="file-path-wrapper">
-                                        <input class="file-path validate" type="text">
-                                      </div>
+                                  <div class="file-field input-field">
+                                    <div class="btn">
+                                      <span>5em coverture</span>
+                                      <input type="file">
                                     </div>
-                                  </form>
-                                  <form action="#">
-                                        <div class="file-field input-field">
-                                          <div class="btn">
-                                            <span>5em coverture</span>
-                                            <input type="file">
-                                          </div>
-                                          <div class="file-path-wrapper">
-                                            <input class="file-path validate" type="text">
-                                          </div>
-                                        </div>
-                                      </form>
-
-                                      <h3>Ajouter des photos à 360°</h3>
-
-                                
-                                      
-                                      <form action="#">
-                                            <div class="file-field input-field">
-                                              <div class="btn">
-                                                <span>1er 360°</span>
-                                                <input type="file">
-                                              </div>
-                                              <div class="file-path-wrapper">
-                                                <input class="file-path validate" type="text">
-                                              </div>
-                                            </div>
-                                          </form>
-                            
-                            
-                                              <form action="#">
-                                                    <div class="file-field input-field">
-                                                      <div class="btn">
-                                                        <span>2em 360°</span>
-                                                        <input type="file">
-                                                      </div>
-                                                      <div class="file-path-wrapper">
-                                                        <input class="file-path validate" type="text">
-                                                      </div>
-                                                    </div>
-                                                  </form>
-                                                  <form action="#">
-                                                        <div class="file-field input-field">
-                                                          <div class="btn">
-                                                            <span>3em 360°</span>
-                                                            <input type="file">
-                                                          </div>
-                                                          <div class="file-path-wrapper">
-                                                            <input class="file-path validate" type="text">
-                                                          </div>
-                                                        </div>
-                                                      </form>
-                                                     
-                                                          <form action="#">
-                                                                <div class="file-field input-field">
-                                                                  <div class="btn">
-                                                                    <span>4em 360°</span>
-                                                                    <input type="file">
-                                                                  </div>
-                                                                  <div class="file-path-wrapper">
-                                                                    <input class="file-path validate" type="text">
-                                                                  </div>
-                                                                </div>
-                                                              </form>
-                                                              <form action="#">
-                                                                    <div class="file-field input-field">
-                                                                      <div class="btn">
-                                                                        <span>5em 360°</span>
-                                                                        <input type="file">
-                                                                      </div>
-                                                                      <div class="file-path-wrapper">
-                                                                        <input class="file-path validate" type="text">
-                                                                      </div>
-                                                                    </div>
-                                                                  </form>      
-                        
-            
-     </mat-card>
+                                    <div class="file-path-wrapper">
+                                      <input class="file-path validate" type="text">
+                                    </div>
+                                  </div>
+                          
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>6em coverture</span>
+                                  <input type="file">
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text">
+                                </div>
+                              </div>
+                       
+                          <div class="file-field input-field">
+                            <div class="btn">
+                              <span>7em coverture</span>
+                              <input type="file">
+                            </div>
+                            <div class="file-path-wrapper">
+                              <input class="file-path validate" type="text">
+                            </div>
+                          </div>
+                  
+                      <div class="file-field input-field">
+                        <div class="btn">
+                          <span>8em coverture</span>
+                          <input type="file">
+                        </div>
+                        <div class="file-path-wrapper">
+                          <input class="file-path validate" type="text">
+                        </div>
+                      </div>
+                      <mat-card-actions align="end">
+                      <button class="waves-effect waves-light btn red">Upload</button>
+                    </mat-card-actions>
+               
+                               
+     </mat-card></form><br>
 </div>

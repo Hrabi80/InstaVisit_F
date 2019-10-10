@@ -18,6 +18,11 @@ import { VenteComponent } from './vente/vente.component';
 import { AllComponent } from './all/all.component';
 import { VenteListComponent } from './vente-list/vente-list.component';
 import { OtherVenteComponent } from './other-vente/other-vente.component';
+import { SearchNavComponent } from './search-nav/search-nav.component';
+import { DydetailsComponent } from './dydetails/dydetails.component';
+import { InfoComponent } from './info/info.component';
+import { VT360Component } from './vt360/vt360.component';
+import { NewsletterComponent } from './newsletter/newsletter.component';
 
 const routes: Routes = [
   
@@ -54,6 +59,14 @@ const routes: Routes = [
         path: 'Upload',
         component: UploadComponent,   
       },
+      {
+        path: 'info/:id',
+        component: InfoComponent,   
+      },
+      {
+        path: 'newsletter',
+        component: NewsletterComponent,   
+      },
     ],
     canActivate: [AuthGuard] 
   },
@@ -67,13 +80,35 @@ const routes: Routes = [
          component: WelcomeComponent,   
       },
       {
-         path: 'details',
+         path: 'details/:id',
          component: DetailsComponent,   
        },  
+       {
+        path: 'Ldetails',
+        component: DydetailsComponent,   
+      },  
+      {
+        path: 'VirtuelTour',
+        component: VT360Component,   
+     },
        {
          path: 'about',
          component: AboutComponent,
        },
+       {
+        path: 'SearchNav',
+        component: SearchNavComponent,
+        children: [
+          {
+            path: 'searchlouer',
+            component: LouerComponent,
+          },
+          {
+            path: 'searchvente',
+            component: VenteComponent,
+          },
+        ],
+      },
        {
           path: 'searchlouer',
           component: LouerComponent,

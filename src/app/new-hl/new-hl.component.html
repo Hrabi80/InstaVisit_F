@@ -7,7 +7,8 @@
  
       <div class="row">
         <div class="input-field col s6">
-          <input id="first_name" type="text" class="validate"  formControlName="adress" required>
+          <input id="first_name" type="text" class="validate"  formControlName="adress" 
+          [ngClass]="{ 'is-invalid': submitted }" required>
           <label for="first_name">Adresse</label>
         </div> 
         <div class="input-field col s6"> <br>
@@ -23,24 +24,27 @@
       
       <div class="row">
           <div class="input-field col s6">
-            <input id="first_name" type="text" class="validate"  formControlName="surface" required>
+            <input id="first_name" type="number" class="validate"  formControlName="surface" 
+            [ngClass]="{ 'is-invalid': submitted }"required>
             <label for="first_name">Surface en m²</label>
           </div>
           <div class="input-field col s5">
-              <input id="first_name" type="text" class="validate"  formControlName="Tx" required>
+              <input id="first_name" type="number" class="validate"  pattern="[0-9]*" formControlName="Tx" 
+              [ngClass]="{ 'is-invalid': submitted }"required>
               <label for="first_name">Nb des chambres</label>
           </div>
       </div>
       <div class="row">
           <div class="input-field col s6">
-            <input id="first_name" type="text" class="validate"  formControlName="price" required>
+            <input id="first_name" type="number" class="validate"  formControlName="price" 
+            [ngClass]="{ 'is-invalid': submitted }" required>
             <label for="first_name">Prix</label>
           </div>
           <div class="input-field col s5">
               <div class="switch" >
                   <label>
                     Non meublé
-                    <input type="checkbox"  formControlName="isMeuble" required>
+                    <input type="checkbox"  formControlName="isMeuble">
                     <span class="lever"></span>
                     meublé
                   </label>
@@ -50,25 +54,64 @@
       </div>
       <div class="row">
           <div class="input-field col s12">
-            <textarea id="textarea1" class="materialize-textarea" data-length="120" formControlName="description" required>
-
+            <textarea id="textarea1" class="materialize-textarea" data-length="120" formControlName="description" 
+            [ngClass]="{ 'is-invalid': submitted }" required>
             </textarea>
             <label for="textarea1">Description</label>
           </div>
         </div>
-        <!--
-        <div class="row">
+      <div class="row">
             <div class="input-field col s12">
-                <input placeholder="Date Limite" class="validate" type="date"   
-                id="date_limite" formControlName="date_limite"> 
-        <label for="textarea1"></label>
+              <textarea id="textarea1" class="materialize-textarea" data-length="120" formControlName="description2" 
+              [ngClass]="{ 'is-invalid': submitted }" required>  
+              </textarea>
+              <label for="textarea1">2eme description</label>
+            </div>
       </div>
-    </div>-->
-      
+      <div class="row">
+          <div class="input-field col s12">
+            <textarea id="textarea1" class="materialize-textarea" data-length="120" formControlName="description3">
+
+            </textarea>
+            <label for="textarea1">3éme description</label>
+          </div>
+      </div>
+      <div class="row">
+          <div class="input-field col s12">
+            <textarea id="textarea1" class="materialize-textarea" data-length="120" formControlName="description4">
+
+            </textarea>
+            <label for="textarea1">4éme description</label>
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="file-field input-field">
+          <div class="btn blue">
+            <span>Photo</span>
+            <input type="file" (change)="onFileChanged($event)">
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" placeholder="Choisit l'image principale">
+          </div>
+        </div>  
+      </div>  
     
+      <div class="row">
+        <div class="file-field input-field">
+          <div class="btn blue">
+            <span>Cover photo</span>
+            <input type="file" (change)="onFileChanged2($event)">
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" placeholder="Choisit la coverture photo">
+          </div>
+        </div>          
+      </div> 
+  
 </mat-card-content>
 <mat-card-actions>
-    <button class="waves-effect waves-light btn yellow" (click)="create()" name="action">
+    <button class="waves-effect waves-light btn yellow" [disabled]="form.pristine || form.invalid" (click)="newHL()" name="action">
       Ajouter</button>
 </mat-card-actions>
             

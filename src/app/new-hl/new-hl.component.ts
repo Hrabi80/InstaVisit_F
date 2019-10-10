@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import {Router} from '@angular/router';
+import { HttpEventType } from '@angular/common/http';
 import { LocalisationService } from '../_services/Localisation.service';
+import { HouseLService } from '../_services/HouseL.service';
 declare var $:any;
 @Component({
   selector: 'app-new-hl',
@@ -11,9 +13,11 @@ declare var $:any;
 export class NewHLComponent implements OnInit {
   form: FormGroup;
   locs:any=[];
+  opt: string;
   constructor(private  _fb: FormBuilder,
               private router: Router,
               private service2: LocalisationService,
+              private _service: HouseLService,
              ) { }
 
   
@@ -30,15 +34,88 @@ export class NewHLComponent implements OnInit {
     $('.datepicker').datepicker();
 
     this.form = this._fb.group({
-      adress: new FormControl(''),
-      description: new FormControl(''),
-      Tx:new FormControl(''),
-      loc:new FormControl(''),
-      price:new FormControl(''),
-      surface:new FormControl(''),
+      adress:['', [Validators.required]],
+      description: ['', [Validators.required]],
+      description2: ['', [Validators.required]],
+      description3: new FormControl(''),
+      description4: new FormControl(''),
+      Tx:['', [Validators.required]],
+      loc:['', [Validators.required]],
+      price:['', [Validators.required]],
+      surface:['', [Validators.required]],
       isMeuble:new FormControl(''),
+      mainIMG: new FormControl(''),
+      cover : new FormControl,
     });
   
+    }
+
+    selectOption(opt: string) {
+      //getted from event
+      //getted from binding
+      console.log("opitonII",opt);
+      this.opt=opt;
+      console.log("opiton",this.opt);
+    }
+
+    onFileChanged(event:any) {
+      if (event.target.files && event.target.files[0]) {
+        const reader = new FileReader();
+        reader.onload = () => {
+          this.form.get('mainIMG').setValue(event.target.files[0]);
+        };
+        reader.readAsDataURL(event.target.files[0]);
+      }
+         event => { if(event.type === HttpEventType.UploadProgress)
+          {
+              console.log('upload progress : ' + Math.round( event.loaded / event.total )*100 +'%')
+          } 
+          else if(event.type === HttpEventType.Response)
+          {
+            console.log(event);
+          }
+        }
+        console.log(event);
+    }
+
+    onFileChanged2(event:any) {
+      if (event.target.files && event.target.files[0]) {
+        const reader = new FileReader();
+        reader.onload = () => {
+          this.form.get('cover').setValue(event.target.files[0]);
+        };
+        reader.readAsDataURL(event.target.files[0]);
+      }
+         event => { if(event.type === HttpEventType.UploadProgress)
+          {
+              console.log('upload progress : ' + Math.round( event.loaded / event.total )*100 +'%')
+          } 
+          else if(event.type === HttpEventType.Response)
+          {
+            console.log(event);
+          }
+        }
+        console.log(event);
+    }
+
+    newHL(){
+      const uploadData = new FormData();
+      uploadData.append('mainIMG', this.form.get('mainIMG').value);
+      uploadData.append('cover', this.form.get('cover').value)
+      uploadData.append('adress', this.form.get('adress').value);
+      uploadData.append('city', this.opt);
+      uploadData.append('description', this.form.get('description').value);
+      uploadData.append('Tx', this.form.get('Tx').value);
+      uploadData.append('loc', this.form.get('loc').value);
+      uploadData.append('price', this.form.get('price').value);
+      uploadData.append('surface', this.form.get('surface').value);
+      console.log(uploadData);
+      if( this.form.get('isMeuble').value === false)
+      {this._service.AddHV(uploadData);}
+      else
+      {this._service.AddHVM(uploadData)}
+        console.log(event);
+       // this.router.navigateByUrl('dashboard/HvData_Table');
     }
   
 

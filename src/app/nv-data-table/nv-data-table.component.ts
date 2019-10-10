@@ -21,7 +21,7 @@ export class NVDataTableComponent implements AfterViewInit, OnInit {
   dataSource = [];
   td = [{id:1, name: 'korba', adress: '14 Rue Tunis', surface: 500 ,price: 50.000}]
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name','adress','surface','price','addIMG','ss'];
+  displayedColumns = ['id', 'name','adress','surface','price','car','addIMG','ss'];
   constructor(private _service: HouseVService,
              // private matTable:NVDataTableDataSource   
              ){}
