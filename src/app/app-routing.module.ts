@@ -23,6 +23,10 @@ import { DydetailsComponent } from './dydetails/dydetails.component';
 import { InfoComponent } from './info/info.component';
 import { VT360Component } from './vt360/vt360.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
+import { MeubleDataTableComponent } from './meuble-data-table/meuble-data-table.component';
+import { NOMeubleComponent } from './nomeuble/nomeuble.component';
+import { InfoMComponent } from './info-m/info-m.component';
+import { OurworkComponent } from './ourwork/ourwork.component';
 
 const routes: Routes = [
   
@@ -56,12 +60,24 @@ const routes: Routes = [
         component: NVDataTableComponent,   
       },
       {
+        path: 'HL_LISTE',
+        component: NOMeubleComponent,   
+      },
+      {
+        path: 'HLM_LISTE',
+        component: MeubleDataTableComponent,   
+      },
+      {
         path: 'Upload',
         component: UploadComponent,   
       },
       {
         path: 'info/:id',
         component: InfoComponent,   
+      },
+      {
+        path: 'infoM/:id',
+        component: InfoMComponent,   
       },
       {
         path: 'newsletter',
@@ -96,6 +112,10 @@ const routes: Routes = [
          component: AboutComponent,
        },
        {
+        path: 'howWeWork',
+        component: OurworkComponent,
+      },
+       {
         path: 'SearchNav',
         component: SearchNavComponent,
         children: [
@@ -108,6 +128,10 @@ const routes: Routes = [
             component: VenteComponent,
           },
         ],
+      },
+      {
+        path: 'searchvente',
+        component: VenteComponent,
       },
        {
           path: 'searchlouer',
@@ -137,6 +161,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   providers: [AuthGuard],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }

@@ -1,15 +1,143 @@
-<!--  STARTER
-<div class="starter">
-	
-	<br><img src="assets/img/dep1.png"><br><br>
-	<h4>Cherchez le logement le plus proche de vous <br>et le prix qui vous convient</h4>
-	
-</div>
-   -->
-
 
 
         
+   <br>
+   <div class="ssr">
+    <div class="row">
+      <div class="col ">
+        <mat-form-field appearance="outline" class="ref">
+          <mat-label>Ref</mat-label>
+          <input matInput placeholder="IV00***" [(ngModel)]="ref" >
+          <mat-hint>tapez nombre de ***</mat-hint>
+        </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+      <div class="col " >
+        <mat-form-field appearance="outline">
+          <mat-label>Lieu</mat-label>
+          <input matInput placeholder="Placeholder" value="{{ParamService.foo}}" [(ngModel)]="term" >
+          <mat-icon matSuffix>find_replace</mat-icon>
+          <mat-hint>Hint</mat-hint>
+        </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+      <div class="col ">
+        <label>Nombre de chambre</label>
+        <select class="browser-default" [(ngModel)]="room">
+          <option value="" disabled selected>S+</option>
+          <option value="1">S + 1</option>
+          <option value="2">S + 2</option>
+          <option value="3">S + 3</option>
+          <option value="4">S + 4</option>
+          <option value="5">S + 5</option>
+          <option value="6">S + 6</option>
+        </select>
+	  </div>
+	   
+    </div>
+     <div class="row">
+       <div class="col">
+          <mat-label>Prix max: </mat-label>
+          <mat-slider
+             thumbLabel
+             [displayWith]="formatLabel"
+             tickInterval="10000"
+             min="100"
+             max="100000000">
+          </mat-slider>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+       </div>
+      <div class="col">
+          <mat-label>Prix min: </mat-label>
+          <mat-slider
+          thumbLabel
+          [displayWith]="formatLabel2"
+          tickInterval="10000"
+          min="100"
+          max="70000000">
+       </mat-slider>
+       &nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+      <div class="col">
+		<mat-label>Surface max: </mat-label>
+		<mat-slider
+		   thumbLabel
+		   [displayWith]="formatLabel3"
+		   tickInterval="1000"
+		   min="100"
+		   max="1000000">
+		</mat-slider>
+	  </div>
+	  <div class="col">
+		<mat-label>Surface max: </mat-label>
+		<mat-slider
+		   thumbLabel
+		   [displayWith]="formatLabel4"
+		   tickInterval="1000"
+		   min="1"
+		   max="100000">
+		</mat-slider>
+	  </div>
+	  
+     </div>   
+         
+    </div>    
+   
+   <div class="row ct">
+     
+        
+     <div class="col s12">
+         
+       <div class="row">
+         <div *ngFor="let output of FirOutput | filter:term:'city' | filter:ref:'id' | filter:room:'RoomNB'">
+            <div class="card col ">
+           <div class="card-image waves-effect waves-block waves-light">
+             <img class="activatorh" src="http://127.0.0.1:8000/images/houses/{{output.mainIMG}}">
+           </div> <br>
+           {{output.city }}
+             <span>{{output.price }} dt - {{output.surface }} m²</span> <br>
+             <small> {{output.RoomNB }} piéces meublé-3eme etage</small>
+             <a routerLink="/nav/details/+{{output.id}}">
+             <i class="material-icons right">filter_none</i></a>
+           <div class="card-content">
+         
+           </div>
+           <div class="card-reveal">
+           </div>
+           </div>
+       </div></div></div></div>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- OLD VENTE-->    
+  <!--
 <br>
 <div class="row spanel">
 	
@@ -64,210 +192,36 @@
 				</div>
 			  </div>
 		</div></div>
-		<!--
-			  <div class="card col">
-				  <div class="card-image waves-effect waves-block waves-light">
-					<img class="activatorh" src="assets/img/houses/h1.jpg">
-				  </div><br>
-					Sidi Bou Said
-					<span>5000 dt - 15.0 m²</span> <br>
-					<small> 3 piéces meublé-3eme etage</small>
-					<a routerLink="/nav">
-					<i class="material-icons right">filter_none</i></a>
-				  <div class="card-content">
-			
-				  </div>
-				  <div class="card-reveal">
-					<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-					<p>Here is some more information about this product that is only revealed once clicked on.</p>
-				  </div>
-				</div> 
-				<div class="card col">
-					<div class="card-image waves-effect waves-block waves-light">
-					  <img class="activatorh" src="assets/img/houses/h1.jpg">
-					</div><br>
-					Sidi Bou Said
-					<span>5000 dt - 15.0 m²</span> <br>
-					<small> 3 piéces meublé-3eme etage</small>
-					<a routerLink="/nav">
-					<i class="material-icons right">filter_none</i></a>
-					<div class="card-content">
-					  
-					</div>
-					<div class="card-reveal">
-					  <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-					  <p>Here is some more information about this product that is only revealed once clicked on.</p>
-					</div>
-				  </div>  
-			
-			</div>
-			<div class="row">
-			   <div class="card col ">
-				<div class="card-image waves-effect waves-block waves-light">
-				  <img class="activatorh" src="assets/img/houses/h1.jpg">
-				</div> <br>
-					Sidi Bou Said
-					<span>5000 dt - 15.0 m²</span> <br>
-					<small> 3 piéces meublé-3eme etage</small>
-					<a routerLink="/nav">
-					<i class="material-icons right">filter_none</i></a>
-				<div class="card-content">
-			
-				</div>
-				<div class="card-reveal">
-				</div>
-			  </div>
-			  <div class="card col">
-				  <div class="card-image waves-effect waves-block waves-light">
-					<img class="activatorh" src="assets/img/houses/h1.jpg">
-				  </div><br>
-					Sidi Bou Said
-					<span>5000 dt - 15.0 m²</span> <br>
-					<small> 3 piéces meublé-3eme etage</small>
-					<a routerLink="/nav">
-					<i class="material-icons right">filter_none</i></a>
-				  <div class="card-content">
-			
-				  </div>
-				  <div class="card-reveal">
-					<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-					<p>Here is some more information about this product that is only revealed once clicked on.</p>
-				  </div>
-				</div> 
-				<div class="card col">
-					<div class="card-image waves-effect waves-block waves-light">
-					  <img class="activatorh" src="assets/img/houses/h1.jpg">
-					</div><br>
-					Sidi Bou Said
-					<span>5000 dt - 15.0 m²</span> <br>
-					<small> 3 piéces meublé-3eme etage</small>
-					<a routerLink="/nav">
-					<i class="material-icons right">filter_none</i></a>
-					<div class="card-content">
-					  
-					</div>
-					<div class="card-reveal">
-					  <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-					  <p>Here is some more information about this product that is only revealed once clicked on.</p>
-					</div>
-				  </div>  
-			
-			</div>
-			<div class="row"> 
-			   <div class="card col ">
-				<div class="card-image waves-effect waves-block waves-light">
-				  <img class="activatorh" src="assets/img/houses/h1.jpg">
-				</div> <br>
-					Sidi Bou Said
-					<span>5000 dt - 15.0 m²</span> <br>
-					<small> 3 piéces meublé-3eme etage</small>
-					<a routerLink="/nav">
-					<i class="material-icons right">filter_none</i></a>
-				<div class="card-content">
-			
-				</div>
-				<div class="card-reveal">
-				</div>
-			  </div>
-			  <div class="card col">
-				  <div class="card-image waves-effect waves-block waves-light">
-					<img class="activatorh" src="assets/img/houses/h1.jpg">
-				  </div><br>
-					Sidi Bou Said
-					<span>5000 dt - 15.0 m²</span> <br>
-					<small> 3 piéces meublé-3eme etage</small>
-					<a routerLink="/nav">
-					<i class="material-icons right">filter_none</i></a>
-				  <div class="card-content">
-			
-				  </div>
-				  <div class="card-reveal">
-					<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-					<p>Here is some more information about this product that is only revealed once clicked on.</p>
-				  </div>
-				</div> 
-				<div class="card col">
-					<div class="card-image waves-effect waves-block waves-light">
-					  <img class="activatorh" src="assets/img/houses/h1.jpg">
-					</div><br>
-					Sidi Bou Said
-					<span>5000 dt - 15.0 m²</span> <br>
-					<small> 3 piéces meublé-3eme etage</small>
-					<a routerLink="/nav">
-					<i class="material-icons right">filter_none</i></a>
-					<div class="card-content">
-					  
-					</div>
-					<div class="card-reveal">
-					  <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-					  <p>Here is some more information about this product that is only revealed once clicked on.</p>
-					</div>
-				  </div>  
-			
-			</div>
-  </div>
-
-
-  <div class="col s2 rightPanel">
-		<div class="row">
-				<div class="col s12 m5">
-				  <div class="card-panel teal">
-					<span class="white-text">I am a very simple card. I am good at containing small bits of information.
-					I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
-					</span>
-				  </div>
-				</div>
-			  </div>
-					  
-	  <div class="row">
-		  <div class="col">
- 
-		  </div>
-		  <div class="col input-field">
-				<input id="last_name" type="text" class="validate">
-				<label for="last_name">Lieu</label>
-		  </div>
-	  </div>
-	  <div class="row">
-			<div class="col">
-
-			</div>
-			<div class="col input-field">
-					<input id="last_name" type="text" class="validate">
-					<label for="last_name">Prix max</label>
-			</div>
-	  </div>
-	  <div class="row">
-			<div class="col">
-
-			</div>
-			<div class="col input-field">
-					<input id="last_name" type="text" class="validate">
-					<label for="last_name">Prix min</label>
-			</div>
-	  </div>
-	  <div class="row">
-
-			<div class="col input-field">
-					<input id="last_name" type="text" class="validate">
-					<label for="last_name">Surface max</label>
-			</div>
-	  </div>
-	  <div class="row">
-			<div class="col">
-	
-			</div>
-			<div class="col input-field">
-					<input id="last_name" type="text" class="validate">
-					<label for="last_name">Surface min</label>
-			</div>
-	  </div>
-
--->
- 
-
+		
   </div>
 </div>
+
+
+ -->  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import {Router} from '@angular/router';
-import { HttpEventType } from '@angular/common/http';
-import { LocalisationService } from '../_services/Localisation.service';
 import { HouseLService } from '../_services/HouseL.service';
+import { LocalisationService } from '../_services/Localisation.service';
+import { HttpEventType } from '@angular/common/http';
 declare var $:any;
+
 @Component({
   selector: 'app-new-hl',
   templateUrl: './new-hl.component.html',
@@ -13,7 +14,11 @@ declare var $:any;
 export class NewHLComponent implements OnInit {
   form: FormGroup;
   locs:any=[];
+  SelectedIMG:File=null;
   opt: string;
+  bool : boolean;
+  uploadResponse:any = { status: '', message: '', filePath: '' };
+  error: string;
   constructor(private  _fb: FormBuilder,
               private router: Router,
               private service2: LocalisationService,
@@ -22,6 +27,7 @@ export class NewHLComponent implements OnInit {
 
   
   ngOnInit() {
+
     this.service2.getLocs()
     .subscribe((response) => {
         console.log(response);
@@ -45,9 +51,9 @@ export class NewHLComponent implements OnInit {
       surface:['', [Validators.required]],
       isMeuble:new FormControl(''),
       mainIMG: new FormControl(''),
-      cover : new FormControl,
+      cover : new FormControl(''),
+      city: new FormControl(''),
     });
-  
     }
 
     selectOption(opt: string) {
@@ -105,16 +111,52 @@ export class NewHLComponent implements OnInit {
       uploadData.append('adress', this.form.get('adress').value);
       uploadData.append('city', this.opt);
       uploadData.append('description', this.form.get('description').value);
+      uploadData.append('description2', this.form.get('description2').value);
+      uploadData.append('description3', this.form.get('description3').value);
+      uploadData.append('description4', this.form.get('description4').value);
       uploadData.append('Tx', this.form.get('Tx').value);
       uploadData.append('loc', this.form.get('loc').value);
       uploadData.append('price', this.form.get('price').value);
       uploadData.append('surface', this.form.get('surface').value);
       console.log(uploadData);
-      if( this.form.get('isMeuble').value === false)
-      {this._service.AddHV(uploadData);}
-      else
-      {this._service.AddHVM(uploadData)}
-        console.log(event);
+      this.bool=this.form.get('isMeuble').value;
+      console.log("isMeuble",this.bool);
+       if(this.bool == true){
+       //this._service.AddHVM(uploadData);
+       //else
+       this._service.AddHLM(uploadData)
+       .subscribe(
+        //(res) => this.uploadResponse = res,
+        //(err) => this.error = err,
+         event => { if(event.type === HttpEventType.UploadProgress)
+          {
+              console.log('upload progress : ' + Math.round( event.loaded / event.total )*100 +'%')
+          } 
+          else if(event.type === HttpEventType.Response)
+          {
+            console.log(event);
+  
+          }
+        }
+        );
+      }else{
+        this._service.AddHL(uploadData)
+        .subscribe(
+          //(res) => this.uploadResponse = res,
+          //(err) => this.error = err,
+           event => { if(event.type === HttpEventType.UploadProgress)
+            {
+                console.log('upload progress : ' + Math.round( event.loaded / event.total )*100 +'%')
+            } 
+            else if(event.type === HttpEventType.Response)
+            {
+              console.log(event);
+    
+            }
+          }
+          );
+      }
+        //console.log(event);
        // this.router.navigateByUrl('dashboard/HvData_Table');
     }
   

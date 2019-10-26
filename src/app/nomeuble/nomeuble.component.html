@@ -1,0 +1,37 @@
+<br>
+<div class="container">
+<div class="mat-elevation-z8">
+  <table mat-table class="full-width-table" [dataSource]="dataSource" matSort aria-label="Elements">
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+      <td mat-cell *matCellDef="let datasource">{{datasource.id}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+      <td mat-cell *matCellDef="let datasource">{{row.name}}</td>
+    </ng-container>
+    <ng-container matColumnDef="adress">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>adress</th>
+      <td mat-cell *matCellDef="let datasource">{{dataSource.city}}</td>
+    </ng-container>
+    <ng-container matColumnDef="surface">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>surface</th>
+      <td mat-cell *matCellDef="let datasource">{{row.name}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator #paginator
+      [length]="dataSource?.data.length"
+      [pageIndex]="0"
+      [pageSize]="50"
+      [pageSizeOptions]="[25, 50, 100, 250]">
+  </mat-paginator>
+</div>
+</div>
+<br>

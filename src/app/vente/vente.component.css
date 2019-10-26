@@ -12,30 +12,23 @@ nav{
   background-color: #00B4CC;
 }
 
-.starter{
-  /*background-image: url("/assets/img/plexus.png");*/
-  background-color: #dbebfa;
-  height: 200px;
-}
-.starter img{
-  height: 200px;
-  position: absolute;
-}
-.starter h4{
-	text-align: center;
-	color: rgb(74, 76, 77);
-	margin: 0 auto;
-	margin-left: 22%;
-}
 
-             /* /STARTER   */ 
-             /* RIGHT PANEL */
-.rightPanel{
-  background-color: rgb(227, 232, 235);
-  height: 700px;
-}             
+.ssr{
+    margin-left:7%;
+  }
+  mat-form-field{
+    width: 275px;
+  }
+  mat-slider {
+    width: 180px;
+  }
+   .ref{
+    width: 170px;
+  }
+  select{
+    width:135px;
+  }
 
-           /* /RIGHTPANEL */
              
            
            .ct{

@@ -50,6 +50,7 @@ export class NewHVComponent implements OnInit {
       cover : new FormControl,
     });
   }
+
   selectOption(opt: string) {
     //getted from event
     //getted from binding
@@ -57,7 +58,6 @@ export class NewHVComponent implements OnInit {
     this.opt=opt;
     console.log("opiton",this.opt);
   }
-
  
   onFileChanged(event:any) {
     if (event.target.files && event.target.files[0]) {
@@ -77,10 +77,8 @@ export class NewHVComponent implements OnInit {
         else if(event.type === HttpEventType.Response)
         {
           console.log(event);
-
         }
-      }
-    
+      } 
       console.log(event);
   }
 
@@ -131,7 +129,6 @@ export class NewHVComponent implements OnInit {
         else if(event.type === HttpEventType.Response)
         {
           console.log(event);
-
         }
       }
       );

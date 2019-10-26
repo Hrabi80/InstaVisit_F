@@ -1,27 +1,50 @@
+
 <div class="myVideo">
   <video autoplay muted loop id="myVideo">
       <source src="assets/coverVideo.mp4" type="video/mp4">    
     </video>
   <div class="content">
     <div class="header">
-        <form>
-            <h1> Visitez             
-               votre prochain logement depuis<br> 
+        <form [formGroup]="GoForm" action="">
+            <h1>
+               Visitez votre prochain logement depuis<br> 
                 <span> chez vous.</span>
             </h1>
-          <div class="row Form-box">
-              <input type="text" class=" col s9 Browser default input search-field browser-default location" placeholder="Indiquer lieu,village,adress...">
-              <button type="button" class="col s3 search-bt  Browser-default">Rechercher</button>
-          </div>      
+         
+           
+                 
+                <mat-radio-group aria-label="Select an option" >&nbsp; &nbsp;
+                    <mat-radio-button value="1" (change)="onItemChange(1)" class="Fopt" checked ><br>A louer &nbsp; &nbsp; </mat-radio-button>
+                    <mat-radio-button value="2" (change)="onItemChange(2)" class="Sopt"><br>A vendre &nbsp; &nbsp;</mat-radio-button>
+                  </mat-radio-group>
+                  
+              <!--
+              <div class="col Fopt">
+                  <div class="form-check"><br>
+                      <input type="radio" class="form-check-input"  name="House" value='louer'  (change)="radioChangeHandler($event.target.value)">
+                      <label class="form-check-label" for="materialGroupExample1">A louer</label>
+                    </div>
+              </div>
+              <div class="col Sopt"><br>
+                  <div class="form-check">
+                      <input type="radio" class="form-check-input"  name="House" value='vendre' (change)="radioChangeHandler($event.target.value)">
+                      <label class="form-check-label" for="materialGroupExample2">A vendre</label>
+                    </div>
+              </div>-->
+             
+            <div class="row Form-box">
+              <input type="text" class=" col s9 Browser default input search-field browser-default location" formControlName="Localisation" placeholder="Indiquer lieu,village,adress...">
+              <button type="button" (click)="Go()"  name="action" class="col s3 search-bt">Rechercher</button>
+            </div>    
         </form>
-    </div>
+    
     <!--  <button id="myBtn" onclick="myFunction()">Pause</button> -->
   </div>  
 </div>
         <!-- WELCOME OUTPUT-->
       <div class="kk"><br><br>  
         <div class="ct">
-          <h4> Les derniers biens à louer  </h4>
+          <h4> Les derniers biens à louer  <div id="result"></div></h4>
           <br>
           <div class="row">
              <div *ngFor="let output of FirOutput | slice:0:8">
@@ -396,3 +419,5 @@
     </footer>
 
  <!--   /TEST NEW FOOTER-->   
+
+ 

@@ -1,0 +1,167 @@
+<br><br>
+<div class="container">
+    <div class="row">
+         <div class="col s6">
+        <form  [formGroup]="formInfo" action="">
+    <mat-card>
+        <mat-card-content>
+ 
+
+        <div class="input-field">
+          <input  type="text" class="validate"  formControlName="etage" required>
+          <label for="first_name">Etage: exp 5/11 ou 2 etages</label>
+        </div> 
+        <div class="input-field">
+            <div class="switch" >
+                <label>
+                  Non 
+                  <input type="checkbox"  formControlName="elevator" required>
+                  <span class="lever"></span>
+                  Avec ascenseur
+                </label>
+              </div>
+            
+        </div><br>
+        <div class="input-field">
+            <div class="switch" >
+                <label>
+                  Non 
+                  <input type="checkbox"  formControlName="parking" required>
+                  <span class="lever"></span>
+                  Avec parking 
+                </label>
+              </div>
+            
+        </div><br>
+        <div class="input-field">
+            <div class="switch" >
+                <label>
+                  Non 
+                  <input type="checkbox"  formControlName="garage" required>
+                  <span class="lever"></span>
+                  Avec garage
+                </label>
+              </div>
+            
+        </div><br>
+        <div class="input-field">
+            <div class="switch" >
+                <label>
+                  Non 
+                  <input type="checkbox"  formControlName="garden" required>
+                  <span class="lever"></span>
+                  Gardienne 
+                </label>
+              </div>
+            
+        </div><br>
+        <div class="input-field">
+            <div class="switch" >
+                <label>
+                  Non 
+                  <input type="checkbox"  formControlName="cave" required>
+                  <span class="lever"></span>
+                  Avec cave
+                </label>
+              </div>
+            
+        </div><br><br> 
+    </mat-card-content>
+    <mat-card-actions>
+        <button class="waves-effect waves-light btn yellow" (click)="newInfo()" name="action">
+          Ajouter</button>
+    </mat-card-actions>
+               
+    
+    </mat-card>
+    </form>
+    <br>
+    <!--AA-->
+    <form  [formGroup]="formMap" action="">
+        <mat-card>
+            <mat-card-content>
+     
+    
+            <div class="input-field">
+              <input  type="text" class="validate"  formControlName="map" required>
+              <label for="map">Ajouter la localisation sur map</label>
+            </div> 
+      
+            <div class="input-field">
+                <input  type="text" class="validate"  formControlName="virtual" required>
+                <label for="virtual">Ajouter le lien 360° </label>
+              </div> 
+             
+        </mat-card-content>
+        <mat-card-actions>
+            <button class="waves-effect waves-light btn yellow" (click)="newMap()" name="action">
+              Ajouter</button>
+        </mat-card-actions>
+                   
+        
+        </mat-card>
+        </form>
+    <!--AA-->
+  </div>
+    <form class="col s6" [formGroup]="form" action="">
+        <mat-card>
+            <mat-card-content>
+     
+                <div class="input-field">
+                    <input id="first_name" type="text" class="validate"  formControlName="taxiST" required>
+                    <label for="first_name">Station de taxi </label>
+                  </div>
+            <div class="input-field">
+              <input id="first_name" type="text" class="validate"  formControlName="taxi" required>
+              <label for="first_name">distance </label>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="metroST" required>
+                <label for="first_name">Station de metro</label>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="metro" required>
+                <label for="first_name">distance (metro-location)</label>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="louageST" required>
+                <label for="first_name">Station de louage</label>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="louage" required>
+                <label for="first_name">distance (Louage-location)</label>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="trainST" required>
+                <label for="first_name">Station de train</label>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="train" required>
+                <label for="first_name">distance (train-location)</label>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="busST" required>
+                <label for="first_name">Station de bus</label>
+            </div>   
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="bus" required>
+                <label for="first_name">distance (Bus-location)</label>
+            </div>    
+       
+            <br><br>
+        </mat-card-content>
+        <mat-card-actions>
+            <button class="waves-effect waves-light btn yellow" (click)="newStation()"  name="action">
+              Ajouter</button>
+        </mat-card-actions>
+                    
+        
+        </mat-card>
+        </form>
+
+
+
+</div>
+
+</div>
+<br><br>

@@ -1,3 +1,5 @@
+
+//import { Filter2Pipe } from './filter2.pipe';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -26,7 +28,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule, MatRadioGroup} from '@angular/material';
+import { MatSliderModule } from '@angular/material';
 import { MatCardModule } from '@angular/material/card';
+import { MatRadioModule } from  '@angular/material';
+
+
 import { LocationComponent } from './location/location.component';
 import { NewHLComponent } from './new-hl/new-hl.component';
 import { NewHVComponent } from './new-hv/new-hv.component';
@@ -54,6 +62,13 @@ import { SearchNavComponent } from './search-nav/search-nav.component';
 import { DydetailsComponent } from './dydetails/dydetails.component';
 import { VT360Component } from './vt360/vt360.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
+import { MeubleDataTableComponent } from './meuble-data-table/meuble-data-table.component';
+import { NOMeubleComponent } from './nomeuble/nomeuble.component';
+import { InfoMComponent } from './info-m/info-m.component';
+import { OurworkComponent } from './ourwork/ourwork.component';
+import { Filter2Pipe } from './filter2.pipe';
+
+
 
 
 @NgModule({
@@ -81,7 +96,13 @@ import { NewsletterComponent } from './newsletter/newsletter.component';
     SearchNavComponent,
     DydetailsComponent,
     VT360Component,
-    NewsletterComponent
+    NewsletterComponent,
+    MeubleDataTableComponent,
+    NOMeubleComponent,
+    InfoMComponent,
+    OurworkComponent,
+    Filter2Pipe,
+    // Filter2Pipe
   ],
   imports: [
     BrowserModule,
@@ -96,8 +117,8 @@ import { NewsletterComponent } from './newsletter/newsletter.component';
     BrowserAnimationsModule,
     NgxGalleryModule,
     NgxImageGalleryModule,
-    MatButtonModule, MatCheckboxModule, LayoutModule, 
-    MatToolbarModule, MatSidenavModule, MatIconModule,
+    MatButtonModule, MatCheckboxModule, LayoutModule, MatSliderModule,MatRadioModule,
+    MatToolbarModule, MatSidenavModule, MatIconModule,MatFormFieldModule,MatInputModule,
     MatListModule,MatCardModule, MatTableModule, MatPaginatorModule, MatSortModule,
   ],
   providers: [
@@ -113,7 +134,7 @@ import { NewsletterComponent } from './newsletter/newsletter.component';
       useClass: JwtInterceptor,
       multi: true,
     },
-
+   
   ],
   bootstrap: [AppComponent]
 })

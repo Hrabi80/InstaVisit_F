@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators,FormControl } from '@angular/forms';
 import { HouseVService } from '../_services/HouseV.service';
 import swal from 'sweetalert2';
 import { FrontService} from '../_services/Front.service';
-const Swal = require('sweetalert2');
+//const Swal = require('sweetalert2');
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
@@ -36,23 +36,23 @@ export class AboutComponent implements OnInit {
     .subscribe(res => {
       console.log(res);
     });
-    Swal.fire(
+    /*Swal.fire(
       'Merci !',
       'Vous etes maintenant abonné à notre newsletter!',
       'success'
-    );
+    );*/
     this.form.reset();
   }
   newContact(){
     this._service.AddContact(this.formContact.value)
     .subscribe(res=>{
       console.log(res);
-    });
+    });/*
     Swal.fire(
       'Merci !',
       'Nous avons récus votre message!',
       'success'
-    );
+    );*/
     this.formContact.reset();
   }
 
