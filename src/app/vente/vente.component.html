@@ -41,7 +41,7 @@
              [displayWith]="formatLabel"
              tickInterval="10000"
              min="100"
-             max="100000000">
+             max="100000000" [(ngModel)]="maxPrice">
           </mat-slider>
           &nbsp;&nbsp;&nbsp;&nbsp;
        </div>
@@ -52,7 +52,7 @@
           [displayWith]="formatLabel2"
           tickInterval="10000"
           min="100"
-          max="70000000">
+          max="70000000" [(ngModel)]="minPrice">
        </mat-slider>
        &nbsp;&nbsp;&nbsp;&nbsp;
       </div>
@@ -63,17 +63,17 @@
 		   [displayWith]="formatLabel3"
 		   tickInterval="1000"
 		   min="100"
-		   max="1000000">
+		   max="1000000" [(ngModel)]="maxSurface">
 		</mat-slider>
 	  </div>
 	  <div class="col">
-		<mat-label>Surface max: </mat-label>
+		<mat-label>Surface min: </mat-label>
 		<mat-slider
 		   thumbLabel
 		   [displayWith]="formatLabel4"
 		   tickInterval="1000"
 		   min="1"
-		   max="100000">
+		   max="100000" [(ngModel)]="minSurface">
 		</mat-slider>
 	  </div>
 	  
@@ -87,7 +87,8 @@
      <div class="col s12">
          
        <div class="row">
-         <div *ngFor="let output of FirOutput | filter:term:'city' | filter:ref:'id' | filter:room:'RoomNB'">
+		 <div *ngFor="let output of FirOutput | filter:term:'city' | filter:ref:'id' | filter:room:'RoomNB'
+		    | filter4:minPrice:'price' | filter3:maxPrice:'price' | filter4:minSurface:'surface' | filter3:maxSurface:'surface'">
             <div class="card col ">
            <div class="card-image waves-effect waves-block waves-light">
              <img class="activatorh" src="http://127.0.0.1:8000/images/houses/{{output.mainIMG}}">

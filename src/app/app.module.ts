@@ -67,6 +67,8 @@ import { NOMeubleComponent } from './nomeuble/nomeuble.component';
 import { InfoMComponent } from './info-m/info-m.component';
 import { OurworkComponent } from './ourwork/ourwork.component';
 import { Filter2Pipe } from './filter2.pipe';
+import { Filter3Pipe } from './filter3.pipe';
+import { Filter4Pipe } from './filter4.pipe';
 
 
 
@@ -102,6 +104,8 @@ import { Filter2Pipe } from './filter2.pipe';
     InfoMComponent,
     OurworkComponent,
     Filter2Pipe,
+    Filter3Pipe,
+    Filter4Pipe,
     // Filter2Pipe
   ],
   imports: [
