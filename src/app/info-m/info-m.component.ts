@@ -12,6 +12,10 @@ export class InfoMComponent implements OnInit {
   form: FormGroup;
   formInfo: FormGroup;
   formMap: FormGroup;
+  formEquip: FormGroup;
+  formCouchage: FormGroup;
+  formCuisine: FormGroup;
+  formAmeubl: FormGroup;
   constructor(private route: ActivatedRoute,
     private  _fb: FormBuilder,
     private _service : HouseLService,
@@ -49,24 +53,85 @@ export class InfoMComponent implements OnInit {
       map: new FormControl(''),
       virtual: new FormControl(''),
     });
+
+    this.formEquip = this._fb.group({
+      toilet: new FormControl(''),
+      machine: new FormControl(''),
+      internet:new FormControl(''),
+      boite:new FormControl(''),
+      inter:new FormControl(''),
+      lave:new FormControl(''),
+    });
+  
+    this.formCouchage = this._fb.group({
+      lit: new FormControl(''),
+      doublelit: new FormControl(''),
+      canape: new FormControl(''),
+    });
+
+    this.formAmeubl = this._fb.group({
+      canape: new FormControl(''),
+      myTable: new FormControl(''),
+      chair:new FormControl(''),
+      myTV:new FormControl(''),
+      desk:new FormControl(''),
+      dressing:new FormControl(''),
+    });
+  
+    this.formCuisine = this._fb.group({
+      four: new FormControl(''),
+      refri: new FormControl(''),
+      lave: new FormControl(''),
+      conge: new FormControl(''),
+      micro: new FormControl(''),
+      plaque: new FormControl(''),
+    });
   }
 
   newStation(){
-    this._service.AddTransport(this.id,this.form.value)
+    this._service.AddTransportM(this.id,this.form.value)
     .subscribe(res => {
       console.log(res);
     });
   }
 
   newInfo(){
-    this._service.AddInfo(this.id,this.formInfo.value)
+    this._service.AddInfoM(this.id,this.formInfo.value)
     .subscribe(res=>{
        console.log(res);
     });
   }
 
   newMap(){
-    this._service.AddMap(this.id,this.formMap.value)
+    this._service.AddMapM(this.id,this.formMap.value)
+    .subscribe(res=>{
+       console.log(res);
+    });
+  }
+
+  newCuisine(){
+    this._service.AddCuisine(this.id,this.formCuisine.value)
+    .subscribe(res => {
+      console.log(res);
+    });
+  }
+
+  newEquip(){
+    this._service.AddEquipment(this.id,this.formEquip.value)
+    .subscribe(res=>{
+       console.log(res);
+    });
+  }
+
+  newAmeub(){
+    this._service.AddAmeubl(this.id,this.formAmeubl.value)
+    .subscribe(res=>{
+       console.log(res);
+    });
+  }
+
+  newCouchage(){
+    this._service.AddCouchage(this.id,this.formCouchage.value)
     .subscribe(res=>{
        console.log(res);
     });

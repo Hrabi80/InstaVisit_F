@@ -54,4 +54,16 @@ export class HouseLService{
     AddMapM(id, data){
         return this._http.post(this._urlM+'/AddMap/'+id,data);
     }
+    AddEquipment(id, data){
+        return this._http.post(this._urlM+'/AddEquip/'+id,data);
+    }
+    AddCuisine(id, data){
+        return this._http.post(this._urlM+'/AddCuisine/'+id,data);
+    }
+    AddCouchage(id, data){
+        return this._http.post(this._urlM+'/AddCouchage/'+id,data);
+    }
+    AddAmeubl(id, data){
+        return this._http.post(this._urlM+'/AddAmeub/'+id,data);
+    }
 }

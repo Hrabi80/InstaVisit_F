@@ -1,5 +1,5 @@
 import { Component, OnInit ,Output,EventEmitter, Input } from '@angular/core';
-import { VoutputService } from '../_services/Voutput.service';
+import { LoutputService } from '../_services/Loutput.service';
 import { ParamService } from '../_services/param-service.service'
 import { ActivatedRoute, ParamMap,Router } from '@angular/router';
 import { FilterPipe } from '../filter.pipe';
@@ -12,18 +12,16 @@ export class LouerComponent implements OnInit {
   userLoc: any=[];
   
   formatLabel(value: number) {
-    if (value >= 1000) {
-      return Math.round(value / 1000) + 'dt';
-    }
+    
 
-    return value;
+    return value + 'dt';
   }
   formatLabel2(value: number) {
-    if (value >= 1000) {
-      return Math.round(value / 1000) + 'dt';
-    }
+    
+      return value  + 'dt';
+  
 
-    return value;
+    //return value;
   }
   @Input() searchModel;
 
@@ -31,7 +29,7 @@ export class LouerComponent implements OnInit {
   FirOutput: any=[];
   constructor(
     private route: ActivatedRoute,
-    private _service: VoutputService,
+    private _service: LoutputService,
     private ParamService: ParamService) { }
 
   ngOnInit() {

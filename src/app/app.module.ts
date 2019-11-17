@@ -11,6 +11,7 @@ import { LocalisationService } from './_services/Localisation.service';
 import { HouseVService } from './_services/HouseV.service';
 import { HouseLService } from './_services/HouseL.service';
 import { VoutputService } from './_services/Voutput.service';
+import { LoutputService } from './_services/Loutput.service';
 import { FrontService } from './_services/Front.service';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -69,6 +70,7 @@ import { OurworkComponent } from './ourwork/ourwork.component';
 import { Filter2Pipe } from './filter2.pipe';
 import { Filter3Pipe } from './filter3.pipe';
 import { Filter4Pipe } from './filter4.pipe';
+import { LmdetailsComponent } from './lmdetails/lmdetails.component';
 
 
 
@@ -106,6 +108,7 @@ import { Filter4Pipe } from './filter4.pipe';
     Filter2Pipe,
     Filter3Pipe,
     Filter4Pipe,
+    LmdetailsComponent,
     // Filter2Pipe
   ],
   imports: [
@@ -131,6 +134,7 @@ import { Filter4Pipe } from './filter4.pipe';
     HouseVService,
     HouseLService,
     VoutputService,
+    LoutputService,
     FrontService,
     JwtInterceptor,
     {

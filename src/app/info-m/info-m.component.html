@@ -101,6 +101,36 @@
         
         </mat-card>
         </form>
+        <br>
+        <!--COUCHAGE-->
+        <form  [formGroup]="formCouchage" action="">
+          <mat-card>
+              <mat-card-content>
+       
+      
+              <div class="input-field">
+                <input  type="number" class="validate"  formControlName="lit" required>
+                <label for="map">Lit simple</label>
+              </div> 
+        
+              <div class="input-field">
+                  <input  type="number" class="validate"  formControlName="doublelit" required>
+                  <label for="virtual">Lit double </label>
+              </div>
+              <div class="input-field">
+                <input  type="number" class="validate"  formControlName="canape" required>
+                <label for="virtual">canape lit </label>
+            </div> 
+               
+          </mat-card-content>
+          <mat-card-actions>
+              <button class="waves-effect waves-light btn yellow" (click)="newCouchage()" name="action">
+                Ajouter</button>
+          </mat-card-actions>
+                     
+          
+          </mat-card>
+          </form>
     <!--AA-->
   </div>
     <form class="col s6" [formGroup]="form" action="">
@@ -160,8 +190,210 @@
         </form>
 
 
+   </div>
 
-</div>
+   <div class="row">
+     <div class="col s6">
+        <form  [formGroup]="formCuisine" action="">
+            <mat-card>
+                <mat-card-content>
+  
+                    <div class="input-field">
+                        <div class="switch" >
+                            <label>
+                              Non 
+                              <input type="checkbox"  formControlName="four" required>
+                              <span class="lever"></span>
+                              Avec four 
+                            </label>
+                          </div>
+                    </div><br>
+                <div class="input-field">
+                    <div class="switch" >
+                        <label>
+                          Non 
+                          <input type="checkbox"  formControlName="refri" required>
+                          <span class="lever"></span>
+                          Avec réfrigérateur
+                        </label>
+                      </div>
+                    
+                </div><br>
+                <div class="input-field">
+                    <div class="switch" >
+                        <label>
+                          Non 
+                          <input type="checkbox"  formControlName="lave" required>
+                          <span class="lever"></span>
+                          Avec Lave vaisselle 
+                        </label>
+                      </div>
+                    
+                </div><br>
+                <div class="input-field">
+                    <div class="switch" >
+                        <label>
+                          Non 
+                          <input type="checkbox"  formControlName="conge" required>
+                          <span class="lever"></span>
+                          Avec congélateur
+                        </label>
+                      </div>
+                    
+                </div><br>
+                <div class="input-field">
+                    <div class="switch" >
+                        <label>
+                          Non 
+                          <input type="checkbox"  formControlName="micro" required>
+                          <span class="lever"></span>
+                          Avec micro-ondes 
+                        </label>
+                      </div>
+                    
+                </div><br>
+                <div class="input-field">
+                    <div class="switch" >
+                        <label>
+                          Non 
+                          <input type="checkbox"  formControlName="plaque" required>
+                          <span class="lever"></span>
+                          Avec plaque de cuisson
+                        </label>
+                      </div>
+                    
+                </div><br><br> 
+            </mat-card-content>
+            <mat-card-actions>
+                <button class="waves-effect waves-light btn yellow" (click)="newCuisine()" name="action">
+                  Ajouter</button>
+            </mat-card-actions>
+            </mat-card>
+            </form>
+
+     </div>
+     <div class="col s6">
+        <form  [formGroup]="formEquip" action="">
+            <mat-card>
+                <mat-card-content>
+         
+                    <div class="input-field">
+                        <div class="switch" >
+                            <label>
+                              Non 
+                              <input type="checkbox"  formControlName="toilet" required>
+                              <span class="lever"></span>
+                              Toilettes séparées 
+                            </label>
+                          </div>
+                    </div><br>
+                <div class="input-field">
+                    <div class="switch" >
+                        <label>
+                          Non 
+                          <input type="checkbox"  formControlName="machine" required>
+                          <span class="lever"></span>
+                           Raccordement machine
+                        </label>
+                      </div>
+                    
+                </div><br>
+                <div class="input-field">
+                    <div class="switch" >
+                        <label>
+                          Non 
+                          <input type="checkbox"  formControlName="internet" required>
+                          <span class="lever"></span>
+                          Raccordement internet 
+                        </label>
+                      </div>
+                    
+                </div><br>
+                <div class="input-field">
+                    <div class="switch" >
+                        <label>
+                          Non 
+                          <input type="checkbox"  formControlName="boite" required>
+                          <span class="lever"></span>
+                          Boite aux lettres
+                        </label>
+                      </div>
+                    
+                </div><br>
+                <div class="input-field">
+                    <div class="switch" >
+                        <label>
+                          Non 
+                          <input type="checkbox"  formControlName="inter" required>
+                          <span class="lever"></span>
+                          Avec interphone 
+                        </label>
+                      </div>
+                    
+                </div><br>
+                <div class="input-field">
+                    <div class="switch" >
+                        <label>
+                          Non 
+                          <input type="checkbox"  formControlName="lave" required>
+                          <span class="lever"></span>
+                          Avec Lave-linge
+                        </label>
+                      </div>
+                    
+                </div><br><br> 
+            </mat-card-content>
+            <mat-card-actions>
+                <button class="waves-effect waves-light btn yellow" (click)="newEquip()" name="action">
+                  Ajouter</button>
+            </mat-card-actions>
+            </mat-card>
+            </form>
+ 
+     </div>
+   </div>
+    
+   <form  [formGroup]="formAmeubl" action="">
+      <mat-card>
+          <mat-card-content>
+   
+  
+          <div class="input-field">
+            <input  type="number" class="validate"  formControlName="canape" required>
+            <label for="map">Canapé</label>
+          </div> 
+    
+          <div class="input-field">
+              <input  type="number" class="validate"  formControlName="myTable" required>
+              <label for="virtual">Table </label>
+          </div>
+          <div class="input-field">
+            <input  type="number" class="validate"  formControlName="chair" required>
+            <label for="virtual">nombre de chaises </label>
+        </div> 
+        <div class="input-field">
+            <input  type="number" class="validate"  formControlName="myTV" required>
+            <label for="virtual">TV </label>
+        </div>
+        <div class="input-field">
+            <input  type="number" class="validate"  formControlName="dressing" required>
+            <label for="virtual">Dressing </label>
+        </div>
+        <div class="input-field">
+            <input  type="number" class="validate"  formControlName="desk" required>
+            <label for="virtual">Bureau </label>
+        </div>
+           
+      </mat-card-content>
+      <mat-card-actions>
+          <button class="waves-effect waves-light btn yellow" (click)="newAmeub()" name="action">
+            Ajouter</button>
+      </mat-card-actions>
+                 
+      
+      </mat-card>
+      </form>
+
 
 </div>
 <br><br>

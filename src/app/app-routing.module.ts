@@ -27,6 +27,7 @@ import { MeubleDataTableComponent } from './meuble-data-table/meuble-data-table.
 import { NOMeubleComponent } from './nomeuble/nomeuble.component';
 import { InfoMComponent } from './info-m/info-m.component';
 import { OurworkComponent } from './ourwork/ourwork.component';
+import { LmdetailsComponent } from './lmdetails/lmdetails.component';
 
 const routes: Routes = [
   
@@ -98,7 +99,11 @@ const routes: Routes = [
       {
          path: 'details/:id',
          component: DetailsComponent,   
-       },  
+       },
+       {
+        path: 'lmdetails/:id',
+        component: LmdetailsComponent,   
+      },  
        {
         path: 'Ldetails',
         component: DydetailsComponent,   

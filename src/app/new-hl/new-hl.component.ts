@@ -11,7 +11,8 @@ declare var $:any;
   templateUrl: './new-hl.component.html',
   styleUrls: ['./new-hl.component.css']
 })
-export class NewHLComponent implements OnInit {
+export class NewHLComponent  {
+  /*
   form: FormGroup;
   locs:any=[];
   SelectedIMG:File=null;
@@ -160,5 +161,5 @@ export class NewHLComponent implements OnInit {
        // this.router.navigateByUrl('dashboard/HvData_Table');
     }
   
-
+*/
 }
