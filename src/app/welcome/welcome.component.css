@@ -1,28 +1,41 @@
-/* Style the video: 100% width and height to cover the entire window */
+
+
+@media (max-width: 700px) {
+
+  #myVideo {
+        position: hidden;
+        width: 100%;
+        height: 100%;
+        
+   }
+ 
+  }
+
+  #myVideo {
+    position: hidden;
+    width: 100%;
+    height: auto;
+   /*  right: 0;
+   /* bottom: 0;*/
+   /* margin-top: -6%;*/
+   
+  }
+  
+
 
 body {
   margin: 0;
   padding: 0;
 }
 
-/*TEST*/
 
-/* /TEST */
-#myVideo {
- position: relative;
- /*  right: 0;
- /* bottom: 0;*/
-  margin-top: -6%;
-  width: 100%;
-  height: 2%;
-}
+
+/*
 .myVideo{
   width: 100%;
   height: 2%;
-}
-/* Add some content at the bottom of the video/page */
+}*/
 
-/* Style the button used to pause/play the video */
 #myBtn {
   width: 200px;
   font-size: 18px;
@@ -64,10 +77,9 @@ mat-radio-group{
 /*form*/
 .header
 {
-  /* margin-top:-9%;*/
+   
    position:absolute;
-
-   top: 50%;
+   top: 10%;
    left: 50%;
    width: 500px;
    transform: translate(-50%,-50%);
@@ -80,10 +92,33 @@ mat-radio-group{
 h1{
    color: rgb(255, 255, 255);
    margin-bottom: 70px;
-   font-size: 45px;
-   letter-spacing: 2px;
+   font-size: 3.5vw;/* 3.46vw; /* 45 px font-size 2 px spacing */
+   letter-spacing: 0.154vw;/*0.154vw;*/
    text-align: center;
+
 }
+@media (max-width: 600px) {
+
+   h1{
+    color: rgb(255, 255, 255);
+    margin-bottom: 210px;
+    font-size: 6.2vw;/* 3.46vw; /* 45 px font-size 2 px spacing */
+    letter-spacing: 0.2vw;/*0.154vw;*/
+    text-align: center;
+   }
+ }
+ @media (max-width: 450px) {
+
+  h1{
+   color: rgb(255, 255, 255);
+   margin-bottom: 300px;
+   margin-left: 70px;
+   font-size: 5.2vw;/* 3.46vw; /* 45 px font-size 2 px spacing */
+   letter-spacing: 0.2vw;/*0.154vw;*/
+   text-align: center;
+
+}
+  }
 .search-field{
  height: 50px;
  padding: 10px;
@@ -285,11 +320,26 @@ background-color: rgb(233, 240, 243);
 margin-top: -1%;
 }
 
+mat-vertical-stepper{
+  background-color:rgb(247, 247, 247) ;
+}
 .why{
 margin-left: 4%;
+
 }
 .why img{
 height:370px;
+}
+@media(max-width:720px){
+  .why img{
+    height:280px;
+    margin-left:-5px;
+    width: 89%;
+    }
+    .why{
+      margin-left: 4%;
+      
+      }
 }
 .why h4{
 text-align: center;
@@ -310,8 +360,8 @@ color:rgb(67, 67, 71);
 
 }
 .why .texthover:hover{
-font-size: 1.19em;
-color: rgb(60, 151, 67);
+font-size: 1.07em;
+color: #505253;
 cursor: pointer;
 }
 .propr img{

@@ -1,46 +1,38 @@
+<div class="content">
+    
+  <div class="header">
+    
+      <form [formGroup]="GoForm" action="">
+        <h1>
+          Visitez votre prochain logement depuis<br> 
+           <span> chez vous.</span>
+       </h1>
+      
+              <mat-radio-group aria-label="Select an option" >&nbsp; &nbsp;
+                  <mat-radio-button value="1" (change)="onItemChange(1)" class="Fopt" checked ><br>A louer &nbsp; &nbsp; </mat-radio-button>
+                  <mat-radio-button value="2" (change)="onItemChange(2)" class="Sopt"><br>A vendre &nbsp; &nbsp;</mat-radio-button>
+              </mat-radio-group>
+              <mat-form-field appearance="outline">
+                <mat-label>Outline form field</mat-label>
+                <input matInput placeholder="Placeholder">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                <mat-hint>Hint</mat-hint>
+              </mat-form-field><!--
+          <div class="row Form-box">
+            <input type="text" class=" col s9 Browser default input search-field browser-default location" formControlName="Localisation" placeholder="Indiquer lieu,village,adress...">
+            <button type="button" (click)="Go()"  name="action" class="col s3 search-bt">Rechercher</button>
+          </div>    -->
+      </form>
 
+</div>  
+</div>
 <div class="myVideo">
   <video autoplay muted loop id="myVideo">
-      <source src="assets/coverVideo.mp4" type="video/mp4">    
-    </video>
-  <div class="content">
-    <div class="header">
-        <form [formGroup]="GoForm" action="">
-            <h1>
-               Visitez votre prochain logement depuis<br> 
-                <span> chez vous.</span>
-            </h1>
-         
-           
-                 
-                <mat-radio-group aria-label="Select an option" >&nbsp; &nbsp;
-                    <mat-radio-button value="1" (change)="onItemChange(1)" class="Fopt" checked ><br>A louer &nbsp; &nbsp; </mat-radio-button>
-                    <mat-radio-button value="2" (change)="onItemChange(2)" class="Sopt"><br>A vendre &nbsp; &nbsp;</mat-radio-button>
-                  </mat-radio-group>
-                  
-              <!--
-              <div class="col Fopt">
-                  <div class="form-check"><br>
-                      <input type="radio" class="form-check-input"  name="House" value='louer'  (change)="radioChangeHandler($event.target.value)">
-                      <label class="form-check-label" for="materialGroupExample1">A louer</label>
-                    </div>
-              </div>
-              <div class="col Sopt"><br>
-                  <div class="form-check">
-                      <input type="radio" class="form-check-input"  name="House" value='vendre' (change)="radioChangeHandler($event.target.value)">
-                      <label class="form-check-label" for="materialGroupExample2">A vendre</label>
-                    </div>
-              </div>-->
-             
-            <div class="row Form-box">
-              <input type="text" class=" col s9 Browser default input search-field browser-default location" formControlName="Localisation" placeholder="Indiquer lieu,village,adress...">
-              <button type="button" (click)="Go()"  name="action" class="col s3 search-bt">Rechercher</button>
-            </div>    
-        </form>
-    
-    <!--  <button id="myBtn" onclick="myFunction()">Pause</button> -->
-  </div>  
-</div>
+      <source src="assets/coverVideo.mp4" type="video/mp4"> 
+  </video>
+  
+  </div>
+
         <!-- WELCOME OUTPUT-->
       <div class="kk"><br><br>  
         <div class="ct">
@@ -48,7 +40,7 @@
           <br>
           <div class="row">
              <div *ngFor="let output of FirOutput | slice:0:8">
-                  <div class="card col">
+                  <div class="card col ">
                       <div class="card-image waves-effect waves-block waves-light">
                        <img class="activatorh" src="http://127.0.0.1:8000/images/houses/{{output.mainIMG}}" alt="img">
                       </div><br>
@@ -72,224 +64,12 @@
       </div>    </div>
         <!-- WELCOME OUTPUT-->
 
-<!-- images STATIC VIEW-->
-<!--
-            
-             <div class="kk"><br><br>
-              <div class=" ct" >
-                 <h4> Les derniers biens à louer  </h4>
-            <div class="row">
-               <div class="card col ">
-                   <div class="card-image waves-effect waves-block waves-light">
-                     <img class="activatorh" src="assets/img/houses/h5.jpg">
-                   </div><br>
-                   Sidi Bou Said
-                   <span>5000 dt - 15.0 m²</span> <br>
-                   <small> 3 piéces meublé-3eme etage</small>
-                   <a routerLink="/nav/welcome">
-                   <i class="material-icons right">move_to_inbox</i></a>
-                   <div class="card-content">
-                 
-                   </div>
-                   <div class="card-reveal">
-                      <i class="material-icons right">close</i>
-                   </div>
-                 </div>  
-              <div class="card col ">
-               <div class="card-image waves-effect waves-block waves-light">
-                 <img class="activatorh" src="assets/img/houses/h1.jpg">
-               </div> <br>
-                   Sidi Bou Said
-                   <span>5000 dt - 15.0 m²</span> <br>
-                   <small> 3 piéces meublé-3eme etage</small>
-                   <a routerLink="/nav">
-                   <i class="material-icons right">filter_none</i></a>
-               <div class="card-content">
-           
-               </div>
-               <div class="card-reveal">
-               </div>
-             </div>
-             <div class="card col">
-                 <div class="card-image waves-effect waves-block waves-light">
-                   <img class="activatorh" src="assets/img/houses/h1.jpg">
-                 </div><br>
-                   Sidi Bou Said
-                   <span>5000 dt - 15.0 m²</span> <br>
-                   <small> 3 piéces meublé-3eme etage</small>
-                   <a routerLink="/nav">
-                   <i class="material-icons right">filter_none</i></a>
-                 <div class="card-content">
-           
-                 </div>
-                 <div class="card-reveal">
-                   <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                   <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                 </div>
-               </div> 
-               <div class="card col">
-                   <div class="card-image waves-effect waves-block waves-light">
-                     <img class="activatorh" src="assets/img/houses/h1.jpg">
-                   </div><br>
-                   Sidi Bou Said
-                   <span>5000 dt - 15.0 m²</span> <br>
-                   <small> 3 piéces meublé-3eme etage</small>
-                   <a routerLink="/nav">
-                   <i class="material-icons right">filter_none</i></a>
-                   <div class="card-content">
-                     
-                   </div>
-                   <div class="card-reveal">
-                     <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                     <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                   </div>
-                 </div>  
-           
-           </div>
-           <div class="row">
-               <div class="card col ">
-                   <div class="card-image waves-effect waves-block waves-light">
-                     <img class="activatorh" src="assets/img/houses/h5.jpg">
-                   </div><br>
-                   Sidi Bou Said
-                   <span>5000 dt - 15.0 m²</span> <br>
-                   <small> 3 piéces meublé-3eme etage</small>
-                   <a routerLink="/nav/welcome">
-                   <i class="material-icons right">move_to_inbox</i></a>
-                   <div class="card-content">
-                 
-                   </div>
-                   <div class="card-reveal">
-                      <i class="material-icons right">close</i>
-                   </div>
-                 </div>  
-              <div class="card col ">
-               <div class="card-image waves-effect waves-block waves-light">
-                 <img class="activatorh" src="assets/img/houses/h1.jpg">
-               </div> <br>
-                   Sidi Bou Said
-                   <span>5000 dt - 15.0 m²</span> <br>
-                   <small> 3 piéces meublé-3eme etage</small>
-                   <a routerLink="/nav">
-                   <i class="material-icons right">filter_none</i></a>
-               <div class="card-content">
-           
-               </div>
-               <div class="card-reveal">
-               </div>
-             </div>
-             <div class="card col">
-                 <div class="card-image waves-effect waves-block waves-light">
-                   <img class="activatorh" src="assets/img/houses/h1.jpg">
-                 </div><br>
-                   Sidi Bou Said
-                   <span>5000 dt - 15.0 m²</span> <br>
-                   <small> 3 piéces meublé-3eme etage</small>
-                   <a routerLink="/nav">
-                   <i class="material-icons right">filter_none</i></a>
-                 <div class="card-content">
-           
-                 </div>
-                 <div class="card-reveal">
-                   <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                   <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                 </div>
-               </div> 
-               <div class="card col">
-                   <div class="card-image waves-effect waves-block waves-light">
-                     <img class="activatorh" src="assets/img/houses/h1.jpg">
-                   </div><br>
-                   Sidi Bou Said
-                   <span>5000 dt - 15.0 m²</span> <br>
-                   <small> 3 piéces meublé-3eme etage</small>
-                   <a routerLink="/nav">
-                   <i class="material-icons right">filter_none</i></a>
-                   <div class="card-content">
-                     
-                   </div>
-                   <div class="card-reveal">
-                     <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                     <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                   </div>
-                 </div>  
-           
-           </div>
-           <div class="row">
-               <div class="card col ">
-                   <div class="card-image waves-effect waves-block waves-light">
-                     <img class="activatorh" src="assets/img/houses/h5.jpg">
-                   </div><br>
-                   Sidi Bou Said
-                   <span>5000 dt - 15.0 m²</span> <br>
-                   <small> 3 piéces meublé-3eme etage</small>
-                   <a routerLink="/nav/welcome">
-                   <i class="material-icons right">move_to_inbox</i></a>
-                   <div class="card-content">
-                 
-                   </div>
-                   <div class="card-reveal">
-                      <i class="material-icons right">close</i>
-                   </div>
-                 </div>  
-              <div class="card col ">
-               <div class="card-image waves-effect waves-block waves-light">
-                 <img class="activatorh" src="assets/img/houses/h1.jpg">
-               </div> <br>
-                   Sidi Bou Said
-                   <span>5000 dt - 15.0 m²</span> <br>
-                   <small> 3 piéces meublé-3eme etage</small>
-                   <a routerLink="/nav">
-                   <i class="material-icons right">filter_none</i></a>
-               <div class="card-content">
-           
-               </div>
-               <div class="card-reveal">
-               </div>
-             </div>
-             <div class="card col">
-                 <div class="card-image waves-effect waves-block waves-light">
-                   <img class="activatorh" src="assets/img/houses/h1.jpg">
-                 </div><br>
-                   Sidi Bou Said
-                   <span>5000 dt - 15.0 m²</span> <br>
-                   <small> 3 piéces meublé-3eme etage</small>
-                   <a routerLink="/nav">
-                   <i class="material-icons right">filter_none</i></a>
-                 <div class="card-content">
-           
-                 </div>
-                 <div class="card-reveal">
-                   <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                   <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                 </div>
-               </div> 
-               <div class="card col">
-                   <div class="card-image waves-effect waves-block waves-light">
-                     <img class="activatorh" src="assets/img/houses/h1.jpg">
-                   </div><br>
-                   Sidi Bou Said
-                   <span>5000 dt - 15.0 m²</span> <br>
-                   <small> 3 piéces meublé-3eme etage</small>
-                   <a routerLink="/nav">
-                   <i class="material-icons right">filter_none</i></a>
-                   <div class="card-content">
-                     
-                   </div>
-                   <div class="card-reveal">
-                     <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                     <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                   </div>
-                 </div>  
-           
-           </div>
-           
-           </div>        
-             </div> 
+<!-- Update WHY IV-->
 
 
-    <!-- /images STATIC VIEW-->
-
+<!-- /Upadate-->
                    <!--  WHY INSTAVISIT-->
+            
   <div class="why">
     <h4>Pourquoi InstaVistit ? </h4><br>
     <div class="row">
@@ -300,21 +80,32 @@
         <div class="container">
         <h5>Vous faites des études ou un stage dans une nouvelle ville ? </h5>
         InstaVisit est la solution idéale pour vous :
-         <br><br><div class="texthover">
-         <i class="material-icons">transfer_within_a_station </i>
+       
+        <mat-vertical-stepper [linear]="isLinear" #stepper>
+          <mat-step [stepControl]="firstFormGroup">
+           
+              <ng-template matStepLabel>Évitez les déplacements inutiles</ng-template>
               Vous évitez les déceptions et les déplacements inutiles,
               En visionnant la visite virtuelle en ligne, vous pouvez
-              vous faire une première impression du bien.</div>
-        <br><br><div class="texthover">
-        <i class="material-icons">description</i>
-        Une description fidèle, précise et complète de
-        Chaque appartement que nous mettons en location ou en vente </div>
-        <br><br><div class="texthover">
-        <i class="material-icons">visibility</i>
-        Nous vous proposons les modélisations des photos 360° et les visites virtuelles proposées par InstaVisit,
-        vous permettent de vous projeter dans votre future maison ou appartement.</div>
-      </div></div>
+              vous faire une première impression du bien.
+            
+          </mat-step>
+          <mat-step [stepControl]="secondFormGroup">
+           
+              <ng-template matStepLabel>Une description fidèle</ng-template>
+              Une description fidèle, précise et complète de
+              Chaque appartement que nous mettons en location ou en vente
+            
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Visites virtuelles</ng-template>
+            Nous vous proposons les modélisations des photos 360° et les visites virtuelles proposées par InstaVisit,
+            vous permettent de vous projeter dans votre future maison ou appartement.
+          </mat-step>
+        </mat-vertical-stepper>
+        
     </div>
+    </div></div>
     <br>
     <br>
     <div class="row">
@@ -323,20 +114,31 @@
               <h5>Vous etes propriétaires ? </h5>
               Louez votre logement avec des outils modernes :
                <br><br><div class="texthover">
-               <i class="material-icons">assignment </i>
-               InstaVisit vous permet de louer ou vendre votre logement de manière efficace. 
+                <mat-vertical-stepper [linear]="isLinear" #stepper>
+                  <mat-step [stepControl]="firstFormGroup">
+                   
+                      <ng-template matStepLabel>Louez votre logement</ng-template>
+                      InstaVisit vous permet de louer ou vendre votre logement de manière efficace. 
                Contactez-nous pour que nous prenions en charge la recherche d’acheteur/locataire 
-               pour votre bien. </div>
-              <br><br><div class="texthover">
-              <i class="material-icons">find_in_page</i>
-              Permettez à vos clients de revisiter en bénéficiant de la géolocalisations des biens
-               et des info du quartier et guidez vos clients à distance. </div>
-              <br><br><div class="texthover">
-              <i class="material-icons">monochrome_photos</i>
-              Un photographe professionnel se rend sur place en 48h de votre demande, 
+               pour votre bien.
+                    
+                  </mat-step>
+                  <mat-step [stepControl]="secondFormGroup">
+                   
+                      <ng-template matStepLabel>guidez vos clients à distance</ng-template>
+                      Permettez à vos clients de revisiter en bénéficiant de la géolocalisations des biens
+               et des info du quartier et guidez vos clients à distance.
+                    
+                  </mat-step>
+                  <mat-step>
+                    <ng-template matStepLabel>Un photographe professionnel</ng-template>
+                    Un photographe professionnel se rend sur place en 48h de votre demande, 
               il réalise des prises des vues 360°,des photos de haute qualité, des vidéos,
                prend les mesures nécessaires de toutes les piéces et toutes les informations qui entoure 
-               le bien</div>           
+               le bien
+                  </mat-step>
+                </mat-vertical-stepper></div>
+                        
             </div>
       </div>
       <br>
@@ -347,8 +149,8 @@
       </div>
       </div>
     </div>
-
-  </div>             
+  
+  </div>        
                <!--  /WHY INSTAVISIT-->
  <br>
 

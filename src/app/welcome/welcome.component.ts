@@ -10,6 +10,9 @@ declare var $:any;
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
+  isLinear = false;
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
   GoForm : FormGroup;
   ad:number= 1;
   FirOutput: any=[];
@@ -34,6 +37,8 @@ export class WelcomeComponent implements OnInit {
         this.GoForm = this._fb.group({
           Localisation: new FormControl(''),
         });    
+
+       
   }
  
 

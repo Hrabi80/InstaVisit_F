@@ -44,6 +44,7 @@ import { NVDataTableComponent } from './nv-data-table/nv-data-table.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import {MatStepperModule} from '@angular/material/stepper';
 import { UploadComponent } from './upload/upload.component';
 import { NgxImageGalleryModule } from 'ngx-image-gallery';
 import { NgxGalleryModule } from 'ngx-gallery';
@@ -71,7 +72,7 @@ import { Filter2Pipe } from './filter2.pipe';
 import { Filter3Pipe } from './filter3.pipe';
 import { Filter4Pipe } from './filter4.pipe';
 import { LmdetailsComponent } from './lmdetails/lmdetails.component';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 
@@ -124,9 +125,9 @@ import { LmdetailsComponent } from './lmdetails/lmdetails.component';
     BrowserAnimationsModule,
     NgxGalleryModule,
     NgxImageGalleryModule,
-    MatButtonModule, MatCheckboxModule, LayoutModule, MatSliderModule,MatRadioModule,
+    MatButtonModule, MatCheckboxModule, LayoutModule, MatSliderModule,MatRadioModule,MatStepperModule,
     MatToolbarModule, MatSidenavModule, MatIconModule,MatFormFieldModule,MatInputModule,
-    MatListModule,MatCardModule, MatTableModule, MatPaginatorModule, MatSortModule,
+    MatListModule,MatCardModule, MatTableModule, MatPaginatorModule, MatSortModule,FlexLayoutModule
   ],
   providers: [
     LocalisationService,

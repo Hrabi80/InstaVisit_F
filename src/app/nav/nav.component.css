@@ -10,13 +10,22 @@ nav .nav-wrapper a{
     position: relative;
 }
 
-
-
-
+.example-fill-remaining-space {
+  /* This fills the remaining space, by using flexbox. 
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+mat-sidenav-content{
+  position: hidden;
+}
+mat-toolbar{
+  background-color: rgb(255, 255, 255);
+}
+/*
 img{
   margin-top:-4%;
 }
-
+*/
 /* LOGO */
 #fh5co-logo {
     position: relative;
