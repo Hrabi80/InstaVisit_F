@@ -20,7 +20,9 @@ export class HouseVService{
       //  console.log(this._http.get(this._url+'/getData'));
     }
   
-
+    deleteHouse(id){
+        return this._http.get(this._url + '/delete/'+id);
+    }
     AddHV(data){
         return this._http.post(this._url + '/AddHouse', data , {reportProgress:true , observe:'events'});
     }

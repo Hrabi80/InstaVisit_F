@@ -22,7 +22,14 @@ export class HouseLService{
     getDataM(){
         return this._http.get(this._urlM+'/allData');
     }
-  
+    
+    deleteHouse(id){
+        return this._http.get(this._urlM + '/delete/'+id);
+    }
+    deleteHouse2(id){
+        return this._http.get(this._url + '/delete/'+id);
+    }
+
 
     AddHL(data){
         return this._http.post(this._url + '/AddHL', data );

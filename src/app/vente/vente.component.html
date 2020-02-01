@@ -83,15 +83,20 @@
    
    <div class="row ct">
      
-        
+	<script>
+		var count=0;
+	</script>
      <div class="col s12">
-         
-       <div class="row">
+		<div class="row">
+       
 		 <div *ngFor="let output of FirOutput | filter:term:'city' | filter:ref:'id' | filter:room:'RoomNB'
-		    | filter4:minPrice:'price' | filter3:maxPrice:'price' | filter4:minSurface:'surface' | filter3:maxSurface:'surface'">
+			| filter4:minPrice:'price' | filter3:maxPrice:'price' | filter4:minSurface:'surface' | filter3:maxSurface:'surface'">
+			
+			<script>count++;</script>
             <div class="card col ">
            <div class="card-image waves-effect waves-block waves-light">
-             <img class="activatorh" src="http://127.0.0.1:8000/images/houses/{{output.mainIMG}}">
+			<a routerLink="/nav/details/+{{output.id}}">
+             <img class="activatorh" src="http://127.0.0.1:8000/images/houses/{{output.mainIMG}}"></a>
            </div> <br>
            {{output.city }}
              <span>{{output.price }} dt - {{output.surface }} m²</span> <br>
@@ -104,7 +109,20 @@
            <div class="card-reveal">
            </div>
            </div>
-       </div></div></div></div>
+	   </div>
+	   <script>
+		 
+		if(count == 4)
+		   { </script>
+			 <br>
+      </div> 
+	  <div class="row">
+	
+	 
+	 <script>} count=0</script>
+	</div>
+    </div>
+   </div>
       
 
 

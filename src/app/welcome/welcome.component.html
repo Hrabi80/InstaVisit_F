@@ -1,5 +1,10 @@
 <div class="content">
+  <div class="myVideo">
+    <video autoplay muted loop id="myVideo" controls poster="assets/img/main2.jpg">
+        <source src="assets/coverVideo.mp4" type="video/mp4"> 
+    </video>
     
+    </div>
   <div class="header">
     
       <form [formGroup]="GoForm" action="">
@@ -7,48 +12,41 @@
           Visitez votre prochain logement depuis<br> 
            <span> chez vous.</span>
        </h1>
-      
+       <div class="TheBox">
               <mat-radio-group aria-label="Select an option" >&nbsp; &nbsp;
                   <mat-radio-button value="1" (change)="onItemChange(1)" class="Fopt" checked ><br>A louer &nbsp; &nbsp; </mat-radio-button>
                   <mat-radio-button value="2" (change)="onItemChange(2)" class="Sopt"><br>A vendre &nbsp; &nbsp;</mat-radio-button>
               </mat-radio-group>
-              <mat-form-field appearance="outline">
-                <mat-label>Outline form field</mat-label>
-                <input matInput placeholder="Placeholder">
-                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-                <mat-hint>Hint</mat-hint>
-              </mat-form-field><!--
+              
           <div class="row Form-box">
-            <input type="text" class=" col s9 Browser default input search-field browser-default location" formControlName="Localisation" placeholder="Indiquer lieu,village,adress...">
-            <button type="button" (click)="Go()"  name="action" class="col s3 search-bt">Rechercher</button>
-          </div>    -->
+            <input type="text" class="col l6 m 12 s12 search-field " formControlName="Localisation" placeholder="Indiquer lieu,village,adress...">
+            <button type="button" (click)="Go()"  name="action" class="col l3 m12 s12 search-bt">Rechercher</button>
+          </div>  </div>  
       </form>
 
 </div>  
 </div>
-<div class="myVideo">
-  <video autoplay muted loop id="myVideo">
-      <source src="assets/coverVideo.mp4" type="video/mp4"> 
-  </video>
-  
-  </div>
 
+        
         <!-- WELCOME OUTPUT-->
+
       <div class="kk"><br><br>  
-        <div class="ct">
+        <div class="ctt">
           <h4> Les derniers biens à louer  <div id="result"></div></h4>
           <br>
+        
           <div class="row">
-             <div *ngFor="let output of FirOutput | slice:0:8">
-                  <div class="card col ">
+             <div *ngFor="let output of FirOutput | slice:0:4">
+                  <div class="card col">
                       <div class="card-image waves-effect waves-block waves-light">
-                       <img class="activatorh" src="http://127.0.0.1:8000/images/houses/{{output.mainIMG}}" alt="img">
+                        <a routerLink="/nav/details/+{{output.id}}">
+                       <img class="activatorh" src="http://127.0.0.1:8000/images/houses/{{output.mainIMG}}" alt="img"></a>
                       </div><br>
                     {{output.city}}
                     <span>{{output.price}} dt - {{output.surface}} m²</span> <br>
                     <small> {{output.RoomNB}} piéces meublé-3eme etage</small>
-                    <a routerLink="/nav/welcome">
-                      <i class="material-icons right">move_to_inbox</i>
+                    <a routerLink="/nav/details/+{{output.id}}">
+                      <i class="material-icons right">filter_none</i>
                     </a>
                     <div class="card-content">
                   </div>
@@ -59,7 +57,27 @@
              </div> 
           </div>   
         </div>  
-        <a class="seeMore" routerLink="/nav/all"><i class="material-icons prefix" >chevron_right</i>
+        <div class="row">
+        <div *ngFor="let output of FirOutput | slice:4:8">
+          <div class="card col">
+            <div class="card-image waves-effect waves-block waves-light">
+              <a routerLink="/nav/details/+{{output.id}}">
+             <img class="activatorh" src="http://127.0.0.1:8000/images/houses/{{output.mainIMG}}" alt="img"></a>
+            </div><br>
+          {{output.city}}
+          <span>{{output.price}} dt - {{output.surface}} m²</span> <br>
+          <small> {{output.RoomNB}} piéces meublé-3eme etage</small>
+          <a routerLink="/nav/details/+{{output.id}}">
+            <i class="material-icons right">filter_none</i></a>
+          <div class="card-content">
+        </div>
+   
+        <div class="card-reveal">
+         <i class="material-icons right">close</i>
+        </div>
+   </div> 
+  </div>   </div>
+        <a class="seeMore" routerLink="/nav/searchlouer"><i class="material-icons prefix" >chevron_right</i>
           Voir plus de logements</a>
       </div>    </div>
         <!-- WELCOME OUTPUT-->
@@ -223,3 +241,15 @@
  <!--   /TEST NEW FOOTER-->   
 
  
+<script>
+  $(document).ready(function(){
+  var screenWidth = $(window).width();
+  // if window width is smaller than 800 remove the autoplay attribute
+  // from the video
+  if (screenWidth < 570){
+        $('myVideo').removeAttr('autoplay');
+  } else {
+    $('myVideo').attr('autoplay');
+  }
+});
+</script>

@@ -34,4 +34,11 @@ export class MeubleDataTableComponent implements AfterViewInit, OnInit {
   ngAfterViewInit() {
     this.table.dataSource = this.dataSource;
   }
+  delete(id) {
+    console.log(id)
+      this._service.deleteHouse(id).subscribe(res => {
+        console.log(res);
+      });
+     // window.location.reload();
+    }
 }

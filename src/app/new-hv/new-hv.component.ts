@@ -42,6 +42,8 @@ export class NewHVComponent implements OnInit {
       adress: new FormControl(''),
       //city: new FormControl(''),
       description: new FormControl(''),
+      description2: new FormControl(''),
+      description3: new FormControl(''),
       Tx:new FormControl(''),
       loc:new FormControl(''),
       price:new FormControl(''),
@@ -113,6 +115,8 @@ export class NewHVComponent implements OnInit {
     uploadData.append('adress', this.form.get('adress').value);
     uploadData.append('city', this.opt);
     uploadData.append('description', this.form.get('description').value);
+    uploadData.append('description2', this.form.get('description2').value);
+    uploadData.append('description3', this.form.get('description3').value);
     uploadData.append('Tx', this.form.get('Tx').value);
     uploadData.append('loc', this.form.get('loc').value);
     uploadData.append('price', this.form.get('price').value);

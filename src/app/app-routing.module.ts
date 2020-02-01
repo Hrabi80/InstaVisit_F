@@ -28,7 +28,7 @@ import { NOMeubleComponent } from './nomeuble/nomeuble.component';
 import { InfoMComponent } from './info-m/info-m.component';
 import { OurworkComponent } from './ourwork/ourwork.component';
 import { LmdetailsComponent } from './lmdetails/lmdetails.component';
-
+import { InfoNmComponent } from './info-nm/info-nm.component';
 const routes: Routes = [
   
   {
@@ -79,6 +79,10 @@ const routes: Routes = [
       {
         path: 'infoM/:id',
         component: InfoMComponent,   
+      },
+      {
+        path: 'infoNM/:id',
+        component: InfoNmComponent,   
       },
       {
         path: 'newsletter',

@@ -12,7 +12,7 @@ declare var $:any;
   styleUrls: ['./new-hl.component.css']
 })
 export class NewHLComponent  {
-  /*
+  
   form: FormGroup;
   locs:any=[];
   SelectedIMG:File=null;
@@ -127,7 +127,7 @@ export class NewHLComponent  {
        //else
        this._service.AddHLM(uploadData)
        .subscribe(
-        //(res) => this.uploadResponse = res,
+        (res) => this.uploadResponse = res,
         //(err) => this.error = err,
          event => { if(event.type === HttpEventType.UploadProgress)
           {
@@ -140,11 +140,12 @@ export class NewHLComponent  {
           }
         }
         );
+        this.router.navigateByUrl('dashboard/HLM_LISTE');
       }else{
         this._service.AddHL(uploadData)
         .subscribe(
-          //(res) => this.uploadResponse = res,
-          //(err) => this.error = err,
+          (res) => this.uploadResponse = res,
+          //(err) => this.error = err
            event => { if(event.type === HttpEventType.UploadProgress)
             {
                 console.log('upload progress : ' + Math.round( event.loaded / event.total )*100 +'%')
@@ -156,10 +157,11 @@ export class NewHLComponent  {
             }
           }
           );
+          this.router.navigateByUrl('dashboard/HLM_LISTE');
       }
         //console.log(event);
        // this.router.navigateByUrl('dashboard/HvData_Table');
     }
   
-*/
+
 }

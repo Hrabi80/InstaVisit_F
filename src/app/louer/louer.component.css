@@ -259,15 +259,7 @@ nav{
               box-shadow: #000000;
             
             }
-            .card:hover{
-              transition: all 0.3s ease;
-              width:244px;
-              height: 204px;
-              margin-top: -0.1%;
-              margin-left: -0.1%;
             
-            
-            }
             .card-image{
               width: 100%;
               height: 120px;

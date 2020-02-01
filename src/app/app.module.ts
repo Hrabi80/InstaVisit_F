@@ -73,6 +73,8 @@ import { Filter3Pipe } from './filter3.pipe';
 import { Filter4Pipe } from './filter4.pipe';
 import { LmdetailsComponent } from './lmdetails/lmdetails.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { InfoNmComponent } from './info-nm/info-nm.component';
+
 
 
 
@@ -110,6 +112,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     Filter3Pipe,
     Filter4Pipe,
     LmdetailsComponent,
+    InfoNmComponent,
+   
     // Filter2Pipe
   ],
   imports: [

@@ -77,7 +77,8 @@
          | filter4:minPrice:'price' | filter3:maxPrice:'price'  ">
             <div class="card col ">
            <div class="card-image waves-effect waves-block waves-light">
-             <img class="activatorh" src="http://127.0.0.1:8000/images/houses/{{output.mainIMG}}">
+            <a routerLink="/nav/lmdetails/+{{output.id}}">
+             <img class="activatorh" src="http://127.0.0.1:8000/images/houses/{{output.mainIMG}}"></a>
            </div> <br>
            {{output.ciy }}
              <span>{{output.price }} dt - {{output.surface }} m²</span> <br>

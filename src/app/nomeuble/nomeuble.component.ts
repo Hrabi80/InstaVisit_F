@@ -15,22 +15,22 @@ export class NOMeubleComponent implements AfterViewInit, OnInit {
   @ViewChild(MatSort, {static: false}) sort: MatSort;
   @ViewChild(MatTable, {static: false}) table: MatTable<NOMeubleItem>;
   //dataSource: NOMeubleDataSource;
-  dataSource = new NOMeubleDataSource(this._service);
+  //dataSource = new NOMeubleDataSource(this._service);
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   //displayedColumns = ['id', 'name','adress','surface','price','car','addIMG','sup/àjour'];
-  displayedColumns = ['id', 'name','adress','surface'];
+  public apps: NOMeubleItem[] = new Array();
+  TD:any[];
+  dataSource = [];
+  td = [{id:1, name: 'korba', adress: '14 Rue Tunis', surface: 500 ,price: 50.000}]
+
+  displayedColumns = ['id', 'name','adress','surface','price','car','ss'];
   constructor(private _service: HouseLService,){}
   ngOnInit() {
-    //this.dataSource = new NOMeubleDataSource();
-    return this._service.getData().subscribe((app:any) => {
-     
+    return this._service.getData().subscribe((app:any) => {     
       this.dataSource  =  app;
-     // this.dataSource.append(td);
-      console.log("ffafa");
       console.log(this.dataSource);
-      //this.dataSource.data = app.house as any[];
-      this.dataSource = new NOMeubleDataSource(app);
     });
+    
     //{ this.apps;});
    //this.dataSource = new NVDataTableDataSource(this.apps);//= res["0"]["data"]);
    
@@ -38,8 +38,14 @@ export class NOMeubleComponent implements AfterViewInit, OnInit {
   
 
   ngAfterViewInit() {
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
   }
+
+  delete(id) {
+    console.log(id)
+      this._service.deleteHouse2(id).subscribe(res => {
+        console.log(res);
+      });
+     // window.location.reload();
+    }
 }
