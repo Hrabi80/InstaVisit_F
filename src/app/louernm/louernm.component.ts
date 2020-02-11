@@ -3,18 +3,17 @@ import { LoutputService } from '../_services/Loutput.service';
 import { HouseLService } from '../_services/HouseL.service';
 import { ParamService } from '../_services/param-service.service'
 import { ActivatedRoute, ParamMap,Router } from '@angular/router';
-import { HttpEventType } from '@angular/common/http';
 import { FilterPipe } from '../filter.pipe';
+
 @Component({
-  selector: 'app-louer',
-  templateUrl: './louer.component.html',
-  styleUrls: ['./louer.component.css']
+  selector: 'app-louernm',
+  templateUrl: './louernm.component.html',
+  styleUrls: ['./louernm.component.css']
 })
-export class LouerComponent implements OnInit {
+export class LouernmComponent implements OnInit {
   userLoc: any=[];
   locs:any=[];
-  opt:string;
-  
+
   formatLabel(value: number) {
     return value + 'dt';
   }
@@ -26,16 +25,15 @@ export class LouerComponent implements OnInit {
 
   @Output() searchModelChange: EventEmitter<any> = new EventEmitter();
   FirOutput: any=[];
-  FirOutput2 : any=[];
-  term : string = this.route.snapshot.paramMap.get('foo');
-  constructor(
-    private route: ActivatedRoute,
-    private _service: LoutputService,
-    private _Nservice: HouseLService,
-    private ParamService: ParamService) { }
+
+  constructor(private route: ActivatedRoute,
+              private _service: HouseLService,
+              private ParamService: ParamService) 
+              { }
+  
 
   ngOnInit() {
-    //console.log(this.route.snapshot.paramMap.get['foo']);
+
     const foo = this.route.snapshot.paramMap.get('foo');
     this.ParamService.foo = foo;
     console.log(foo);
@@ -45,16 +43,16 @@ export class LouerComponent implements OnInit {
         console.log(res);
         this.FirOutput = res;
     });
-
-   
   }
-  selectOption(opt: string) {
-    //getted from event
-    //getted from binding
-    console.log("opitonII",opt);
-    this.opt=opt;
-    console.log("opiton",this.opt);
-  }
- 
 
 }
+
+
+
+ 
+
+  
+ 
+ 
+
+

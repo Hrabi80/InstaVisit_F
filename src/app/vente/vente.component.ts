@@ -18,7 +18,7 @@ export class VenteComponent implements OnInit {
   @Output() searchModelChange: EventEmitter<any> = new EventEmitter();
   userLoc: any=[];
 	//term: string = "";
-   
+  term : string = this.route.snapshot.paramMap.get('foo'); 
   FirOutput: any=[];
   constructor(
     private route: ActivatedRoute,

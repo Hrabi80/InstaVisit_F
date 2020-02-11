@@ -36,15 +36,15 @@
           <br>
         
           <div class="row">
-             <div *ngFor="let output of FirOutput | slice:0:4">
+             <div *ngFor="let output of FirOutput | slice:-8:-4">
                   <div class="card col">
                       <div class="card-image waves-effect waves-block waves-light">
                         <a routerLink="/nav/details/+{{output.id}}">
                        <img class="activatorh" src="http://127.0.0.1:8000/images/houses/{{output.mainIMG}}" alt="img"></a>
                       </div><br>
-                    {{output.city}}
+                    {{output.ciy}}
                     <span>{{output.price}} dt - {{output.surface}} m²</span> <br>
-                    <small> {{output.RoomNB}} piéces meublé-3eme etage</small>
+                    <small> {{output.room_nb}} piéces meublé</small>
                     <a routerLink="/nav/details/+{{output.id}}">
                       <i class="material-icons right">filter_none</i>
                     </a>
@@ -58,15 +58,15 @@
           </div>   
         </div>  
         <div class="row">
-        <div *ngFor="let output of FirOutput | slice:4:8">
+        <div *ngFor="let output of FirOutput | slice:-4">
           <div class="card col">
             <div class="card-image waves-effect waves-block waves-light">
               <a routerLink="/nav/details/+{{output.id}}">
              <img class="activatorh" src="http://127.0.0.1:8000/images/houses/{{output.mainIMG}}" alt="img"></a>
             </div><br>
-          {{output.city}}
+          {{output.ciy}}
           <span>{{output.price}} dt - {{output.surface}} m²</span> <br>
-          <small> {{output.RoomNB}} piéces meublé-3eme etage</small>
+          <small> {{output.room_nb}} piéces meublé</small>
           <a routerLink="/nav/details/+{{output.id}}">
             <i class="material-icons right">filter_none</i></a>
           <div class="card-content">
@@ -96,7 +96,7 @@
       </div>
       <div class="col s9">
         <div class="container">
-        <h5>Vous faites des études ou un stage dans une nouvelle ville ? </h5>
+        <h5>Vous êtes entrain de chercher un logement ? </h5>
         InstaVisit est la solution idéale pour vous :
        
         <mat-vertical-stepper [linear]="isLinear" #stepper>
@@ -111,13 +111,13 @@
           <mat-step [stepControl]="secondFormGroup">
            
               <ng-template matStepLabel>Une description fidèle</ng-template>
-              Une description fidèle, précise et complète de
-              Chaque appartement que nous mettons en location ou en vente
+              Une description fidèle et précise de
+              Chaque bien que nous mettons en location ou en vente
             
           </mat-step>
           <mat-step>
             <ng-template matStepLabel>Visites virtuelles</ng-template>
-            Nous vous proposons les modélisations des photos 360° et les visites virtuelles proposées par InstaVisit,
+            Nous vous proposons les modélisations des photos 360° et une visite virtuelle proposées par InstaVisit,
             vous permettent de vous projeter dans votre future maison ou appartement.
           </mat-step>
         </mat-vertical-stepper>
@@ -130,7 +130,7 @@
       <div class="col s9">
           <div class="container fprop">
               <h5>Vous etes propriétaires ? </h5>
-              Louez votre logement avec des outils modernes :
+              Louez ou vendez votre logement avec des outils modernes :
                <br><br><div class="texthover">
                 <mat-vertical-stepper [linear]="isLinear" #stepper>
                   <mat-step [stepControl]="firstFormGroup">
@@ -144,8 +144,7 @@
                   <mat-step [stepControl]="secondFormGroup">
                    
                       <ng-template matStepLabel>guidez vos clients à distance</ng-template>
-                      Permettez à vos clients de revisiter en bénéficiant de la géolocalisations des biens
-               et des info du quartier et guidez vos clients à distance.
+                      En leur permettant  de découvrir  la géolocalisation des biens et les  infos  du quartier  ou ils se trouvent 
                     
                   </mat-step>
                   <mat-step>
@@ -221,7 +220,7 @@
  
     <p class="footer-company-about">
     <span>About the company</span>
-    une agence immobilière dont les  processus de location et de vente  se font en ligne 
+    un portail internet innovant dans le domaine immobilier
    &amp; .
     </p>
  

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { VoutputService } from '../_services/Voutput.service';
+import { HouseLService } from '../_services/HouseL.service';
 import { ActivatedRoute, Params,Router } from '@angular/router';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { HttpEventType } from '@angular/common/http';
@@ -15,25 +15,31 @@ export class WelcomeComponent implements OnInit {
   secondFormGroup: FormGroup;
   GoForm : FormGroup;
   ad:number= 1;
+ // NbData : number;
+ // dis1 :number;
+  //dis2:number;
   FirOutput: any=[];
   userLoc : string;
   radioSel:any;
   radioSelected:string;
   radioSelectedString:string;
-  constructor(private _service: VoutputService,
+  constructor(private _service: HouseLService,
               private route: ActivatedRoute,
               private router: Router,
               private  _fb: FormBuilder,) { }
  
   ngOnInit() {
-    this._service.getData()
+    this._service.getDataM()
         .subscribe((res) => {
             console.log(res);
             this.FirOutput = res;
             
         });
+       
         this.radioSelected = "1";
-      
+        //this.NbData=this.FirOutput.length();
+       // this.dis1=this.NbData-8;
+        //this.dis2=this.NbData-4;
         this.GoForm = this._fb.group({
           Localisation: new FormControl(''),
         });    

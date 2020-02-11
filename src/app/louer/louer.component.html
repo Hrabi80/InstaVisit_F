@@ -13,7 +13,7 @@
       <div class="col " >
         <mat-form-field appearance="outline">
           <mat-label>Lieu</mat-label>
-          <input matInput placeholder="Placeholder"  [(ngModel)]="term" value="{{ParamService.foo}}" >
+          <input matInput placeholder="Placeholder" value="{{ParamService.foo}}"  [(ngModel)]="term">
           <mat-icon matSuffix>find_replace</mat-icon>
           <mat-hint>Hint</mat-hint>
         </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -57,11 +57,13 @@
        &nbsp;&nbsp;&nbsp;&nbsp;
       </div>
       <div class="col">
-          <select class="browser-default">
-            <option value="" disabled selected>type</option>
-            <option value="1">Meublé</option>
-            <option value="2">Non meublé</option>
-          </select>
+        <a routerLink="/nav/searchlouerNonMeuble" mat-raised-button color="primary">Biens non meublés <i class="material-icons">keyboard_arrow_right</i></a>
+        <!--
+          <select class="browser-default" >
+            <option  [value]="Z" disabled selected>type</option>
+            <option [value]= "M" >Meublé</option>
+            <option [value]= N > <a routerLink="/nav/about" >Non meublé</a> </option>
+          </select>-->
       </div>
      </div>   
           

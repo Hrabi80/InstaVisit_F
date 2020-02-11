@@ -29,6 +29,7 @@ import { InfoMComponent } from './info-m/info-m.component';
 import { OurworkComponent } from './ourwork/ourwork.component';
 import { LmdetailsComponent } from './lmdetails/lmdetails.component';
 import { InfoNmComponent } from './info-nm/info-nm.component';
+import { LouernmComponent } from './louernm/louernm.component';
 const routes: Routes = [
   
   {
@@ -145,6 +146,10 @@ const routes: Routes = [
        {
           path: 'searchlouer',
           component: LouerComponent,
+        },
+        {
+          path: 'searchlouerNonMeuble',
+          component: LouernmComponent,
         },
         {
           path: 'searchvente',

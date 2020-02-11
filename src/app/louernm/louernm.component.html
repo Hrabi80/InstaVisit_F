@@ -1,0 +1,96 @@
+
+<br>
+<div class="ssr">
+ <div class="row">
+   <div class="col ">
+     <mat-form-field appearance="outline" class="ref">
+       <mat-label>Ref</mat-label>
+       <input matInput placeholder="IV00***" [(ngModel)]="ref" >
+       <mat-hint>tapez nombre de ***</mat-hint>
+     </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;
+   </div>
+   <div class="col " >
+     <mat-form-field appearance="outline">
+       <mat-label>Lieu</mat-label>
+       <input matInput placeholder="Placeholder"  [(ngModel)]="term" value="{{ParamService.foo}}" >
+       <mat-icon matSuffix>find_replace</mat-icon>
+       <mat-hint>Hint</mat-hint>
+     </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;
+   </div>
+   <div class="col ">
+     <label>Nombre de chambre</label>
+     <select class="browser-default" [(ngModel)]="room">
+       <option value="" disabled selected>S+</option>
+       <option value="1">S + 1</option>
+       <option value="2">S + 2</option>
+       <option value="3">S + 3</option>
+       <option value="4">S + 4</option>
+       <option value="5">S + 5</option>
+       <option value="6">S + 6</option>
+     </select>
+   </div>
+
+   
+ </div>
+  <div class="row">
+    <div class="col">
+       <mat-label>Prix max: </mat-label>
+       <mat-slider
+          thumbLabel
+          [displayWith]="formatLabel"
+          tickInterval="100"
+          min="300"
+          max="3000" [(ngModel)]="maxPrice">
+       </mat-slider>
+       &nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+   <div class="col">
+       <mat-label>Prix min: </mat-label>
+       <mat-slider
+       thumbLabel
+       [displayWith]="formatLabel2"
+       tickInterval="100"
+       min="300"
+       max="5000" [(ngModel)]="minPrice">
+    </mat-slider>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+   </div>
+   <div class="col">
+     <a routerLink="/nav/searchlouer" mat-raised-button color="primary">Biens meublés <i class="material-icons">keyboard_arrow_right</i></a>
+     <!--
+       <select class="browser-default" >
+         <option  [value]="Z" disabled selected>type</option>
+         <option [value]= "M" >Meublé</option>
+         <option [value]= N > <a routerLink="/nav/about" >Non meublé</a> </option>
+       </select>-->
+   </div>
+  </div>   
+       
+ </div>    
+
+<div class="row ct">
+  
+     
+  <div class="col s12">
+      
+    <div class="row">
+      <div *ngFor="let output of FirOutput | filter:term:'city' | filter:ref:'id' | filter:room:'room_nb'
+      | filter4:minPrice:'price' | filter3:maxPrice:'price'  ">
+         <div class="card col ">
+        <div class="card-image waves-effect waves-block waves-light">
+         <a routerLink="/nav/lmdetails/+{{output.id}}">
+          <img class="activatorh" src="http://127.0.0.1:8000/images/houses/{{output.mainIMG}}"></a>
+        </div> <br>
+        {{output.city }}
+          <span>{{output.price }} dt - {{output.surface }} m²</span> <br>
+          <small> {{output.room_nb }} piéces meublé</small>
+          <a routerLink="/nav/lmdetails/+{{output.id}}">
+          <i class="material-icons right">filter_none</i></a>
+        <div class="card-content">
+      
+        </div>
+        <div class="card-reveal">
+        </div>
+        </div>
+    </div></div></div></div>
+   
