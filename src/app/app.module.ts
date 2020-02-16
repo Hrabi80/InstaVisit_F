@@ -75,6 +75,7 @@ import { LmdetailsComponent } from './lmdetails/lmdetails.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { InfoNmComponent } from './info-nm/info-nm.component';
 import { LouernmComponent } from './louernm/louernm.component';
+import { LdetailsComponent } from './ldetails/ldetails.component';
 
 
 
@@ -115,6 +116,7 @@ import { LouernmComponent } from './louernm/louernm.component';
     LmdetailsComponent,
     InfoNmComponent,
     LouernmComponent,
+    LdetailsComponent,
    
     // Filter2Pipe
   ],

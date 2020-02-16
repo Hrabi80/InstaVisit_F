@@ -21,8 +21,8 @@ export class AuthService {
   constructor(private http: HttpClient,
              ){
 
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    this.token = currentUser && currentUser.token;
+   // const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    //this.token = currentUser && currentUser.token;
   }
 
  

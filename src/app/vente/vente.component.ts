@@ -34,6 +34,9 @@ export class VenteComponent implements OnInit {
         .subscribe((res) => {
             console.log(res);
             this.FirOutput = res;
+            for (var i = 0; i < this.FirOutput.length; i++) {
+              this.FirOutput[i].refr = "IV00"+this.FirOutput[i].id; // Add "total": 2 to all objects in array
+          }
         });
        
     }

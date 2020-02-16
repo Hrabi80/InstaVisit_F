@@ -30,11 +30,12 @@ import { OurworkComponent } from './ourwork/ourwork.component';
 import { LmdetailsComponent } from './lmdetails/lmdetails.component';
 import { InfoNmComponent } from './info-nm/info-nm.component';
 import { LouernmComponent } from './louernm/louernm.component';
+import { LdetailsComponent } from './ldetails/ldetails.component';
 const routes: Routes = [
   
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'nav/welcome',
     pathMatch: 'full',
   },
   {
@@ -105,6 +106,10 @@ const routes: Routes = [
          path: 'details/:id',
          component: DetailsComponent,   
        },
+       {
+        path: 'ldetails/:id',
+        component: LdetailsComponent,   
+      },
        {
         path: 'lmdetails/:id',
         component: LmdetailsComponent,   

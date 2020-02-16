@@ -22,7 +22,7 @@
       <div class="col ">
         <label>Nombre de chambre</label>
         <select class="browser-default" [(ngModel)]="room">
-          <option value="" disabled selected>S+</option>
+          <option value=""  selected>S+</option>
           <option value="1">S + 1</option>
           <option value="2">S + 2</option>
           <option value="3">S + 3</option>
@@ -89,7 +89,7 @@
      <div class="col s12">
 		<div class="row">
        
-		 <div *ngFor="let output of FirOutput | filter:term:'city' | filter:ref:'id' | filter:room:'RoomNB'
+		 <div *ngFor="let output of FirOutput | filter:term:'city' | filter:ref:'refr' | filter:room:'RoomNB'
 			| filter4:minPrice:'price' | filter3:maxPrice:'price' | filter4:minSurface:'surface' | filter3:maxSurface:'surface'">
 			
 			<script>count++;</script>
@@ -100,7 +100,7 @@
            </div> <br>
            {{output.city }}
              <span>{{output.price }} dt - {{output.surface }} m²</span> <br>
-             <small> {{output.RoomNB }} piéces meublé</small>
+             <small> {{output.piece }} piéces meublé</small>
              <a routerLink="/nav/details/+{{output.id}}">
              <i class="material-icons right">filter_none</i></a>
            <div class="card-content">

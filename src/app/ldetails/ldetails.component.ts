@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { VoutputService } from '../_services/Voutput.service';
+import { LoutputService } from '../_services/Loutput.service';
 @Component({
-  selector: 'app-details',
-  templateUrl: './details.component.html',
-  styleUrls: ['./details.component.css']
+  selector: 'app-ldetails',
+  templateUrl: './ldetails.component.html',
+  styleUrls: ['./ldetails.component.css']
 })
-export class DetailsComponent implements OnInit {
+export class LdetailsComponent implements OnInit {
   id:number;
   info:any=[];
   station:any=[];
@@ -15,7 +15,7 @@ export class DetailsComponent implements OnInit {
   Map: Array<any>;
   nb :number=0;
   path:string;
- // parking
+  // parking
   cave :string;
   garden : string ;
   park : string ;
@@ -23,21 +23,19 @@ export class DetailsComponent implements OnInit {
   garage: string ;
 
   constructor(private route: ActivatedRoute,
-              private _service : VoutputService,    
-             ) 
-   { }
+              private _service : LoutputService,) { }
 
   ngOnInit() {
     this.id=parseInt(this.route.snapshot.paramMap.get('id'));
     console.log("this id is : ",this.id);
 
-    this._service.getDetails(this.id)
+    this._service.getDetailsNM(this.id)
      .subscribe((res)=>{
        console.log("details",res);
        this.info=res;
      });
     
-    this._service.getParking(this.id)
+    this._service.getParkingNM(this.id)
      .subscribe((res2:Array<any>)=>{
        console.log("Parking",res2);
        this.parking=res2;
@@ -71,20 +69,22 @@ export class DetailsComponent implements OnInit {
         }
      });
      
-    this._service.getStation(this.id)
+    this._service.getStationNM(this.id)
      .subscribe((res3:Array<any>)=>{
        console.log("station",res3);
        this.rows = res3;
      });
 
-     this._service.getMap(this.id)
+     this._service.getMapNM(this.id)
      .subscribe((res4:Array<any>)=>{
        console.log("Map",res4);
        this.Map = res4;
      }); 
      this.path=this.Map[0].map;
      console.log("mayMap",this.path)
+  
   }
- 
+
+  
 
 }

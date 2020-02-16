@@ -4,7 +4,7 @@
  
 <div class="card special"  data-offset-bottom="700" data-offset-top="0" data-spy="affix">
     <div class="card-content">
-      <p><span style="font-size: 1.4rem;font-weight: bold; color:orangered;">{{info.adress}}, {{info.ciy}} </span>
+      <p><span style="font-size: 1.4rem;font-weight: bold; color:orangered;">{{info.adress}}, {{info.city}} </span>
           <br><br>
           ref. INV000{{info.id}} <br><br>
          <span style="font-size: 1.1rem ; font-weight : bold;"> {{info.price}} dt </span>(dont 000 DT de charges)<br>
@@ -49,22 +49,21 @@
       <div class="col s5 m5">
         <!-- <div class="row"> -->
             <!--<div class="col s7"> --> 
-                <h5> Maison à louer de S+{{info.room_nb}}  au {{info.adress}}, 92000, {{info.city}} </h5>
+                <h5> Maison à louer d'un S+{{info.room_nb}}  au {{info.adress}}, {{info.city}} </h5>
     
                  <h6>le logement</h6>
-                  <p>
-                    {{info.description}}
-                  </p>
-                  <p>
-                    {{info.description2}}
-                  </p>
-                  <p>
-                    {{info.description3}}
-                  </p>
-                  <p>
-                    {{info.description4}}
-                  </p>
+    
                  <p>
+                    {{info.description}}
+                 </p><br>
+                 <p>
+                  {{info.description2}}
+               </p><br>
+               <p>
+                {{info.description3}}
+             </p>
+                 <p>
+    
         
         A  visiter sur InstaVisit.com
     
@@ -114,63 +113,62 @@
     <div class="row">
       <div class="col s8">
           <h6>Caractéristiques</h6>
-          
           <table class="striped highlight responsive-table">
-              <thead>
-                <tr>
-                    <th class="tableS">Informations essentielles</th>
-                    <th></th>
-                    <th></th>
-                </tr>
-              </thead>
-      
-              <tbody>
-              
-                <tr>
-                  <td class="gras">Cave</td>
+            <thead>
+              <tr>
+                  <th class="tableS">Informations essentielles</th>
+                  <th></th>
+                  <th></th>
+              </tr>
+            </thead>
+    
+            <tbody>
+            
+              <tr>
+                <td class="gras">Cave</td>
+                
+                <td>
+                    {{cave}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span style="font-size: 1.4rem;text-transform: capitalize;"> 
+                          Gardienne</span>
+                  </td>
                   
-                  <td>
-                      {{cave}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <span style="font-size: 1.4rem;text-transform: capitalize;"> 
-                            Gardienne</span>
-                    </td>
-                    
-                    
+                  
 
+                <td>
+                    {{garden}}
+                    
+                </td>
+              </tr>
+              <tr>
+                  <td class="gras">Étage</td>
                   <td>
-                      {{garden}}
+                      {{parking[nb].etage}}
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <span style="font-size: 1.4rem;text-transform: capitalize;"> 
+                    Ascenseur</span></td>
+                  <td> 
+                      {{elevator}}
                       
                   </td>
                 </tr>
                 <tr>
-                    <td class="gras">Étage</td>
+                    <td class="gras">Box/Garage</td>
                     <td>
-                        {{parking[nb].etage}}
-                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        {{garage}}
+                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <span style="font-size: 1.4rem;text-transform: capitalize;"> 
-                      Ascenseur</span></td>
+                      Parking</span></td>
                     <td> 
-                        {{elevator}}
+                        {{park}}
                         
                     </td>
                   </tr>
-                  <tr>
-                      <td class="gras">Box/Garage</td>
-                      <td>
-                          {{garage}}
-                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <span style="font-size: 1.4rem;text-transform: capitalize;"> 
-                        Parking</span></td>
-                      <td> 
-                          {{park}}
-                          
-                      </td>
-                    </tr>
-              </tbody>
-            </table>
+            </tbody>
+          </table>
     
        <!--EQUIPEMENT DANS LOUER-->
-          
+          <!--
           <table class="striped highlight responsive-table">
               <thead>
                 <tr>
@@ -180,173 +178,51 @@
                     <th></th>
                 </tr>
               </thead>
+      
               <tbody>
                 <tr>
+                    
                   <td class="gras">
-                    <i class="material-icons">wc</i>	
-                    Toilettes séparés
-                  </td>
-                  
-                      <td>{{toilette}}   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                          &nbsp;&nbsp;
-                          <span style="font-size: 1.4rem;text-transform: capitalize;"> 
-                              <i class="material-icons">speaker</i>	
-                              Lave-linge </span></td>
-                  <td>
-                  {{lavelange}}</td>
+                      <i class="material-icons">wc</i>	
+                    Toilettes séparés</td>
+                  <td>Non   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                      &nbsp;&nbsp;
+                      <span style="font-size: 1.4rem;text-transform: capitalize;"> 
+                          <i class="material-icons">speaker</i>	
+                          Lave-linge </span></td>
+                  <td>Oui</td>
                 </tr>
                 <tr>
                   <td class="gras">
                       <i class="material-icons">chrome_reader_mode</i>
-                    Interphone
-                  </td>  
-                  <td>{{interphone}}   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          &nbsp;&nbsp;
-                          <span style="font-size: 1.4rem;text-transform: capitalize;"> 
-                              <i class="material-icons">highlight</i>	
-                               Rac. machine</span>
-                  </td>    
-                  <td>
-                 {{machine}}
-                </td>
+                    Interphone</td>
+                  <td>Non	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;
+                      <span style="font-size: 1.4rem;text-transform: capitalize;">
+                          <i class="material-icons">highlight</i> 
+                          Raccordement machine</span></td>
+                  <td>11 / 16</td>
                 </tr>
                 <tr>
-                <td class="gras">
+                  <td class="gras">
                       <i class="material-icons">wifi</i>
-                       Raccordement internet</td>
-                    
-                <td>
-                    {{internet}}	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Raccordement internet</td>
+                  <td>Non	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       &nbsp;&nbsp;
                       <span style="font-size: 1.4rem;text-transform: capitalize;"> 
                           <i class="material-icons">drafts</i>
                           Boite aux lettres</span></td>
-                <td>
-                  {{boite}}
-                  </td>
+                  <td>Oui</td>
                 </tr>
               </tbody>
             </table>
-    
-         
-    <!--EQUIPEMENT DANS LOUER-->
-    <!-- Cuisine II-->
-    <table class="striped highlight responsive-table">
-        <thead>
-          <tr>
-              <th class="tableS">
-                  Cuisine</th>
-              <th></th>
-              <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="gras">
-              <i class="material-icons">vignette</i>	
-              Four
-            </td>
+    -->
             
-            <td>
-                  {{four}}   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                    &nbsp;&nbsp;
-                    <span style="font-size: 1.4rem;text-transform: capitalize;"> 
-                        <i class="material-icons">border_all</i>	
-                        Plaque</span>
-            </td>
-            <td>
-            {{plaque}}
-            </td>
-            </tr>
-            <tr>
-            <td class="gras">
-              Lave vaisselle
-            </td>
-             <td>
-                  {{lave}}   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;
-                    <span style="font-size: 1.4rem;text-transform: capitalize;"> 
-                        <i class="material-icons">ac_unit</i>	
-                        Congélateur</span>
-              </td>     
-             <td>
-             {{congelateur}}
-             </td>
-             </tr>
-             <tr>
-             <td class="gras">
-                <i class="material-icons">local_cafe</i>
-                Micro-ondes</td>
-             <td>
-                 {{microonde}}
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;
-                    <span style="font-size: 1.4rem;text-transform: capitalize;"> 
-                    <i class="material-icons">kitchen</i>
-                    Réfrigérateur</span>
-            </td>
-            <td>
-                 {{refri}}
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    <!-- Cuisine II-->
-    <!--Couchage-->
-    <table class="striped highlight responsive-table">
-      <thead>
-        <tr>
-            <th class="tableS">Ameublement</th>
-            <th></th>
-            <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="gras"><i class="material-icons">airline_seat_individual_suite
-          </i>Lit </td>
-          <td>
-            {{Couchage[nb].lit}}
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <span style="font-size: 1.4rem;text-transform: capitalize;">
-                <i class="material-icons"></i> 
-                Dressing</span>
-            </td>
-          <td>
-            {{Amb[nb].dressing}}
+    <!--EQUIPEMENT DANS LOUER-->
              
-          </td>
-        </tr>
-        <tr>
-            <td class="gras"><i class="material-icons">weekend</i>Canapé</td>
-            <td>
-              {{Amb[nb].canape}}
-               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <span style="font-size: 1.4rem;text-transform: capitalize;">
-                  <i class="material-icons">airline_seat_legroom_normal</i> 
-                  Chaise</span></td>
-            <td> 
-              {{Amb[nb].chaise}}
-                
-            </td>
-          </tr>
-          <tr>
-              <td class="gras"><i class="material-icons">airline_seat_recline_normal</i>Table</td>
-              <td>
-                {{Amb[nb].mytable}}
-                 
-
-                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <span style="font-size: 1.4rem;text-transform: capitalize;"> 
-                    <i class="material-icons">tv</i> TV</span></td>
-              <td> 
-                {{Amb[nb].MyTV}}   
-                  
-              </td>
-            </tr>
-      </tbody>
-    </table>
-    <!-- Couchage-->
+    
+    
+    
     
       </div>
       <div class="col s4">

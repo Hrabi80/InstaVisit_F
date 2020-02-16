@@ -39,13 +39,13 @@
              <div *ngFor="let output of FirOutput | slice:-8:-4">
                   <div class="card col">
                       <div class="card-image waves-effect waves-block waves-light">
-                        <a routerLink="/nav/details/+{{output.id}}">
+                        <a routerLink="/nav/lmdetails/+{{output.id}}">
                        <img class="activatorh" src="http://127.0.0.1:8000/images/houses/{{output.mainIMG}}" alt="img"></a>
                       </div><br>
                     {{output.ciy}}
                     <span>{{output.price}} dt - {{output.surface}} m²</span> <br>
                     <small> {{output.room_nb}} piéces meublé</small>
-                    <a routerLink="/nav/details/+{{output.id}}">
+                    <a routerLink="/nav/lmdetails/+{{output.id}}">
                       <i class="material-icons right">filter_none</i>
                     </a>
                     <div class="card-content">
@@ -61,13 +61,13 @@
         <div *ngFor="let output of FirOutput | slice:-4">
           <div class="card col">
             <div class="card-image waves-effect waves-block waves-light">
-              <a routerLink="/nav/details/+{{output.id}}">
+              <a routerLink="/nav/lmdetails/+{{output.id}}">
              <img class="activatorh" src="http://127.0.0.1:8000/images/houses/{{output.mainIMG}}" alt="img"></a>
             </div><br>
           {{output.ciy}}
           <span>{{output.price}} dt - {{output.surface}} m²</span> <br>
-          <small> {{output.room_nb}} piéces meublé</small>
-          <a routerLink="/nav/details/+{{output.id}}">
+          <small> {{output.piece}} pieces meublé</small>
+          <a routerLink="/nav/lmdetails/+{{output.id}}">
             <i class="material-icons right">filter_none</i></a>
           <div class="card-content">
         </div>

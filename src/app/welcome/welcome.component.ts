@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HouseLService } from '../_services/HouseL.service';
+import { VoutputService } from '../_services/Voutput.service';
 import { ActivatedRoute, Params,Router } from '@angular/router';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { HttpEventType } from '@angular/common/http';
@@ -23,13 +23,13 @@ export class WelcomeComponent implements OnInit {
   radioSel:any;
   radioSelected:string;
   radioSelectedString:string;
-  constructor(private _service: HouseLService,
+  constructor(private _service: VoutputService,
               private route: ActivatedRoute,
               private router: Router,
               private  _fb: FormBuilder,) { }
  
   ngOnInit() {
-    this._service.getDataM()
+    this._service.getWData()
         .subscribe((res) => {
             console.log(res);
             this.FirOutput = res;

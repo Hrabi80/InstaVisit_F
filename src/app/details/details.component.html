@@ -49,10 +49,8 @@
       <div class="col s5 m5">
         <!-- <div class="row"> -->
             <!--<div class="col s7"> --> 
-                <h5> Maison à vendre d'un T{{info.RoomNB}}  au {{info.adress}}, 92000, {{info.city}} </h5>
-    
+                <h5> Maison à vendre de S+{{info.RoomNB}}  au {{info.adress}}, {{info.city}} </h5>
                  <h6>le logement</h6>
-    
                  <p>
                     {{info.description}}
                  </p><br>
@@ -63,8 +61,6 @@
                 {{info.description3}}
              </p>
                  <p>
-    
-        
         A  visiter sur InstaVisit.com
     
                  </p>
@@ -113,79 +109,60 @@
     <div class="row">
       <div class="col s8">
           <h6>Caractéristiques</h6>
-          
           <table class="striped highlight responsive-table">
-              <thead>
-                <tr>
-                    <th class="tableS">Informations essentielles</th>
-                    <th></th>
-                    <th></th>
-                </tr>
-              </thead>
-      
-              <tbody>
-              <!--  <tr>
-                  <td class="gras">Parking</td>
-                  <td>
-                      <div *ngIf="parking[0].parking == true; else elseBlock">Oui</div>
-                      <ng-template #elseBlock>Non</ng-template>
+            <thead>
+              <tr>
+                  <th class="tableS">Informations essentielles</th>
+                  <th></th>
+                  <th></th>
+              </tr>
+            </thead>
+    
+            <tbody>
+            
+              <tr>
+                <td class="gras">Cave</td>
+                
+                <td>
+                    {{cave}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span style="font-size: 1.4rem;text-transform: capitalize;"> 
+                          Gardienne</span>
+                  </td>
+                  
+                  
+
+                <td>
+                    {{garden}}
                     
-                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                      &nbsp;&nbsp;</td>
-                     
-                </tr>
-                <tr>
-                  <td class="gras">Box / garage</td>
-                  <td>	
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      &nbsp;&nbsp;
-                      <span style="font-size: 1.4rem;text-transform: capitalize;"> 
-                       Étage</span></td>
-                  <td>{{parking[0].etage}} </td>
-                </tr>-->
-                <tr>
-                  <td class="gras">Cave</td>
+                </td>
+              </tr>
+              <tr>
+                  <td class="gras">Étage</td>
                   <td>
-                      <div *ngIf="parking[nb].cave == true; else elseBlock">Oui</div>
-                      <ng-template #elseBlock>Non</ng-template>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      {{parking[nb].etage}}
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <span style="font-size: 1.4rem;text-transform: capitalize;"> 
+                    Ascenseur</span></td>
+                  <td> 
+                      {{elevator}}
                       
-                      <span style="font-size: 1.4rem;text-transform: capitalize;"> 
-                      Gardienne</span>
-                    </td>
-                  <td>
-                      <div *ngIf="parking[nb].garden == true; else elseBlock">Oui</div>
-                      <ng-template #elseBlock>Non</ng-template>
                   </td>
                 </tr>
                 <tr>
-                    <td class="gras">Étage</td>
+                    <td class="gras">Box/Garage</td>
                     <td>
-                        {{parking[nb].etage}}
-                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        {{garage}}
+                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <span style="font-size: 1.4rem;text-transform: capitalize;"> 
-                      Ascenseur</span></td>
+                      Parking</span></td>
                     <td> 
-                        <div *ngIf="parking[nb].elevator == true; else elseBlock">Oui</div>
-                        <ng-template #elseBlock>Non</ng-template>
+                        {{park}}
+                        
                     </td>
                   </tr>
-                  <tr>
-                      <td class="gras">Box/Garage</td>
-                      <td>
-                          <div *ngIf="parking[nb].garage == true; else elseBlock">Oui</div>
-                           <ng-template #elseBlock>Non</ng-template>
-
-                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <span style="font-size: 1.4rem;text-transform: capitalize;"> 
-                        Parking</span></td>
-                      <td> 
-                          <div *ngIf="parking[nb].parking == true; else elseBlock">Oui</div>
-                          <ng-template #elseBlock>Non</ng-template>
-                      </td>
-                    </tr>
-              </tbody>
-            </table>
+            </tbody>
+          </table>
+          
     
        <!--EQUIPEMENT DANS LOUER-->
           <!--

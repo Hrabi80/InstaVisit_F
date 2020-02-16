@@ -2,6 +2,8 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { environment } from "src/environments/environment";
 import {Observable} from 'rxjs/Observable';
+
+
 import 'rxjs/add/operator/map';
 import { Subject,of } from 'rxjs';
 
@@ -9,7 +11,7 @@ import { Subject,of } from 'rxjs';
 export class VoutputService{
     setGroupFilter$ = new Subject<any>();
 	getGroupFilter = this.setGroupFilter$.asObservable();
-    private _url = environment.api_url + '/api/output';
+    private _url = environment.m_url + '/public/output';
     projects: any = [];
     project:any=[];
     
@@ -18,6 +20,10 @@ export class VoutputService{
         private _http: HttpClient,
     ){}
 
+
+    getWData(){
+        return this._http.get(this._url+'/welcomeD');           
+    }
     getData(){
         return this._http.get(this._url+'/getallData');
         //return this._http.get(this._url+'/get');

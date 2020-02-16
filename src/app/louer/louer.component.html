@@ -21,7 +21,7 @@
       <div class="col ">
         <label>Nombre de chambre</label>
         <select class="browser-default" [(ngModel)]="room">
-          <option value="" disabled selected>S+</option>
+          <option value=""  selected>S+</option>
           <option value="1">S + 1</option>
           <option value="2">S + 2</option>
           <option value="3">S + 3</option>
@@ -75,7 +75,7 @@
      <div class="col s12">
          
        <div class="row">
-         <div *ngFor="let output of FirOutput | filter:term:'ciy' | filter:ref:'id' | filter:room:'room_nb'
+         <div *ngFor="let output of FirOutput | filter:term:'ciy' | filter:ref:'refr' | filter:room:'room_nb'
          | filter4:minPrice:'price' | filter3:maxPrice:'price'  ">
             <div class="card col ">
            <div class="card-image waves-effect waves-block waves-light">
@@ -84,7 +84,7 @@
            </div> <br>
            {{output.ciy }}
              <span>{{output.price }} dt - {{output.surface }} m²</span> <br>
-             <small> {{output.room_nb }} piéces meublé-3eme etage</small>
+             <small> {{output.piece }} piéces meublé</small>
              <a routerLink="/nav/lmdetails/+{{output.id}}">
              <i class="material-icons right">filter_none</i></a>
            <div class="card-content">
