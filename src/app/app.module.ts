@@ -76,6 +76,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { InfoNmComponent } from './info-nm/info-nm.component';
 import { LouernmComponent } from './louernm/louernm.component';
 import { LdetailsComponent } from './ldetails/ldetails.component';
+import { SafePipe } from './safe.pipe';
 
 
 
@@ -117,6 +118,7 @@ import { LdetailsComponent } from './ldetails/ldetails.component';
     InfoNmComponent,
     LouernmComponent,
     LdetailsComponent,
+    SafePipe,
    
     // Filter2Pipe
   ],

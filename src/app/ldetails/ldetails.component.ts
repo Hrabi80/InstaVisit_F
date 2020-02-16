@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LoutputService } from '../_services/Loutput.service';
+import {DomSanitizer} from '@angular/platform-browser';
+import { Pipe, PipeTransform} from '@angular/core';
 @Component({
   selector: 'app-ldetails',
   templateUrl: './ldetails.component.html',
   styleUrls: ['./ldetails.component.css']
 })
-export class LdetailsComponent implements OnInit {
+@Pipe({ name: 'safe' })
+export class LdetailsComponent implements OnInit,PipeTransform {
   id:number;
   info:any=[];
   station:any=[];
@@ -21,9 +24,13 @@ export class LdetailsComponent implements OnInit {
   park : string ;
   elevator: string;
   garage: string ;
-
+  mapsrc;string;
+  mapsrc1:any;
   constructor(private route: ActivatedRoute,
-              private _service : LoutputService,) { }
+              private _service : LoutputService,
+              public sanitizer: DomSanitizer,) { 
+                this.mapsrc1 = sanitizer.bypassSecurityTrustUrl(this.mapsrc);
+              }
 
   ngOnInit() {
     this.id=parseInt(this.route.snapshot.paramMap.get('id'));
@@ -79,12 +86,16 @@ export class LdetailsComponent implements OnInit {
      .subscribe((res4:Array<any>)=>{
        console.log("Map",res4);
        this.Map = res4;
+       this.mapsrc=this.Map[0].map;
+       console.log(this.mapsrc);
      }); 
      this.path=this.Map[0].map;
      console.log("mayMap",this.path)
   
   }
-
+  transform() {
+    return this.sanitizer.bypassSecurityTrustUrl(this.mapsrc);
+   }
   
 
 }
