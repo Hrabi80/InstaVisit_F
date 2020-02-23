@@ -61,7 +61,6 @@ import { FilterPipe } from './filter.pipe';
 import { VenteListComponent } from './vente-list/vente-list.component';
 import { OtherVenteComponent } from './other-vente/other-vente.component';
 import { SearchNavComponent } from './search-nav/search-nav.component';
-import { DydetailsComponent } from './dydetails/dydetails.component';
 import { VT360Component } from './vt360/vt360.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
 import { MeubleDataTableComponent } from './meuble-data-table/meuble-data-table.component';
@@ -104,7 +103,6 @@ import { SafePipe } from './safe.pipe';
     VenteListComponent,
     OtherVenteComponent,
     SearchNavComponent,
-    DydetailsComponent,
     VT360Component,
     NewsletterComponent,
     MeubleDataTableComponent,

@@ -42,25 +42,20 @@ export class VenteComponent implements OnInit {
     }
     
     formatLabel(value: number) {
-      if (value >= 1000) {
-        return Math.round(value / 100) + 'dt';
+     
+        return value + "dt";
       }
   
-      return value;
-    }
+    
+    
     formatLabel2(value: number) {
-      if (value >= 1000) {
-        return Math.round(value / 100) + 'dt';
-      }
+      
   
-      return value;
+      return value +"dt";
     }
     formatLabel3(value: number) {
-      if (value >= 1000) {
-        return Math.round(value / 100) + 'm²';
-      }
-  
-      return value;
+      
+      return value +"dt";
     }
     formatLabel4(value: number) {
       if (value >= 1000) {

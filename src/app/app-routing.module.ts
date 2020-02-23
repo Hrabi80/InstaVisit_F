@@ -19,7 +19,7 @@ import { AllComponent } from './all/all.component';
 import { VenteListComponent } from './vente-list/vente-list.component';
 import { OtherVenteComponent } from './other-vente/other-vente.component';
 import { SearchNavComponent } from './search-nav/search-nav.component';
-import { DydetailsComponent } from './dydetails/dydetails.component';
+
 import { InfoComponent } from './info/info.component';
 import { VT360Component } from './vt360/vt360.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
@@ -114,10 +114,7 @@ const routes: Routes = [
         path: 'lmdetails/:id',
         component: LmdetailsComponent,   
       },  
-       {
-        path: 'Ldetails',
-        component: DydetailsComponent,   
-      },  
+        
       {
         path: 'VirtuelTour',
         component: VT360Component,   
