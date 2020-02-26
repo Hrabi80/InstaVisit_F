@@ -13,7 +13,7 @@ export class LdetailsComponent implements OnInit,PipeTransform {
   id:number;
   info:any=[];
   station:any=[];
-  parking : Array<any>;
+  parking : Array<any>=[{},{},{},{}];
   rows: Array<any>;
   Map: Array<any>;
   nb :number=0;
@@ -26,12 +26,65 @@ export class LdetailsComponent implements OnInit,PipeTransform {
   garage: string ;
   mapsrc;string;
   mapsrc1:any;
+  data = {
+      info: {
+            title: "Informations essentielles",
+            more: "> Afficher le détail des informations",
+            fields: {
+                cave: {
+                    title: "Cave",
+                    value: "Oui"
+                },
+                garden: {
+                    title: "Gardienne",
+                    value: "Non"
+                },
+                etage: {
+                    title: "Étage",
+                    value: "1"
+                },
+                elevator: {
+                    title: "Ascenseur",
+                    value: "Oui"
+                },
+                garage: {
+                    title: "Box/Garage",
+                    value: "Oui"
+                },
+                park: {
+                    title: "Parking",
+                    value: "Non"
+                }
+            }
+          
+      }
+  }
+    forceTable = false;
   constructor(private route: ActivatedRoute,
               private _service : LoutputService,
               public sanitizer: DomSanitizer,) { 
                 this.mapsrc1 = sanitizer.bypassSecurityTrustUrl(this.mapsrc);
               }
 
+
+    pairData(field) {
+        let d = Object.values(this.data[field].fields)
+        let res = []
+        for (let i = 0; i < d.length; i += 2) {
+            if (d[i+1] == undefined) {
+                res.push([d[i]])
+                continue
+            }
+            res.push([d[i], d[i+1]])
+        }
+        return res;
+    }
+    ForceShowTableHideMore() {
+        console.log("clicked")
+        this.forceTable = true;
+    }
+    
+    
   ngOnInit() {
     this.id=parseInt(this.route.snapshot.paramMap.get('id'));
     console.log("this id is : ",this.id);
@@ -47,6 +100,10 @@ export class LdetailsComponent implements OnInit,PipeTransform {
        console.log("Parking",res2);
        this.parking=res2;
      //  return(this.inHouse);
+     for (let item of ['parking', 'garage', 'elevator', 'cave', 'garden']) {
+         this.parking[0][item] ? this.data.info.fields[item] = "Oui" : this.data.info.fields[item] = "Non"
+     }
+     /*
      if(this.parking[0].parking == true){
       this.park="Oui";
         }else{
@@ -74,6 +131,7 @@ export class LdetailsComponent implements OnInit,PipeTransform {
         }else{
             this.garden="Oui";
         }
+        */
      });
      
     this._service.getStationNM(this.id)
@@ -97,5 +155,4 @@ export class LdetailsComponent implements OnInit,PipeTransform {
     return this.sanitizer.bypassSecurityTrustUrl(this.mapsrc);
    }
   
-
 }
