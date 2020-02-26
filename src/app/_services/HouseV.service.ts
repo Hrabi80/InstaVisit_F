@@ -23,6 +23,15 @@ export class HouseVService{
     deleteHouse(id){
         return this._http.get(this._url + '/delete/'+id);
     }
+    getHouseInfo(id){
+        return this._http.get(this._url+'/getHouseInfo/'+id);
+    }
+    updateHouseInfo(id,data){
+        return this._http.put(this._url+'/updateHouseInfo/'+id,data);
+    }
+    updateIMG(id,data){
+        return this._http.put(this._url+'/updateIMG/'+id,data);
+    }
     AddHV(data){
         return this._http.post(this._url + '/AddHouse', data , {reportProgress:true , observe:'events'});
     }

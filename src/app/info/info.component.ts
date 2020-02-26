@@ -20,7 +20,7 @@ export class InfoComponent implements OnInit {
 
   ngOnInit() {
     this.id = parseInt(this.route.snapshot.paramMap.get('id'));
-    console.log(this.id)
+    console.log(this.id);
   
 
   this.form = this._fb.group({

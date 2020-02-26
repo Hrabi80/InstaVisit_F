@@ -111,7 +111,7 @@ export class NewHVComponent implements OnInit {
   newHV(){
     const uploadData = new FormData();
     uploadData.append('mainIMG', this.form.get('mainIMG').value);
-    uploadData.append('cover', this.form.get('cover').value)
+    uploadData.append('cover', this.form.get('cover').value);
     uploadData.append('adress', this.form.get('adress').value);
     uploadData.append('city', this.opt);
     uploadData.append('description', this.form.get('description').value);

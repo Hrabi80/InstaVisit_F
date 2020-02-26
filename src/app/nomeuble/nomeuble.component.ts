@@ -23,7 +23,7 @@ export class NOMeubleComponent implements AfterViewInit, OnInit {
   dataSource = [];
   td = [{id:1, name: 'korba', adress: '14 Rue Tunis', surface: 500 ,price: 50.000}]
 
-  displayedColumns = ['id', 'name','adress','surface','price','car','ss'];
+  displayedColumns = ['id', 'name','adress','surface','price','car','update','ss'];
   constructor(private _service: HouseLService,){}
   ngOnInit() {
     return this._service.getData().subscribe((app:any) => {     

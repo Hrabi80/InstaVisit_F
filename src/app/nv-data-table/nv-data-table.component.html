@@ -32,7 +32,13 @@
           </form>
         </td> 
     </ng-container>  
-   
+    <ng-container matColumnDef="update">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>update</th>
+       <td mat-cell *matCellDef="let dataSource"><form>
+          <a class="btn-floating btn-small waves-effect waves-light yellow" routerLink="/dashboard/updateV/+{{dataSource.id}}"><i class="material-icons">add</i></a>
+        </form>
+      </td> 
+  </ng-container>
     <ng-container matColumnDef="ss">
       <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
        <td mat-cell *matCellDef="let dataSource"> <button (click)="delete(dataSource.id)"class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">delete</i></button></td> 
