@@ -112,7 +112,78 @@
 <div class="sec3">
     <div class="row">
         <div class="col s8">
-            <h6>Caractéristiques</h6>
+
+
+            <div class="u-container">
+                <div class="u-table">
+                    <div class="u-table-head">
+                        {{data.info.title}}
+                    </div>
+                    <div (click)="ForceShowTableHideMore('info')" [class.force-hide]="forceTable['first']" class="u-table-view-more">
+                        {{data.info.more}}
+                    </div>
+                    <div class="u-table-body" [class.force-show]="forceTable['info']">
+                        <!--We format data.info fields into a [[],[],[]] Array-->
+                        <div *ngFor="let row of pairData('info'); index as i;" class="u-table-row">
+                            <!-- Iterate over each small area of values and titile-->
+                            <div *ngFor="let item of row" [class.greyed-out]="item.value == 'Non'" class="u-table-item">
+                                <div class="u-table-item-text">
+                                    {{item.title}}
+                                </div>
+                                <div class="u-table-item-data">
+                                    {{item.value}}
+                                </div>
+            
+                            </div>
+            
+                        </div>
+            
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 20px;" class="u-container">
+                <ng-container *ngFor="let field of ['equipment', 'cuisine', 'ameublement']">
+                    <div 
+                    *ngIf="field == 'equipment' || forceTable['equipment']"
+                    class="u-table-many">
+                        <div class="u-table-head">
+                            {{data[field].title}}
+                        </div>
+                        
+                        <div class="u-table-body-many" >
+                            <!--We format data.info fields into a [[],[],[]] Array-->
+                            <div *ngFor="let row of pairData(field); index as i;" class="u-table-row-many">
+                                <!-- Iterate over each small area of values and titile-->
+                                <div *ngFor="let item of row" [class.greyed-out]="item.value == 'Non'" class="u-table-item-many">
+                                    <div class="u-table-item-icon">
+                                        <i class="material-icons">{{item.icon}}</i>
+                                    </div>
+                                    <div class="u-table-item-text">
+                                        {{item.title}}
+                                    </div>
+                                    <div class="u-table-item-data-many">
+                                        {{item.value}}
+                                    </div>
+                
+                                </div>
+                
+                            </div>
+                
+                        </div>
+                    </div>
+                </ng-container>
+                <div (click)="ForceShowTableHideMore('equipment')"  class="u-table-view-more-many">
+                    {{data.equipment.more}}
+                </div>
+            </div>
+
+
+
+
+
+
+            <!--
+            <h4>Caractéristiques</h4>
 
             <table class="striped highlight responsive-table">
                 <thead>
@@ -172,7 +243,7 @@
                 </tbody>
             </table>
 
-            <!--EQUIPEMENT DANS LOUER-->
+            EQUIPEMENT DANS LOUER
 
             <table class="striped highlight responsive-table">
                 <thead>
@@ -261,8 +332,8 @@
             </table>
 
 
-            <!--EQUIPEMENT DANS LOUER-->
-            <!-- Cuisine II-->
+            EQUIPEMENT DANS LOUER
+             Cuisine II
             <table class="striped highlight responsive-table">
                 <thead>
                     <tr>
@@ -346,8 +417,8 @@
                     </tr>
                 </tbody>
             </table>
-            <!-- Cuisine II-->
-            <!--Couchage-->
+             Cuisine II
+            Couchage
             <table class="striped highlight responsive-table">
                 <thead>
                     <tr>
@@ -436,12 +507,10 @@
                     </tr>
                 </tbody>
             </table>
-            <!-- Couchage-->
-
+             Couchage
+            -->
         </div>
-        <div class="col s4">
-
-        </div>
+        
     </div>
 </div>
 
@@ -471,7 +540,7 @@
                     }
                 </style>
             </div>
-            <!-- Secial 20% Discount for Elegant Themes Divi Page Builder https://www.embedgooglemap.net/divi-sale/ -->
+           
 
             <br> <br>
 
