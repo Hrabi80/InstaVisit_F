@@ -267,3 +267,16 @@ footer{
   }}
   
   /* TEST NEW FOOTER */
+
+  td.table-text-item {
+      width: 40%;
+      
+  }
+  .td-icon-text {
+      width: 100%;
+      display: flex;
+      align-items: center;
+  }
+  .td-icon-text  i {
+      margin-right: 6px;
+  }
