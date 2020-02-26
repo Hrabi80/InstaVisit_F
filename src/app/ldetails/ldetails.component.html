@@ -1,33 +1,32 @@
-
 <!--COVER SECTION-->
 
- 
-<div class="card special"  data-offset-bottom="700" data-offset-top="0" data-spy="affix">
+
+<div class="card special" data-offset-bottom="700" data-offset-top="0" data-spy="affix">
     <div class="card-content">
-      <p><span style="font-size: 1.4rem;font-weight: bold; color:orangered;">{{info.adress}}, {{info.city}} </span>
-          <br><br>
-          ref. INV000{{info.id}} <br><br>
-         <span style="font-size: 1.1rem ; font-weight : bold;"> {{info.price}} dt </span>(dont 000 DT de charges)<br>
-         </p>
+        <p><span style="font-size: 1.4rem;font-weight: bold; color:orangered;">{{info.adress}}, {{info.city}} </span>
+            <br><br>
+            ref. INV000{{info.id}} <br><br>
+            <span style="font-size: 1.1rem ; font-weight : bold;"> {{info.price}} dt </span>(dont 000 DT de charges)<br>
+        </p>
     </div>
-   <div class="row">
-     <div class="col">&nbsp;&nbsp;
-      <a class=" mycard waves-effect waves-light btn grey">S + {{info.room_nb}}</a>
-     </div>
-     <div class="col">
-      <a class="mycard waves-effect waves-light btn grey">{{info.surface}} m²</a>
-     </div>
-   </div>
-   &nbsp;&nbsp;&nbsp;&nbsp;
-   Disponibilité : Immédiate<br><br>
-  </div>
-  <div class="cover">
-      <a class="coverA waves-effect waves-light btn-large blue" routerLink="/nav/VirtuelTour">
-          <i class="material-icons left">add_a_photo</i>
-          Voir les photos,les videos et la visite virtuelle
-        </a>
-  <img src="http://127.0.0.1:8000/images/houses/{{info.cover}}">
-  
+    <div class="row">
+        <div class="col">&nbsp;&nbsp;
+            <a class=" mycard waves-effect waves-light btn grey">S + {{info.room_nb}}</a>
+        </div>
+        <div class="col">
+            <a class="mycard waves-effect waves-light btn grey">{{info.surface}} m²</a>
+        </div>
+    </div>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    Disponibilité : Immédiate<br><br>
+</div>
+<div class="cover">
+    <a class="coverA waves-effect waves-light btn-large blue" routerLink="/nav/VirtuelTour">
+        <i class="material-icons left">add_a_photo</i>
+        Voir les photos,les videos et la visite virtuelle
+    </a>
+    <img src="http://127.0.0.1:8000/images/houses/{{info.cover}}">
+
 </div>
 <!--OLD COVER
 <div class="cover" style="background-image: url('http://127.0.0.1:8000/images/houses/{{info.mainIMG}}');">
@@ -41,293 +40,343 @@
         
       </div>
 -->
-    
-    
-    <!--CARD SECTION-->
-    <br>
-    <div class="row">
-      <div class="col s5 m5">
-        <!-- <div class="row"> -->
-            <!--<div class="col s7"> --> 
-                <h5> Maison à louer d'un S+{{info.room_nb}}  au {{info.adress}}, {{info.city}} </h5>
-    
-                 <h6>le logement</h6>
-    
-                 <p>
-                    {{info.description}}
-                 </p><br>
-                 <p>
-                  {{info.description2}}
-               </p><br>
-               <p>
-                {{info.description3}}
-             </p>
-                 <p>
-    
-        
-        A  visiter sur InstaVisit.com
-    
-                 </p>
-               </div>
-               <br>
-               <br>
-               <br>
-               <br>
-               <br>
-               <br>
-               <br>
-               <br>
-               <div class="col s3 m3">
-                 <!-- <div class="row"> -->
-                         
-                          <div class="card-panel ">
-                            
-                              <img src="assets/img/Nada.jpg">
-    
-                            <span class="white-text">
-                              <br> <br> 
-                              Présenté par<span class="orange-text" style="font-weight: bold;"> Aymen Hamda </span> <br>
-                              Votre expert immobilier <br>
-                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                              &nbsp;&nbsp;&nbsp;&nbsp;@InstaVisit
-                            </span><br> <br>
-                            <i class="small material-icons left"  style="font-weight: bold; color:white;">phone </i>
-                             <span class="white-text" style="font-weight: bold;color:white;font-size: 22px; ">50 808 080</span>
-                          </div>
-                      
-                     
-                    </div>
-             <!--<div>  </div>-->  
-           
-    
-             <div class="col s4 m4">
-                Empty space
-            </div>  
-      </div>
-       
-    
-    <!---->
-    <!--CARACTERSITIC SECTION-->
-    <div class="sec3">
-    <div class="row">
-      <div class="col s8">
-          <h6>Caractéristiques</h6>
-          <table class="striped highlight responsive-table">
-            <thead>
-              <tr>
-                  <th class="tableS">Informations essentielles</th>
-                  <th></th>
-                  <th></th>
-              </tr>
-            </thead>
-    
-            <tbody>
-            
-            <tr>
-                <td class="gras able-text-item">Cave</td>
-            
-                <td>
-                    {{cave}}
-            
-                </td>
-                <td class="table-text-item" style="font-size: 1.4rem;text-transform: capitalize;">
-                    <span>Gardienne</span></td>
-            
-            
-            
-                <td>
-                    {{garden}}
-            
-                </td>
-            </tr>
-            <tr>
-                <td class="gras table-text-item">Étage</td>
-                <td>
-                    {{parking[nb].etage}}
-                </td>
-            
-                <td class="table-text-item" style="font-size: 1.4rem;text-transform: capitalize;">
-                    Ascenseur</td>
-                <td>
-                    {{elevator}}
-            
-                </td>
-            </tr>
-            <tr>
-                <td class="gras table-text-item">Box/Garage</td>
-                <td>
-                    {{garage}}
-            
-                </td>
-            
-                <td class="table-text-item" style="font-size: 1.4rem;text-transform: capitalize;">
-                    Parking</td>
-                <td>
-                    {{park}}
-            
-                </td>
-            </tr>
-            </tbody>
-          </table>
-    
-      </div>
-      <div class="col s4">
-      
-      </div>
-    </div>
-    </div>
-    
-    
-    <div class="sec4">
-        <div class="row">
-          <div class="col s8">
-              <h6>Environnement </h6>
-              <div class="mapouter">
-                  <div class="gmap_canvas">
-                  <iframe width="1100" height="500" id="gmap_canvas" 
-                  [src]='sanitizer.bypassSecurityTrustResourceUrl(mapsrc)' frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.maps-erstellen.de"></a></div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>
-                <!-- Secial 20% Discount for Elegant Themes Divi Page Builder https://www.embedgooglemap.net/divi-sale/ -->
-    
-      <br> <br>
-    
-    
-      <table class="striped highlight responsive-table">
-          <thead>
-            <tr>
-                <th> <i class="material-icons">directions_bus</i>
-                    Bus</th>
-                <th>  <i class="material-icons">directions_railway</i>
-                  Metro</th>
-                <th> <i class="material-icons">directions_subway</i>
-                  Train</th>
-            </tr>
-          </thead>
-    
-          <tbody>
-            <tr>
-                
-              <td>
-                  <i class="material-icons">pin_drop</i>
-                  {{rows[nb].BusST}}	
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;
-                    <span style="font-size: 1.4rem;text-transform: capitalize;">
-                        {{rows[nb].Bus}} m</span> 	
-                </td>
-              <td><i class="material-icons">pin_drop</i>
-                {{rows[nb].metroST}}   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                  &nbsp;&nbsp;
-                  <span style="font-size: 1.4rem;text-transform: capitalize;"> 
-                          
-                      {{rows[nb].metro}} m </span></td>
-              <td><i class="material-icons">pin_drop</i>
-                {{rows[nb].trainST}}</td>
-                <td>{{rows[nb].train}} M</td>
-            </tr>
-            <tr>
-              <td>
-                  
-                  <i class="material-icons">local_car_wash</i>&nbsp;&nbsp;Louage
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;
-              </td>
-              <td> </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="gras">
 
-                  <i class="material-icons">pin_drop</i> 
-                  {{rows[nb].louageST}}
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;
-                    <span style="font-size: 1.4rem;text-transform: capitalize;"> 
-                      {{rows[nb].louage}}</span>
-                  
-               </td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-    
-    
-    
-      </div>
-      <div class="col s4">
+
+<!--CARD SECTION-->
+<br>
+<div class="row">
+    <div class="col s5 m5">
+        <!-- <div class="row"> -->
+        <!--<div class="col s7"> -->
+        <h5> Maison à louer d'un S+{{info.room_nb}} au {{info.adress}}, {{info.city}} </h5>
+
+        <h6>le logement</h6>
+
+        <p>
+            {{info.description}}
+        </p><br>
+        <p>
+            {{info.description2}}
+        </p><br>
+        <p>
+            {{info.description3}}
+        </p>
+        <p>
+
+
+            A visiter sur InstaVisit.com
+
+        </p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="col s3 m3">
+        <!-- <div class="row"> -->
+
+        <div class="card-panel ">
+
+            <img src="assets/img/Nada.jpg">
+
+            <span class="white-text">
+                <br> <br>
+                Présenté par<span class="orange-text" style="font-weight: bold;"> Aymen Hamda </span> <br>
+                Votre expert immobilier <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;@InstaVisit
+            </span><br> <br>
+            <i class="small material-icons left" style="font-weight: bold; color:white;">phone </i>
+            <span class="white-text" style="font-weight: bold;color:white;font-size: 22px; ">50 808 080</span>
+        </div>
+
+
+    </div>
+    <!--<div>  </div>-->
+
+
+    <div class="col s4 m4">
         Empty space
-      </div>
-    </div> 
-    </div>   
-    
-    
-    
-      <!-- Site footer -->
-               <!--FOOTER-->
-  <footer class="footer-distributed">
- 
-      <div class="footer-left">
-   
-      <h3>Insta<span>Visit</span></h3>
-   
-      <p class="footer-links">
-      <a href="#">Home</a>
-    ·
-      <a href="#">Blog</a>
-    ·
-      <a href="#">Pricing</a>
-    ·
-      <a href="#">About</a>
-    ·
-      <a href="#">Faq</a>
-    ·
-      <a href="#">Contact</a>
-      </p>
-   
-      <p class="footer-company-name">InstaVisit &copy; 2019</p>
-      <br>
-      <p class="footer-company-name">Powred by Digita</p> 
-      </div>
-   
-      <div class="footer-center">
-   
-      <div>
-      <i class="fa fa-map-marker"></i>
-      <p><span>21 XXXX Street</span> YYY, Tunis</p>
-      </div>
-   
-      <div>
-      <i class="fa fa-phone"></i>
-      <p>+216 555 123 456</p>
-      </div>
-   
-      <div>
-      <i class="fa fa-envelope"></i>
-      <p><a href="mailto:support@company.com">contact@InstaVisit.com</a></p>
-      </div>
-   
-      </div>
-   
-      <div class="footer-right">
-   
-      <p class="footer-company-about">
-      <span>About the company</span>
-      une agence immobilière dont les  processus de location et de vente  se font en ligne 
-     &amp; .
-      </p>
-   
-      <div class="footer-icons">
-   
-      <a href="#"><i class="fa fa-facebook"></i></a>
-      <a href="#"><i class="fa fa-twitter"></i></a>
-      <a href="#"><i class="fa fa-linkedin"></i></a>
-      <a href="#"><i class="fa fa-github"></i></a>
-   
-      </div>
-   
-      </div>
-   
-      </footer>
-  
-   <!--   /TEST NEW FOOTER-->   
+    </div>
+</div>
+
+
+
+<!--CARACTERSITIC SECTION
+<div class="sec3">
+    <div class="row">
+        <div class="col s8">
+            <h6>Caractéristiques</h6>
+            <table class="striped highlight responsive-table">
+                <thead>
+                    <tr>
+                        <th class="tableS">Informations essentielles</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    
+                    <tr>
+                        <td class="gras able-text-item">Cave</td>
+
+                        <td>
+                            {{cave}}
+
+                        </td>
+                        <td class="table-text-item" style="font-size: 1.4rem;text-transform: capitalize;">
+                            <span>Gardienne</span></td>
+
+
+
+                        <td>
+                            {{garden}}
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="gras table-text-item">Étage</td>
+                        <td>
+                           {{parking[nb].etage}}
+                        </td>
+
+                        <td class="table-text-item" style="font-size: 1.4rem;text-transform: capitalize;">
+                            Ascenseur</td>
+                        <td>
+                            {{elevator}}
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="gras table-text-item">Box/Garage</td>
+                        <td>
+                            {{garage}}
+
+                        </td>
+
+                        <td class="table-text-item" style="font-size: 1.4rem;text-transform: capitalize;">
+                            Parking</td>
+                        <td>
+                            {{park}}
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <div class="col s4">
+
+        </div>
+    </div>
+</div>
+-->
+<div class="sec3">
+    <div class="row">
+        <div class="col s8">
+            <div class="u-container">
+                <div class="u-table">
+                    <div class="u-table-head">
+                        {{data.info.title}}
+                    </div>
+                    <div (click)="ForceShowTableHideMore()" [class.force-hide]="forceTable" class="u-table-view-more">
+                        {{data.info.more}}
+                    </div>
+                    <div class="u-table-body" [class.force-show]="forceTable">
+                        <!--We format data.info fields into a [[],[],[]] Array-->
+                        <div *ngFor="let row of pairData('info'); index as i;" class="u-table-row">
+                            <!-- Iterate over each small area of values and titile-->
+                            <div *ngFor="let item of row" [class.greyed-out]="item.value == 'Non'" class="u-table-item">
+                                <div class="u-table-item-text">
+                                    {{item.title}}
+                                </div>
+                                <div class="u-table-item-data">
+                                    {{item.value}}
+                                </div>
+
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="sec4">
+    <div class="row">
+        <div class="col s8">
+            <h6>Environnement </h6>
+            <div class="mapouter">
+                <div class="gmap_canvas">
+                   <iframe width="1100" height="500" id="gmap_canvas"
+                        [src]='sanitizer.bypassSecurityTrustResourceUrl(mapsrc)' frameborder="0" scrolling="no"
+                        marginheight="0" marginwidth="0"></iframe><a href="https://www.maps-erstellen.de"></a></div>
+                <style>
+                    .mapouter {
+                        position: relative;
+                        text-align: right;
+                        height: 500px;
+                        width: 600px;
+                    }
+
+                    .gmap_canvas {
+                        overflow: hidden;
+                        background: none !important;
+                        height: 500px;
+                        width: 600px;
+                    }
+                </style>
+            </div>
+           
+
+            <br> <br>
+
+
+            <table class="striped highlight responsive-table">
+                <thead>
+                    <tr>
+                        <th> <i class="material-icons">directions_bus</i>
+                            Bus</th>
+                        <th> <i class="material-icons">directions_railway</i>
+                            Metro</th>
+                        <th> <i class="material-icons">directions_subway</i>
+                            Train</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+
+                        <td>
+                            <i class="material-icons">pin_drop</i>
+                            {{rows[nb].BusST}}
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;
+                            <span style="font-size: 1.4rem;text-transform: capitalize;">
+                                {{rows[nb].Bus}} m</span>
+                        </td>
+                        <td><i class="material-icons">pin_drop</i>
+                            {{rows[nb].metroST}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;
+                            <span style="font-size: 1.4rem;text-transform: capitalize;">
+
+                                {{rows[nb].metro}} m </span></td>
+                        <td><i class="material-icons">pin_drop</i>
+                            {{rows[nb].trainST}}</td>
+                        <td>{{rows[nb].train}} M</td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                            <i class="material-icons">local_car_wash</i>&nbsp;&nbsp;Louage
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;
+                        </td>
+                        <td> </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="gras">
+
+                            <i class="material-icons">pin_drop</i>
+                            {{rows[nb].louageST}}
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;
+                            <span style="font-size: 1.4rem;text-transform: capitalize;">
+                                {{rows[nb].louage}}</span>
+
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+        </div>
+        <div class="col s4">
+            Empty space
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Site footer -->
+<!--FOOTER-->
+<footer class="footer-distributed">
+
+    <div class="footer-left">
+
+        <h3>Insta<span>Visit</span></h3>
+
+        <p class="footer-links">
+            <a href="#">Home</a>
+            ·
+            <a href="#">Blog</a>
+            ·
+            <a href="#">Pricing</a>
+            ·
+            <a href="#">About</a>
+            ·
+            <a href="#">Faq</a>
+            ·
+            <a href="#">Contact</a>
+        </p>
+
+        <p class="footer-company-name">InstaVisit &copy; 2019</p>
+        <br>
+        <p class="footer-company-name">Powred by Digita</p>
+    </div>
+
+    <div class="footer-center">
+
+        <div>
+            <i class="fa fa-map-marker"></i>
+            <p><span>21 XXXX Street</span> YYY, Tunis</p>
+        </div>
+
+        <div>
+            <i class="fa fa-phone"></i>
+            <p>+216 555 123 456</p>
+        </div>
+
+        <div>
+            <i class="fa fa-envelope"></i>
+            <p><a href="mailto:support@company.com">contact@InstaVisit.com</a></p>
+        </div>
+
+    </div>
+
+    <div class="footer-right">
+
+        <p class="footer-company-about">
+            <span>About the company</span>
+            une agence immobilière dont les processus de location et de vente se font en ligne
+            &amp; .
+        </p>
+
+        <div class="footer-icons">
+
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-github"></i></a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<!--   /TEST NEW FOOTER-->
