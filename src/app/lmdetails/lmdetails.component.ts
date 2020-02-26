@@ -46,12 +46,177 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
   microonde: string;
   mapsrc:string;
   mapsrc1:any;
+    data = {
+        info: {
+            title: "Informations essentielles",
+            more: "> Afficher le détail des informations",
+            fields: {
+                cave: {
+                    title: "Cave",
+                    value: "Oui"
+                },
+                garden: {
+                    title: "Gardienne",
+                    value: "Non"
+                },
+                etage: {
+                    title: "Étage",
+                    value: "1"
+                },
+                elevator: {
+                    title: "Ascenseur",
+                    value: "Oui"
+                },
+                garage: {
+                    title: "Box/Garage",
+                    value: "Oui"
+                },
+                park: {
+                    title: "Parking",
+                    value: "Non"
+                }
+            }
+
+        },
+        equipment: {
+            title: "Équipement",
+            more: "> Afficher l’ensemble des équipements",
+            less: "> Cacher l’ensemble des équipements",
+            fields: {
+                toilette: {
+                    title: "Toilettes séparés",
+                    value: "Non",
+                    icon: "wc"
+                },
+                lavelange: {
+                    title: "Lave-linge",
+                    value: "Oui",
+                    icon: "speaker"
+                },
+                interphone: {
+                    title: "Interphone",
+                    value: "Non",
+                    icon: "chrome_reader_mode"
+                },
+                machine: {
+                    title: "Rac. machine",
+                    value: "Oui",
+                    icon: "highlight"
+                },
+                internet: {
+                    title: "Raccordement internet",
+                    value: "Non",
+                    icon: "wifi"
+                },
+                boite: {
+                    title: "Boite aux lettres",
+                    value: "Non",
+                    icon: "drafts"
+                }
+            }
+        },
+        cuisine: {
+            title: "Cuisine",
+            more: false,
+            fields: {
+                four: {
+                    title: "Four",
+                    value: "Non",
+                    icon: "vignette",
+                },
+                plaque: {
+                    title: "Plaque",
+                    value: "Non",
+                    icon: "border_all"
+                },
+                lave: {
+                    title: "Lave vaisselle",
+                    value: "Non",
+                    icon: false
+                },
+                congelateur: {
+                    title: "Congélateur",
+                    value: "Non",
+                    icon: "ac_unit"
+                },
+                microonde: {
+                    title: "Micro-ondes",
+                    value: "Non",
+                    icon: "local_cafe"
+                },
+                refri: {
+                    title: "Réfrigérateur",
+                    value: "Non",
+                    icon: "kitchen"
+                }
+            }
+        },
+        ameublement: {
+            title: "Ameublement",
+            more: false,
+            fields: {
+                lit: {
+                    title: "Lit",
+                    value: "1",
+                    icon: "airline_seat_individual_suite"
+                },
+                dressing: {
+                    title: "Dressing",
+                    value: "Oui",
+                    icon: false
+                },
+                canape: {
+                    title: "Canapé",
+                    value: "Oui",
+                    icon: "weekend"
+                },
+                chaise: {
+                    title: "Chaise",
+                    value: "Oui",
+                    icon: "airline_seat_legroom_normal"
+                },
+                table: {
+                    title: "Table",
+                    value: "Non",
+                    icon: "airline_seat_recline_normal"
+                },
+                tv: {
+                    title: "TV",
+                    value: "Oui",
+                    icon: "tv"
+                }
+            }
+        }
+    }
+    forceTable = {
+        info: false,
+        equipement: false,
+    }
   constructor(private route: ActivatedRoute,
               private _service : LoutputService,
               public sanitizer: DomSanitizer,    
              ) 
    {this.mapsrc1 = sanitizer.bypassSecurityTrustUrl(this.mapsrc); }
+    pairData(field) {
+        let d = Object.values(this.data[field].fields)
+        let res = []
+        for (let i = 0; i < d.length; i += 2) {
+            if (d[i + 1] == undefined) {
+                res.push([d[i]])
+                continue
+            }
+            res.push([d[i], d[i + 1]])
+        }
+        return res;
+    }
 
+    ForceShowTableHideMore(v) {
+
+        this.forceTable[v] = !this.forceTable[v];
+    }
+    
+    
+    
   ngOnInit() {
     this.id=parseInt(this.route.snapshot.paramMap.get('id'));
     console.log("this id is : ",this.id);
@@ -67,6 +232,10 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
        console.log("Parking",res2);
        this.parking=res2;
        console.log("HEEEEEEEEEEEEEEEY");
+        for (let item of ['parking', 'garage', 'elevator', 'cave', 'garden']) {
+            this.parking[0][item] ? this.data.info.fields[item] = "Oui" : this.data.info.fields[item] = "Non"
+        }
+        /*
        if(this.parking[0].parking == true){
         this.park="Oui";
           }else{
@@ -96,6 +265,7 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
           }
   console.log("Eyppppppppppp");
      //  return(this.inHouse);
+     */
      });
      
     this._service.getStation(this.id)
@@ -119,6 +289,12 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
       console.log("Equip",res5);
       this.Eqp=res5;
     //  return(this.inHouse);
+        for (let item of ['toilette', 'internet', 'interphone', 'machine', 'boite', 'lavelange']) {
+            this.Eqp[0][item] ? this.data.equipment.fields[item] = "Oui" : this.data.equipment.fields[item] = "Non"
+        }
+
+        
+        /*
       if(this.Eqp[0].toilette == true){
           this.toilette="Oui";
       }else{
@@ -159,13 +335,17 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
       }else{
           this.lave = "Non";
       }
+      */
     });
     
    this._service.getCuisine(this.id)
     .subscribe((res6:Array<any>)=>{
       console.log("Cuisine",res6);
       this.Cuisine = res6;  
-
+        for (let item of ['four', 'refri', 'microonde', 'congelateur', 'plaque', 'lave']) {
+            this.Cuisine[0][item] ? this.data.cuisine.fields[item] = "Oui" : this.data.cuisine.fields[item] = "Non"
+        }
+        /*
       if(this.Cuisine[0].four == true){
           this.four = "Oui";
       }else{
@@ -196,6 +376,7 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
       }else{
         this.plaque ="Non";
       }
+      */
     });
     this._service.getAmeubl(this.id)
     .subscribe((res7:Array<any>)=>{
@@ -221,7 +402,7 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
   transform() {
     return this.sanitizer.bypassSecurityTrustUrl(this.mapsrc);
    }
-
+   
   
 
 }
