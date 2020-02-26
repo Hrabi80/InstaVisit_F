@@ -76,6 +76,9 @@ import { InfoNmComponent } from './info-nm/info-nm.component';
 import { LouernmComponent } from './louernm/louernm.component';
 import { LdetailsComponent } from './ldetails/ldetails.component';
 import { SafePipe } from './safe.pipe';
+import { UpdatevComponent } from './updatev/updatev.component';
+import { UpdatelmComponent } from './updatelm/updatelm.component';
+import { UpdatelnmComponent } from './updatelnm/updatelnm.component';
 
 
 
@@ -117,6 +120,9 @@ import { SafePipe } from './safe.pipe';
     LouernmComponent,
     LdetailsComponent,
     SafePipe,
+    UpdatevComponent,
+    UpdatelmComponent,
+    UpdatelnmComponent,
    
     // Filter2Pipe
   ],

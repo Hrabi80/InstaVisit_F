@@ -31,6 +31,9 @@ import { LmdetailsComponent } from './lmdetails/lmdetails.component';
 import { InfoNmComponent } from './info-nm/info-nm.component';
 import { LouernmComponent } from './louernm/louernm.component';
 import { LdetailsComponent } from './ldetails/ldetails.component';
+import { UpdatevComponent } from './updatev/updatev.component';
+import { UpdatelmComponent } from './updatelm/updatelm.component';
+import { UpdatelnmComponent } from './updatelnm/updatelnm.component';
 const routes: Routes = [
   
   {
@@ -86,6 +89,19 @@ const routes: Routes = [
         path: 'infoNM/:id',
         component: InfoNmComponent,   
       },
+      {
+        path: 'updateV/:id',
+        component: UpdatevComponent,   
+      },
+      {
+        path: 'updateLM/:id',
+        component: UpdatelmComponent,   
+      },
+      {
+        path: 'updateLNM/:id',
+        component: UpdatelnmComponent,   
+      },
+      
       {
         path: 'newsletter',
         component: NewsletterComponent,   
