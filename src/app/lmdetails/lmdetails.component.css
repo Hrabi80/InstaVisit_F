@@ -57,15 +57,7 @@ h5{
   .col{
       margin:0px !important;
   }
-  img{
-      border-radius: 50%;
-      height: 130px;
-      width: 130px;
-      margin-left: 43px;
-      margin-top: -70px;
-      border: 5px solid #eee;
-      box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
-  }
+  
   .card-panel{
     background-color: rgb(10, 131, 230);
     width: 88%;
@@ -265,6 +257,61 @@ footer{
     line-height: normal;
     font-size: auto;
   }}
+  .u-description-headlines {
+      max-width: 760px;
+      margin: 0 auto 20px auto;
+
+  }
+  .u-description-headlines h6, .u-description-headlines h5 {
+      margin: 20px 0 !important;
+      display: block;
+  }
+  .u-description-contact {
+      display: flex;
+      justify-content: space-between;;
+      align-items: center;
+      max-width: 760px;
+      margin: auto;
+  }
+  .u-descriptions {
+      display: flex;
+      flex-direction: column;
+      width: 55%;
+  }
+
+  .u-descriptions h5, .u-descriptions p {
+      margin: 4px 0;
+  }
+
+  .card-panel{
+    background-color: rgb(10, 131, 230);
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+  }
+
+   .card-panel img{
+      border-radius: 50%;
+      height: 130px;
+      width: 130px;
+      margin-top: -70px;
+      border: 5px solid #eee;
+      box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
+      display: block;
+      margin-bottom: 16px;
+  }
+
+  .card-panel-text {
+        text-align: center;
+        color: white;
+        margin-bottom: 16px;
+  }
+
+  .card-panel-phone {
+      display: flex;
+      align-items: center;
+  }
 
   th {
       font-size: 18px;
@@ -288,9 +335,9 @@ footer{
       margin-right: 6px;
   }
   /* TEST NEW FOOTER */
-  .u-container {
+.u-container {
       width: 100%;
-  }
+  }  
   .u-table, .u-table-many {
       margin: 0 auto;
       width: 100%;
@@ -344,7 +391,7 @@ footer{
       padding: 0 3px;
       
   }
-  .u-table-item.greyed-out {
+  .greyed-out {
       color: grey;
   }
   .u-table-item-text {
@@ -367,6 +414,23 @@ footer{
       width: 12%;
       min-width: 36px;
       text-align: center;
+  }
+  .u-table-head.stations {
+      display: flex;
+      background-color: white;
+  }
+  .u-table-head-item  {
+      display: flex;
+      justify-content: flex-start;;
+      width: 50%;
+      
+
+  }
+  .u-table-head-item .u-button {
+      display: flex;
+      padding: 0.5em;
+      border-radius: 12px;
+      background-color: #F4F6F9;
   }
   
 
@@ -409,4 +473,31 @@ footer{
       font-size: 13px;
       
   }
+  
+  }
+
+  @media only screen and (max-width: 890px) {
+      .col.s8 {
+          width: 100% !important;
+      }
+    .card.special {
+        display: none;
+    }
+    .u-description-contact {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .u-descriptions {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+    .card-panel {
+        width: 100%
+    }
+
+    .u-container {
+        width: 90%;
+        margin: 0 auto;
+    }
   }

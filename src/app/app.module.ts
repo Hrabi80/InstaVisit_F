@@ -79,6 +79,8 @@ import { SafePipe } from './safe.pipe';
 import { UpdatevComponent } from './updatev/updatev.component';
 import { UpdatelmComponent } from './updatelm/updatelm.component';
 import { UpdatelnmComponent } from './updatelnm/updatelnm.component';
+import { MobileOverviewComponent } from './comps/mobile-overview/mobile-overview.component';
+import { CommuteTableComponent } from './comps/commute-table/commute-table.component';
 
 
 
@@ -123,6 +125,8 @@ import { UpdatelnmComponent } from './updatelnm/updatelnm.component';
     UpdatevComponent,
     UpdatelmComponent,
     UpdatelnmComponent,
+    MobileOverviewComponent,
+    CommuteTableComponent,
    
     // Filter2Pipe
   ],

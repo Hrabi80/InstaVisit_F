@@ -30,67 +30,64 @@
 </div>
 
 <!--CARD SECTION-->
-<br>
+
+
+
+<app-mobile-overview [info]='info' ></app-mobile-overview>
+
 <div class="row">
-    <div class="col s5 m5">
-        <!-- <div class="row"> -->
-        <!--<div class="col s7"> -->
-        <h5> Maison à louer de S+{{info.room_nb}} au {{info.adress}}, 92000, {{info.city}} </h5>
 
-        <h6>le logement</h6>
-        <p>
-            {{info.description}}
-        </p>
-        <p>
-            {{info.description2}}
-        </p>
-        <p>
-            {{info.description3}}
-        </p>
-        <p>
-            {{info.description4}}
-        </p>
-        <p>
+    <div class="col s8">
+        <div class="u-container">
+            <div class="u-description-headlines">
+                <h5> Maison à louer de S+{{info.room_nb}} au {{info.adress}}, 92000, {{info.city}} </h5>
+                <h6>le logement</h6>
+            </div>
+            
+            <div class="u-description-contact">
+                <div class="u-descriptions">
+                    
+                    <p>
+                        {{info.description}}
+                    </p>
+                    <p>
+                        {{info.description2}}
+                    </p>
+                    <p>
+                        {{info.description3}}
+                    </p>
+                    <p>
+                        {{info.description4}}
+                    </p>
+                    <p>
+                        A visiter sur InstaVisit.com
+                    </p>
+                </div>
 
-            A visiter sur InstaVisit.com
-
-        </p>
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="col s3 m3">
-        <!-- <div class="row"> -->
-
-        <div class="card-panel ">
-
-            <img src="assets/img/Nada.jpg">
-
-            <span class="white-text">
-                <br> <br>
-                Présenté par<span class="orange-text" style="font-weight: bold;"> Aymen Hamda </span> <br>
-                Votre expert immobilier <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;@InstaVisit
-            </span><br> <br>
-            <i class="small material-icons left" style="font-weight: bold; color:white;">phone </i>
-            <span class="white-text" style="font-weight: bold;color:white;font-size: 22px; ">50 808 080</span>
+                <div class="card-panel ">
+                
+                    <img src="assets/img/Nada.jpg">
+                    <div class="card-panel-text">
+                        <div>Présenté par<span class="orange-text" style="font-weight: bold;"> Aymen Hamda </span></div>
+                        <div>Votre expert immobilier</div>
+                        <div>@InstaVisit</div>
+                
+                    </div>
+                
+                    <div class="card-panel-phone">
+                        <i class="small material-icons left" style="font-weight: bold; color:white;">phone </i>
+                        <span class="white-text" style="font-weight: bold;color:white;font-size: 22px; ">50 808 080</span>
+                
+                    </div>
+                
+                </div>
+            </div>
         </div>
 
-
+        
     </div>
-    <!--<div>  </div>-->
-
-
-    <div class="col s4 m4">
-        Empty space
-    </div>
+    
+    
 </div>
 
 
@@ -160,11 +157,11 @@
                     </div>
                 </ng-container>
                 <div (click)="ForceShowTableHideMore('equipment')"  class="u-table-view-more-many">
-                    {{data.equipment.more}}
+                    {{ forceTable['equipment'] ? data.equipment.less : data.equipment.more}}
                 </div>
             </div>
 
-
+            <app-commute-table [commute]='commute'></app-commute-table>
 
 
 
@@ -501,7 +498,7 @@
     </div>
 </div>
 
-
+<!--
 <div class="sec4">
     <div class="row">
         <div class="col s8">
@@ -600,7 +597,7 @@
         </div>
     </div>
 </div>
-
+-->
 
 
 <!-- Site footer -->

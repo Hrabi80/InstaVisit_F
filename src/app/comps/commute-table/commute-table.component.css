@@ -1,0 +1,71 @@
+
+.u-container {
+      width: 100%;
+  }  
+.u-commute {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      box-shadow: 0 15px 35px rgba(0,108,86,0.1), 0 5px 15px rgba(0,0,0,0.07);
+    -webkit-box-shadow: 0 15px 35px rgba(0,108,86,0.1), 0 5px 15px rgba(0,0,0,0.07);
+
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .one-commute-option {
+      width: 50%;
+      flex-direction: column;
+      padding: 0;
+  }
+  .commute-option-head {
+      min-height: 56px;
+      padding: 6px 12px;
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+  }
+  .commute-option-head .u-button {
+      padding: 8px;
+      display: flex;
+      align-items: center;
+      border-radius: 16px;
+      background: rgb(248, 114, 4);
+      color: white;
+  }
+
+  .commute-option-content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+  }
+  
+  .commute-option-item:nth-of-type(odd) {
+      background-color: white;
+  }
+
+  .commute-option-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 12px;
+      font-size: 16px;
+      font-weight: bold;
+      min-height: 40px;
+      
+  } 
+  .commute-option-item-distance {
+    white-space: nowrap;
+  }
+
+   @media only screen and (max-width: 600px) {
+    .commute-option-item {
+      font-size: 13px;
+    }
+   }
+
+   @media only screen and (max-width: 890px) {
+    .u-container {
+        width: 90%;
+        margin: 0 auto;
+    }
+   }

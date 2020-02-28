@@ -1,0 +1,23 @@
+<div style="margin-top: 20px;" class="u-container">
+    <div class="u-commute">
+        <div *ngFor="let item of gCommuteTable()" class="one-commute-option">
+            <div class="commute-option-head">
+                <div *ngIf="item.name" class="u-button">
+                    <i class="material-icons">{{item.icon}}</i>
+                    <span>{{item.name}}</span>
+                </div>
+
+            </div>
+            <div class="commute-option-content">
+
+                <div *ngFor="let commute of item.data" class="commute-option-item">
+
+                    <div class="commute-option-item-name">{{commute.name}}</div>
+                    <div class="commute-option-item-distance">{{commute.distance}} {{commute.distance ? " m": ""}}</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

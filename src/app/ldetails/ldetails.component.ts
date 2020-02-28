@@ -11,10 +11,51 @@ import { Pipe, PipeTransform} from '@angular/core';
 @Pipe({ name: 'safe' })
 export class LdetailsComponent implements OnInit,PipeTransform {
   id:number;
-  info:any=[];
+    info: any = {
+        room_nb: 0,
+        adress: "Mohammed V",
+        city: "Tunis",
+        description: "Flatlooker vous propose un charmant appartement T4 non meublé situé au Bourget.",
+        description2: "Le hall d'entrée donne accès aux différentes pièces de l'appartement et comporte un placard de rangement avec étagères. ",
+        description3: "La cuisine est ouverte et dispose d'une tablette de barre, d'un frigo américain, d'un four, d'un lave- vaisselle, d'une plaque de cuisson en dessous d'une hotte aspirante, ainsi que de plusieurs placards et tiroirs de rangements.",
+        description4: "Enfin, la troisième chambre de l'appartement, tout comme le salon, donne accès au balcon. ",
+        surface: "500",
+        price: "200"
+    };
+    commute = {
+        metro: {
+            name: "Metro",
+            icon: "directions_railway",
+            data: [{
+                name: "La Courneuve - 8 Mai 1945",
+                distance: "1830"
+            },
+            {
+                name: "Fort d'Aubervilliers",
+                distance: "2660"
+            }
+            ]
+        },
+        bus: {
+            name: "Bus",
+            icon: "directions_bus",
+            data: [{
+                name: "Rue de la Station",
+                distance: "320",
+            }],
+        },
+        train: {
+            name: "Train",
+            icon: "directions_subway",
+            data: [{
+                name: "Rue de la Station",
+                distance: "320",
+            }],
+        }
+    };
   station:any=[];
   parking : Array<any>=[{},{},{},{}];
-  rows: Array<any>;
+  rows: Array<any>=[{},{},{},{}];
   Map: Array<any>;
   nb :number=0;
   path:string;
@@ -83,8 +124,9 @@ export class LdetailsComponent implements OnInit,PipeTransform {
         console.log("clicked")
         this.forceTable = true;
     }
-    
-    
+        ngOnInit() {}
+        transform() {}
+    /*
   ngOnInit() {
     this.id=parseInt(this.route.snapshot.paramMap.get('id'));
     console.log("this id is : ",this.id);
@@ -131,9 +173,10 @@ export class LdetailsComponent implements OnInit,PipeTransform {
         }else{
             this.garden="Oui";
         }
-        */
+        
      });
      
+
     this._service.getStationNM(this.id)
      .subscribe((res3:Array<any>)=>{
        console.log("station",res3);
@@ -154,5 +197,5 @@ export class LdetailsComponent implements OnInit,PipeTransform {
   transform() {
     return this.sanitizer.bypassSecurityTrustUrl(this.mapsrc);
    }
-  
+  */
 }
