@@ -23,6 +23,20 @@ export class WelcomeComponent implements OnInit {
   radioSel:any;
   radioSelected:string;
   radioSelectedString:string;
+  activeStudent = 0;
+  activeSeller = 0;
+  allImages =  {
+      students: [
+          '/assets/img/students/student-01-angry.png',
+          '/assets/img/students/student-02-amazed.png',
+          '/assets/img/students/student-03-fabulous.png'
+      ],
+      seller: [
+          '/assets/img/seller/1st-seller-01.png',
+          '/assets/img/seller/2nd-seller-01.png',
+          '/assets/img/seller/3rd-seller-01.png'
+      ]
+  }
   constructor(private _service: VoutputService,
               private route: ActivatedRoute,
               private router: Router,
@@ -46,7 +60,7 @@ export class WelcomeComponent implements OnInit {
 
        
   }
- 
+  
 
   onItemChange(item) {
     
