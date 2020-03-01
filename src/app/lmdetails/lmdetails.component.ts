@@ -164,7 +164,7 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
                 lave: {
                     title: "Lave vaisselle",
                     value: "Non",
-                    icon: false
+                    icon: "bug"
                 },
                 congelateur: {
                     title: "Congélateur",
