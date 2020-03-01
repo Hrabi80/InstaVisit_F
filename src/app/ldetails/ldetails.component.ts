@@ -29,10 +29,6 @@ export class LdetailsComponent implements OnInit,PipeTransform {
             data: [{
                 name: "La Courneuve - 8 Mai 1945",
                 distance: "1830"
-            },
-            {
-                name: "Fort d'Aubervilliers",
-                distance: "2660"
             }
             ]
         },

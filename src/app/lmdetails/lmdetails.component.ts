@@ -24,34 +24,23 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
         price: "200"
     };
     commute = {
+        bus: {
+            name: "Bus",
+            icon: "directions_bus",
+            data: [{
+                name: "La Courneuve - 8 Mai 1945",
+                distance: "1830",
+            }
+            ]
+        },
         metro: {
             name: "Metro",
             icon: "directions_railway",
             data: [{ 
                 name: "La Courneuve - 8 Mai 1945",
-                distance: "1830"
-            },
-            {
-                name: "Fort d'Aubervilliers",
-                distance: "2660"
-            }
-            ]},
-        bus: {
-            name: "Bus",
-            icon: "directions_bus",
-            data: [{
-                name: "Rue de la Station",
-                distance: "320",
+                distance: "1830",
             }],
         },
-        train: {
-            name: "Train",
-            icon: "directions_subway",
-            data: [{
-                name: "Rue de la Station",
-                distance: "320",
-            }],
-        }
     }
   station:any=[];
   parking : Array<any>;
@@ -91,30 +80,32 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
             title: "Informations essentielles",
             more: "> Afficher le détail des informations",
             fields: {
-                cave: {
-                    title: "Cave",
-                    value: "Oui"
-                },
-                garden: {
-                    title: "Gardienne",
+                parking: {
+                    title: "Parking",
                     value: "Non"
-                },
-                etage: {
-                    title: "Étage",
-                    value: "1"
-                },
-                elevator: {
-                    title: "Ascenseur",
-                    value: "Oui"
                 },
                 garage: {
                     title: "Box/Garage",
                     value: "Oui"
                 },
-                park: {
-                    title: "Parking",
-                    value: "Non"
+                cave: {
+                    title: "Cave",
+                    value: "Oui"
                 }
+                ,
+                elevator: {
+                    title: "Ascenseur",
+                    value: "Oui"
+                },
+                
+                etage: {
+                    title: "Étage",
+                    value: "1"
+                },
+                garden: {
+                    title: "Gardienne",
+                    value: "Non"
+                }      
             }
 
         },
@@ -127,16 +118,6 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
                     title: "Toilettes séparés",
                     value: "Non",
                     icon: "wc"
-                },
-                lavelange: {
-                    title: "Lave-linge",
-                    value: "Oui",
-                    icon: "speaker"
-                },
-                interphone: {
-                    title: "Interphone",
-                    value: "Non",
-                    icon: "chrome_reader_mode"
                 },
                 machine: {
                     title: "Rac. machine",
@@ -152,7 +133,18 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
                     title: "Boite aux lettres",
                     value: "Non",
                     icon: "drafts"
+                },
+                interphone: {
+                    title: "Interphone",
+                    value: "Non",
+                    icon: "chrome_reader_mode"
+                },
+                lavelange: {
+                    title: "Lave-linge",
+                    value: "Oui",
+                    icon: "speaker"
                 }
+                
             }
         },
         cuisine: {
@@ -179,55 +171,78 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
                     value: "Non",
                     icon: "ac_unit"
                 },
+                refri: {
+                    title: "Réfrigérateur",
+                    value: "Non",
+                    icon: "kitchen"
+                },
                 microonde: {
                     title: "Micro-ondes",
                     value: "Non",
                     icon: "local_cafe"
                 },
-                refri: {
-                    title: "Réfrigérateur",
-                    value: "Non",
-                    icon: "kitchen"
-                }
             }
         },
         ameublement: {
             title: "Ameublement",
             more: false,
             fields: {
-                lit: {
-                    title: "Lit",
-                    value: "1",
+                canape: {
+                    title: "Canapé",
+                    value: "_",
+                    icon: "weekend"
+                },
+                mytable: {
+                    title: "Table",
+                    value: "_",
+                    icon: "airline_seat_recline_normal"
+                },
+                chaise: {
+                    title: "Chaise",
+                    value: "_",
+                    icon: "airline_seat_legroom_normal"
+                },
+                MyTV: {
+                    title: "TV",
+                    value: "_",
+                    icon: "tv"
+                },
+                bureau: {
+                    title: "Bureau",
+                    value: "_",
                     icon: "airline_seat_individual_suite"
                 },
                 dressing: {
                     title: "Dressing",
-                    value: "Oui",
+                    value: "_",
                     icon: false
-                },
-                canape: {
-                    title: "Canapé",
-                    value: "Oui",
-                    icon: "weekend"
-                },
-                chaise: {
-                    title: "Chaise",
-                    value: "Oui",
-                    icon: "airline_seat_legroom_normal"
-                },
-                table: {
-                    title: "Table",
-                    value: "Non",
-                    icon: "airline_seat_recline_normal"
-                },
-                tv: {
-                    title: "TV",
-                    value: "Oui",
-                    icon: "tv"
                 }
             }
-        }
+        },
+        Couchage: {
+            title: "Couchage",
+            more: false,
+            fields:{
+                lit: {
+                    title: "Lit",
+                    value: "_",
+                    icon: false
+                },
+                doublelit:{
+                    title: "Lit double",
+                    value: "_",
+                    icon: false,
+                },
+                canapelit:{
+                    title : "Canpe lit",
+                    value: "_",
+                    icon : false,
+                }
+            }
+        },
+        
     }
+
     forceTable = {
         info: false,
         equipement: false,
@@ -271,47 +286,42 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
      .subscribe((res2:Array<any>)=>{
        console.log("Parking",res2);
        this.parking=res2;
-       console.log("HEEEEEEEEEEEEEEEY");
-        for (let item of ['parking', 'garage', 'elevator', 'cave', 'garden']) {
-            this.parking[0][item] ? this.data.info.fields[item] = "Oui" : this.data.info.fields[item] = "Non"
+        for (let item of ['parking','garage','cave','elevator','etage','garden']) {
+            if(item == 'etage'){
+                this.data.info.fields[item].value = this.parking[0][item];
+            }else{
+            if( this.parking[0][item] == true){
+                this.data.info.fields[item].value = "Oui";
+            }else{
+                this.data.info.fields[item].value = "Non";
+            }}
         }
-        /*
-       if(this.parking[0].parking == true){
-        this.park="Oui";
-          }else{
-                this.park="Non";   
-          }
-          if(this.parking[0].garage == true){
-                this.garage="Oui";
-          }else{
-                this.garage="Non";
-          }
-          if(this.parking[0].elevator == true){
-                this.elevator="Oui";
-                
-          }else{
-                this.elevator="Non"; 
-          }
-          if(this.parking[0].cave == false){
-            this.cave="Non"; 
-           }else
-          {
-            this.cave="Oui"; 
-          }
-          if(this.parking[0].garden == false){
-              this.garden="Non";    
-          }else{
-              this.garden="Oui";
-          }
-  console.log("Eyppppppppppp");
-     //  return(this.inHouse);
-     */
      });
      
     this._service.getStation(this.id)
      .subscribe((res3:Array<any>)=>{
        console.log("station",res3);
        this.rows = res3;
+       for (let item of ['metroST','metro']) {
+           if(item == 'metroST'){
+            console.log("hello", this.rows[0][item].toString(),this.commute.metro.data[0]);
+            this.commute.metro.data[0].name = this.rows[0][item].toString(); 
+           }
+           else if(item == 'metro'){
+            this.commute.metro.data[0].distance = this.rows[0][item].toString();
+           }
+        }
+    
+        for (let item of ['BusST','Bus']) {
+            if(item == 'BusST'){
+                
+                this.commute.bus.data[0].name = this.rows[0][item].toString();
+                
+            }else{
+                this.commute.bus.data[0].distance =this.rows[0][item].toString();
+                
+            }
+        }
      });
 
      this._service.getMap(this.id)
@@ -329,100 +339,40 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
       console.log("Equip",res5);
       this.Eqp=res5;
     //  return(this.inHouse);
-        for (let item of ['toilette', 'internet', 'interphone', 'machine', 'boite', 'lavelange']) {
-            this.Eqp[0][item] ? this.data.equipment.fields[item] = "Oui" : this.data.equipment.fields[item] = "Non"
+        for (let item of ['toilette', 'machine', 'interphone', 'internet', 'boite', 'lavelange']) {
+            //this.Eqp[0][item] ? this.data.equipment.fields[item] = "Oui" : this.data.equipment.fields[item] = "Non";
+            if( this.Eqp[0][item] == true){
+                this.data.info.fields[item].value = "Oui";
+            }else{
+                this.data.info.fields[item].value = "Non";
+            }
         }
 
         
-        /*
-      if(this.Eqp[0].toilette == true){
-          this.toilette="Oui";
-      }else{
-          this.toilette="Non";
-      }
-      if(this.Eqp[0].internet == true){
-          this.internet="Oui";
-      }else{
-          this.internet="Non";
-      }
-      if(this.Eqp[0].interphone == true){
-          this.interphone = "Oui";
-      }else{
-          this.interphone = "Non";
-      }
-      if(this.Eqp[0].machine == true){
-          this.machine = "Oui";
-      }else{
-          this.machine = "Non";
-      }
-      if(this.Eqp[0].boite == true){
-          this.boite = "Oui";
-      }else{
-          this.boite = "Non";
-      }
-      if(this.Eqp[0].lavelange == true){
-          this.lavelange = "Oui";
-      }else{
-          this.lavelange = "Non";
-      }
-      if(this.Cuisine[0].plaque == true){
-          this.plaque = "Oui";
-      }else{
-          this.plaque = "Non";
-      }
-      if(this.Cuisine[0].lave == true){
-          this.lave = "Oui";
-      }else{
-          this.lave = "Non";
-      }
-      */
     });
     
    this._service.getCuisine(this.id)
     .subscribe((res6:Array<any>)=>{
       console.log("Cuisine",res6);
       this.Cuisine = res6;  
-        for (let item of ['four', 'refri', 'microonde', 'congelateur', 'plaque', 'lave']) {
-            this.Cuisine[0][item] ? this.data.cuisine.fields[item] = "Oui" : this.data.cuisine.fields[item] = "Non"
+        for (let item of ['four', 'plaque', 'lave', 'congelateur', 'refri', 'microonde']) {
+            //this.Cuisine[0][item] ? this.data.cuisine.fields[item] = "Oui" : this.data.cuisine.fields[item] = "Non";
+            if(this.Cuisine[0][item] == true){
+                this.data.cuisine.fields[item].value = "Oui";
+            }else{
+                this.data.cuisine.fields[item].value = "Non";
+            }
         }
-        /*
-      if(this.Cuisine[0].four == true){
-          this.four = "Oui";
-      }else{
-          this.four = "Non";
-      }
-      if(this.Cuisine[0].refri == true){
-          this.refri = "Oui";
-      }else{
-          this.refri = "Non";
-      }
-      if(this.Cuisine[0].microonde == true){
-          this.microonde = "Oui";
-      }else{
-          this.microonde = "Non";
-      }
-      if(this.Cuisine[0].congelateur == true){
-          this.congelateur = "Oui";
-      }else{
-          this.congelateur = "Non";
-      }
-      if(this.Cuisine[0].lave == true){
-          this.lave = "Oui";
-      }else{
-          this.lave = "Non";
-      }
-      if(this.Cuisine[0].plaque == true){
-        this.plaque = "Oui";
-      }else{
-        this.plaque ="Non";
-      }
-      */
+       
     });
     this._service.getAmeubl(this.id)
     .subscribe((res7:Array<any>)=>{
       console.log("Ameubl",res7);
       this.Amb=res7;
-    //  return(this.inHouse);
+      for (let item of ['canape', 'mytable', 'chaise', 'MyTV', 'bureau', 'dressing']) {
+        //this.Cuisine[0][item] ? this.data.cuisine.fields[item] = "Oui" : this.data.cuisine.fields[item] = "Non";
+            this.data.ameublement.fields[item].value = this.Amb[0][item].toString();
+      }
     });
     
    this._service.getCouchage(this.id)
