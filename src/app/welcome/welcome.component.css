@@ -131,21 +131,24 @@ mat-radio-group{
 }
 @media(max-width:704px){
   .header{
-    margin-top:-70px;
+   /* margin-top:-70px;*/
     width: 39vw;
   }
 }
 @media(max-width:625px){
   .TheBox
 {
+
   position: absolute;
-  margin-top: -400px;
+  margin-top: -500px;
   width: 60vw;
+  margin-left: -10%;
  
 }
-.header{
-  margin-top: 2px;
+.Fopt{
+  margin-left: 58%;
 }
+
 
 
 .search-bt{
@@ -179,8 +182,8 @@ mat-radio-group{
 }
 h1{
    color: rgb(255, 255, 255);
-   margin-bottom: 70px;
-   font-size: 3.5vw;/* 3.46vw; /* 45 px font-size 2 px spacing */
+    margin-top : 70% !important;
+   font-size: 5.2vw !important;/* 3.46vw; /* 45 px font-size 2 px spacing */
    letter-spacing: 0.154vw;/*0.154vw;*/
    text-align: center;
    font-family: Varela, Round;
