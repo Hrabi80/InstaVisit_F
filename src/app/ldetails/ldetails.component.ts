@@ -23,32 +23,24 @@ export class LdetailsComponent implements OnInit,PipeTransform {
         price: "200"
     };
     commute = {
-        metro: {
-            name: "Metro",
-            icon: "directions_railway",
-            data: [{
-                name: "La Courneuve - 8 Mai 1945",
-                distance: "1830"
-            }
-            ]
-        },
-        bus: {
-            name: "Bus",
-            icon: "directions_bus",
-            data: [{
-                name: "Rue de la Station",
-                distance: "320",
-            }],
-        },
-        train: {
-            name: "Train",
-            icon: "directions_subway",
-            data: [{
-                name: "Rue de la Station",
-                distance: "320",
-            }],
-        }
-    };
+      bus: {
+          name: "Bus",
+          icon: "directions_bus",
+          data: [{
+              name: "La Courneuve - 8 Mai 1945",
+              distance: "1830",
+          }
+          ]
+      },
+      metro: {
+          name: "Metro",
+          icon: "directions_railway",
+          data: [{ 
+              name: "La Courneuve - 8 Mai 1945",
+              distance: "1830",
+          }],
+      },
+  };
   station:any=[];
   parking : Array<any>=[{},{},{},{}];
   rows: Array<any>=[{},{},{},{}];
@@ -68,30 +60,32 @@ export class LdetailsComponent implements OnInit,PipeTransform {
             title: "Informations essentielles",
             more: "> Afficher le détail des informations",
             fields: {
-                cave: {
-                    title: "Cave",
-                    value: "Oui"
-                },
-                garden: {
-                    title: "Gardienne",
-                    value: "Non"
-                },
-                etage: {
-                    title: "Étage",
-                    value: "1"
-                },
-                elevator: {
-                    title: "Ascenseur",
-                    value: "Oui"
-                },
-                garage: {
-                    title: "Box/Garage",
-                    value: "Oui"
-                },
-                park: {
-                    title: "Parking",
-                    value: "Non"
-                }
+                  parking: {
+                      title: "Parking",
+                      value: "Non"
+                  },
+                  garage: {
+                      title: "Box/Garage",
+                      value: "Oui"
+                  },
+                  cave: {
+                      title: "Cave",
+                      value: "Oui"
+                  }
+                  ,
+                  elevator: {
+                      title: "Ascenseur",
+                      value: "Oui"
+                  },
+                  
+                  etage: {
+                      title: "Étage",
+                      value: "1"
+                  },
+                  garden: {
+                      title: "Gardienne",
+                      value: "Non"
+                  }   
             }
           
       }
@@ -120,9 +114,9 @@ export class LdetailsComponent implements OnInit,PipeTransform {
         console.log("clicked")
         this.forceTable = true;
     }
-        ngOnInit() {}
-        transform() {}
-    /*
+       // ngOnInit() {}
+       // transform() {}
+    
   ngOnInit() {
     this.id=parseInt(this.route.snapshot.paramMap.get('id'));
     console.log("this id is : ",this.id);
@@ -138,45 +132,43 @@ export class LdetailsComponent implements OnInit,PipeTransform {
        console.log("Parking",res2);
        this.parking=res2;
      //  return(this.inHouse);
-     for (let item of ['parking', 'garage', 'elevator', 'cave', 'garden']) {
-         this.parking[0][item] ? this.data.info.fields[item] = "Oui" : this.data.info.fields[item] = "Non"
-     }
-     /*
-     if(this.parking[0].parking == true){
-      this.park="Oui";
-        }else{
-              this.park="Non";   
-        }
-        if(this.parking[0].garage == true){
-              this.garage="Oui";
-        }else{
-              this.garage="Non";
-        }
-        if(this.parking[0].elevator == true){
-              this.elevator="Oui";
-              
-        }else{
-              this.elevator="Non"; 
-        }
-        if(this.parking[0].cave == false){
-          this.cave="Non"; 
-         }else
-        {
-          this.cave="Oui"; 
-        }
-        if(this.parking[0].garden == false){
-            this.garden="Non";    
-        }else{
-            this.garden="Oui";
-        }
-        
-     });
+     for (let item of ['parking','garage','cave','elevator','etage','garden']) {
+      if(item == 'etage'){
+          this.data.info.fields[item].value = this.parking[0][item];
+      }else{
+      if( this.parking[0][item] == true){
+          this.data.info.fields[item].value = "Oui";
+      }else{
+          this.data.info.fields[item].value = "Non";
+      }}
+  }
+    }
+     );
      
-
     this._service.getStationNM(this.id)
      .subscribe((res3:Array<any>)=>{
        console.log("station",res3);
        this.rows = res3;
+       for (let item of ['metroST','metro']) {
+        if(item == 'metroST'){
+         console.log("hello", this.rows[0][item].toString(),this.commute.metro.data[0]);
+         this.commute.metro.data[0].name = this.rows[0][item].toString(); 
+        }
+        else if(item == 'metro'){
+         this.commute.metro.data[0].distance = this.rows[0][item].toString();
+        }
+     }
+ 
+     for (let item of ['BusST','Bus']) {
+         if(item == 'BusST'){
+             
+             this.commute.bus.data[0].name = this.rows[0][item].toString();
+             
+         }else{
+             this.commute.bus.data[0].distance =this.rows[0][item].toString();
+             
+         }
+     }
      });
 
      this._service.getMapNM(this.id)
@@ -188,10 +180,10 @@ export class LdetailsComponent implements OnInit,PipeTransform {
      }); 
      this.path=this.Map[0].map;
      console.log("mayMap",this.path)
-  
-  }
+    }
   transform() {
     return this.sanitizer.bypassSecurityTrustUrl(this.mapsrc);
    }
-  */
-}
+  }
+  
+

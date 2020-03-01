@@ -28,29 +28,15 @@
     <img src="http://127.0.0.1:8000/images/houses/{{info.cover}}">
 
 </div>
-<!--OLD COVER
-<div class="cover" style="background-image: url('http://127.0.0.1:8000/images/houses/{{info.mainIMG}}');">
-    <div class="row">
-          <div class="col s6">
-              <a class="coverA waves-effect waves-light btn-large blue"><i class="material-icons left">add_a_photo</i>Voir les photos,les videos et la visite virtuelle</a>
-            </div>
-          <div class="col s6">
-     
-        </div>
-        
-      </div>
--->
 
-
-<!--CARD SECTION-->
 <app-mobile-overview [info]='info'></app-mobile-overview>
 
 <div class="row">
 
-<div class="col s8">
+<div class="col s9">
     <div class="u-container">
         <div class="u-description-headlines">
-            <h5> Maison à louer de S+{{info.room_nb}} au {{info.adress}}, 92000, {{info.city}} </h5>
+            <h5> Maison à louer de S+{{info.room_nb}} au {{info.adress}}, {{info.city}} </h5>
             <h6>le logement</h6>
         </div>
 
@@ -70,7 +56,7 @@
                     {{info.description4}}
                 </p>
                 <p>
-                    A visiter sur InstaVisit.com
+                    A visiter sur InstaVisit.tn
                 </p>
             </div>
 
@@ -102,77 +88,10 @@
 
 
 
-<!--CARACTERSITIC SECTION
+
 <div class="sec3">
     <div class="row">
-        <div class="col s8">
-            <h6>Caractéristiques</h6>
-            <table class="striped highlight responsive-table">
-                <thead>
-                    <tr>
-                        <th class="tableS">Informations essentielles</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    
-                    <tr>
-                        <td class="gras able-text-item">Cave</td>
-
-                        <td>
-                            {{cave}}
-
-                        </td>
-                        <td class="table-text-item" style="font-size: 1.4rem;text-transform: capitalize;">
-                            <span>Gardienne</span></td>
-
-
-
-                        <td>
-                            {{garden}}
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="gras table-text-item">Étage</td>
-                        <td>
-                           {{parking[nb].etage}}
-                        </td>
-
-                        <td class="table-text-item" style="font-size: 1.4rem;text-transform: capitalize;">
-                            Ascenseur</td>
-                        <td>
-                            {{elevator}}
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="gras table-text-item">Box/Garage</td>
-                        <td>
-                            {{garage}}
-
-                        </td>
-
-                        <td class="table-text-item" style="font-size: 1.4rem;text-transform: capitalize;">
-                            Parking</td>
-                        <td>
-                            {{park}}
-
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-
-        </div>
-        <div class="col s4">
-
-        </div>
-    </div>
-</div>
--->
-<div class="sec3">
-    <div class="row">
-        <div class="col s8">
+        <div class="col s9">
             <div class="u-container">
                 <div class="u-table">
                     <div class="u-table-head">
@@ -206,10 +125,10 @@
     </div>
 </div>
 
-<!--
+
 <div class="sec4">
     <div class="row">
-        <div class="col s8">
+        <div class="col s9">
             <h6>Environnement </h6>
             
             <div class="mapouter">
@@ -233,80 +152,14 @@
                     }
                 </style>
             </div>
-        
-
             <br> <br>
-
-
-            <table class="striped highlight responsive-table">
-                <thead>
-                    <tr>
-                        <th> <i class="material-icons">directions_bus</i>
-                            Bus</th>
-                        <th> <i class="material-icons">directions_railway</i>
-                            Metro</th>
-                        <th> <i class="material-icons">directions_subway</i>
-                            Train</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr>
-
-                        <td>
-                            <i class="material-icons">pin_drop</i>
-                            {{rows[nb].BusST}}
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            &nbsp;&nbsp;
-                            <span style="font-size: 1.4rem;text-transform: capitalize;">
-                                {{rows[nb].Bus}} m</span>
-                        </td>
-                        <td><i class="material-icons">pin_drop</i>
-                            {{rows[nb].metroST}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            &nbsp;&nbsp;
-                            <span style="font-size: 1.4rem;text-transform: capitalize;">
-
-                                {{rows[nb].metro}} m </span></td>
-                        <td><i class="material-icons">pin_drop</i>
-                            {{rows[nb].trainST}}</td>
-                        <td>{{rows[nb].train}} M</td>
-                    </tr>
-                    <tr>
-                        <td>
-
-                            <i class="material-icons">local_car_wash</i>&nbsp;&nbsp;Louage
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            &nbsp;&nbsp;
-                        </td>
-                        <td> </td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td class="gras">
-
-                            <i class="material-icons">pin_drop</i>
-                            {{rows[nb].louageST}}
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            &nbsp;&nbsp;
-                            <span style="font-size: 1.4rem;text-transform: capitalize;">
-                                {{rows[nb].louage}}</span>
-
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
-
-
-
         </div>
-        <div class="col s4">
-            Empty space
+        <div class="col s3">
+            
         </div>
     </div>
 </div>
--->
+
 
 
 <!-- Site footer -->

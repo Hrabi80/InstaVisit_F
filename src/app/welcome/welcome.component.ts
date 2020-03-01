@@ -19,6 +19,7 @@ export class WelcomeComponent implements OnInit {
  // dis1 :number;
   //dis2:number;
   FirOutput: any=[];
+  SecOutput: any=[];
   userLoc : string;
   radioSel:any;
   radioSelected:string;
@@ -34,6 +35,10 @@ export class WelcomeComponent implements OnInit {
             console.log(res);
             this.FirOutput = res;
             
+        });
+    this._service.getData()
+        .subscribe((res)=>{
+          this.SecOutput = res;
         });
        
         this.radioSelected = "1";
