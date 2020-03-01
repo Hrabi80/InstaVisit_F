@@ -81,6 +81,7 @@ import { UpdatelmComponent } from './updatelm/updatelm.component';
 import { UpdatelnmComponent } from './updatelnm/updatelnm.component';
 import { MobileOverviewComponent } from './comps/mobile-overview/mobile-overview.component';
 import { CommuteTableComponent } from './comps/commute-table/commute-table.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -127,6 +128,7 @@ import { CommuteTableComponent } from './comps/commute-table/commute-table.compo
     UpdatelnmComponent,
     MobileOverviewComponent,
     CommuteTableComponent,
+    FooterComponent,
    
     // Filter2Pipe
   ],

@@ -14,7 +14,7 @@ export class DetailsComponent implements OnInit,PipeTransform {
  
   id:number;
     info: any = {
-        room_nb: 0,
+        RoomNB: 0,
         adress: "Mohammed V",
         city: "Tunis",
         description: "Flatlooker vous propose un charmant appartement T4 non meublé situé au Bourget.",
@@ -25,35 +25,23 @@ export class DetailsComponent implements OnInit,PipeTransform {
         price: "200"
     };
     commute = {
-        metro: {
-            name: "Metro",
-            icon: "directions_railway",
-            data: [{
-                name: "La Courneuve - 8 Mai 1945",
-                distance: "1830"
-            },
-            {
-                name: "Fort d'Aubervilliers",
-                distance: "2660"
-            }
-            ]
-        },
         bus: {
             name: "Bus",
             icon: "directions_bus",
             data: [{
-                name: "Rue de la Station",
-                distance: "320",
+                name: "La Courneuve - 8 Mai 1945",
+                distance: "1830",
+            }
+            ]
+        },
+        metro: {
+            name: "Metro",
+            icon: "directions_railway",
+            data: [{ 
+                name: "La Courneuve - 8 Mai 1945",
+                distance: "1830",
             }],
         },
-        train: {
-            name: "Train",
-            icon: "directions_subway",
-            data: [{
-                name: "Rue de la Station",
-                distance: "320",
-            }],
-        }
     };
   station:any=[];
   parking : Array<any>;
@@ -74,30 +62,32 @@ export class DetailsComponent implements OnInit,PipeTransform {
             title: "Informations essentielles",
             more: "> Afficher le détail des informations",
             fields: {
-                cave: {
-                    title: "Cave",
-                    value: "Oui"
-                },
-                garden: {
-                    title: "Gardienne",
+                parking: {
+                    title: "Parking",
                     value: "Non"
-                },
-                etage: {
-                    title: "Étage",
-                    value: "1"
-                },
-                elevator: {
-                    title: "Ascenseur",
-                    value: "Oui"
                 },
                 garage: {
                     title: "Box/Garage",
                     value: "Oui"
                 },
-                park: {
-                    title: "Parking",
-                    value: "Non"
+                cave: {
+                    title: "Cave",
+                    value: "Oui"
                 }
+                ,
+                elevator: {
+                    title: "Ascenseur",
+                    value: "Oui"
+                },
+                
+                etage: {
+                    title: "Étage",
+                    value: "1"
+                },
+                garden: {
+                    title: "Gardienne",
+                    value: "Non"
+                }   
             }
 
         }
@@ -128,77 +118,73 @@ export class DetailsComponent implements OnInit,PipeTransform {
         console.log("clicked")
         this.forceTable = true;
     }
-    ngOnInit() { }
-    transform() { }
-    /*
-  ngOnInit() {
-    this.id=parseInt(this.route.snapshot.paramMap.get('id'));
-    console.log("this id is : ",this.id);
-
-    this._service.getDetails(this.id)
-     .subscribe((res)=>{
-       console.log("details",res);
-       this.info=res;
-     });
+    ngOnInit() {
+        this.id=parseInt(this.route.snapshot.paramMap.get('id'));
+        console.log("this id is : ",this.id);
     
-    this._service.getParking(this.id)
-     .subscribe((res2:Array<any>)=>{
-       console.log("Parking",res2);
-       this.parking=res2;
-     //  return(this.inHouse);
-     if(this.parking[0].parking == true){
-      this.park="Oui";
-        }else{
-              this.park="Non";   
+        this._service.getDetails(this.id)
+         .subscribe((res)=>{
+           console.log("details",res);
+           this.info=res;
+         });
+        
+        this._service.getParking(this.id)
+         .subscribe((res2:Array<any>)=>{
+           console.log("Parking",res2);
+           this.parking=res2;
+           for (let item of ['parking','garage','cave','elevator','etage','garden']) {
+            if(item == 'etage'){
+                this.data.info.fields[item].value = this.parking[0][item];
+            }else{
+            if( this.parking[0][item] == true){
+                this.data.info.fields[item].value = "Oui";
+            }else{
+                this.data.info.fields[item].value = "Non";
+            }}
         }
-        if(this.parking[0].garage == true){
-              this.garage="Oui";
-        }else{
-              this.garage="Non";
+        
+         });
+         
+        this._service.getStation(this.id)
+         .subscribe((res3:Array<any>)=>{
+           console.log("station",res3);
+           this.rows = res3;
+       for (let item of ['metroST','metro']) {
+        if(item == 'metroST'){
+         console.log("hello", this.rows[0][item].toString(),this.commute.metro.data[0]);
+         this.commute.metro.data[0].name = this.rows[0][item].toString(); 
         }
-        if(this.parking[0].elevator == true){
-              this.elevator="Oui";
-              
-        }else{
-              this.elevator="Non"; 
+        else if(item == 'metro'){
+         this.commute.metro.data[0].distance = this.rows[0][item].toString();
         }
-        if(this.parking[0].cave == false){
-          this.cave="Non"; 
-         }else
-        {
-          this.cave="Oui"; 
-        }
-        if(this.parking[0].garden == false){
-            this.garden="Non";    
-        }else{
-            this.garden="Oui";
-        }
-     });
-     
-    this._service.getStation(this.id)
-     .subscribe((res3:Array<any>)=>{
-       console.log("station",res3);
-       this.rows = res3;
-     });
+     }
+ 
+     for (let item of ['BusST','Bus']) {
+         if(item == 'BusST'){
+             
+             this.commute.bus.data[0].name = this.rows[0][item].toString();
+             
+         }else{
+             this.commute.bus.data[0].distance =this.rows[0][item].toString();
+             
+         }
+     }
+         });
+    
+         this._service.getMap(this.id)
+         .subscribe((res4:Array<any>)=>{
+           console.log("Map",res4);
+           this.Map = res4;
+           this.mapsrc=this.Map[0].map;
+           console.log(this.mapsrc);
+           this.mapsrc1=this.mapsrc+" | safe";
+           
+         }); 
+         this.path=this.Map[0].map;
+         console.log("mayMap",this.path);
+     }
+    transform() {
+        return this.sanitizer.bypassSecurityTrustUrl(this.mapsrc);
+       }
 
-     this._service.getMap(this.id)
-     .subscribe((res4:Array<any>)=>{
-       console.log("Map",res4);
-       this.Map = res4;
-       this.mapsrc=this.Map[0].map;
-       console.log(this.mapsrc);
-       this.mapsrc1=this.mapsrc+" | safe";
-       
-     }); 
-     this.path=this.Map[0].map;
-     console.log("mayMap",this.path);
-     
-     
-  }
-
-  
-  transform() {
-   return this.sanitizer.bypassSecurityTrustUrl(this.mapsrc);
-  }
-  */
 }

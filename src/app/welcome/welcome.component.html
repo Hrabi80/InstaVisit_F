@@ -36,7 +36,7 @@
 
       <div class="kk"><br><br>  
         <div class="ctt">
-          <h4> Les derniers biens à louer  <div id="result"></div></h4>
+          <h4> Les derniers biens à louer<div id="result"></div></h4>
           <br>
         
           <div class="row">
@@ -149,7 +149,7 @@
                    <!--  WHY INSTAVISIT-->
             
   <div class="why">
-    <h4 >Pourquoi InstaVistit ? {{activeStudent}}</h4><br>
+    <h4 >Pourquoi InstaVistit ? </h4><br>
     <div class="row">
       <div class="col s3 studentimages">
         <!--<img src="assets/img/student2.png">-->
@@ -163,7 +163,7 @@
         <mat-vertical-stepper (selectionChange)="activeStudent = $event.selectedIndex" [linear]="isLinear" #stepper>
           <mat-step   [stepControl]="firstFormGroup">
            
-              <ng-template matStepLabel> Évitez les déplacements inutiles </ng-template>
+              <ng-template matStepLabel class="lj"> Évitez les déplacements inutiles </ng-template>
               Vous évitez les déceptions et les déplacements inutiles,
               En visionnant la visite virtuelle en ligne, vous pouvez
               vous faire une première impression du bien.
@@ -177,9 +177,9 @@
             
           </mat-step>
           <mat-step >
-            <ng-template matStepLabel> Visites virtuelles </ng-template>
+            <ng-template matStepLabel> Une Visite virtuelle </ng-template>
             Nous vous proposons les modélisations des photos 360° et une visite virtuelle proposées par InstaVisit,
-            vous permettent de vous projeter dans votre future maison ou appartement.
+            vous permettent de vous projeter dans votre future maison ou bien.
           </mat-step>
         </mat-vertical-stepper>
         
@@ -230,75 +230,9 @@
   
   </div>        
                <!--  /WHY INSTAVISIT-->
- <br>
 
-          <!--FOOTER-->
-  <footer class="footer-distributed">
- 
-    <div class="footer-left">
- 
-    <h3>Insta<span>Visit</span></h3>
- 
-    <p class="footer-links">
-    <a href="#">Home</a>
-  ·
-    <a href="#">Blog</a>
-  ·
-    <a href="#">Pricing</a>
-  ·
-    <a href="#">About</a>
-  ·
-    <a href="#">Faq</a>
-  ·
-    <a href="#">Contact</a>
-    </p>
- 
-    <p class="footer-company-name">InstaVisit &copy; 2019</p>
-    <br>
-    <p class="footer-company-name">Powred by Digita</p> 
-    </div>
- 
-    <div class="footer-center">
- 
-    <div>
-    <i class="fa fa-map-marker"></i>
-    <p><span>21 XXXX Street</span> YYY, Tunis</p>
-    </div>
- 
-    <div>
-    <i class="fa fa-phone"></i>
-    <p>+216 555 123 456</p>
-    </div>
- 
-    <div>
-    <i class="fa fa-envelope"></i>
-    <p><a href="mailto:support@company.com">contact@InstaVisit.com</a></p>
-    </div>
- 
-    </div>
- 
-    <div class="footer-right">
- 
-    <p class="footer-company-about">
-    <span>About the company</span>
-    un portail internet innovant dans le domaine immobilier
-   &amp; .
-    </p>
- 
-    <div class="footer-icons">
- 
-    <a href="#"><i class="fa fa-facebook"></i></a>
-    <a href="#"><i class="fa fa-twitter"></i></a>
-    <a href="#"><i class="fa fa-linkedin"></i></a>
-    <a href="#"><i class="fa fa-github"></i></a>
- 
-    </div>
- 
-    </div>
- 
-    </footer>
-
- <!--   /TEST NEW FOOTER-->   
+      <br>
+      <app-footer></app-footer>
 
  
 <script>

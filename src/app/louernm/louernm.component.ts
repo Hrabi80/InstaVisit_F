@@ -42,7 +42,7 @@ export class LouernmComponent implements OnInit {
         console.log(res);
         this.FirOutput = res;
         for (var i = 0; i < this.FirOutput.length; i++) {
-          this.FirOutput[i].refr = "IV00"+this.FirOutput[i].id; // Add "total": 2 to all objects in array
+          this.FirOutput[i].refr = "INLN000"+this.FirOutput[i].id; // Add "total": 2 to all objects in array
       }
     });
   }

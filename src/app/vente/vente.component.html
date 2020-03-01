@@ -39,9 +39,9 @@
           <mat-slider
              thumbLabel
              [displayWith]="formatLabel"
-             tickInterval="10000"
-             min="100"
-             max="100000000" [(ngModel)]="maxPrice">
+             tickInterval="500000"
+             min="0"
+             max="5000000" [(ngModel)]="maxPrice">
           </mat-slider>
           &nbsp;&nbsp;&nbsp;&nbsp;
        </div>
@@ -51,8 +51,8 @@
           thumbLabel
           [displayWith]="formatLabel2"
           tickInterval="10000"
-          min="100"
-          max="70000000" [(ngModel)]="minPrice">
+          min="0"
+          max="7000" [(ngModel)]="minPrice">
        </mat-slider>
        &nbsp;&nbsp;&nbsp;&nbsp;
       </div>
@@ -62,7 +62,7 @@
 		   thumbLabel
 		   [displayWith]="formatLabel3"
 		   tickInterval="1000"
-		   min="100"
+		   min="0"
 		   max="1000000" [(ngModel)]="maxSurface">
 		</mat-slider>
 	  </div>
@@ -100,7 +100,7 @@
            </div> <br>
            {{output.city }}
              <span>{{output.price }} dt - {{output.surface }} m²</span> <br>
-             <small> {{output.piece }} piéces meublé</small>
+             <small> {{output.piece }} piéces</small>
              <a routerLink="/nav/details/+{{output.id}}">
              <i class="material-icons right">filter_none</i></a>
            <div class="card-content">

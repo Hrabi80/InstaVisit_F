@@ -35,7 +35,7 @@ export class VenteComponent implements OnInit {
             console.log(res);
             this.FirOutput = res;
             for (var i = 0; i < this.FirOutput.length; i++) {
-              this.FirOutput[i].refr = "IV00"+this.FirOutput[i].id; // Add "total": 2 to all objects in array
+              this.FirOutput[i].refr = "INV000"+this.FirOutput[i].id; // Add "total": 2 to all objects in array
           }
         });
        
@@ -45,9 +45,6 @@ export class VenteComponent implements OnInit {
      
         return value + "dt";
       }
-  
-    
-    
     formatLabel2(value: number) {
       
   
@@ -58,11 +55,7 @@ export class VenteComponent implements OnInit {
       return value +"dt";
     }
     formatLabel4(value: number) {
-      if (value >= 1000) {
-        return Math.round(value / 100) + 'm²';
-      }
-  
-      return value;
+      return value + "m²";
     }
 }  
 

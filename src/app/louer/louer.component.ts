@@ -46,7 +46,7 @@ export class LouerComponent implements OnInit {
         this.FirOutput = res;
         //this.FirOutput.append("IV00"+this.FirOutput.id);
         for (var i = 0; i < this.FirOutput.length; i++) {
-          this.FirOutput[i].refr = "IV00"+this.FirOutput[i].id; // Add "total": 2 to all objects in array
+          this.FirOutput[i].refr = "INLM000"+this.FirOutput[i].id; // Add "total": 2 to all objects in array
       }
     });
 
