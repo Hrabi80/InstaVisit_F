@@ -13,7 +13,48 @@ import { Pipe, PipeTransform} from '@angular/core';
 export class DetailsComponent implements OnInit,PipeTransform {
  
   id:number;
-  info:any=[];
+    info: any = {
+        room_nb: 0,
+        adress: "Mohammed V",
+        city: "Tunis",
+        description: "Flatlooker vous propose un charmant appartement T4 non meublé situé au Bourget.",
+        description2: "Le hall d'entrée donne accès aux différentes pièces de l'appartement et comporte un placard de rangement avec étagères. ",
+        description3: "La cuisine est ouverte et dispose d'une tablette de barre, d'un frigo américain, d'un four, d'un lave- vaisselle, d'une plaque de cuisson en dessous d'une hotte aspirante, ainsi que de plusieurs placards et tiroirs de rangements.",
+        description4: "Enfin, la troisième chambre de l'appartement, tout comme le salon, donne accès au balcon. ",
+        surface: "500",
+        price: "200"
+    };
+    commute = {
+        metro: {
+            name: "Metro",
+            icon: "directions_railway",
+            data: [{
+                name: "La Courneuve - 8 Mai 1945",
+                distance: "1830"
+            },
+            {
+                name: "Fort d'Aubervilliers",
+                distance: "2660"
+            }
+            ]
+        },
+        bus: {
+            name: "Bus",
+            icon: "directions_bus",
+            data: [{
+                name: "Rue de la Station",
+                distance: "320",
+            }],
+        },
+        train: {
+            name: "Train",
+            icon: "directions_subway",
+            data: [{
+                name: "Rue de la Station",
+                distance: "320",
+            }],
+        }
+    };
   station:any=[];
   parking : Array<any>;
   rows: Array<any>;
@@ -28,6 +69,40 @@ export class DetailsComponent implements OnInit,PipeTransform {
   garage: string ;
   mapsrc:string;
   mapsrc1:any;
+    data = {
+        info: {
+            title: "Informations essentielles",
+            more: "> Afficher le détail des informations",
+            fields: {
+                cave: {
+                    title: "Cave",
+                    value: "Oui"
+                },
+                garden: {
+                    title: "Gardienne",
+                    value: "Non"
+                },
+                etage: {
+                    title: "Étage",
+                    value: "1"
+                },
+                elevator: {
+                    title: "Ascenseur",
+                    value: "Oui"
+                },
+                garage: {
+                    title: "Box/Garage",
+                    value: "Oui"
+                },
+                park: {
+                    title: "Parking",
+                    value: "Non"
+                }
+            }
+
+        }
+    }
+    forceTable = false;
   constructor(
               public sanitizer: DomSanitizer,
               private route: ActivatedRoute,
@@ -37,7 +112,25 @@ export class DetailsComponent implements OnInit,PipeTransform {
     this.mapsrc1 = sanitizer.bypassSecurityTrustUrl(this.mapsrc);
       
    }
-
+    pairData(field) {
+        let d = Object.values(this.data[field].fields)
+        let res = []
+        for (let i = 0; i < d.length; i += 2) {
+            if (d[i + 1] == undefined) {
+                res.push([d[i]])
+                continue
+            }
+            res.push([d[i], d[i + 1]])
+        }
+        return res;
+    }
+    ForceShowTableHideMore() {
+        console.log("clicked")
+        this.forceTable = true;
+    }
+    ngOnInit() { }
+    transform() { }
+    /*
   ngOnInit() {
     this.id=parseInt(this.route.snapshot.paramMap.get('id'));
     console.log("this id is : ",this.id);
@@ -107,5 +200,5 @@ export class DetailsComponent implements OnInit,PipeTransform {
   transform() {
    return this.sanitizer.bypassSecurityTrustUrl(this.mapsrc);
   }
-
+  */
 }

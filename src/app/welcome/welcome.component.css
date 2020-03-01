@@ -393,11 +393,11 @@ color: #FDA701;
 .icon_prefix{
 color:blue;
 }
-
+/*
 img{
 width: 390px;
 height: 200px;
-}
+}*/
 .ctt{
 margin-left: 8%;
 margin-right: 3%;
@@ -545,9 +545,10 @@ mat-vertical-stepper{
 margin-left: 4%;
 
 }
+/*
 .why img{
 height:370px;
-}
+}*/
 @media(max-width:720px){
   .why img{
     height:280px;
@@ -580,8 +581,7 @@ color: #505253;
 cursor: pointer;
 }
 .propr img{
-height: 400px;
-margin-right: 7%;
+    width: 70%;
 }
 
 .fprop{
@@ -758,3 +758,7 @@ margin-bottom: 5px;
 }}
 
 /* TEST NEW FOOTER */
+.studentimages {
+    display: flex;
+    justify-content: center;
+}

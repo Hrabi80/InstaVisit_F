@@ -42,135 +42,106 @@
     </div>
 -->
   
-  
+<app-mobile-overview [info]='info'></app-mobile-overview>
   <!--CARD SECTION-->
-  <br>
-  <div class="row">
-    <div class="col s5 m5">
-      <!-- <div class="row"> -->
-          <!--<div class="col s7"> --> 
-              <h5> Maison à vendre de S+{{info.RoomNB}}  au {{info.adress}}, {{info.city}} </h5>
-               <h6>le logement</h6>
-               <p>
-                  {{info.description}}
-               </p><br>
-               <p>
-                {{info.description2}}
-             </p><br>
-             <p>
-              {{info.description3}}
-           </p>
-               <p>
-      A  visiter sur InstaVisit.com
-  
-               </p>
-             </div>
-             <br>
-             <br>
-             <br>
-             <br>
-             <br>
-             <br>
-             <br>
-             <br>
-             <div class="col s3 m3">
-               <!-- <div class="row"> -->
-                       
-                        <div class="card-panel ">
-                          
-                            <img src="assets/img/Nada.jpg">
-  
-                          <span class="white-text">
-                            <br> <br> 
-                            Présenté par<span class="orange-text" style="font-weight: bold;"> Aymen Hamda </span> <br>
-                            Votre expert immobilier <br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            &nbsp;&nbsp;&nbsp;&nbsp;@InstaVisit
-                          </span><br> <br>
-                          <i class="small material-icons left"  style="font-weight: bold; color:white;">phone </i>
-                           <span class="white-text" style="font-weight: bold;color:white;font-size: 22px; ">50 808 080</span>
-                        </div>
-                    
-                   
-                  </div>
-           <!--<div>  </div>-->  
-         
-  
-           <div class="col s4 m4">
-              Empty space
-          </div>  
-    </div>
-     
-  
-  <!---->
-  <!--CARACTERSITIC SECTION-->
-  <div class="sec3">
-  <div class="row">
-    <div class="col s8">
-        <h6>Caractéristiques</h6>
-        <table class="striped highlight responsive-table">
-          <thead>
-            <tr>
-                <th class="tableS">Informations essentielles</th>
-                <th></th>
-                <th></th>
-            </tr>
-          </thead>
-  
-          <tbody>
-          
-            <tr>
-              <td class="gras">Cave</td>
-              
-              <td>
-                  {{cave}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <span style="font-size: 1.4rem;text-transform: capitalize;"> 
-                        Gardienne</span>
-                </td>
-                
-                
 
-              <td>
-                  {{garden}}
-                  
-              </td>
-            </tr>
-            <tr>
-                <td class="gras">Étage</td>
-                <td>
-                    {{parking[nb].etage}}
-                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <span style="font-size: 1.4rem;text-transform: capitalize;"> 
-                  Ascenseur</span></td>
-                <td> 
-                    {{elevator}}
-                    
-                </td>
-              </tr>
-              <tr>
-                  <td class="gras">Box/Garage</td>
-                  <td>
-                      {{garage}}
-                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <span style="font-size: 1.4rem;text-transform: capitalize;"> 
-                    Parking</span></td>
-                  <td> 
-                      {{park}}
-                      
-                  </td>
-                </tr>
-          </tbody>
-        </table>
-  
+<div class="row">
+
+    <div class="col s8">
+        <div class="u-container">
+            <div class="u-description-headlines">
+                <h5> Maison à louer de S+{{info.room_nb}} au {{info.adress}}, 92000, {{info.city}} </h5>
+                <h6>le logement</h6>
+            </div>
+
+            <div class="u-description-contact">
+                <div class="u-descriptions">
+
+                    <p>
+                        {{info.description}}
+                    </p>
+                    <p>
+                        {{info.description2}}
+                    </p>
+                    <p>
+                        {{info.description3}}
+                    </p>
+                    <p>
+                        {{info.description4}}
+                    </p>
+                    <p>
+                        A visiter sur InstaVisit.com
+                    </p>
+                </div>
+
+                <div class="card-panel ">
+
+                    <img src="assets/img/Nada.jpg">
+                    <div class="card-panel-text">
+                        <div>Présenté par<span class="orange-text" style="font-weight: bold;"> Aymen Hamda </span></div>
+                        <div>Votre expert immobilier</div>
+                        <div>@InstaVisit</div>
+
+                    </div>
+
+                    <div class="card-panel-phone">
+                        <i class="small material-icons left" style="font-weight: bold; color:white;">phone </i>
+                        <span class="white-text" style="font-weight: bold;color:white;font-size: 22px; ">50 808
+                            080</span>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
     </div>
-    <div class="col s4">
-    
+
+
+</div>
+<!---->
+<!--CARACTERSITIC SECTION-->
+<div class="sec3">
+    <div class="row">
+        <div class="col s8">
+            <div class="u-container">
+                <div class="u-table">
+                    <div class="u-table-head">
+                        {{data.info.title}}
+                    </div>
+                    <div (click)="ForceShowTableHideMore()" [class.force-hide]="forceTable" class="u-table-view-more">
+                        {{data.info.more}}
+                    </div>
+                    <div class="u-table-body" [class.force-show]="forceTable">
+                        <!--We format data.info fields into a [[],[],[]] Array-->
+                        <div *ngFor="let row of pairData('info'); index as i;" class="u-table-row">
+                            <!-- Iterate over each small area of values and titile-->
+                            <div *ngFor="let item of row" [class.greyed-out]="item.value == 'Non'" class="u-table-item">
+                                <div class="u-table-item-text">
+                                    {{item.title}}
+                                </div>
+                                <div class="u-table-item-data">
+                                    {{item.value}}
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <app-commute-table [commute]='commute'></app-commute-table>
+
+        </div>
     </div>
-  </div>
-  </div>
+</div>
   
   
+  
+  
+  <!--
   <div class="sec4">
       <div class="row">
         <div class="col s8">
@@ -179,7 +150,7 @@
                 <div class="gmap_canvas">
                 <iframe width="1100" height="500" id="gmap_canvas" 
                 [src]='sanitizer.bypassSecurityTrustResourceUrl(mapsrc)' frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.maps-erstellen.de"></a></div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>
-              <!-- Secial 20% Discount for Elegant Themes Divi Page Builder https://www.embedgooglemap.net/divi-sale/ -->
+            
   
     <br> <br>
   
@@ -252,7 +223,7 @@
     </div>
   </div> 
   </div>   
-  
+-->
   
   
     <!-- Site footer -->
