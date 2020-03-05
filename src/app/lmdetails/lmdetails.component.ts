@@ -239,7 +239,7 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
                     title: "Bureau",
                     value: '_',
                     icon: " ",
-                    class: "fab glyphicon glyphicon-lamp"
+                    class: "fas fa-desktop"
                 },
                 dressing: {
                     title: "Dressing",
@@ -263,7 +263,7 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
                     title: "Lit double",
                     value: "_",
                     icon: " ",
-                    class: "glyphicon glyphicon-bed"
+                    class: "fab fa-slideshare"
                 },
                 canapelit:{
                     title : "Canapé lit",
