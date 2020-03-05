@@ -48,37 +48,14 @@
 
 <br> <br> <br> <br>
 <ul class="collection">
+      <div *ngFor="let item of locs">
         <li class="collection-item avatar">
           <i class="material-icons circle">public</i>
-          <span class="title">Korba</span>
-          <p>Nabeul<br>
-            
+          <span class="title">{{item.City}}</span>
+          <p>{{item.Gover}}<br>
           </p>
-          <a href="#!" class="secondary-content"><i class="material-icons">delete_sweep</i></a>
+          <button (click)="delete(item.id)" class="secondary-content btn-floating btn-small waves-effect waves-light red"><i class="material-icons">delete_sweep</i></button>
         </li>
-        <li class="collection-item avatar">
-          <i class="material-icons circle">public</i>
-          <span class="title">Manar</span>
-          <p>Tunis <br>
-         
-          </p>
-          <a href="#!" class="secondary-content"><i class="material-icons">delete_sweep</i></a>
-        </li>
-        <li class="collection-item avatar">
-                <i class="material-icons circle">public</i>
-          <span class="title">Charguia II</span>
-          <p>Carthage <br>
-             Second Line
-          </p>
-          <a href="#!" class="secondary-content"><i class="material-icons">delete_sweep</i></a>
-        </li>
-        <li class="collection-item avatar">
-                <i class="material-icons circle">public</i>
-          <span class="title">Hay Ghazela</span>
-          <p>Ariana <br>
-             
-          </p>
-          <a href="#!" class="secondary-content"><i class="material-icons ">delete_sweep</i></a>
-        </li>
+      </div>  
       </ul>
     </div>

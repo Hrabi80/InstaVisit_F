@@ -19,4 +19,13 @@ export class FrontService{
     getNewsletter(){
         return this._http.get(this._url+'/getNewsletter');   
     }
+    getMessages(){
+        return this._http.get(this._url+'/getMessages');   
+    }
+    delete(id){
+        return this._http.get(this._url + '/deletecontact/'+id);
+    }
+    deleteNews(id){
+        return this._http.get(this._url + '/deletenewsletter/'+id);
+    }
 }

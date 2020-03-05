@@ -52,6 +52,11 @@ h5{
     display: none;
     right: 20px;
   }
+  @media(min-width: 860px){
+    .sec4{
+        margin-left: 5%;
+    }
+}
   h6{
     font-weight: bold;
     color: #27607a;  

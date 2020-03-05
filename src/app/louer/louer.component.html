@@ -40,8 +40,8 @@
              thumbLabel
              [displayWith]="formatLabel"
              tickInterval="100"
-             min="300"
-             max="3000" [(ngModel)]="maxPrice">
+             min="0"
+             max="100000" [(ngModel)]="maxPrice">
           </mat-slider>
           &nbsp;&nbsp;&nbsp;&nbsp;
        </div>
@@ -51,8 +51,8 @@
           thumbLabel
           [displayWith]="formatLabel2"
           tickInterval="100"
-          min="300"
-          max="5000" [(ngModel)]="minPrice">
+          min="0"
+          max="1000" [(ngModel)]="minPrice">
        </mat-slider>
        &nbsp;&nbsp;&nbsp;&nbsp;
       </div>

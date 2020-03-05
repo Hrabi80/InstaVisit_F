@@ -62,29 +62,35 @@ export class LdetailsComponent implements OnInit,PipeTransform {
             fields: {
                   parking: {
                       title: "Parking",
-                      value: "Non"
+                      value: "Non",
+                      icon: "fas fa-parking",
                   },
                   garage: {
-                      title: "Box/Garage",
-                      value: "Oui"
+                      title: "Garage",
+                      value: "Oui",
+                      icon: "fas fa-warehouse"
                   },
                   cave: {
                       title: "Cave",
-                      value: "Oui"
+                      value: "Oui",
+                      icon: "fa fa-underline"
                   }
                   ,
                   elevator: {
                       title: "Ascenseur",
-                      value: "Oui"
+                      value: "Oui",
+                      icon: "fas fa-sort-numeric-up-alt"
                   },
                   
                   etage: {
                       title: "Étage",
-                      value: "1"
+                      value: "1",
+                      icon: "fas fa-sort-numeric-up-alt"
                   },
                   garden: {
-                      title: "Gardienne",
-                      value: "Non"
+                      title: "Concierge",
+                      value: "Non",
+                      icon: "fas fa-tree"
                   }   
             }
           
@@ -178,6 +184,7 @@ export class LdetailsComponent implements OnInit,PipeTransform {
        this.mapsrc=this.Map[0].map;
        console.log(this.mapsrc);
      }); 
+     
      this.path=this.Map[0].map;
      console.log("mayMap",this.path)
     }

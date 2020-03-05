@@ -52,7 +52,7 @@ export class VenteComponent implements OnInit {
     }
     formatLabel3(value: number) {
       
-      return value +"dt";
+      return value +"m²";
     }
     formatLabel4(value: number) {
       return value + "m²";

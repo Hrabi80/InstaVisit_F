@@ -50,7 +50,7 @@
     <div class="col s9">
         <div class="u-container">
             <div class="u-description-headlines">
-                <h5> Maison à louer de S+{{info.RoomNB}} au {{info.adress}}, {{info.city}} </h5>
+                <h5> Maison à vendre de S+{{info.RoomNB}} au {{info.adress}}, {{info.city}} </h5>
                 <h6>le logement</h6>
             </div>
 
@@ -118,6 +118,9 @@
                         <div *ngFor="let row of pairData('info'); index as i;" class="u-table-row">
                             <!-- Iterate over each small area of values and titile-->
                             <div *ngFor="let item of row" [class.greyed-out]="item.value == 'Non'" class="u-table-item">
+                                <div class="u-table-item-icon">
+                                    <i class={{item.icon}}> &nbsp;</i>
+                                </div>
                                 <div class="u-table-item-text">
                                     {{item.title}}
                                 </div>
@@ -153,11 +156,10 @@
             
   
     <br> <br>
-    </div>
-    
-  </div> 
+    </div> 
+    <div class="col s3"></div>
   </div>   
-
+</div>
   
   
     <!-- Site footer -->

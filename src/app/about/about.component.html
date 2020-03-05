@@ -37,7 +37,7 @@
                   
                   <div class="main_team_content text-center">
                  
-                    <div class="col m12 col s12 ">
+                    <div class="container">
                       <div class="single_team wow fadeIn" data-wow-duration="2s">
                         <div class="single_team_img">
                           <img src="assets/img/Digita.png" alt="" />
@@ -50,8 +50,8 @@
                           </div>
                         </div>
                         <div class="single_team_name">
-                          <h4>Digita</h4>
-                          <p>Notre partenaire </p>
+                          <h4></h4>
+                          <p> </p>
                         </div>
                       </div>
                     </div>
@@ -76,7 +76,7 @@
   <div class="container subs">
       <div class="row Form-box">
           <input type="email" formControlName="newsletter" name="email" 
-          class="col s9 Browser default input search-field browser-default location"
+          class="col s12 m9 l9 Browser default input search-field browser-default location"
            placeholder="Entrez votre adress mail !"
            [ngClass]="{ 'is-invalid': submitted && form.email.errors }" required>
            <!--
@@ -88,7 +88,7 @@
                
           </div>-->
           <label for="email" class="controle-label">email</label>
-          <button type="button"  [disabled]="form.pristine || form.invalid" (click)="newMail()" name="action" class="col s3 search-bt waves-effect waves-light btn  Browser-default">s'abonner</button>
+          <button class="col s12 m3 l3" type="button"  [disabled]="form.pristine || form.invalid" (click)="newMail()" name="action" class="col s3 search-bt waves-effect waves-light btn  Browser-default">s'abonner</button>
           
       </div>      
 

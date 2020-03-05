@@ -1,50 +1,6 @@
-<!---<nav>
-    <div class="nav-wrapper">
-        
-        <h1 id="fh5co-logo"><a href="index.html">
-            <img src="assets/img/Logo2.png" style="max-width: 10%;"> </a></h1>
-     
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a routerLink="/nav/welcome">ACCUEIL</a> &nbsp;</li>
-        <li><a routerLink="/nav/howWeWork">Vous etes proprietaire ?</a>&nbsp;</li>  
-        <li><a routerLink="/nav/about">CONTACT</a>&nbsp;</li>
-      </ul> 
-    </div>
-  </nav>
 
--->
-<!--
-<mat-toolbar color="white" >
-  <span>&nbsp;
-    <a routerLink="/nav/welcome"><img src="assets/img/Flogo.png" style="width: 6%;"> </a></span>
-    <span class="example-fill-remaining-space"></span>
-     <div fxFlex fxShow="”true”" fxHide.lt-md="”true”">
-      <span><a routerLink="/nav/welcome">Accueil</a> &nbsp;</span>
-      <span><a routerLink="/nav/howWeWork">Vous etes proprietaire ?</a> &nbsp;</span>  
-      <span><a routerLink="/nav/about">contact</a> &nbsp;</span>
-
-  </div>
-  
-  <div fxShow="true" fxHide.gt-sm="true">
-      <a routerLink="/nav/welcome" (click)="sidenav.toggle()">Show Side Menu</a>
-  </div>
-
-</mat-toolbar>
-<mat-sidenav-container fxFlexFill class="example-container">
-    <mat-sidenav #sidenav fxLayout="column">
-      <div fxLayout="column">
-          <a (click)="sidenav.toggle()"  mat-button>Close</a>
-          <a routerLink="/nav/welcome">Accueil</a>
-          <a routerLink="/nav/howWeWork">Vous etes proprietaire ?</a>
-          <a routerLink="/nav/about">contact</a>
-      </div>
-    </mat-sidenav>
-
-  </mat-sidenav-container>
--->
-
-<div>
-    <mat-toolbar color="yellow">
+<div class="fixed-header" id="myHeader" #stickyMenu [class.sticky] = "sticky">
+    <mat-toolbar color="yellow" class="fixed" #toolBara >
       <mat-toolbar-row>
         <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
           <mat-icon>menu</mat-icon>
@@ -60,7 +16,7 @@
           </a>
           <a routerLink="/nav/howWeWork" mat-button>
             <mat-icon>emoji_people</mat-icon>
-            Vous etes proprietaire ?
+            Vous &ecirc;tes proprietaire ?
           </a>
           <a routerLink="/nav/about" mat-button>
             <mat-icon>account_box</mat-icon>
@@ -79,7 +35,7 @@
           </a>
           <a routerLink="/nav/howWeWork" mat-list-item>
             <mat-icon>emoji_people</mat-icon>
-            Vous etes proprietaire ?</a>
+            Vous  &ecirc;tes proprietaire ?</a>
           <a routerLink="/nav/about" mat-list-item>
             <mat-icon>account_box</mat-icon>
             A propos
@@ -94,3 +50,18 @@
     </mat-sidenav-container>
   </div>
  
+
+  <script>
+    window.onscroll = function() {myFunction()};
+    
+    var header = document.getElementById("myHeader");
+    var sticky = header.offsetTop;
+    
+    function myFunction() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("router-outlet");
+      } else {
+        header.classList.remove("router-outlet");
+      }
+    }
+    </script>

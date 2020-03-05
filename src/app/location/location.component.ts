@@ -8,6 +8,7 @@ import { LocalisationService } from '../_services/Localisation.service';
 })
 export class LocationComponent implements OnInit {
   form: FormGroup;
+  locs: any=[];
   constructor(
     private _service: LocalisationService,
     private  _fb: FormBuilder,
@@ -18,14 +19,25 @@ export class LocationComponent implements OnInit {
     this.form = this._fb.group({
       gov: new FormControl(''),
       city: new FormControl(''),
-  }); }
+  });
+    this._service.getLocs()
+      .subscribe(res=>{
+        this.locs= res;
+        console.log(this.locs);
+      })
+  }
 
   AddLoc(){
     this._service.AddLocation(this.form.value)
     .subscribe(res => {
       console.log(res);
     });
-
+  }
+  delete(id){
+    this._service.deleteLoc(id)
+      .subscribe(res => {
+      console.log(res);
+    });
   }
 
 }

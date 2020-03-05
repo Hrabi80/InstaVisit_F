@@ -3,6 +3,11 @@ h5{
     margin: 37px;
     font-family: "Comic Sans MS", cursive, sans-serif;
 }
+@media(min-width: 860px){
+    .sec4{
+        margin-left: 5%;
+    }
+}
 
 .cover img{
   width: 100%;
@@ -89,7 +94,7 @@ h5{
       font-size: 1.5rem;
   }
   .mapouter{
-      margin-left: 34px;
+      margin-left: 54px;
   }
 
  

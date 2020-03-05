@@ -40,7 +40,7 @@
     <div class="col s9">
         <div class="u-container">
             <div class="u-description-headlines">
-                <h5> Maison à louer de S+{{info.room_nb}} au {{info.adress}}, {{info.city}} </h5>
+                <h5> Maison à louer un S+{{info.room_nb}} au {{info.adress}}, {{info.city}} </h5>
                 <h6>le logement</h6>
             </div>
             
@@ -111,6 +111,9 @@
                         <div *ngFor="let row of pairData('info'); index as i;" class="u-table-row">
                             <!-- Iterate over each small area of values and titile-->
                             <div *ngFor="let item of row" [class.greyed-out]="item.value == 'Non'" class="u-table-item">
+                                <div class="u-table-item-icon">
+                                    <i class={{item.class}}>{{item.icon}}</i>
+                                </div>
                                 <div class="u-table-item-text">
                                     {{item.title}}
                                 </div>
@@ -126,7 +129,7 @@
                 </div>
             </div>
             <div style="margin-top: 20px;" class="u-container">
-                <ng-container *ngFor="let field of ['equipment', 'cuisine', 'ameublement']">
+                <ng-container *ngFor="let field of ['equipment', 'cuisine', 'ameublement','Couchage']">
                     <div 
                     *ngIf="field == 'equipment' || forceTable['equipment']"
                     class="u-table-many">
@@ -140,7 +143,7 @@
                                 <!-- Iterate over each small area of values and titile-->
                                 <div *ngFor="let item of row" [class.greyed-out]="item.value == 'Non'" class="u-table-item-many">
                                     <div class="u-table-item-icon">
-                                        <i class="material-icons">{{item.icon}}</i>
+                                        <i class={{item.class}}>{{item.icon}}</i>
                                     </div>
                                     <div class="u-table-item-text">
                                         {{item.title}}
@@ -197,69 +200,6 @@
 
 <!-- Site footer -->
 <!--FOOTER-->
-<footer class="footer-distributed">
-
-    <div class="footer-left">
-
-        <h3>Insta<span>Visit</span></h3>
-
-        <p class="footer-links">
-            <a href="#">Home</a>
-            ·
-            <a href="#">Blog</a>
-            ·
-            <a href="#">Pricing</a>
-            ·
-            <a href="#">About</a>
-            ·
-            <a href="#">Faq</a>
-            ·
-            <a href="#">Contact</a>
-        </p>
-
-        <p class="footer-company-name">InstaVisit &copy; 2019</p>
-        <br>
-        <p class="footer-company-name">Powred by Digita</p>
-    </div>
-
-    <div class="footer-center">
-
-        <div>
-            <i class="fa fa-map-marker"></i>
-            <p><span>21 XXXX Street</span> YYY, Tunis</p>
-        </div>
-
-        <div>
-            <i class="fa fa-phone"></i>
-            <p>+216 555 123 456</p>
-        </div>
-
-        <div>
-            <i class="fa fa-envelope"></i>
-            <p><a href="mailto:support@company.com">contact@InstaVisit.com</a></p>
-        </div>
-
-    </div>
-
-    <div class="footer-right">
-
-        <p class="footer-company-about">
-            <span>About the company</span>
-            une agence immobilière dont les processus de location et de vente se font en ligne
-            &amp; .
-        </p>
-
-        <div class="footer-icons">
-
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-linkedin"></i></a>
-            <a href="#"><i class="fa fa-github"></i></a>
-
-        </div>
-
-    </div>
-
-</footer>
+<app-footer></app-footer>
 
 <!--   /TEST NEW FOOTER-->

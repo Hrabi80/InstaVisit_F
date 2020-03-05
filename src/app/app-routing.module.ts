@@ -19,7 +19,6 @@ import { AllComponent } from './all/all.component';
 import { VenteListComponent } from './vente-list/vente-list.component';
 import { OtherVenteComponent } from './other-vente/other-vente.component';
 import { SearchNavComponent } from './search-nav/search-nav.component';
-
 import { InfoComponent } from './info/info.component';
 import { VT360Component } from './vt360/vt360.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
@@ -34,6 +33,7 @@ import { LdetailsComponent } from './ldetails/ldetails.component';
 import { UpdatevComponent } from './updatev/updatev.component';
 import { UpdatelmComponent } from './updatelm/updatelm.component';
 import { UpdatelnmComponent } from './updatelnm/updatelnm.component';
+import { MessagesComponent } from './messages/messages.component';
 const routes: Routes = [
   
   {
@@ -105,6 +105,10 @@ const routes: Routes = [
       {
         path: 'newsletter',
         component: NewsletterComponent,   
+      },
+      {
+        path: 'messages',
+        component: MessagesComponent,   
       },
     ],
     canActivate: [AuthGuard] 

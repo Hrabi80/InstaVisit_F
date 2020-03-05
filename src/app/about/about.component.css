@@ -1,4 +1,9 @@
 /* About Section */
+@media(max-width: 480px){
+	.img-responsive{
+		max-width: 90%;
+	}
+}
 .instac{
 	color: #fda701;
 }

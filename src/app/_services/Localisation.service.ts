@@ -23,4 +23,7 @@ export class LocalisationService{
     AddLocation(data){
         return this._http.post(this._url + '/AddLoc', data);
     }
+    deleteLoc(id){
+        return this._http.get(this._url + '/delete/'+id);
+    }
 }

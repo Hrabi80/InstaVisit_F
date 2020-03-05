@@ -1,36 +1,37 @@
 
 
 <div class="content">
-     
       <div class="myVideo">
-        <video autoplay muted loop id="myVideo" controls poster="assets/img/main2.jpg">
+        <video autoplay muted loop id="myVideo" >
             <source src="assets/coverVideo.mp4" type="video/mp4"> 
         </video>
+        
       </div>
   
-        <div class="container header" >
+        <div class="header" >
               <form [formGroup]="GoForm" action="">
+                
                   <div class="title-wrapper">
                     <h1>
                         Visitez votre prochain logement depuis<br> 
                         <span> chez vous.</span>
                     </h1>
-                  </div> 
-                    <div class="TheBox">
-                            <mat-radio-group aria-label="Select an option" >&nbsp; &nbsp;
-                                <mat-radio-button value="1" (change)="onItemChange(1)" class="Fopt" checked ><br>A louer &nbsp; &nbsp; </mat-radio-button>
-                                <mat-radio-button value="2" (change)="onItemChange(2)" class="Sopt"><br>A vendre &nbsp; &nbsp;</mat-radio-button>
+                  </div>
+                  <div class="radioandform">
+                            <mat-radio-group aria-label="Select an option" >
+                                <mat-radio-button value="1" (change)="onItemChange(1)" class="Fopt" checked ><br><span class="radiotext">A louer</span>  </mat-radio-button>
+                                <mat-radio-button value="2" (change)="onItemChange(2)" class="Sopt"><br><span class="radiotext">A vendre</span>  </mat-radio-button>
                             </mat-radio-group>
-                            
                             <div class="row Form-box">
-                              <input type="text" class="col l6 m 12 s12 search-field " formControlName="Localisation" placeholder="Indiquer lieu,village,adress...">
-                              <button type="button" (click)="Go()"  name="action" class="col l3 m12 s12 search-bt">Rechercher</button>
+                              <input type="text" class="col l7 m6 s12 search-field " formControlName="Localisation" placeholder="Indiquer lieu,village,adress...">
+                              <button type="button" (click)="Go()"  name="action" class="col l4 m3 s12 search-bt">Rechercher</button>
                             </div>
-                    </div>  
+                  </div>
               </form>
         </div>  
 
 </div>
+
         
         <!-- WELCOME OUTPUT-->
 
@@ -95,13 +96,13 @@
            <div *ngFor="let output of SecOutput | slice:-8:-4">
                 <div class="card col">
                     <div class="card-image waves-effect waves-block waves-light">
-                      <a routerLink="/nav/lmdetails/+{{output.id}}">
+                      <a routerLink="/nav/details/+{{output.id}}">
                      <img class="activatorh" src="http://127.0.0.1:8000/images/houses/{{output.mainIMG}}" alt="img"></a>
                     </div><br>
                   {{output.city}}
                   <span>{{output.price}} dt - {{output.surface}} m²</span> <br>
                   <small> {{output.room_nb}} piéces </small>
-                  <a routerLink="/nav/lmdetails/+{{output.id}}">
+                  <a routerLink="/nav/details/+{{output.id}}">
                     <i class="material-icons right">filter_none</i>
                   </a>
                   <div class="card-content">
@@ -117,13 +118,13 @@
       <div *ngFor="let output of SecOutput | slice:-4">
         <div class="card col">
           <div class="card-image waves-effect waves-block waves-light">
-            <a routerLink="/nav/lmdetails/+{{output.id}}">
+            <a routerLink="/nav/details/+{{output.id}}">
            <img class="activatorh" src="http://127.0.0.1:8000/images/houses/{{output.mainIMG}}" alt="img"></a>
           </div><br>
-        {{output.ctiy}}
+        {{output.city}}
         <span>{{output.price}} dt - {{output.surface}} m²</span> <br>
         <small> {{output.piece}} pieces</small>
-        <a routerLink="/nav/lmdetails/+{{output.id}}">
+        <a routerLink="/nav/details/+{{output.id}}">
           <i class="material-icons right">filter_none</i></a>
         <div class="card-content">
       </div>
@@ -173,13 +174,13 @@
            
               <ng-template matStepLabel> Une description fidèle</ng-template>
               Une description fidèle et précise de
-              Chaque bien que nous mettons en location ou en vente
+              Chaque bien que nous mettons en location ou en vente.
             
           </mat-step>
           <mat-step >
             <ng-template matStepLabel> Une Visite virtuelle </ng-template>
-            Nous vous proposons les modélisations des photos 360° et une visite virtuelle proposées par InstaVisit,
-            vous permettent de vous projeter dans votre future maison ou bien.
+            Vous Faites découvrir le logement de vos rêves à votre famille ou amis éloignés à tout moment via votre Smartphone, 
+            votre Tablette ou votre ordinateur à travers la visite virtuelle.
           </mat-step>
         </mat-vertical-stepper>
         
@@ -188,7 +189,7 @@
     <br>
     <br>
     <div class="row">
-      <div class="col s7">
+      <div class="col s9">
           <div class="container fprop">
               <h5>Vous etes propriétaires ? </h5>
               Louez ou vendez votre logement avec des outils modernes :
@@ -196,7 +197,7 @@
                 <mat-vertical-stepper (selectionChange)="activeSeller = $event.selectedIndex" [linear]="isLinear" #stepper>
                   <mat-step [stepControl]="firstFormGroup">
                    
-                      <ng-template matStepLabel>Louez votre logement</ng-template>
+                      <ng-template matStepLabel>Louez ou vendez votre logement</ng-template>
                       InstaVisit vous permet de louer ou vendre votre logement de manière efficace. 
                Contactez-nous pour que nous prenions en charge la recherche d’acheteur/locataire 
                pour votre bien.
@@ -212,7 +213,7 @@
                     <ng-template matStepLabel>Un photographe professionnel</ng-template>
                     Un photographe professionnel se rend sur place en 48h de votre demande, 
               il réalise des prises des vues 360°,des photos de haute qualité, des vidéos,
-               prend les mesures nécessaires de toutes les piéces et toutes les informations qui entoure 
+               prend les mesures nécessaires de toutes les piéces et toutes les informations qui entourent 
                le bien
                   </mat-step>
                 </mat-vertical-stepper></div>
@@ -222,7 +223,7 @@
       <br>
       <br>
       <div class="propr">
-      <div class="col s5">
+      <div class="col s3">
           <img src='{{allImages.seller[activeSeller]}}'>
       </div>
       </div>

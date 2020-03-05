@@ -49,7 +49,7 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
   Cuisine: Array<any>;
   Eqp :Array<any>;
   Amb : Array<any>;
-  Couchage: Array<any>;
+  Couchage1: Array<any>;
   nb :number=0;
   path:string;
   //let values: (string | number)[];
@@ -82,29 +82,41 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
             fields: {
                 parking: {
                     title: "Parking",
-                    value: "Non"
+                    value: "Non",
+                    class: "fas fa-parking",
+                    icon: " "
                 },
                 garage: {
-                    title: "Box/Garage",
-                    value: "Oui"
+                    title: "Garage",
+                    value: "Oui",
+                    class: "fas fa-warehouse",
+                    icon: " "
                 },
                 cave: {
                     title: "Cave",
-                    value: "Oui"
+                    value: "Oui",
+                    class: "fa fa-underline",
+                    icon: " "
                 }
                 ,
                 elevator: {
                     title: "Ascenseur",
-                    value: "Oui"
+                    value: "Oui",
+                    class: "fas fa-sort-numeric-up-alt",
+                    icon: " "
                 },
                 
                 etage: {
                     title: "Étage",
-                    value: "1"
+                    value: "1",
+                    class: "fas fa-sort-numeric-up-alt",
+                    icon: " "
                 },
                 garden: {
-                    title: "Gardienne",
-                    value: "Non"
+                    title: "Concierge",
+                    value: "Non",
+                    class: "fas fa-tree",
+                    icon: " "
                 }      
             }
 
@@ -116,33 +128,39 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
             fields: {
                 toilette: {
                     title: "Toilettes séparés",
-                    value: "Non",
-                    icon: "wc"
+                    value: "_",
+                    icon: "wc",
+                    class: "material-icons"
                 },
                 machine: {
                     title: "Rac. machine",
-                    value: "Oui",
-                    icon: "highlight"
+                    value: "_",
+                    icon: "highlight",
+                    class: "material-icons"
                 },
                 internet: {
                     title: "Raccordement internet",
-                    value: "Non",
-                    icon: "wifi"
+                    value: "_",
+                    icon: "wifi",
+                    class: "material-icons"
                 },
                 boite: {
                     title: "Boite aux lettres",
-                    value: "Non",
-                    icon: "drafts"
+                    value: "_",
+                    icon: "drafts",
+                    class: "material-icons"
                 },
                 interphone: {
                     title: "Interphone",
-                    value: "Non",
-                    icon: "chrome_reader_mode"
+                    value: "_",
+                    icon: "chrome_reader_mode",
+                    class: "material-icons"
                 },
                 lavelange: {
                     title: "Lave-linge",
-                    value: "Oui",
-                    icon: "speaker"
+                    value: "_",
+                    icon: "speaker",
+                    class: "material-icons"
                 }
                 
             }
@@ -153,33 +171,39 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
             fields: {
                 four: {
                     title: "Four",
-                    value: "Non",
+                    value: "_",
                     icon: "vignette",
+                    class: "material-icons"
                 },
                 plaque: {
                     title: "Plaque",
-                    value: "Non",
-                    icon: "border_all"
+                    value: "_",
+                    icon: "border_all",
+                    class: "material-icons"
                 },
                 lave: {
                     title: "Lave vaisselle",
-                    value: "Non",
-                    icon: "bug"
+                    value: "_",
+                    icon: "local_laundry_service",
+                    class: "material-icons"
                 },
                 congelateur: {
                     title: "Congélateur",
-                    value: "Non",
-                    icon: "ac_unit"
+                    value: "_",
+                    icon: "ac_unit",
+                    class: "material-icons"
                 },
                 refri: {
                     title: "Réfrigérateur",
-                    value: "Non",
-                    icon: "kitchen"
+                    value: "_",
+                    icon: "kitchen",
+                    class: "material-icons"
                 },
                 microonde: {
                     title: "Micro-ondes",
-                    value: "Non",
-                    icon: "local_cafe"
+                    value: "_",
+                    icon: "local_cafe",
+                    class: "material-icons"
                 },
             }
         },
@@ -190,32 +214,38 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
                 canape: {
                     title: "Canapé",
                     value: "_",
-                    icon: "weekend"
+                    icon: "weekend",
+                    class: "material-icons"
                 },
                 mytable: {
                     title: "Table",
                     value: "_",
-                    icon: "airline_seat_recline_normal"
+                    icon: "airline_seat_recline_normal",
+                    class: "material-icons"
                 },
                 chaise: {
                     title: "Chaise",
                     value: "_",
-                    icon: "airline_seat_legroom_normal"
+                    icon: "event_seat",
+                    class: "material-icons"
                 },
                 MyTV: {
                     title: "TV",
                     value: "_",
-                    icon: "tv"
+                    icon: "tv",
+                    class: "material-icons"
                 },
                 bureau: {
                     title: "Bureau",
-                    value: "_",
-                    icon: "airline_seat_individual_suite"
+                    value: '_',
+                    icon: " ",
+                    class: "fab glyphicon glyphicon-lamp"
                 },
                 dressing: {
                     title: "Dressing",
                     value: "_",
-                    icon: false
+                    icon: " ",
+                    class:"fas fa-tshirt"
                 }
             }
         },
@@ -225,18 +255,21 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
             fields:{
                 lit: {
                     title: "Lit",
-                    value: "_",
-                    icon: false
+                    value: "hotel",
+                    icon: "hotel",
+                    class: "material-icons"
                 },
                 doublelit:{
                     title: "Lit double",
                     value: "_",
-                    icon: false,
+                    icon: " ",
+                    class: "glyphicon glyphicon-bed"
                 },
                 canapelit:{
-                    title : "Canpe lit",
+                    title : "Canapé lit",
                     value: "_",
-                    icon : false,
+                    icon : "weekend",
+                    class: "material-icons"
                 }
             }
         },
@@ -333,18 +366,17 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
      }); 
      
 
-     //ddd
     this._service.getEquip(this.id)
     .subscribe((res5:Array<any>)=>{
       console.log("Equip",res5);
       this.Eqp=res5;
     //  return(this.inHouse);
-        for (let item of ['toilette', 'machine', 'interphone', 'internet', 'boite', 'lavelange']) {
+        for (let item of ['toilette', 'machine', 'internet', 'boite', 'interphone', 'lavelange']) {
             //this.Eqp[0][item] ? this.data.equipment.fields[item] = "Oui" : this.data.equipment.fields[item] = "Non";
             if( this.Eqp[0][item] == true){
-                this.data.info.fields[item].value = "Oui";
+                this.data.equipment.fields[item].value = "Oui";
             }else{
-                this.data.info.fields[item].value = "Non";
+                this.data.equipment.fields[item].value = "Non";
             }
         }
 
@@ -370,7 +402,6 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
       console.log("Ameubl",res7);
       this.Amb=res7;
       for (let item of ['canape', 'mytable', 'chaise', 'MyTV', 'bureau', 'dressing']) {
-        //this.Cuisine[0][item] ? this.data.cuisine.fields[item] = "Oui" : this.data.cuisine.fields[item] = "Non";
             this.data.ameublement.fields[item].value = this.Amb[0][item].toString();
       }
     });
@@ -378,7 +409,10 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
    this._service.getCouchage(this.id)
     .subscribe((res8:Array<any>)=>{
       console.log("Couchage",res8);
-      this.Couchage = res8;
+      this.Couchage1 = res8;
+      for (let item of ['lit', 'doublelit', 'canapelit']) {
+            this.data.Couchage.fields[item].value = this.Couchage1[0][item].toString();
+      }
     });
  //ddd
  this.path=this.Map[0].map;

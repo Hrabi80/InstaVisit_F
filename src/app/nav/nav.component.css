@@ -1,13 +1,12 @@
-nav{
-    background-color: rgb(255, 255, 255);
-    height: 78px;
-    line-height: 78px;
-    position: relative ;
 
+
+@media(max-width: 480px){
+  .brand-logo{
+    margin-left: 135% !important;
+  }
 }
-nav .nav-wrapper a{
-    color: rgb(63, 63, 68);
-    position: relative;
+.fixed-header{
+  z-index: 1000000 !important;
 }
 
 .example-fill-remaining-space {
@@ -20,15 +19,47 @@ mat-sidenav-content{
 }
 mat-toolbar{
   background-color: rgb(255, 255, 255);
+  position: sticky !important;
+  z-index: 1000000 !important;
 }
 /*
-img{
-  margin-top:-4%;
-}
+code scrolling 
 */
+.mat-toolbar.mat-primary {
+  -webkit-transition: 700ms ;
+  -ms-transition:  700ms ;
+  transition: 700ms ;
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+.fixed {
+  position: absolute;
+ /* background-color: transparent !important;*/
+  top: 0;
+  z-index: 5;
+  margin-top: 0.90%;
+  align-content: center;
+  
+}
+.sticky {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 5;
+}
+
+
+.divFundo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+/* /scrolling */
+
+
 /* LOGO */
 #fh5co-logo {
-    position: relative;
+    position: fixed;
     z-index: 2;
    /* font-size: 28px;*/
    font-size: 3px;
