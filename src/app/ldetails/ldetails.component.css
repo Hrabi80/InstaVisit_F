@@ -57,7 +57,7 @@ h5{
   }
   h6{
     font-weight: bold;
-    color: #27607a;  
+    color: #e7760c;  
     margin: 37px;
   }
   p{
@@ -125,7 +125,7 @@ h5{
       margin: 4px 0;
   }
   .card-panel{
-    background-color: #e0a40a;
+    background-color: #00b28e;
     width: 35%;
     display: flex;
     flex-direction: column;

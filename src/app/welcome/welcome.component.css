@@ -36,8 +36,8 @@
    }
       .radioandform{
         margin-left: -0.5% !important;
-        width: 95%;
-        max-width: 95%;
+        width: 93%;
+        max-width: 93%;
       }
   
       .radiotext{
@@ -90,13 +90,14 @@
         }
         .card{
           margin:10px !important;
-          width: 290px !important;
+          width: 270px !important;
           height: 205px !important;
           box-shadow: #000000;
         }
         .propr img{
-          margin-left: -25% !important;
-          margin-top: 25% !important;
+          margin-left: -60% !important;
+          margin-bottom: -80% !important;
+
         }
               
 }

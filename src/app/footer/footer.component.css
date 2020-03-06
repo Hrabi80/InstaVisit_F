@@ -1,4 +1,12 @@
 /* TEST NEW FOOTER */
+@media(max-width: 480px){
+  .phoneM{
+    margin-left: -18% !important;
+  }
+  .avenueM{
+    margin-right: -10%;
+  }
+}
 footer{
     position: relative;
     bottom: 0;
