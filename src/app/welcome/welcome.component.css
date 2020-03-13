@@ -418,7 +418,7 @@ top: 0;
 left: 0;
 width: 60px;
 height: 60px;
-border: 20px solid rgb(14, 136, 192);
+border: 20px solid #00b28e;
 border-radius: 50px 50px 0 50px;
 transform: rotate(-45deg);
 }

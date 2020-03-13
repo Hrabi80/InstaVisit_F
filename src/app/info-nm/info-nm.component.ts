@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { HouseLService } from '../_services/HouseL.service';
+import swal from 'sweetalert2';
 @Component({
   selector: 'app-info-nm',
   templateUrl: './info-nm.component.html',
@@ -54,6 +55,11 @@ export class InfoNmComponent implements OnInit {
     .subscribe(res => {
       console.log(res);
     });
+    swal.fire(
+      'AJOUTER !',
+      'Vous ajoutez maintenant les caractéristiques transport !',
+      'success'
+    );
   }
 
   newInfo(){
@@ -61,6 +67,12 @@ export class InfoNmComponent implements OnInit {
     .subscribe(res=>{
        console.log(res);
     });
+    swal.fire(
+      'AJOUTER !',
+      'Vous ajoutez maintenant les caractéristiques essentielles !',
+      'success'
+    );
+
   }
 
   newMap(){
@@ -68,6 +80,11 @@ export class InfoNmComponent implements OnInit {
     .subscribe(res=>{
        console.log(res);
     });
+    swal.fire(
+      'AJOUTER !',
+      'Vous ajoutez maintenant le map et le VT360 !',
+      'success'
+    );
   }
 
 }

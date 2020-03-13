@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { HouseLService } from '../_services/HouseL.service';
+import swal from 'sweetalert2';
 @Component({
   selector: 'app-info-m',
   templateUrl: './info-m.component.html',
@@ -93,6 +94,11 @@ export class InfoMComponent implements OnInit {
     .subscribe(res => {
       console.log(res);
     });
+    swal.fire(
+      'AJOUTER !',
+      'Vous ajoutez maintenant les caractéristiques transport !',
+      'success'
+    );
   }
 
   newInfo(){
@@ -100,6 +106,11 @@ export class InfoMComponent implements OnInit {
     .subscribe(res=>{
        console.log(res);
     });
+    swal.fire(
+      'AJOUTER !',
+      'Vous ajoutez maintenant les caractéristiques essentielles !',
+      'success'
+    );
   }
 
   newMap(){
@@ -107,6 +118,12 @@ export class InfoMComponent implements OnInit {
     .subscribe(res=>{
        console.log(res);
     });
+    swal.fire(
+      'AJOUTER !',
+      'Vous ajoutez maintenant le map et le VT360!',
+      'success'
+    );
+    
   }
 
   newCuisine(){
@@ -114,6 +131,12 @@ export class InfoMComponent implements OnInit {
     .subscribe(res => {
       console.log(res);
     });
+    swal.fire(
+      'AJOUTER !',
+      'Vous ajoutez maintenant les equipements de la cuisine !',
+      'success'
+    );
+    
   }
 
   newEquip(){
@@ -121,6 +144,11 @@ export class InfoMComponent implements OnInit {
     .subscribe(res=>{
        console.log(res);
     });
+    swal.fire(
+      'AJOUTER !',
+      'Vous ajoutez maintenant les equipement du bien à louer!',
+      'success'
+    );
   }
 
   newAmeub(){
@@ -128,6 +156,11 @@ export class InfoMComponent implements OnInit {
     .subscribe(res=>{
        console.log(res);
     });
+    swal.fire(
+      'AJOUTER !',
+      'Vous ajoutez maintenant les meubles!',
+      'success'
+    );
   }
 
   newCouchage(){
@@ -135,6 +168,11 @@ export class InfoMComponent implements OnInit {
     .subscribe(res=>{
        console.log(res);
     });
+    swal.fire(
+      'AJOUTER !',
+      'Vous ajoutez maintenant les couchages!',
+      'success'
+    );
   }
 
 }

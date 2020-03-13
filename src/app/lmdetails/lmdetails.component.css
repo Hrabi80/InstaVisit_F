@@ -41,8 +41,9 @@ u-description-contact{
     margin-left: 70%;
     margin-right: 2px;
 }
-.u-table-view-more{
+.u-table-view-more-many{
     cursor:pointer;
+    color:#00b28e;
 }
 .u-table-many{
     cursor: pointer;

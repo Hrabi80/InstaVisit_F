@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { HouseVService } from '../_services/HouseV.service';
+import swal from 'sweetalert2';
 @Component({
   selector: 'app-info',
   templateUrl: './info.component.html',
@@ -57,6 +58,11 @@ export class InfoComponent implements OnInit {
     .subscribe(res => {
       console.log(res);
     });
+    swal.fire(
+      'AJOUTER !',
+      'Vous ajoutez maintenant les caractéristiques transport !',
+      'success'
+    );
   }
 
   newInfo(){
@@ -64,6 +70,11 @@ export class InfoComponent implements OnInit {
     .subscribe(res=>{
        console.log(res);
     });
+    swal.fire(
+      'AJOUTER !',
+      'Vous ajoutez maintenant les caractéristiques essentielles !',
+      'success'
+    );
   }
 
   newMap(){
@@ -71,6 +82,11 @@ export class InfoComponent implements OnInit {
     .subscribe(res=>{
        console.log(res);
     });
+    swal.fire(
+      'AJOUTER !',
+      'Vous ajoutez maintenant le Map et le VT360 !',
+      'success'
+    );
   }
 
 }  
