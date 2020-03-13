@@ -76,7 +76,7 @@ export class DetailsComponent implements OnInit,PipeTransform {
                     icon: "fas fa-warehouse"
                 },
                 cave: {
-                    title: "Cave",
+                    title: "Piscine",
                     value: "Oui",
                     icon: "fa fa-underline"
                 }

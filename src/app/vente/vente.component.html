@@ -39,7 +39,7 @@
           <mat-slider
              thumbLabel
              [displayWith]="formatLabel"
-             tickInterval="500000"
+             tickInterval="50000"
              min="0"
              max="5000000" [(ngModel)]="maxPrice">
           </mat-slider>
@@ -50,9 +50,9 @@
           <mat-slider
           thumbLabel
           [displayWith]="formatLabel2"
-          tickInterval="10000"
+          tickInterval="50000"
           min="0"
-          max="7000" [(ngModel)]="minPrice">
+          max="50000" [(ngModel)]="minPrice">
        </mat-slider>
        &nbsp;&nbsp;&nbsp;&nbsp;
       </div>
@@ -61,7 +61,7 @@
 		<mat-slider
 		   thumbLabel
 		   [displayWith]="formatLabel3"
-		   tickInterval="1000"
+		   tickInterval="25"
 		   min="0"
 		   max="2000" [(ngModel)]="maxSurface">
 		</mat-slider>
@@ -71,7 +71,7 @@
 		<mat-slider
 		   thumbLabel
 		   [displayWith]="formatLabel4"
-		   tickInterval="1000"
+		   tickInterval="25"
 		   min="0"
 		   max="50" [(ngModel)]="minSurface">
 		</mat-slider>

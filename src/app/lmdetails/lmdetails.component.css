@@ -41,6 +41,12 @@ u-description-contact{
     margin-left: 70%;
     margin-right: 2px;
 }
+.u-table-view-more{
+    cursor:pointer;
+}
+.u-table-many{
+    cursor: pointer;
+}
 .card{
   position:fixed;
 }
@@ -142,11 +148,14 @@ u-description-contact{
   }
 
   .card-panel{
-    background-color: #e0a40a;
+    background-color: #00b28e;
     width: 35%;
     display: flex;
     flex-direction: column;
     align-items: center; 
+  }
+  .u-table-head{
+      color:#00b28e ;
   }
 
    .card-panel img{

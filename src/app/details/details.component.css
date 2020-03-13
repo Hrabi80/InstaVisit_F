@@ -85,6 +85,9 @@ h5{
       background-color: rgb(241, 245, 247);
       font-size: 1.1rem;
   }
+  .u-table-view-more{
+      cursor:pointer;
+  }
   .gras{
     font-size: 1.4rem;
     text-transform: capitalize;
@@ -99,7 +102,9 @@ h5{
       margin-left: 34px;
   }
 
- 
+  .u-table-head{
+    color:#00b28e ;
+}
 
   .u-description-headlines {
       max-width: 760px;

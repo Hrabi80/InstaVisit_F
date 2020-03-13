@@ -93,7 +93,7 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
                     icon: " "
                 },
                 cave: {
-                    title: "Cave",
+                    title: "Piscine",
                     value: "Oui",
                     class: "fa fa-underline",
                     icon: " "

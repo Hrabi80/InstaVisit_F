@@ -1,5 +1,12 @@
-
+body{
+  font-family: 'Varela Round', 'Helvetica Neue', Helvetica, sans-serif;
+}
 /* MAX WIDTH 876 */
+@media(min-width: 1300px){
+  .header{
+    margin-left: 8% !important;
+  }
+}
 @media (max-width: 876px) {
   .content {
       background-size: cover !important;
@@ -235,7 +242,7 @@ h1{
  font-size: 5.2vw !important;/* 3.46vw; /* 45 px font-size 2 px spacing */
  letter-spacing: 0.154vw;/*0.154vw;*/
  text-align: center;
- font-family: Varela, Round;
+ font-family: 'Varela Round', 'Helvetica Neue', Helvetica, sans-serif;;
 
 }
 .search-field {
@@ -282,7 +289,7 @@ opacity: .4;
 position: absolute;
 top: 3%;
 left: 50%;
-background: rgb(20, 152, 218);
+background: #00b28e;
 width: 500px;
 height: 500px;
 margin-left: -250px;
@@ -352,7 +359,7 @@ background-color:#33353d
 background-color: #616161; 
 }
 .seeMore{
-color:rgb(2, 148, 216);
+color:#00b28e;
 text-decoration: underline;
 margin-left: 85%;
 font-size: 14px;
@@ -432,7 +439,7 @@ background-color:rgb(247, 247, 247) ;
 }
 .why{
 margin-left: 4%;
-
+font-family:  'Varela Round', 'Helvetica Neue', Helvetica, sans-serif;
 }
 /*
 .why img{
@@ -442,15 +449,15 @@ height:370px;
 .why h4{
 text-align: center;
 font-style: Georgia;
-color: rgb(110, 110, 110);
+color: #28617b;
 }
 
 .why h5{
 text-align: left;
 font-style: Georgia;
-color: rgb(58, 139, 214);
+color: #00b28e;
 margin-right: -7%;
-font-family: 'system-ui;';
+font-family: 'Varela Round', 'Helvetica Neue', Helvetica, sans-serif;
 }
 
 
