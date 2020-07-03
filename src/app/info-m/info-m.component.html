@@ -68,7 +68,7 @@
         </div><br><br> 
     </mat-card-content>
     <mat-card-actions>
-        <button class="waves-effect waves-light btn yellow" (click)="newInfo()" name="action">
+        <button class="waves-effect waves-light btn yellow" (click)="newInfo()" [disabled]="clicked1" name="action">
           Ajouter</button>
     </mat-card-actions>
                
@@ -94,7 +94,7 @@
              
         </mat-card-content>
         <mat-card-actions>
-            <button class="waves-effect waves-light btn yellow" (click)="newMap()" name="action">
+            <button class="waves-effect waves-light btn yellow" (click)="newMap()" [disabled]="clickedMap" name="action">
               Ajouter</button>
         </mat-card-actions>
                    
@@ -124,7 +124,7 @@
                
           </mat-card-content>
           <mat-card-actions>
-              <button class="waves-effect waves-light btn yellow" (click)="newCouchage()" name="action">
+              <button class="waves-effect waves-light btn yellow" (click)="newCouchage()" [disabled]="clickedCou" name="action">
                 Ajouter</button>
           </mat-card-actions>
                      
@@ -177,7 +177,7 @@
             <br><br>
         </mat-card-content>
         <mat-card-actions>
-            <button class="waves-effect waves-light btn yellow" (click)="newStation()"  name="action">
+            <button class="waves-effect waves-light btn yellow" (click)="newStation()" [disabled]="clickedTr" name="action">
               Ajouter</button>
         </mat-card-actions>
                     
@@ -261,7 +261,7 @@
                 </div><br><br> 
             </mat-card-content>
             <mat-card-actions>
-                <button class="waves-effect waves-light btn yellow" (click)="newCuisine()" name="action">
+                <button class="waves-effect waves-light btn yellow" (click)="newCuisine()" [disabled]="clickedCui" name="action">
                   Ajouter</button>
             </mat-card-actions>
             </mat-card>
@@ -340,7 +340,7 @@
                 </div><br><br> 
             </mat-card-content>
             <mat-card-actions>
-                <button class="waves-effect waves-light btn yellow" (click)="newEquip()" name="action">
+                <button class="waves-effect waves-light btn yellow" (click)="newEquip()" [disabled]="clickedEqp" name="action">
                   Ajouter</button>
             </mat-card-actions>
             </mat-card>
@@ -382,11 +382,10 @@
            
       </mat-card-content>
       <mat-card-actions>
-          <button class="waves-effect waves-light btn yellow" (click)="newAmeub()" name="action">
+          <button class="waves-effect waves-light btn yellow" (click)="newAmeub()" [disabled]="clickedAmm" name="action">
             Ajouter</button>
       </mat-card-actions>
                  
-      
       </mat-card>
       </form>
 

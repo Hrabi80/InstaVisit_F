@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import {Router} from '@angular/router';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { HouseLService } from '../_services/HouseL.service';
+import { UpdatelService } from '../_services/updatel.service'; 
 import swal from 'sweetalert2';
+
 @Component({
   selector: 'app-info-m',
   templateUrl: './info-m.component.html',
@@ -10,6 +13,19 @@ import swal from 'sweetalert2';
 })
 export class InfoMComponent implements OnInit {
   id:number;
+  errorMessage: string;
+
+  clicked1: boolean;
+  clickedTr: boolean;
+  clickedMap: boolean;
+  clickedEqp: boolean;
+  clickedAmm: boolean;
+  clickedCui: boolean;
+  clickedCou: boolean;
+
+  parking:any=[];
+  Map:any=[];
+  Tran:any=[];
   form: FormGroup;
   formInfo: FormGroup;
   formMap: FormGroup;
@@ -20,13 +36,51 @@ export class InfoMComponent implements OnInit {
   constructor(private route: ActivatedRoute,
     private  _fb: FormBuilder,
     private _service : HouseLService,
+    private _service2 : UpdatelService,
+    private router: Router,
     ) 
     { }
 
-  ngOnInit() {
+ async ngOnInit() {
     this.id = parseInt(this.route.snapshot.paramMap.get('id'));
     console.log(this.id);
 
+    this._service2.getParkingL(this.id)
+    .subscribe((res)=>{
+        Object.keys(res).length === 0 ? this.clicked1=false: this.clicked1=true;
+        console.log(this.clicked1, "let's see here");
+        this._service2.getTransportL(this.id)
+        .subscribe((res)=>{
+            Object.keys(res).length === 0 ? this.clickedTr=false: this.clickedTr=true;
+            this._service2.getMapL(this.id)
+            .subscribe((res)=>{
+                Object.keys(res).length === 0 ? this.clickedMap=false: this.clickedMap=true;
+                this._service2.getAmm(this.id)
+                .subscribe((res)=>{
+                     Object.keys(res).length === 0 ? this.clickedAmm=false: this.clickedAmm=true;
+                     this._service2.getCouchage(this.id)
+                      .subscribe((res)=>{
+                          Object.keys(res).length === 0 ? this.clickedCou=false: this.clickedCou=true;
+                          this._service2.getCuisine(this.id)
+                          .subscribe((res)=>{
+                                Object.keys(res).length === 0 ? this.clickedCui=false: this.clickedCui=true;
+                                this._service2.getEquip(this.id)
+                                .subscribe((res)=>{
+                                      Object.keys(res).length === 0 ? this.clickedEqp=false: this.clickedEqp=true;
+                                      this.startercheck();
+                                });
+                          });
+                      });
+                });
+             });
+         });  
+       });
+
+    
+        
+    
+  
+   
 
     this.form = this._fb.group({
       taxi: new FormControl(''),
@@ -86,7 +140,24 @@ export class InfoMComponent implements OnInit {
       conge: new FormControl(''),
       micro: new FormControl(''),
       plaque: new FormControl(''),
-    });
+    });      
+    }
+
+
+
+  
+   startercheck(){
+    if( this.clicked1 && this.clickedAmm && this.clickedCou && this.clickedTr && this.clickedMap
+      && this.clickedEqp && this.clickedCui){
+      
+        swal.fire(
+          'C est deja fait !',
+          'Vous avez deja ajouter tout les caractéristique de ce lougement , Si vous voulez faire un mis à jour , allez aux update page !',
+          'success', 
+        );
+          setTimeout(()=>{this.router.navigateByUrl('dashboard/HLM_LISTE');},3000);
+        
+      };
   }
 
   newStation(){
@@ -99,6 +170,7 @@ export class InfoMComponent implements OnInit {
       'Vous ajoutez maintenant les caractéristiques transport !',
       'success'
     );
+    this.clickedTr=true;
   }
 
   newInfo(){
@@ -111,6 +183,7 @@ export class InfoMComponent implements OnInit {
       'Vous ajoutez maintenant les caractéristiques essentielles !',
       'success'
     );
+    this.clicked1=true;
   }
 
   newMap(){
@@ -123,6 +196,7 @@ export class InfoMComponent implements OnInit {
       'Vous ajoutez maintenant le map et le VT360!',
       'success'
     );
+    this.clickedMap=true;
     
   }
 
@@ -136,7 +210,7 @@ export class InfoMComponent implements OnInit {
       'Vous ajoutez maintenant les equipements de la cuisine !',
       'success'
     );
-    
+    this.clickedCui=true;
   }
 
   newEquip(){
@@ -149,6 +223,7 @@ export class InfoMComponent implements OnInit {
       'Vous ajoutez maintenant les equipement du bien à louer!',
       'success'
     );
+    this.clickedEqp=true;
   }
 
   newAmeub(){
@@ -161,6 +236,7 @@ export class InfoMComponent implements OnInit {
       'Vous ajoutez maintenant les meubles!',
       'success'
     );
+    this.clickedAmm=true;
   }
 
   newCouchage(){
@@ -173,6 +249,7 @@ export class InfoMComponent implements OnInit {
       'Vous ajoutez maintenant les couchages!',
       'success'
     );
+    this.clickedCou=true;
   }
 
 }
