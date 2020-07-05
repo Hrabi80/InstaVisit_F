@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { HouseVService } from '../_services/HouseV.service';
 import { UpdateService } from '../_services/update.service';
 import { HttpEventType } from '@angular/common/http';
+import swal from 'sweetalert2';
 @Component({
   selector: 'app-updatev',
   templateUrl: './updatev.component.html',
@@ -102,14 +103,22 @@ export class UpdatevComponent implements OnInit {
       map: new FormControl(''),
       virtual: new FormControl(''),
     });
-
-    
   }
+
+  alertFire(car:string){
+    swal.fire(
+      'Updated !',
+      car+' sont mis à jour.',
+      'success'
+    );
+  }
+
   updateInfo(){
     console.log(this.form.value);
     this._service.updateHouseInfo(this.id,this.form.value)
       .subscribe((res)=>{
         console.log(res);
+        this.alertFire("Les informations essentielles");
       });
   }
   updateTran(){
@@ -117,6 +126,7 @@ export class UpdatevComponent implements OnInit {
     this._upservice.updateTransportV(this.trId,this.formTransport.value)
       .subscribe((res)=>{
           console.log(res);
+          this.alertFire("Les caractéristiques transport");
       });
   }
   updateParking(){
@@ -124,6 +134,7 @@ export class UpdatevComponent implements OnInit {
     this._upservice.updateParkingV(this.Parking[0].id,this.formInfo.value)
       .subscribe((res)=>{
           console.log(res);
+          this.alertFire("Ces caractéristiques");
       });
   }
   updateMap(){
@@ -131,6 +142,7 @@ export class UpdatevComponent implements OnInit {
     this._upservice.updateMapV(this.Map[0].id,this.formMap.value)
       .subscribe((res)=>{
           console.log(res);
+          this.alertFire("Map && VT360");
       });
   }
 

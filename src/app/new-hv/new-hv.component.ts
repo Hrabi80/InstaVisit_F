@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 import { HouseVService } from '../_services/HouseV.service';
 import { LocalisationService } from '../_services/Localisation.service';
 import { HttpEventType } from '@angular/common/http';
+import Swal from 'sweetalert2';
 declare var $:any;
 
 @Component({
@@ -137,7 +138,15 @@ export class NewHVComponent implements OnInit {
       }
       );
       console.log(event);
-      this.router.navigateByUrl('dashboard/HvData_Table');
+      Swal.fire(
+        'Ajouter !',
+        'Un logement est ajouter à la base de données',
+        'success'
+      );
+      setTimeout(()=>{
+        this.router.navigateByUrl('dashboard/HvData_Table'), 3000;
+      })
+      
   }
 
 }

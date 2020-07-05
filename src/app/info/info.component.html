@@ -68,7 +68,8 @@
         </div><br><br> 
     </mat-card-content>
     <mat-card-actions>
-        <button class="waves-effect waves-light btn yellow" (click)="newInfo()" name="action">
+        <button class="waves-effect waves-light btn yellow" (click)="newInfo()" 
+        [disabled]="clicked1" name="action">
           Ajouter</button>
     </mat-card-actions>
                
@@ -94,7 +95,8 @@
              
         </mat-card-content>
         <mat-card-actions>
-            <button class="waves-effect waves-light btn yellow" (click)="newMap()" name="action">
+            <button class="waves-effect waves-light btn yellow" (click)="newMap()"
+             [disabled]="clickedMap" name="action">
               Ajouter</button>
         </mat-card-actions>
                    
@@ -151,17 +153,13 @@
             <br><br>
         </mat-card-content>
         <mat-card-actions>
-            <button class="waves-effect waves-light btn yellow" (click)="newStation()"  name="action">
+            <button class="waves-effect waves-light btn yellow" (click)="newStation()" 
+            [disabled]="clickedTr" name="action">
               Ajouter</button>
         </mat-card-actions>
                     
-        
         </mat-card>
         </form>
-
-
-
 </div>
-
 </div>
 <br><br>

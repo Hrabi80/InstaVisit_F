@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 import { HouseLService } from '../_services/HouseL.service';
 import { LocalisationService } from '../_services/Localisation.service';
 import { HttpEventType } from '@angular/common/http';
+import Swal from 'sweetalert2';
 declare var $:any;
 
 @Component({
@@ -122,7 +123,7 @@ export class NewHLComponent  {
       console.log(uploadData);
       this.bool=this.form.get('isMeuble').value;
       console.log("isMeuble",this.bool);
-       if(this.bool == true){
+       if(this.bool === true){
        //this._service.AddHVM(uploadData);
        //else
        this._service.AddHLM(uploadData)
@@ -136,11 +137,19 @@ export class NewHLComponent  {
           else if(event.type === HttpEventType.Response)
           {
             console.log(event);
-  
           }
         }
         );
-        this.router.navigateByUrl('dashboard/HLM_LISTE');
+        Swal.fire(
+          'Ajouter !',
+          'Un logement meublé est ajouter à la base de données',
+          'success'
+        );
+        setTimeout(()=>{
+          this.router.navigateByUrl('dashboard/HLM_LISTE')
+          ,3000
+        });
+        
       }else{
         this._service.AddHL(uploadData)
         .subscribe(
@@ -157,7 +166,15 @@ export class NewHLComponent  {
             }
           }
           );
-          this.router.navigateByUrl('dashboard/HLM_LISTE');
+          Swal.fire(
+            'Ajouter !',
+            'Un logement non meublé est ajouter à la base de données',
+            'success'
+          );
+          setTimeout(()=>{
+            this.router.navigateByUrl('dashboard/HL_LISTE')
+            ,3000
+          });
       }
         //console.log(event);
        // this.router.navigateByUrl('dashboard/HvData_Table');

@@ -3,7 +3,10 @@ import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { UpdatelService } from '../_services/updatel.service';
 import { HttpEventType } from '@angular/common/http';
-
+import swal from 'sweetalert2';
+import { map } from '../models/map';
+import { equip } from '../models/equip'; 
+import { parking } from '../models/parking';
 @Component({
   selector: 'app-updatelm',
   templateUrl: './updatelm.component.html',
@@ -24,11 +27,11 @@ export class UpdatelmComponent implements OnInit {
 
   Info : any=[];
   Tran : any=[];
-  Parking :any=[];
-  Map :any=[];
+  Parking :Array<parking>;
+  Map :Array<map>;
   Amm: any=[];
   Cuisine : any=[];
-  Equip :any=[];
+  Equip :Array<equip>;
   Couchage : any=[];
 
   city: string;
@@ -53,7 +56,7 @@ export class UpdatelmComponent implements OnInit {
         });
   
       this._service.getParkingL(this.id)
-        .subscribe((res)=>{
+        .subscribe((res:Array<parking>)=>{
           this.Parking=res;
           console.log("parking",res);
         });
@@ -66,7 +69,7 @@ export class UpdatelmComponent implements OnInit {
         });
   
         this._service.getMapL(this.id)
-        .subscribe((res)=>{
+        .subscribe((res:Array<map>)=>{
           this.Map=res;
           console.log("map", this.Map)
         });
@@ -90,7 +93,7 @@ export class UpdatelmComponent implements OnInit {
         });
 
         this._service.getEquip(this.id)
-        .subscribe((res)=>{
+        .subscribe((res:Array<equip>)=>{
           this.Equip=res;
           console.log("equi", this.Equip)
         });
@@ -170,25 +173,37 @@ export class UpdatelmComponent implements OnInit {
       });
     }
 
+    alertFire(car:string){
+      swal.fire(
+        'Updated !',
+        car+' sont mis à jour.',
+        'success'
+      );
+    }
     updateInfo(){
       console.log(this.form.value);
       this._service.updateHouseInfo(this.id,this.form.value)
         .subscribe((res)=>{
           console.log(res);
+          
         });
+        this.alertFire("Les informations essentielles");
     }
     updateTran(){
       console.log("uptr",this.formTransport.value);
       this._service.updateTransportL(this.trId,this.formTransport.value)
         .subscribe((res)=>{
             console.log(res);
+            this.alertFire("Les caractéristiques trasnport");
         });
+        
     }
     updateParking(){
       console.log("upparki",this.formInfo.value);
       this._service.updateParkingL(this.Parking[0].id,this.formInfo.value)
         .subscribe((res)=>{
             console.log(res);
+            this.alertFire("Ces caractéristiques");
         });
     }
     updateMap(){
@@ -196,6 +211,7 @@ export class UpdatelmComponent implements OnInit {
       this._service.updateMapL(this.Map[0].id,this.formMap.value)
         .subscribe((res)=>{
             console.log(res);
+            this.alertFire("map et VT360");
         });
     }
     updateCouchage(){
@@ -203,6 +219,7 @@ export class UpdatelmComponent implements OnInit {
       this._service.updateCouchage(this.Couchage[0].id,this.formCouchage.value)
         .subscribe((res)=>{
             console.log(res);
+            this.alertFire("Les caractéristiques Couchage");
         });
     }
     updateCuisine(){
@@ -210,6 +227,7 @@ export class UpdatelmComponent implements OnInit {
       this._service.updateCuisine(this.Cuisine[0].id,this.formCuisine.value)
         .subscribe((res)=>{
             console.log(res);
+            this.alertFire("Les caractéristiques Cuisine");
         });
     }
     updateEquip(){
@@ -217,6 +235,7 @@ export class UpdatelmComponent implements OnInit {
       this._service.updateEquip(this.Equip[0].id,this.formEquip.value)
         .subscribe((res)=>{
             console.log(res);
+            this.alertFire("Les caractéristiques equipement");
         });
     }
     updateAmm(){
@@ -224,6 +243,7 @@ export class UpdatelmComponent implements OnInit {
       this._service.updateAmm(this.Amm[0].id,this.formAmeubl.value)
         .subscribe((res)=>{
             console.log(res);
+            this.alertFire("Les caractéristiques ammeublement");
         });
     }
   

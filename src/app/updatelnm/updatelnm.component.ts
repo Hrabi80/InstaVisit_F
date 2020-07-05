@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { UpdatelnmService } from '../_services/updatelnm.service';
 import { HttpEventType } from '@angular/common/http';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-updatelnm',
@@ -103,11 +104,20 @@ export class UpdatelnmComponent implements OnInit {
     });
   }
 
+  alertFire(car:string){
+    swal.fire(
+      'Updated !',
+      car+' sont mis à jour.',
+      'success'
+    );
+  }
+
   updateInfo(){
     console.log(this.form.value);
     this._service.updateHouseInfo(this.id,this.form.value)
       .subscribe((res)=>{
         console.log(res);
+        this.alertFire("Les informations essentielles");
       });
   }
   updateTran(){
@@ -115,6 +125,7 @@ export class UpdatelnmComponent implements OnInit {
     this._service.updateTransportL(this.trId,this.formTransport.value)
       .subscribe((res)=>{
           console.log(res);
+          this.alertFire("Les caractéristiques transport");
       });
   }
   updateParking(){
@@ -122,6 +133,7 @@ export class UpdatelnmComponent implements OnInit {
     this._service.updateParkingL(this.Parking[0].id,this.formInfo.value)
       .subscribe((res)=>{
           console.log(res);
+          this.alertFire("Ces caractéristiques");
       });
   }
   updateMap(){
@@ -129,6 +141,7 @@ export class UpdatelnmComponent implements OnInit {
     this._service.updateMapL(this.Map[0].id,this.formMap.value)
       .subscribe((res)=>{
           console.log(res);
+          this.alertFire("Map && VT360");
       });
   }
 

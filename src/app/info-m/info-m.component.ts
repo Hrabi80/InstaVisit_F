@@ -34,11 +34,11 @@ export class InfoMComponent implements OnInit {
   formCuisine: FormGroup;
   formAmeubl: FormGroup;
   constructor(private route: ActivatedRoute,
-    private  _fb: FormBuilder,
-    private _service : HouseLService,
-    private _service2 : UpdatelService,
-    private router: Router,
-    ) 
+              private  _fb: FormBuilder,
+              private _service : HouseLService,
+              private _service2 : UpdatelService,
+              private router: Router,
+              ) 
     { }
 
  async ngOnInit() {
@@ -78,9 +78,6 @@ export class InfoMComponent implements OnInit {
 
     
         
-    
-  
-   
 
     this.form = this._fb.group({
       taxi: new FormControl(''),
@@ -152,7 +149,7 @@ export class InfoMComponent implements OnInit {
       
         swal.fire(
           'C est deja fait !',
-          'Vous avez deja ajouter tout les caractéristique de ce lougement , Si vous voulez faire un mis à jour , allez aux update page !',
+          'Vous avez deja ajouter tout les caractéristiques à ce lougement. Vous pouvez fair des mis à jour dans la page update!',
           'success', 
         );
           setTimeout(()=>{this.router.navigateByUrl('dashboard/HLM_LISTE');},3000);
@@ -164,12 +161,13 @@ export class InfoMComponent implements OnInit {
     this._service.AddTransportM(this.id,this.form.value)
     .subscribe(res => {
       console.log(res);
+      swal.fire(
+        'AJOUTER !',
+        'Vous ajoutez maintenant les caractéristiques transport !',
+        'success'
+      );
     });
-    swal.fire(
-      'AJOUTER !',
-      'Vous ajoutez maintenant les caractéristiques transport !',
-      'success'
-    );
+    
     this.clickedTr=true;
   }
 
@@ -177,12 +175,13 @@ export class InfoMComponent implements OnInit {
     this._service.AddInfoM(this.id,this.formInfo.value)
     .subscribe(res=>{
        console.log(res);
+       swal.fire(
+        'AJOUTER !',
+        'Vous ajoutez maintenant les caractéristiques essentielles !',
+        'success'
+      );
     });
-    swal.fire(
-      'AJOUTER !',
-      'Vous ajoutez maintenant les caractéristiques essentielles !',
-      'success'
-    );
+    
     this.clicked1=true;
   }
 
@@ -190,12 +189,13 @@ export class InfoMComponent implements OnInit {
     this._service.AddMapM(this.id,this.formMap.value)
     .subscribe(res=>{
        console.log(res);
+       swal.fire(
+        'AJOUTER !',
+        'Vous ajoutez maintenant le map et le VT360!',
+        'success'
+      );
     });
-    swal.fire(
-      'AJOUTER !',
-      'Vous ajoutez maintenant le map et le VT360!',
-      'success'
-    );
+    
     this.clickedMap=true;
     
   }
@@ -204,12 +204,13 @@ export class InfoMComponent implements OnInit {
     this._service.AddCuisine(this.id,this.formCuisine.value)
     .subscribe(res => {
       console.log(res);
+      swal.fire(
+        'AJOUTER !',
+        'Vous ajoutez maintenant les equipements de la cuisine !',
+        'success'
+      );
     });
-    swal.fire(
-      'AJOUTER !',
-      'Vous ajoutez maintenant les equipements de la cuisine !',
-      'success'
-    );
+    
     this.clickedCui=true;
   }
 
@@ -217,12 +218,12 @@ export class InfoMComponent implements OnInit {
     this._service.AddEquipment(this.id,this.formEquip.value)
     .subscribe(res=>{
        console.log(res);
+       swal.fire(
+        'AJOUTER !',
+        'Vous ajoutez maintenant les equipement du bien à louer!',
+        'success'
+      );
     });
-    swal.fire(
-      'AJOUTER !',
-      'Vous ajoutez maintenant les equipement du bien à louer!',
-      'success'
-    );
     this.clickedEqp=true;
   }
 
@@ -230,12 +231,13 @@ export class InfoMComponent implements OnInit {
     this._service.AddAmeubl(this.id,this.formAmeubl.value)
     .subscribe(res=>{
        console.log(res);
+       swal.fire(
+        'AJOUTER !',
+        'Vous ajoutez maintenant les meubles!',
+        'success'
+      );
     });
-    swal.fire(
-      'AJOUTER !',
-      'Vous ajoutez maintenant les meubles!',
-      'success'
-    );
+    
     this.clickedAmm=true;
   }
 
@@ -243,12 +245,12 @@ export class InfoMComponent implements OnInit {
     this._service.AddCouchage(this.id,this.formCouchage.value)
     .subscribe(res=>{
        console.log(res);
+       swal.fire(
+        'AJOUTER !',
+        'Vous ajoutez maintenant les couchages!',
+        'success'
+      );
     });
-    swal.fire(
-      'AJOUTER !',
-      'Vous ajoutez maintenant les couchages!',
-      'success'
-    );
     this.clickedCou=true;
   }
 

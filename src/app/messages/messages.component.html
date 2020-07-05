@@ -1,5 +1,28 @@
 <div class="container">
     <br>
+
+    <table>
+      <thead>
+        <tr >
+            <th>Nom</th>
+            <th>Adress</th>
+            <th>Message</th>
+            <th>Supprimer</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let item of mess">
+          <td>{{item.name}}</td>
+          <td>{{item.email}}</td>
+          <td>{{item.message}}</td>
+          <td><button (click)="delete(item.id)" class="secondary-content btn-floating btn-small waves-effect waves-light red">
+            <i class="material-icons">delete_sweep</i></button></td>
+        </tr>
+       
+      </tbody>
+    </table>
+<!--
 <table class="striped">
     <thead>
       <tr>
@@ -11,14 +34,20 @@
     </thead>
 
     <tbody>
-       <div *ngFor="let item of mess">
-      <tr>
-        <td>{{item.name}}</td>
+       
+      
+        <div *ngFor="let item of mess">
+        <tr>
+        <td>{{item.name}}</td>        
         <td>{{item.email}}</td>
         <td>{{item.message}}</td>
-        <td><button (click)="delete(item.id)" class="secondary-content btn-floating btn-small waves-effect waves-light red"><i class="material-icons">delete_sweep</i></button></td>
-      </tr>
-    </div>
+        <td><button (click)="delete(item.id)" class="secondary-content btn-floating btn-small waves-effect waves-light red">
+            <i class="material-icons">delete_sweep</i></button></td>
+        </tr>
+      </div>
+      
+    
     </tbody>
   </table>
+-->
 </div>      

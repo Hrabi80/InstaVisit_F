@@ -4,7 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
 import { NOMeubleDataSource, NOMeubleItem } from './nomeuble-datasource';
 import { HouseLService } from '../_services/HouseL.service'; 
-
+import swal from 'sweetalert2';
 @Component({
   selector: 'app-nomeuble',
   templateUrl: './nomeuble.component.html',
@@ -42,10 +42,40 @@ export class NOMeubleComponent implements AfterViewInit, OnInit {
   }
 
   delete(id) {
-    console.log(id)
-      this._service.deleteHouse2(id).subscribe(res => {
-        console.log(res);
-      });
-     // window.location.reload();
-    }
+    swal.fire({
+      type:'warning',
+      title: 'Are you sure to Delete Staff?',
+      text: 'You will not be able to recover the data of Staff',
+      showCancelButton: true,
+      confirmButtonColor: '#049F0C',
+      cancelButtonColor:'#ff0000',
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'No, keep it'
+    }).then((res) => {
+      if (res.value) {
+        this._service.deleteHouse2(id).subscribe(
+          data => {
+            console.log(data);
+            swal.fire(
+              'Deleted!',
+              'Your file has been deleted.',
+              'success'
+            );
+            const index = this.dataSource.findIndex(x => x.id ===id);
+              this.dataSource.splice(index, 1);
+              setTimeout(()=>{
+                this.table.dataSource=this.dataSource;
+                this.table.renderRows();
+              },1500);
+          });
+      }else{
+        swal.fire(
+          'Canceled!',
+          'The operation is canceled.',
+          'success'
+        )
+      }
+    });
+    // window.location.reload();
+  }
 }

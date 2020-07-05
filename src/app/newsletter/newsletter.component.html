@@ -6,7 +6,10 @@
       <div class="collapsible-header">
         <i class="material-icons">filter_drama</i>
          {{mail.UserMail}}
-        <span class="new badge">1</span></div>
+        <span class="new badge">1</span>
+        <button (click)="delete(mail.id)" class="secondary-content btn-floating btn-small waves-effect waves-light red">
+          <i class="material-icons">delete_sweep</i></button>
+      </div>
       <div class="collapsible-body"><p></p></div>
     </li>
    </div>
