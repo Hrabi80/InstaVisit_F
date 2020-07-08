@@ -20,6 +20,7 @@ body{
   }
   .radioandform{
     margin-left: -30%;
+    font-family:'Varela Round', 'Helvetica Neue', Helvetica, sans-serif;
   }
 
 }
@@ -43,6 +44,7 @@ body{
    }
       .radioandform{
         margin-left: -0.5% !important;
+        font-family:'Varela Round', 'Helvetica Neue', Helvetica, sans-serif;
         width: 93%;
         max-width: 93%;
       }
@@ -132,7 +134,8 @@ margin-top: -6%;
         font-size: 1.11vw;
         padding-bottom: 2px;
         color: #ffffff;
-        font-family: bold;
+      /*  font-family: bold;*/
+        
       }
       .Fopt{
         background-color: rgba(0, 0, 0, 0.7);
@@ -184,6 +187,7 @@ margin-top: -6%;
         padding-bottom: 40px;
         }
         .radioandform{
+           font-family:'Varela Round', 'Helvetica Neue', Helvetica, sans-serif;
            margin-left:10%;
            width: 90%;
            max-width: 90%;
@@ -254,6 +258,7 @@ h1{
   color: rgb(53, 53, 53); 
 }
 .radioandform{
+  font-family:'Varela Round', 'Helvetica Neue', Helvetica, sans-serif;
   margin-left:15%;
 }
 .Form-box{
@@ -320,6 +325,7 @@ height: 350px;
 }
 
 h4{
+font-family:'Varela Round', 'Helvetica Neue', Helvetica, sans-serif;
 color:rgb(75, 74, 74);
 }
 
@@ -361,7 +367,7 @@ background-color: #616161;
 .seeMore{
 color:#00b28e;
 text-decoration: underline;
-margin-left: 85%;
+margin-left: 75%;
 font-size: 14px;
 
 }
@@ -447,6 +453,7 @@ height:370px;
 }*/
 
 .why h4{
+font-family:'Varela Round', 'Helvetica Neue', Helvetica, sans-serif;
 text-align: center;
 font-style: Georgia;
 color: #28617b;
