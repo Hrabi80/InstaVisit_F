@@ -23,74 +23,37 @@
     </div>
   </div>
 </div>
-
-             <!-- A Team --> 
- 
-             <section id="team" class="team">
-              <div class="container">
-                <div class="row">
-                  <div class="head_title text-center wow zoomIn" data-wow-duration="0.5s">
-                    <h2>Notre partenaire</h2>
-                    <div class="separetor"></div>
-                    <p>Vous voulez en savoir plus à propos de notre partenaire</p>
-                  </div>
-                  
-                  <div class="main_team_content text-center">
-                 
-                    <div class="container">
-                      <div class="single_team wow fadeIn" data-wow-duration="2s">
-                        <div class="single_team_img">
-                          <img src="assets/img/Digita.png" alt="" />
-                          <div class="single_team_overlay text-center">
-                            <p>Agende de marketing digital qui assiste les petites 
-                              entreprises pour se lancer au marché </p>
-                            <a href=""><img src="assets/img/instagram.png"></a>
-                            <a href=""><img src="assets/img/facebook.png"></a>
-                          </div>
-                        </div>
-                        <div class="single_team_name">
-                          <h4></h4>
-                          <p> </p>
-                        </div>
-                      </div>
-                    </div>
-                  
-                  
-                  </div>
-                </div>
-              </div>
-            </section>
-     
-             
-
-             <!-- /A team -->
-<br> <br> <br>
+            <!--Test partner-->
+            
+                <div class="container">
+                  <hr>
+                  <br>
+                  <app-partner></app-partner>
+                  <br><br>
+                  <hr>
+                
+               </div>   
+            <!-- / test-->
+<br> <br> 
              <!-- NESLETTER -->
 <form [formGroup]="form" action="" >             
 <div class="newsletter">
 
   <br><br><br> <br><br>
   <h3>NOS ACTUALITÉS</h3> <br><br><br><br>
-  <h5>Abonnez-vous à notre Newsletter pour recevoir nos nouveautés !</h5><br><br><br><br>
+  <h5>Abonnez-vous à notre Newsletter pour recevoir nos nouveautés !</h5>
+<br><br><br><br>
   <div class="container subs">
       <div class="row Form-box">
           <input type="email" formControlName="newsletter" name="email" 
           class="col s12 m9 l9 Browser default input search-field browser-default location"
            placeholder="Entrez votre adress mail !"
            [ngClass]="{ 'is-invalid': submitted && form.email.errors }" required>
-           <!--
-           <div *ngIf="form.controls['email'].invalid && (form.controls['email'].dirty || form.controls['email'].touched)" class="alert alert-danger">
-              <!-- I did not remove this  dd
-              <div *ngIf="form.controls['email'].errors.required">
-                <br>Name is required.
-              </div>
-               
-          </div>-->
+          
           <label for="email" class="controle-label">email</label>
           <button class="col s12 m3 l3" type="button"  [disabled]="form.pristine || form.invalid" (click)="newMail()" name="action" class="col s3 search-bt waves-effect waves-light btn  Browser-default">s'abonner</button>
           
       </div>      
-
   </div>
 </div>
 </form>
@@ -123,14 +86,14 @@
 </div>
 </div>
 
-<div class="input-field col s12 m12">
+<div class="input-field col s12 m12 l8">
   <i class="mdi-communication-email prefix"></i>
   <input id="icon_email" type="email" class="validate" formControlName="email"
   [ngClass]="{ 'is-invalid': submitted }">
   <label for="icon_email">Votre email</label>
 </div>
 
- <div class="input-field col s12 m12">
+ <div class="input-field col s12 m12 l4">
     <i class="mdi-editor-mode-edit prefix"></i>
     <textarea id="icon_prefix2" class="materialize-textarea" formControlName="message"
     [ngClass]="{ 'is-invalid': submitted }">
@@ -161,10 +124,10 @@
 <br>
 <br>
 <p>
-123 IMAGINARY ST, SUITE 100 <br>
-XXXXX, IL 30314
+  52 Avenue de Carthage,Tunis
 </p>
-<iframe src="https://maps.google.com/maps?q=tunisia&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3194.97031696538!2d10.179981550274258!3d36.79526207558008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd3412ae566397%3A0x24d03a8be1de40f2!2s52%20Avenue%20De%20Carthage%2C%20Tunis!5e0!3m2!1sfr!2stn!4v1594249675182!5m2!1sfr!2stn
+"
 width="300" height="300" frameborder="0" style="border:0"></iframe>
 </div>
 

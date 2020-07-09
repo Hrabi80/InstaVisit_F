@@ -78,7 +78,7 @@ export class DetailsComponent implements OnInit,PipeTransform {
                 cave: {
                     title: "Piscine",
                     value: "Oui",
-                    icon: "fa fa-underline"
+                    icon: "fas fa-swimming-pool"
                 }
                 ,
                 elevator: {
@@ -95,7 +95,7 @@ export class DetailsComponent implements OnInit,PipeTransform {
                 garden: {
                     title: "Concierge",
                     value: "Non",
-                    icon: "fas fa-tree"
+                    icon: "fas fa-concierge-bell"
                 }   
             }
 

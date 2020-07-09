@@ -95,7 +95,7 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
                 cave: {
                     title: "Piscine",
                     value: "Oui",
-                    class: "fa fa-underline",
+                    class: "fas fa-swimming-pool",
                     icon: " "
                 }
                 ,
@@ -115,7 +115,7 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
                 garden: {
                     title: "Concierge",
                     value: "Non",
-                    class: "fas fa-tree",
+                    class: "fas fa-concierge-bell",
                     icon: " "
                 }      
             }
@@ -133,9 +133,9 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
                     class: "material-icons"
                 },
                 machine: {
-                    title: "Rac. machine",
+                    title: "Climatiseur",
                     value: "_",
-                    icon: "highlight",
+                    icon: "ac_unit",
                     class: "material-icons"
                 },
                 internet: {
@@ -157,10 +157,10 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
                     class: "material-icons"
                 },
                 lavelange: {
-                    title: "Lave-linge",
+                    title: "Chauffe-eau",
                     value: "_",
-                    icon: "speaker",
-                    class: "material-icons"
+                    icon: " ",
+                    class: "fa fa-fire"
                 }
                 
             }
@@ -188,9 +188,9 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
                     class: "material-icons"
                 },
                 congelateur: {
-                    title: "Congélateur",
+                    title: "Lave-linge",
                     value: "_",
-                    icon: "ac_unit",
+                    icon: "speaker",
                     class: "material-icons"
                 },
                 refri: {

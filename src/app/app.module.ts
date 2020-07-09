@@ -34,7 +34,7 @@ import { MatInputModule, MatRadioGroup} from '@angular/material';
 import { MatSliderModule } from '@angular/material';
 import { MatCardModule } from '@angular/material/card';
 import { MatRadioModule } from  '@angular/material';
-
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { LocationComponent } from './location/location.component';
 import { NewHLComponent } from './new-hl/new-hl.component';
@@ -83,6 +83,7 @@ import { MobileOverviewComponent } from './comps/mobile-overview/mobile-overview
 import { CommuteTableComponent } from './comps/commute-table/commute-table.component';
 import { FooterComponent } from './footer/footer.component';
 import { MessagesComponent } from './messages/messages.component';
+import { PartnerComponent } from './partner/partner.component';
 
 
 
@@ -131,6 +132,7 @@ import { MessagesComponent } from './messages/messages.component';
     CommuteTableComponent,
     FooterComponent,
     MessagesComponent,
+    PartnerComponent,
    
     // Filter2Pipe
   ],
@@ -138,6 +140,7 @@ import { MessagesComponent } from './messages/messages.component';
     BrowserModule,
     GalleryModule,
    // GalleryModule.forRoot(),
+    AngularFontAwesomeModule,
     LightboxModule,
     GalleryModule.withConfig({  }),
     AppRoutingModule,

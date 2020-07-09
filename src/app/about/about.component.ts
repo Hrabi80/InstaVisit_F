@@ -3,15 +3,15 @@ import { FormGroup, FormBuilder, Validators,FormControl } from '@angular/forms';
 import { HouseVService } from '../_services/HouseV.service';
 import swal from 'sweetalert2';
 import { FrontService} from '../_services/Front.service';
+import { Pipe, PipeTransform} from '@angular/core';
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css']
 })
-
+@Pipe({ name: 'safe' })
 export class AboutComponent implements OnInit {
- 
   form: FormGroup;
   formContact :FormGroup;
   constructor( 
@@ -29,6 +29,7 @@ export class AboutComponent implements OnInit {
       email:  ['', [Validators.required, Validators.email]],
       message:  ['', [Validators.required, Validators.minLength(6)]],    
     });
+
   }
 
   newMail(){

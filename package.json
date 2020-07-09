@@ -27,6 +27,7 @@
     "@ngx-gallery/lightbox": "^4.0.3",
     "@types/hammerjs": "^2.0.36",
     "@types/mousetrap": "^1.6.3",
+    "angular-font-awesome": "^3.1.2",
     "angular2-image-gallery": "^8.0.0",
     "angular2-materialize": "^15.1.10",
     "font-awesome": "^4.7.0",
