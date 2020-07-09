@@ -20,7 +20,7 @@ body{
   }
   .radioandform{
     margin-left: -30%;
-    font-family:'Varela Round', 'Helvetica Neue', Helvetica, sans-serif;
+    font-family:'Varela Round', 'Helvetica Neue', Helvetica, sans-serif !important;
   }
 
 }
