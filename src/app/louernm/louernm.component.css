@@ -16,6 +16,13 @@ body {
     width: 100%;
     height: 2%;
   }
+
+  .pb-0pt-3{
+    display:table;
+    margin: 0 auto;
+  
+  }
+  
   .ssr{
     margin-left:7%;
   }

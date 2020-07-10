@@ -35,6 +35,8 @@ import { MatSliderModule } from '@angular/material';
 import { MatCardModule } from '@angular/material/card';
 import { MatRadioModule } from  '@angular/material';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+//import { JwPaginationComponent } from 'jw-angular-pagination';
+import { JwPaginationComponent } from './jw-pagination/jw-pagination.component';
 
 import { LocationComponent } from './location/location.component';
 import { NewHLComponent } from './new-hl/new-hl.component';
@@ -108,6 +110,7 @@ import { PartnerComponent } from './partner/partner.component';
     AllComponent,
     InfoComponent,
     FilterPipe,
+    JwPaginationComponent,
     VenteListComponent,
     OtherVenteComponent,
     SearchNavComponent,
@@ -155,6 +158,7 @@ import { PartnerComponent } from './partner/partner.component';
     MatListModule,MatCardModule, MatTableModule, MatPaginatorModule, MatSortModule,FlexLayoutModule
   ],
   providers: [
+    JwPaginationComponent,
     LocalisationService,
     AuthService,
     HouseVService,

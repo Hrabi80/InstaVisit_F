@@ -12,7 +12,14 @@ nav{
   background-color: #00B4CC;
 }
 
+.pb-0pt-3{
+  display:table;
+  margin: 0 auto;
 
+}
+.pagination{
+  background: #00B4CC !important;
+}
 .ssr{
     margin-left:7%;
   }

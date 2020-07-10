@@ -27,6 +27,7 @@ export class LouerComponent implements OnInit {
   @Output() searchModelChange: EventEmitter<any> = new EventEmitter();
   FirOutput: any=[];
   FirOutput2 : any=[];
+  pageOfItems: any=[];
   term : string = this.route.snapshot.paramMap.get('foo');
   constructor(
     private route: ActivatedRoute,
@@ -49,12 +50,12 @@ export class LouerComponent implements OnInit {
           this.FirOutput[i].refr = "INLM000"+this.FirOutput[i].id; // Add "total": 2 to all objects in array
       }
     });
+  }
 
-   
+  onChangePage(pageOfItems: any=[]) {
+    this.pageOfItems = pageOfItems;
   }
   selectOption(opt: string) {
-    //getted from event
-    //getted from binding
     console.log("opitonII",opt);
     this.opt=opt;
     console.log("opiton",this.opt);

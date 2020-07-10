@@ -24,6 +24,7 @@ export class LouernmComponent implements OnInit {
 
   @Output() searchModelChange: EventEmitter<any> = new EventEmitter();
   FirOutput: any=[];
+  pageOfItems: any=[];
 
   constructor(private route: ActivatedRoute,
               private _service: LoutputService,
@@ -45,6 +46,10 @@ export class LouernmComponent implements OnInit {
           this.FirOutput[i].refr = "INLN000"+this.FirOutput[i].id; // Add "total": 2 to all objects in array
       }
     });
+  }
+
+  onChangePage(pageOfItems: any=[]) {
+    this.pageOfItems = pageOfItems;
   }
 
 }
