@@ -7,7 +7,10 @@
       [opened]="(isHandset$ | async) === false" >
     <mat-toolbar >InstaVisit</mat-toolbar>
     <mat-nav-list>
-       
+      <a mat-list-item routerLink="/dashboard/stat">
+        <i class="material-icons prefix">donut_small</i>
+        &nbsp; Statistiques 
+      </a>
       <a mat-list-item routerLink="/dashboard/newHL">
         <i class="material-icons prefix">store</i>
         &nbsp; Nv à louer
@@ -16,6 +19,10 @@
           <i class="material-icons prefix">class</i>
           &nbsp; Nv à vendre
       </a>
+      <a mat-list-item routerLink="/dashboard/newSL">
+        <i class="material-icons prefix">deck</i>
+        &nbsp; Nv salle
+    </a>
       <a mat-list-item routerLink="/dashboard/loc">
           <i class="material-icons prefix">edit_location</i>
           &nbsp; Localisation
@@ -32,7 +39,10 @@
         <i class="material-icons prefix">list</i>
         &nbsp; Liste M à vendre
       </a>
-      
+      <a mat-list-item routerLink="/dashboard/Salle_Data_Table">
+        <i class="material-icons prefix">list</i>
+        &nbsp; Liste des salles
+      </a>
       <a mat-list-item routerLink="/dashboard/messages" >
         <i class="material-icons prefix">message</i>
         &nbsp; messages

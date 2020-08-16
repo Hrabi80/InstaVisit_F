@@ -38,7 +38,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 //import { JwPaginationComponent } from 'jw-angular-pagination';
 import { JwPaginationComponent } from './jw-pagination/jw-pagination.component';
 
-import { LocationComponent } from './location/location.component';
+import { LocationComponent } from './dashboard/location/location.component';
 import { NewHLComponent } from './new-hl/new-hl.component';
 import { NewHVComponent } from './new-hv/new-hv.component';
 import { LoginComponent } from './login/login.component';
@@ -51,7 +51,7 @@ import { UploadComponent } from './upload/upload.component';
 import { NgxImageGalleryModule } from 'ngx-image-gallery';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { GalleryComponent } from './gallery/gallery.component';
-import { LouerComponent } from './louer/louer.component';
+import { LouerComponent } from './client/louer_meublé/louer/louer.component';
 import { VenteComponent } from './vente/vente.component';
 import { GalleryModule } from  '@ngx-gallery/core';
 import { LightboxModule } from  '@ngx-gallery/lightbox';
@@ -64,28 +64,36 @@ import { VenteListComponent } from './vente-list/vente-list.component';
 import { OtherVenteComponent } from './other-vente/other-vente.component';
 import { SearchNavComponent } from './search-nav/search-nav.component';
 import { VT360Component } from './vt360/vt360.component';
-import { NewsletterComponent } from './newsletter/newsletter.component';
-import { MeubleDataTableComponent } from './meuble-data-table/meuble-data-table.component';
+import { NewsletterComponent } from './dashboard/newsletter/newsletter.component';
+import { MeubleDataTableComponent } from './dashboard/house_meuble/meuble-data-table/meuble-data-table.component';
 import { NOMeubleComponent } from './nomeuble/nomeuble.component';
-import { InfoMComponent } from './info-m/info-m.component';
+import { InfoMComponent } from './dashboard/house_meuble/info-m/info-m.component';
 import { OurworkComponent } from './ourwork/ourwork.component';
 import { Filter2Pipe } from './filter2.pipe';
 import { Filter3Pipe } from './filter3.pipe';
 import { Filter4Pipe } from './filter4.pipe';
-import { LmdetailsComponent } from './lmdetails/lmdetails.component';
+import { LmdetailsComponent } from './client/louer_meublé/lmdetails/lmdetails.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { InfoNmComponent } from './info-nm/info-nm.component';
 import { LouernmComponent } from './louernm/louernm.component';
 import { LdetailsComponent } from './ldetails/ldetails.component';
 import { SafePipe } from './safe.pipe';
 import { UpdatevComponent } from './updatev/updatev.component';
-import { UpdatelmComponent } from './updatelm/updatelm.component';
+import { UpdatelmComponent } from './dashboard/house_meuble/updatelm/updatelm.component';
 import { UpdatelnmComponent } from './updatelnm/updatelnm.component';
 import { MobileOverviewComponent } from './comps/mobile-overview/mobile-overview.component';
 import { CommuteTableComponent } from './comps/commute-table/commute-table.component';
 import { FooterComponent } from './footer/footer.component';
-import { MessagesComponent } from './messages/messages.component';
+import { MessagesComponent } from './dashboard/messages/messages.component';
 import { PartnerComponent } from './partner/partner.component';
+import { NewSalleComponent } from './dashboard/salle/new-salle/new-salle.component';
+import { DatatableComponent } from './dashboard/salle/datatable/datatable.component';
+import { InfoSComponent } from './dashboard/salle/info/info.component';
+import { SearchComponent } from './client/salle/search/search.component';
+import { SalledetailComponent } from './client/salle/salledetail/salledetail.component';
+import { MobileOverviewSalleComponent } from './comps/mobile-overview-salle/mobile-overview-salle.component';
+import { UpdateSalleComponent } from './dashboard/salle/update-salle/update-salle.component';
+import { StatisticsComponent } from './dashboard/statistics/statistics.component';
 
 
 
@@ -136,7 +144,14 @@ import { PartnerComponent } from './partner/partner.component';
     FooterComponent,
     MessagesComponent,
     PartnerComponent,
-   
+    NewSalleComponent,
+    DatatableComponent,
+    InfoSComponent,
+    SearchComponent,
+    SalledetailComponent,
+    MobileOverviewSalleComponent,
+    UpdateSalleComponent,
+    StatisticsComponent
     // Filter2Pipe
   ],
   imports: [

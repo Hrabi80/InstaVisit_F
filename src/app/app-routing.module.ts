@@ -6,14 +6,14 @@ import {DetailsComponent} from './details/details.component';
 import {AboutComponent} from './about/about.component';
 import {NavComponent} from './nav/nav.component';
 import {DashnavComponent} from './dashnav/dashnav.component';
-import {LocationComponent} from './location/location.component';
+import {LocationComponent} from './dashboard/location/location.component';
 import {NewHLComponent} from './new-hl/new-hl.component';
 import {NewHVComponent} from './new-hv/new-hv.component';
 import {LoginComponent} from './login/login.component';
 import { NVDataTableComponent } from './nv-data-table/nv-data-table.component';
 import { UploadComponent } from './upload/upload.component';
 import { GalleryComponent } from './gallery/gallery.component';
-import { LouerComponent } from './louer/louer.component';
+import { LouerComponent } from './client/louer_meublé/louer/louer.component';
 import { VenteComponent } from './vente/vente.component';
 import { AllComponent } from './all/all.component';
 import { VenteListComponent } from './vente-list/vente-list.component';
@@ -21,19 +21,26 @@ import { OtherVenteComponent } from './other-vente/other-vente.component';
 import { SearchNavComponent } from './search-nav/search-nav.component';
 import { InfoComponent } from './info/info.component';
 import { VT360Component } from './vt360/vt360.component';
-import { NewsletterComponent } from './newsletter/newsletter.component';
-import { MeubleDataTableComponent } from './meuble-data-table/meuble-data-table.component';
+import { NewsletterComponent } from './dashboard/newsletter/newsletter.component';
+import { MeubleDataTableComponent } from './dashboard/house_meuble/meuble-data-table/meuble-data-table.component';
 import { NOMeubleComponent } from './nomeuble/nomeuble.component';
-import { InfoMComponent } from './info-m/info-m.component';
+import { InfoMComponent } from './dashboard/house_meuble/info-m/info-m.component';
 import { OurworkComponent } from './ourwork/ourwork.component';
-import { LmdetailsComponent } from './lmdetails/lmdetails.component';
+import { LmdetailsComponent } from './client/louer_meublé/lmdetails/lmdetails.component';
 import { InfoNmComponent } from './info-nm/info-nm.component';
 import { LouernmComponent } from './louernm/louernm.component';
 import { LdetailsComponent } from './ldetails/ldetails.component';
 import { UpdatevComponent } from './updatev/updatev.component';
-import { UpdatelmComponent } from './updatelm/updatelm.component';
+import { UpdatelmComponent } from './dashboard/house_meuble/updatelm/updatelm.component';
 import { UpdatelnmComponent } from './updatelnm/updatelnm.component';
-import { MessagesComponent } from './messages/messages.component';
+import { MessagesComponent } from './dashboard/messages/messages.component';
+import { NewSalleComponent } from './dashboard/salle/new-salle/new-salle.component';
+import { DatatableComponent } from './dashboard/salle/datatable/datatable.component';
+import { InfoSComponent} from './dashboard/salle/info/info.component';
+import { SearchComponent} from './client/salle/search/search.component';
+import { SalledetailComponent } from './client/salle/salledetail/salledetail.component';
+import { UpdateSalleComponent } from './dashboard/salle/update-salle/update-salle.component';
+import { StatisticsComponent } from './dashboard/statistics/statistics.component';
 const routes: Routes = [
   
   {
@@ -50,6 +57,10 @@ const routes: Routes = [
     component: DashnavComponent,
     children: [
       {
+        path: 'stat',
+        component: StatisticsComponent,   
+      },
+      {
         path: 'loc',
         component: LocationComponent,   
       },
@@ -62,8 +73,16 @@ const routes: Routes = [
         component: NewHVComponent,   
       },
       {
+        path: 'newSL',
+        component: NewSalleComponent,   
+      },
+      {
         path: 'HvData_Table',
         component: NVDataTableComponent,   
+      },
+      {
+        path: 'Salle_Data_Table',
+        component: DatatableComponent,   
       },
       {
         path: 'HL_LISTE',
@@ -90,6 +109,10 @@ const routes: Routes = [
         component: InfoNmComponent,   
       },
       {
+        path: 'infoSalle/:id',
+        component: InfoSComponent,   
+      },
+      {
         path: 'updateV/:id',
         component: UpdatevComponent,   
       },
@@ -100,6 +123,10 @@ const routes: Routes = [
       {
         path: 'updateLNM/:id',
         component: UpdatelnmComponent,   
+      },
+      {
+        path: 'updateSalle/:id',
+        component: UpdateSalleComponent,   
       },
       
       {
@@ -133,7 +160,11 @@ const routes: Routes = [
        {
         path: 'lmdetails/:id',
         component: LmdetailsComponent,   
-      },  
+      }, 
+      {
+        path: 'Salledetails/:id',
+        component: SalledetailComponent,   
+      }, 
         
       {
         path: 'VirtuelTour',
@@ -169,6 +200,11 @@ const routes: Routes = [
           path: 'searchlouer',
           component: LouerComponent,
         },
+        {
+          path: 'ChercherSalle',
+          component: SearchComponent,
+        },
+        
         {
           path: 'searchlouerNonMeuble',
           component: LouernmComponent,
