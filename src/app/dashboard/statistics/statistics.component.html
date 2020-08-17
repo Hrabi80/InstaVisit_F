@@ -13,16 +13,16 @@
       <div class="panel-body">
         <div class="categories">
           <div class="category">
-            <span>New Users</span>
-            <span>1.897</span>
+            <span>Online now</span>
+            <span>1</span>
           </div>
           <div class="category">
-            <span>Recurring Users</span>
-            <span>127</span>
+            <span> Users</span>
+            <span>1</span>
           </div>
           <div class="category">
             <span>Page Views</span>
-            <span>8.648</span>
+            <span>__</span>
           </div>
         </div>
 
@@ -39,15 +39,7 @@
             </span>
           </div>
 
-          <div class="android-stats">
-            453.67<span></span>
-          </div>
-          <div class="ios-stats">
-            <span></span>453.67
-          </div>
-          <div class="windows-stats">
-            <span></span>453.67
-          </div>
+        
 
           <svg width="563" height="204" class="data-chart" viewBox="0 0 563 204" xmlns="http://www.w3.org/2000/svg">
 Place the SVG here
@@ -56,3 +48,128 @@ Place the SVG here
         </div>
       </div>
     </div>
+</div>
+loook here !!! 
+    <div id="embed-api-auth-container"></div>
+<div id="chart-container"></div>
+<div id="view-selector-container"></div>
+<!--
+  xxxx
+-->
+
+<h1> Analytics Reporting API V4</h1>
+
+<!-- The Sign-in button. This will run `queryReports()` on success. -->
+<p class="g-signin2" data-onsuccess="queryReports"></p>
+
+<!-- The API response will be printed here. -->
+<textarea cols="80" rows="20" id="query-output"></textarea>
+
+<script>
+  // Replace with your view ID.
+  var VIEW_ID = 'UA-175521849-1';
+
+  // Query the API and print the results to the page.
+  function queryReports() {
+    gapi.client.request({
+      path: '/v4/reports:batchGet',
+      root: 'https://analyticsreporting.googleapis.com/',
+      method: 'POST',
+      body: {
+        reportRequests: [
+          {
+            viewId: VIEW_ID,
+            dateRanges: [
+              {
+                startDate: '7daysAgo',
+                endDate: 'today'
+              }
+            ],
+            metrics: [
+              {
+                expression: 'ga:sessions'
+              }
+            ]
+          }
+        ]
+      }
+    }).then(displayResults, console.error.bind(console));
+  }
+
+  function displayResults(response) {
+    var formattedJson = JSON.stringify(response.result, null, 2);
+    document.getElementById('query-output').value = formattedJson;
+  }
+</script>
+
+<!-- Load the JavaScript API client and Sign-in library. -->
+<script src="https://apis.google.com/js/client:platform.js"></script>
+<!--
+
+  wwwww
+-->
+<script>
+
+  gapi.analytics.ready(function() {
+  
+    /**
+     * Authorize the user immediately if the user has already granted access.
+     * If no access has been created, render an authorize button inside the
+     * element with the ID "embed-api-auth-container".
+     */
+    gapi.analytics.auth.authorize({
+      container: 'embed-api-auth-container',
+      clientid: 'UA-175521849-1'
+    });
+  
+  
+    /**
+     * Create a new ViewSelector instance to be rendered inside of an
+     * element with the id "view-selector-container".
+     */
+    var viewSelector = new gapi.analytics.ViewSelector({
+      container: 'view-selector-container'
+    });
+  
+    // Render the view selector to the page.
+    viewSelector.execute();
+  
+  
+    /**
+     * Create a new DataChart instance with the given query parameters
+     * and Google chart options. It will be rendered inside an element
+     * with the id "chart-container".
+     */
+    var dataChart = new gapi.analytics.googleCharts.DataChart({
+      query: {
+        metrics: 'ga:sessions',
+        dimensions: 'ga:date',
+        'start-date': '30daysAgo',
+        'end-date': 'yesterday'
+      },
+      chart: {
+        container: 'chart-container',
+        type: 'LINE',
+        options: {
+          width: '100%'
+        }
+      }
+    });
+  
+  
+    /**
+     * Render the dataChart on the page whenever a new view is selected.
+     */
+    viewSelector.on('change', function(ids) {
+      dataChart.set({query: {ids: ids}}).execute();
+    });
+  
+  });
+  </script>
+<div>
+  
+
+
+
+
+
