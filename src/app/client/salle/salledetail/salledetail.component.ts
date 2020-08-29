@@ -98,7 +98,7 @@ export class SalledetailComponent implements OnInit,PipeTransform {
                 icon: "invert_colors",
                 class: "material-icons"
             },
-            ext: {
+            extincteur: {
                 title: "Climatisation",
                 value: "_",
                 icon: "ac_unit",
@@ -250,7 +250,7 @@ ForceShowTableHideMore(v) {
     .subscribe((res5:Array<any>)=>{
       console.log("Equip",res5);
       this.Eqp=res5;
-        for (let item of ['water', 'ext', 'telp', 'electrique']) {
+        for (let item of ['water', 'extincteur', 'telp', 'electrique']) {
             if( this.Eqp[0][item] == true){
                 this.data.equipment.fields[item].value = "Oui";
             }else{

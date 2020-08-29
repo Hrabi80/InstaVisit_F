@@ -2,19 +2,19 @@ import { NgModule } from '@angular/core';
 import { AuthGuard } from './_guard';
 import { Routes, RouterModule } from '@angular/router';
 import {WelcomeComponent} from './welcome/welcome.component';
-import {DetailsComponent} from './details/details.component';
+import {DetailsComponent} from './client/vente/details/details.component';
 import {AboutComponent} from './about/about.component';
 import {NavComponent} from './nav/nav.component';
 import {DashnavComponent} from './dashnav/dashnav.component';
 import {LocationComponent} from './dashboard/location/location.component';
-import {NewHLComponent} from './new-hl/new-hl.component';
-import {NewHVComponent} from './new-hv/new-hv.component';
+import {NewHLComponent} from './dashboard/new-hl/new-hl.component';
+import {NewHVComponent} from './dashboard/house_Vente/new-hv/new-hv.component';
 import {LoginComponent} from './login/login.component';
-import { NVDataTableComponent } from './nv-data-table/nv-data-table.component';
+import { NVDataTableComponent } from './dashboard/house_Vente/nv-data-table/nv-data-table.component';
 import { UploadComponent } from './upload/upload.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { LouerComponent } from './client/louer_meublé/louer/louer.component';
-import { VenteComponent } from './vente/vente.component';
+import { VenteComponent } from './client/vente/vente/vente.component';
 import { AllComponent } from './all/all.component';
 import { VenteListComponent } from './vente-list/vente-list.component';
 import { OtherVenteComponent } from './other-vente/other-vente.component';
@@ -23,16 +23,16 @@ import { InfoComponent } from './info/info.component';
 import { VT360Component } from './vt360/vt360.component';
 import { NewsletterComponent } from './dashboard/newsletter/newsletter.component';
 import { MeubleDataTableComponent } from './dashboard/house_meuble/meuble-data-table/meuble-data-table.component';
-import { NOMeubleComponent } from './nomeuble/nomeuble.component';
+import { NOMeubleComponent } from './dashboard/house_Louer/nomeuble/nomeuble.component';
 import { InfoMComponent } from './dashboard/house_meuble/info-m/info-m.component';
 import { OurworkComponent } from './ourwork/ourwork.component';
 import { LmdetailsComponent } from './client/louer_meublé/lmdetails/lmdetails.component';
 import { InfoNmComponent } from './info-nm/info-nm.component';
-import { LouernmComponent } from './louernm/louernm.component';
-import { LdetailsComponent } from './ldetails/ldetails.component';
-import { UpdatevComponent } from './updatev/updatev.component';
+import { LouernmComponent } from './client/non_meuble/louernm/louernm.component';
+import { LdetailsComponent } from './client/non_meuble/ldetails/ldetails.component';
+import { UpdatevComponent } from './dashboard/house_Vente/updatev/updatev.component';
 import { UpdatelmComponent } from './dashboard/house_meuble/updatelm/updatelm.component';
-import { UpdatelnmComponent } from './updatelnm/updatelnm.component';
+import { UpdatelnmComponent } from './dashboard/house_Louer/updatelnm/updatelnm.component';
 import { MessagesComponent } from './dashboard/messages/messages.component';
 import { NewSalleComponent } from './dashboard/salle/new-salle/new-salle.component';
 import { DatatableComponent } from './dashboard/salle/datatable/datatable.component';
@@ -41,6 +41,8 @@ import { SearchComponent} from './client/salle/search/search.component';
 import { SalledetailComponent } from './client/salle/salledetail/salledetail.component';
 import { UpdateSalleComponent } from './dashboard/salle/update-salle/update-salle.component';
 import { StatisticsComponent } from './dashboard/statistics/statistics.component';
+
+
 const routes: Routes = [
   
   {

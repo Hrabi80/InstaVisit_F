@@ -3,7 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
 import { NVDataTableDataSource, NVDataTableItem } from './nv-data-table-datasource';
-import { HouseVService } from '../_services/HouseV.service';
+import { HouseVService } from '../../../_services/HouseV.service';
 import swal from 'sweetalert2';
 @Component({
   selector: 'app-nv-data-table',

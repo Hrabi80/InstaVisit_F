@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import {Router} from '@angular/router';
-import { HouseLService } from '../_services/HouseL.service';
-import { LocalisationService } from '../_services/Localisation.service';
+import { HouseLService } from '../../_services/HouseL.service';
+import { LocalisationService } from '../../_services/Localisation.service';
 import { HttpEventType } from '@angular/common/http';
 import Swal from 'sweetalert2';
 declare var $:any;

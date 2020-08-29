@@ -3,7 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
 import { NOMeubleDataSource, NOMeubleItem } from './nomeuble-datasource';
-import { HouseLService } from '../_services/HouseL.service'; 
+import { HouseLService } from '../../../_services/HouseL.service'; 
 import swal from 'sweetalert2';
 @Component({
   selector: 'app-nomeuble',

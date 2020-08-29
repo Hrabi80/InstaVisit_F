@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import 'materialize-css';
 import { MaterializeModule } from 'angular2-materialize';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,4 +9,7 @@ import { MaterializeModule } from 'angular2-materialize';
 })
 export class AppComponent {
   title = 'Front-end';
+  
 }
+
+

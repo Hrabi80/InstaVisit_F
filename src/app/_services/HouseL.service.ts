@@ -2,7 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { environment } from "src/environments/environment";
 import { Observable }   from 'rxjs/Observable';
-import { NVDataTableItem} from '../nv-data-table/nv-data-table-datasource';
+import { NVDataTableItem} from '../dashboard/house_Vente/nv-data-table/nv-data-table-datasource';
 
 @Injectable()
 export class HouseLService{

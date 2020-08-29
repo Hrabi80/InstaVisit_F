@@ -1,8 +1,8 @@
 import { Component, OnInit ,Output,EventEmitter, Input } from '@angular/core';
-import { LoutputService } from '../_services/Loutput.service';
-import { ParamService } from '../_services/param-service.service'
+import { LoutputService } from '../../../_services/Loutput.service';
+import { ParamService } from '../../../_services/param-service.service'
 import { ActivatedRoute, ParamMap,Router } from '@angular/router';
-import { FilterPipe } from '../filter.pipe';
+import { FilterPipe } from '../../../filter.pipe';
 
 @Component({
   selector: 'app-louernm',

@@ -3,7 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
-import { HouseLService } from '../_services/HouseL.service';
+import { HouseLService } from '../../../_services/HouseL.service';
 // TODO: Replace this with your own data model type
 export interface NOMeubleItem {
   name: string;

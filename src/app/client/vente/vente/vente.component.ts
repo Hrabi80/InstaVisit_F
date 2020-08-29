@@ -1,9 +1,9 @@
 import { Component, OnInit, Output,EventEmitter, Input } from '@angular/core';
-import { VoutputService } from '../_services/Voutput.service';
-import { ParamService } from '../_services/param-service.service'
+import { VoutputService } from '../../../_services/Voutput.service';
+import { ParamService } from '../../../_services/param-service.service'
 import { ActivatedRoute, ParamMap,Router } from '@angular/router';
-import { FilterPipe } from '../filter.pipe';
-import { Filter2Pipe } from '../filter2.pipe';
+import { FilterPipe } from '../../../filter.pipe';
+import { Filter2Pipe } from '../../../filter2.pipe';
 
 
 @Component({

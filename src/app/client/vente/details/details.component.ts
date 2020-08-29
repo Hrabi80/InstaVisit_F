@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { VoutputService } from '../_services/Voutput.service';
+import { VoutputService } from '../../../_services/Voutput.service';
 import {DomSanitizer} from '@angular/platform-browser';
 import { Pipe, PipeTransform} from '@angular/core';
 // npm install --save-dev @iconify/react @iconify/icons-mdi

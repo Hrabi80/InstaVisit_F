@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
-import { UpdatelnmService } from '../_services/updatelnm.service';
+import { UpdatelnmService } from '../../../_services/updatelnm.service';
 import { HttpEventType } from '@angular/common/http';
 import swal from 'sweetalert2';
 

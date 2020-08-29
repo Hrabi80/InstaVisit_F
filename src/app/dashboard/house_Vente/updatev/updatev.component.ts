@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
-import { HouseVService } from '../_services/HouseV.service';
-import { UpdateService } from '../_services/update.service';
+import { HouseVService } from '../../../_services/HouseV.service';
+import { UpdateService } from '../../../_services/update.service';
 import { HttpEventType } from '@angular/common/http';
 import swal from 'sweetalert2';
 @Component({

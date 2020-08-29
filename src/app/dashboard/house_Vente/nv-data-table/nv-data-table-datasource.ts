@@ -3,7 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
-import { HouseVService } from '../_services/HouseV.service';
+import { HouseVService } from '../../../_services/HouseV.service';
 
 // TODO: Replace this with your own data model type
 export interface NVDataTableItem {

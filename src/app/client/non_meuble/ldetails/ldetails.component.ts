@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { LoutputService } from '../_services/Loutput.service';
+import { LoutputService } from '../../../_services/Loutput.service';
 import {DomSanitizer} from '@angular/platform-browser';
 import { Pipe, PipeTransform} from '@angular/core';
 @Component({
