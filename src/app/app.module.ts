@@ -35,9 +35,9 @@ import { MatSliderModule } from '@angular/material';
 import { MatCardModule } from '@angular/material/card';
 import { MatRadioModule } from  '@angular/material';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-//import { JwPaginationComponent } from 'jw-angular-pagination';
-import { JwPaginationComponent } from './jw-pagination/jw-pagination.component';
 
+import { JwPaginationComponent } from './jw-pagination/jw-pagination.component';
+import { JwPaginationModule } from 'jw-angular-pagination';
 import { LocationComponent } from './dashboard/location/location.component';
 import { NewHLComponent } from './dashboard/new-hl/new-hl.component';
 import { NewHVComponent } from './dashboard//house_Vente/new-hv/new-hv.component';
@@ -48,9 +48,6 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import {MatStepperModule} from '@angular/material/stepper';
 import { UploadComponent } from './upload/upload.component';
-import { NgxImageGalleryModule } from 'ngx-image-gallery';
-import { NgxGalleryModule } from 'ngx-gallery';
-import { GalleryComponent } from './gallery/gallery.component';
 import { LouerComponent } from './client/louer_meublé/louer/louer.component';
 import { VenteComponent } from './client/vente/vente/vente.component';
 import { GalleryModule } from  '@ngx-gallery/core';
@@ -93,7 +90,6 @@ import { SearchComponent } from './client/salle/search/search.component';
 import { SalledetailComponent } from './client/salle/salledetail/salledetail.component';
 import { MobileOverviewSalleComponent } from './comps/mobile-overview-salle/mobile-overview-salle.component';
 import { UpdateSalleComponent } from './dashboard/salle/update-salle/update-salle.component';
-import { StatisticsComponent } from './dashboard/statistics/statistics.component';
 import { ChartsModule } from 'ng2-charts';
 import { Angulartics2Module } from 'angulartics2';
 import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
@@ -131,7 +127,6 @@ let gapiClientConfig: NgGapiClientConfig = {
     LoginComponent,
     NVDataTableComponent,
     UploadComponent,
-    GalleryComponent,
     LouerComponent,
     VenteComponent,
     AllComponent,
@@ -170,7 +165,6 @@ let gapiClientConfig: NgGapiClientConfig = {
     SalledetailComponent,
     MobileOverviewSalleComponent,
     UpdateSalleComponent,
-    StatisticsComponent
     // Filter2Pipe
   ],
   imports: [
@@ -178,7 +172,7 @@ let gapiClientConfig: NgGapiClientConfig = {
     BrowserModule,
     GalleryModule,
     ChartsModule,
-   // GalleryModule.forRoot(),
+    JwPaginationModule,
     AngularFontAwesomeModule,
     Angulartics2Module.forRoot(),
     LightboxModule,
@@ -188,8 +182,6 @@ let gapiClientConfig: NgGapiClientConfig = {
     FormsModule, 
     ReactiveFormsModule , 
     BrowserAnimationsModule,
-    NgxGalleryModule,
-    NgxImageGalleryModule,
     MatButtonModule, MatCheckboxModule, LayoutModule, MatSliderModule,MatRadioModule,MatStepperModule,
     MatToolbarModule, MatSidenavModule, MatIconModule,MatFormFieldModule,MatInputModule,
     MatListModule,MatCardModule, MatTableModule, MatPaginatorModule, MatSortModule,FlexLayoutModule,

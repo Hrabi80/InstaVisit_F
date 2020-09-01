@@ -12,12 +12,10 @@ import {NewHVComponent} from './dashboard/house_Vente/new-hv/new-hv.component';
 import {LoginComponent} from './login/login.component';
 import { NVDataTableComponent } from './dashboard/house_Vente/nv-data-table/nv-data-table.component';
 import { UploadComponent } from './upload/upload.component';
-import { GalleryComponent } from './gallery/gallery.component';
 import { LouerComponent } from './client/louer_meublé/louer/louer.component';
 import { VenteComponent } from './client/vente/vente/vente.component';
 import { AllComponent } from './all/all.component';
-import { VenteListComponent } from './vente-list/vente-list.component';
-import { OtherVenteComponent } from './other-vente/other-vente.component';
+
 import { SearchNavComponent } from './search-nav/search-nav.component';
 import { InfoComponent } from './info/info.component';
 import { VT360Component } from './vt360/vt360.component';
@@ -40,7 +38,7 @@ import { InfoSComponent} from './dashboard/salle/info/info.component';
 import { SearchComponent} from './client/salle/search/search.component';
 import { SalledetailComponent } from './client/salle/salledetail/salledetail.component';
 import { UpdateSalleComponent } from './dashboard/salle/update-salle/update-salle.component';
-import { StatisticsComponent } from './dashboard/statistics/statistics.component';
+
 
 
 const routes: Routes = [
@@ -58,10 +56,7 @@ const routes: Routes = [
     path: 'dashboard',
     component: DashnavComponent,
     children: [
-      {
-        path: 'stat',
-        component: StatisticsComponent,   
-      },
+    
       {
         path: 'loc',
         component: LocationComponent,   
@@ -219,14 +214,8 @@ const routes: Routes = [
           path: 'all',
           component: AllComponent,
         },
-        {
-          path: 'fff',
-          component: VenteListComponent,   
-       },
-       {
-        path: 'fuck',
-        component: OtherVenteComponent,   
-     },
+      
+    
      ],
   },
  

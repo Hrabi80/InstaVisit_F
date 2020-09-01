@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  api_url: 'http://www.domaine.com/backend/public/index.php'
+  api_url: 'http://www.instavisit.com/backend/InstaVisit_B/public/index.php',
+  m_url: 'http://www.instavisit.com/backend/InstaVisit_B/public/index.php'
 };
