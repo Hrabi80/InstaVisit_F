@@ -1,11 +1,11 @@
 import { Component, Input, Output, EventEmitter, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 const paginate = require('jw-paginate');
 declare var require: any;
-declare var module :any;
-declare var moduleId : any;
+//declare var module :any;
+//declare var moduleId : any;
 @Component({
-  moduleId: module.id,
-  selector: 'jw-pagination',
+//  moduleId: module.id,
+  selector: 'jw-pagination2',
   template: `<ul *ngIf="pager.pages && pager.pages.length" class="pagination">
   <li [ngClass]="{disabled:pager.currentPage === 1}" class="page-item first-item">
       <a (click)="setPage(1)" class="page-link">première</a>
@@ -48,7 +48,7 @@ export class JwPaginationComponent implements OnInit, OnChanges {
     }
   }
 
-   setPage(page: number) {
+   private setPage(page: number) {
     // get new pager object for specified page
     this.pager = paginate(this.items.length, page, this.pageSize, this.maxPages);
 

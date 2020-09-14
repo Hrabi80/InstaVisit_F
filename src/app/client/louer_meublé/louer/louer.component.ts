@@ -5,6 +5,7 @@ import { ParamService } from '../../../_services/param-service.service'
 import { ActivatedRoute, ParamMap,Router } from '@angular/router';
 import { HttpEventType } from '@angular/common/http';
 import { FilterPipe } from '../../../filter.pipe';
+
 @Component({
   selector: 'app-louer',
   templateUrl: './louer.component.html',

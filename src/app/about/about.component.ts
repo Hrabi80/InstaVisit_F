@@ -5,6 +5,7 @@ import swal from 'sweetalert2';
 import { FrontService} from '../_services/Front.service';
 import { Pipe, PipeTransform} from '@angular/core';
 
+
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
@@ -14,6 +15,8 @@ import { Pipe, PipeTransform} from '@angular/core';
 export class AboutComponent implements OnInit {
   form: FormGroup;
   formContact :FormGroup;
+  public submitAttempt: boolean = false;
+
   constructor( 
               private  _fb: FormBuilder,
               private _service : FrontService,
