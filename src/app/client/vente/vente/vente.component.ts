@@ -30,7 +30,6 @@ export class VenteComponent implements OnInit {
   ngOnInit() {
     const foo = this.route.snapshot.paramMap.get('foo');
     this.ParamService.foo = foo;
-    console.log(foo);
 
     this._service.getData()
         .subscribe((res) => {

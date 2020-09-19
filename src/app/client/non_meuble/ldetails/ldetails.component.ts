@@ -120,12 +120,10 @@ export class LdetailsComponent implements OnInit,PipeTransform {
         console.log("clicked")
         this.forceTable = true;
     }
-       // ngOnInit() {}
-       // transform() {}
+
     
   ngOnInit() {
     this.id=parseInt(this.route.snapshot.paramMap.get('id'));
-    console.log("this id is : ",this.id);
 
     this._service.getDetailsNM(this.id)
      .subscribe((res)=>{
@@ -135,9 +133,7 @@ export class LdetailsComponent implements OnInit,PipeTransform {
     
     this._service.getParkingNM(this.id)
      .subscribe((res2:Array<any>)=>{
-       console.log("Parking",res2);
        this.parking=res2;
-     //  return(this.inHouse);
      for (let item of ['parking','garage','cave','elevator','etage','garden']) {
       if(item == 'etage'){
           this.data.info.fields[item].value = this.parking[0][item];
@@ -153,7 +149,6 @@ export class LdetailsComponent implements OnInit,PipeTransform {
      
     this._service.getStationNM(this.id)
      .subscribe((res3:Array<any>)=>{
-       console.log("station",res3);
        this.rows = res3;
        for (let item of ['metroST','metro']) {
         if(item == 'metroST'){
@@ -182,11 +177,9 @@ export class LdetailsComponent implements OnInit,PipeTransform {
        console.log("Map",res4);
        this.Map = res4;
        this.mapsrc=this.Map[0].map;
-       console.log(this.mapsrc);
      }); 
      
      this.path=this.Map[0].map;
-     console.log("mayMap",this.path)
     }
   transform() {
     return this.sanitizer.bypassSecurityTrustUrl(this.mapsrc);

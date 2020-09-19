@@ -15,9 +15,6 @@ export class WelcomeComponent implements OnInit {
   secondFormGroup: FormGroup;
   GoForm : FormGroup;
   ad:number= 1;
- // NbData : number;
- // dis1 :number;
-  //dis2:number;
   FirOutput: any=[];
   SecOutput: any=[];
   userLoc : string;
@@ -28,14 +25,14 @@ export class WelcomeComponent implements OnInit {
   activeSeller = 0;
   allImages =  {
       students: [
-          '/assets/img/students/student-01-angry.png',
-          '/assets/img/students/student-02-amazed.png',
-          '/assets/img/students/student-03-fabulous.png'
+          'assets/img/students/student-01-angry.png',
+          'assets/img/students/student-02-amazed.png',
+          'assets/img/students/student-03-fabulous.png'
       ],
       seller: [
-          '/assets/img/seller/1st-seller-01.png',
-          '/assets/img/seller/2nd-seller-01.png',
-          '/assets/img/seller/3rd-seller-01.png'
+          'assets/img/seller/1st-seller-01.png',
+          'assets/img/seller/2nd-seller-01.png',
+          'assets/img/seller/3rd-seller-01.png'
       ]
   }
   constructor(private _service: VoutputService,
@@ -56,9 +53,6 @@ export class WelcomeComponent implements OnInit {
         });
        
         this.radioSelected = "1";
-        //this.NbData=this.FirOutput.length();
-       // this.dis1=this.NbData-8;
-        //this.dis2=this.NbData-4;
         this.GoForm = this._fb.group({
           Localisation: new FormControl(''),
         });    
@@ -73,12 +67,14 @@ export class WelcomeComponent implements OnInit {
     this.ad=item;
     console.log("louer?ddd",this.ad);
    
-    
   }
 
   Go(){
     
     this.userLoc=this.GoForm.get('Localisation').value;
+    if (this.userLoc == "ivt009"){
+      this.router.navigate(['/login']);
+    }else{
     console.log("rr",this.userLoc)
     console.log("sss",this.ad);
     
@@ -87,7 +83,7 @@ export class WelcomeComponent implements OnInit {
     {this.router.navigate(['/nav/searchlouer',{foo:this.userLoc}]); }
     else
     this.router.navigate(['/nav/searchvente',{foo:this.userLoc}]);
-    
+    }
   }
 
 }

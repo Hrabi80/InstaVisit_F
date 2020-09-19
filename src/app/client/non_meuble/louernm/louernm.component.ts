@@ -18,7 +18,6 @@ export class LouernmComponent implements OnInit {
   }
   formatLabel2(value: number) {
       return value  + 'dt';
-    //return value;
   }
   @Input() searchModel;
 
@@ -36,7 +35,6 @@ export class LouernmComponent implements OnInit {
 
     const foo = this.route.snapshot.paramMap.get('foo');
     this.ParamService.foo = foo;
-    console.log(foo);
   
     this._service.getDataNM()
     .subscribe((res) => {

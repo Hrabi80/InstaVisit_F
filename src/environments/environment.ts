@@ -3,9 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  api_url: 'http://127.0.0.1:8000',
-  m_url: 'http://127.0.0.1:8000',
+  production: true,
+  api_url : 'https://instavisit.tn/InstaVisit_B/public/index.php',
+  m_url: 'https://instavisit.tn/InstaVisit_B/public/index.php',
+  api_url1: 'http://127.0.0.1:8000',
+  m_url1: 'http://127.0.0.1:8000',
   GAtrackingId:'UA-175521849-1'
 };
 

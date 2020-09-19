@@ -52,21 +52,21 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
   Couchage1: Array<any>;
   nb :number=0;
   path:string;
-  //let values: (string | number)[];
+
  // parking
   cave :string;
   garden : string ;
   park : string ;
   elevator: string;
   garage: string ;
-  //equipement
+
   toilette :string;
   machine : string;
   internet : string;
   boite : string;
   interphone: string;
   lavelange: string;
-  //cuisine
+
   four: string;
   plaque: string;
   lave: string;
@@ -307,17 +307,14 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
     
   ngOnInit() {
     this.id=parseInt(this.route.snapshot.paramMap.get('id'));
-    console.log("this id is : ",this.id);
 
     this._service.getDetails(this.id)
      .subscribe((res)=>{
-       console.log("details",res);
        this.info=res;
      });
     
     this._service.getParking(this.id)
      .subscribe((res2:Array<any>)=>{
-       console.log("Parking",res2);
        this.parking=res2;
         for (let item of ['parking','garage','cave','elevator','etage','garden']) {
             if(item == 'etage'){
@@ -333,7 +330,6 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
      
     this._service.getStation(this.id)
      .subscribe((res3:Array<any>)=>{
-       console.log("station",res3);
        this.rows = res3;
        for (let item of ['metroST','metro']) {
            if(item == 'metroST'){
@@ -359,7 +355,6 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
 
      this._service.getMap(this.id)
      .subscribe((res4:Array<any>)=>{
-       console.log("Map",res4);
        this.Map = res4;
        this.mapsrc=this.Map[0].map;
        console.log(this.mapsrc);
@@ -368,9 +363,7 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
 
     this._service.getEquip(this.id)
     .subscribe((res5:Array<any>)=>{
-      console.log("Equip",res5);
       this.Eqp=res5;
-    //  return(this.inHouse);
         for (let item of ['toilette', 'machine', 'internet', 'boite', 'interphone', 'lavelange']) {
             //this.Eqp[0][item] ? this.data.equipment.fields[item] = "Oui" : this.data.equipment.fields[item] = "Non";
             if( this.Eqp[0][item] == true){
@@ -385,7 +378,6 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
     
    this._service.getCuisine(this.id)
     .subscribe((res6:Array<any>)=>{
-      console.log("Cuisine",res6);
       this.Cuisine = res6;  
         for (let item of ['four', 'plaque', 'lave', 'congelateur', 'refri', 'microonde']) {
             //this.Cuisine[0][item] ? this.data.cuisine.fields[item] = "Oui" : this.data.cuisine.fields[item] = "Non";
@@ -399,7 +391,6 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
     });
     this._service.getAmeubl(this.id)
     .subscribe((res7:Array<any>)=>{
-      console.log("Ameubl",res7);
       this.Amb=res7;
       for (let item of ['canape', 'mytable', 'chaise', 'MyTV', 'bureau', 'dressing']) {
             this.data.ameublement.fields[item].value = this.Amb[0][item].toString();
@@ -408,15 +399,14 @@ export class LmdetailsComponent implements OnInit,PipeTransform {
     
    this._service.getCouchage(this.id)
     .subscribe((res8:Array<any>)=>{
-      console.log("Couchage",res8);
       this.Couchage1 = res8;
       for (let item of ['lit', 'doublelit', 'canapelit']) {
             this.data.Couchage.fields[item].value = this.Couchage1[0][item].toString();
       }
     });
- //ddd
+
  this.path=this.Map[0].map;
- console.log("mayMap",this.path);
+
 
  
     

@@ -103,6 +103,8 @@ import { NgGapiClientConfig } from './_helpers/_interfaces/NgGapiClientConfig';
 import { GoogleApiModule } from './_services/_googleServices/GoogleApiModule';
 import { NG_GAPI_CONFIG } from './_services/_googleServices';
 import { GoogleApiConfig } from './_services/_googleServices/config/GoogleApiConfig';
+import { MobileOverviewVenteComponent } from './comps/mobile-overview-vente/mobile-overview-vente.component';
+import { MobileOverviewLouerComponent } from './comps/mobile-overview-louer/mobile-overview-louer.component';
 
 let gapiClientConfig: NgGapiClientConfig = {
   client_id: "UA-175521849-1",
@@ -165,6 +167,8 @@ let gapiClientConfig: NgGapiClientConfig = {
     SalledetailComponent,
     MobileOverviewSalleComponent,
     UpdateSalleComponent,
+    MobileOverviewVenteComponent,
+    MobileOverviewLouerComponent,
     // Filter2Pipe
   ],
   imports: [

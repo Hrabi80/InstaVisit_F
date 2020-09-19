@@ -21,11 +21,11 @@
     <span style="font-weight: bold;">Disponibilité : </span>Immédiate<br><br>
 </div>
 <div class="cover">
-    <a class="coverA waves-effect waves-light btn-large " routerLink="/nav/VirtuelTour">
+    <a class="coverA waves-effect waves-light btn-large " rel="noopener noreferrer" href="{{Map[0].virtualTour}}">
         <i class="material-icons left">add_a_photo</i>
         Voir la visite virtuelle,les photos et les videos
     </a>
-    <img src="http://127.0.0.1:8000/images/houses/{{info.cover}}">
+    <img src="https://instavisit.tn/InstaVisit_B/public/images/houses/{{info.cover}}">
 
 </div>
 
@@ -33,7 +33,7 @@
 
 
 
-<app-mobile-overview [info]='info' ></app-mobile-overview>
+<app-mobile-overview-louer [info]='info' ></app-mobile-overview-louer>
 
 <div class="row">
 

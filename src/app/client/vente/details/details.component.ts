@@ -129,11 +129,8 @@ export class DetailsComponent implements OnInit,PipeTransform {
     }
     ngOnInit() {
         this.id=parseInt(this.route.snapshot.paramMap.get('id'));
-        console.log("this id is : ",this.id);
-    
         this._service.getDetails(this.id)
          .subscribe((res)=>{
-           console.log("details",res);
            this.info=res;
          });
         
@@ -156,7 +153,6 @@ export class DetailsComponent implements OnInit,PipeTransform {
          
         this._service.getStation(this.id)
          .subscribe((res3:Array<any>)=>{
-           console.log("station",res3);
            this.rows = res3;
        for (let item of ['metroST','metro']) {
         if(item == 'metroST'){
@@ -190,7 +186,6 @@ export class DetailsComponent implements OnInit,PipeTransform {
            
          }); 
          this.path=this.Map[0].map;
-         console.log("mayMap",this.path);
      }
     transform() {
         return this.sanitizer.bypassSecurityTrustUrl(this.mapsrc);
