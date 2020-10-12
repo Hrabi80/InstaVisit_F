@@ -62,12 +62,10 @@
     
             <div class="input-field">
               <input  type="text" class="validate"  formControlName="map" [(ngModel)]="Map[0].map">
-              <label for="map">Ajouter la localisation sur map</label>
             </div> 
       
             <div class="input-field">
                 <input  type="text" class="validate"  formControlName="virtual" [(ngModel)]="Map[0].virtualTour">
-                <label for="virtual">Ajouter le lien 360° </label>
               </div> 
              
         </mat-card-content>
@@ -353,6 +351,51 @@
       </div>
  
      <!--MeubleInfo-->
+
+
+     <!--update image and cover-->
+      <!--IMAGE-->
+ <br>
+ <form [formGroup]="form2" action="">
+     <mat-card>
+         <mat-card-content>
+
+         <div class="row">
+             <div class="file-field input-field">
+               <div class="btn blue">
+                 <span>Photo</span>
+                 <input type="file" (change)="onFileChanged($event)">
+               </div>
+               <div class="file-path-wrapper">
+                 <input class="file-path validate" type="text" placeholder="Choisit l'image principale">
+               </div>
+             </div>  
+           </div>  
+         
+           <div class="row">
+             <div class="file-field input-field">
+               <div class="btn blue">
+                 <span>Cover photo</span>
+                 <input type="file" (change)="onFileChanged2($event)">
+               </div>
+               <div class="file-path-wrapper">
+                 <input class="file-path validate" type="text" placeholder="Choisit la coverture photo">
+               </div>
+             </div>
+                   
+           </div>     
+    
+         <br> 
+     </mat-card-content>
+     <mat-card-actions>
+         <button class="waves-effect waves-light btn yellow" (click)="updateIMG()"  name="action">
+           Update</button>
+     </mat-card-actions>
+                 
+     
+     </mat-card>
+     </form>
+ <!--IMAGE-->
 
 </div>
 <br><br>

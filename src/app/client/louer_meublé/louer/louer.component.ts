@@ -2,7 +2,7 @@ import { Component, OnInit ,Output,EventEmitter, Input } from '@angular/core';
 import { LoutputService } from '../../../_services/Loutput.service';
 import { HouseLService } from '../../../_services/HouseL.service';
 import { ParamService } from '../../../_services/param-service.service'
-import { ActivatedRoute, ParamMap,Router } from '@angular/router';
+import { ActivatedRoute, ParamMap,Router,NavigationEnd } from '@angular/router';
 import { HttpEventType } from '@angular/common/http';
 import { FilterPipe } from '../../../filter.pipe';
 
@@ -30,13 +30,19 @@ export class LouerComponent implements OnInit {
   pageOfItems: any=[];
   term : string = this.route.snapshot.paramMap.get('foo');
   constructor(
+    private router : Router,
     private route: ActivatedRoute,
     private _service: LoutputService,
     private _Nservice: HouseLService,
     private ParamService: ParamService) { }
 
   ngOnInit() {
-    //console.log(this.route.snapshot.paramMap.get['foo']);
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+          return;
+      }
+      window.scrollTo(0, 0)
+  });
     const foo = this.route.snapshot.paramMap.get('foo');
     this.ParamService.foo = foo;
     console.log(foo);
@@ -44,7 +50,8 @@ export class LouerComponent implements OnInit {
     this._service.getData()
     .subscribe((res) => {
         console.log(res);
-        this.FirOutput = res;
+        setTimeout(()=>{this.FirOutput = res;},2600);
+       // this.FirOutput = res;
         //this.FirOutput.append("IV00"+this.FirOutput.id);
         for (var i = 0; i < this.FirOutput.length; i++) {
           this.FirOutput[i].refr = "INLM000"+this.FirOutput[i].id; // Add "total": 2 to all objects in array

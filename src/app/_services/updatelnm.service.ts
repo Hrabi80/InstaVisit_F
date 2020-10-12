@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { environment } from "src/environments/environment";
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -34,7 +35,9 @@ export class UpdatelnmService {
   updateParkingL(id,data){
     return this._http.put(this._url+'/UpdateParkingLNM/'+id,data);
   }
-  updateIMG(id,data){
-    return this._http.put(this._url+'/updateHouseLMNimg/'+id,data);
+  updateIMG(id,data):Observable<any>{
+    return this._http.post(this._url+'/updateIMG/'+id,data,{
+      reportProgress: true,
+      observe: 'events'});
 }
 }

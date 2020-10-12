@@ -3,7 +3,7 @@
 <div class="content">
       <div class="myVideo">
         <video autoplay muted loop id="myVideo" >
-            <source src="assets/coverVideo.mp4" type="video/mp4"> 
+            <source src="assets/loopV.mp4" type="video/mp4"> 
         </video>
         
       </div>
@@ -32,12 +32,19 @@
 </div>
         
         <!-- WELCOME OUTPUT-->
-      <div class="kk"><br><br>  
+
+      <div class="kk">
+        <br><br>  
+
         <div class="ctt">
           <h4> Les derniers biens à louer<div id="result"></div></h4>
+      
           <br>
-        
+         
+
           <div class="row">
+            <div class="cardqs col"><span *ngIf="FirOutput.length==0" id="loading2"></span></div>
+
              <div *ngFor="let output of FirOutput | slice:-8:-4">
                   <div class="card col">
                       <div class="card-image waves-effect waves-block waves-light">
@@ -64,7 +71,8 @@
           <div class="card col">
             <div class="card-image waves-effect waves-block waves-light">
               <a routerLink="/nav/lmdetails/+{{output.id}}">
-             <img class="activatorh" src="https://instavisit.tn/InstaVisit_B/public/images/houses/{{output.mainIMG}}" alt="img"></a>
+                <img class="activatorh" src="https://instavisit.tn/InstaVisit_B/public/images/houses/{{output.mainIMG}}" alt="img"></a>
+            <!-- <img class="activatorh" src="https://instavisit.tn/InstaVisit_B/public/images/houses/{{output.mainIMG}}" alt="img"></a> -->
             </div><br>
           {{output.ciy}}
           <span>{{output.price}} DT - {{output.surface}} m²</span> <br>
@@ -90,11 +98,14 @@
         <br>
       
         <div class="row">
+          <div class="cardqs col"><span *ngIf="SecOutput.length==0" id="loading2"></span></div>
            <div *ngFor="let output of SecOutput | slice:-8:-4">
                 <div class="card col">
                     <div class="card-image waves-effect waves-block waves-light">
                       <a routerLink="/nav/details/+{{output.id}}">
-                     <img class="activatorh" src="https://instavisit.tn/InstaVisit_B/public/images/houses/{{output.mainIMG}}" alt="img"></a>
+                <!--     <img class="activatorh" src="https://instavisit.tn/InstaVisit_B/public/images/houses/{{output.mainIMG}}" alt="img"></a> -->
+                    <img class="activatorh" src="https://instavisit.tn/InstaVisit_B/public/images/houses/{{output.mainIMG}}" alt="img"></a>
+
                     </div><br>
                   {{output.city}}
                   <span>{{output.price}} DT - {{output.surface}} m²</span> <br>
@@ -139,12 +150,7 @@
       <!--/VOutput-->
       </div>
         <!-- WELCOME OUTPUT-->
-
-<!-- Update WHY IV-->
-
-
-<!-- /Upadate-->
-                   <!--  WHY INSTAVISIT-->
+      <!--  WHY INSTAVISIT-->
             
   <div class="why">
     <h4 >Pourquoi InstaVistit ? </h4><br>
@@ -188,7 +194,7 @@
     <div class="row">
       <div class="col s9">
           <div class="container fprop">
-              <h5>Vous etes propriétaires ? </h5>
+              <h5>Vous êtes propriétaires ? </h5>
               Louez ou vendez votre logement avec des outils modernes :
                <br><br><div class="texthover">
                 <mat-vertical-stepper (selectionChange)="activeSeller = $event.selectedIndex" [linear]="isLinear" #stepper>

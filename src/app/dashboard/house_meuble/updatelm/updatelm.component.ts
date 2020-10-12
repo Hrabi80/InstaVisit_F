@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { UpdatelService } from '../../../_services/updatel.service';
-import { HttpEventType } from '@angular/common/http';
+import { HttpEvent, HttpEventType } from '@angular/common/http';
 import swal from 'sweetalert2';
 import { map } from '../../../models/map';
 import { equip } from '../../../models/equip'; 
@@ -24,7 +24,7 @@ export class UpdatelmComponent implements OnInit {
   formEquip: FormGroup;
   formCouchage: FormGroup;
   formCuisine: FormGroup;
-
+  progress:number=0;
   Info : any=[];
   Tran : any=[];
   Parking :Array<parking>;
@@ -294,6 +294,26 @@ export class UpdatelmComponent implements OnInit {
       uploadData.append('cover', this.form2.get('cover').value);
       console.log("hey",uploadData);
        this._service.updateIMG(this.id,uploadData)
+       .subscribe((event: HttpEvent<any>) => {
+        switch (event.type) {
+          case HttpEventType.Sent:
+            console.log('Request has been made!');
+            break;
+          case HttpEventType.ResponseHeader:
+            console.log('Response header has been received!');
+            break;
+          case HttpEventType.UploadProgress:
+            this.progress = Math.round(event.loaded / event.total * 100);
+            console.log(`Uploaded! ${this.progress}%`);
+            break;
+          case HttpEventType.Response:
+            console.log('product successfully created!', event.body);
+            setTimeout(() => {
+              this.progress = 0;
+            }, 1500);
+  
+      }
+  })
     }
 
 }

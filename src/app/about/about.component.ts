@@ -4,7 +4,7 @@ import { HouseVService } from '../_services/HouseV.service';
 import swal from 'sweetalert2';
 import { FrontService} from '../_services/Front.service';
 import { Pipe, PipeTransform} from '@angular/core';
-
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-about',
@@ -20,9 +20,18 @@ export class AboutComponent implements OnInit {
   constructor( 
               private  _fb: FormBuilder,
               private _service : FrontService,
+              private router : Router
              ) { }
  
   ngOnInit() {
+
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+          return;
+      }
+      window.scrollTo(0, 0)
+  });
+
     this.form = this._fb.group({
       newsletter: ['', [Validators.required, Validators.minLength(6),Validators.email]],    
     });

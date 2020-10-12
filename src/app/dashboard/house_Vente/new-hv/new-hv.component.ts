@@ -70,9 +70,6 @@ export class NewHVComponent implements OnInit {
       };
       reader.readAsDataURL(event.target.files[0]);
     }
-   
-      //(res) => this.uploadResponse = res,
-      //(err) => this.error = err,
        event => { if(event.type === HttpEventType.UploadProgress)
         {
             console.log('upload progress : ' + Math.round( event.loaded / event.total )*100 +'%')
@@ -93,9 +90,6 @@ export class NewHVComponent implements OnInit {
       };
       reader.readAsDataURL(event.target.files[0]);
     }
-   
-      //(res) => this.uploadResponse = res,
-      //(err) => this.error = err,
        event => { if(event.type === HttpEventType.UploadProgress)
         {
             console.log('upload progress : ' + Math.round( event.loaded / event.total )*100 +'%')

@@ -84,5 +84,11 @@ export class AdminService {
     .pipe(catchError(this.errorHandler));
   }
 
+  updateIMG(id,data): Observable<any> {
+    return this._http.post(this.url2+'/updateIMG/'+id,data,{
+      reportProgress: true,
+      observe: 'events'});
+}
+
 
 }

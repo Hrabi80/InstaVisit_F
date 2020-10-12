@@ -47,8 +47,10 @@ export class UpdatelService {
     return this._http.put(this._url+'/UpdateParkingLM/'+id,data)
     .pipe(catchError(this.errorHandler));;
   }
-  updateIMG(id,data){
-    return this._http.put(this._url+'/updateHouseLMimg/'+id,data)
+  updateIMG(id,data): Observable<any> {
+    return this._http.post(this._url+'/updateIMG/'+id,data,{
+      reportProgress: true,
+      observe: 'events'})
     .pipe(catchError(this.errorHandler));;
   }
   getCuisine(id){

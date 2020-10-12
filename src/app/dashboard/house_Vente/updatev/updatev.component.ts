@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { HouseVService } from '../../../_services/HouseV.service';
 import { UpdateService } from '../../../_services/update.service';
-import { HttpEventType } from '@angular/common/http';
+import { HttpEventType,HttpEvent } from '@angular/common/http';
 import swal from 'sweetalert2';
 @Component({
   selector: 'app-updatev',
@@ -12,6 +12,7 @@ import swal from 'sweetalert2';
 })
 export class UpdatevComponent implements OnInit {
   id:number;
+  progress: number = 0;
   trId:number;
   form: FormGroup;
   formTransport: FormGroup;
@@ -146,7 +147,20 @@ export class UpdatevComponent implements OnInit {
       });
   }
 
-
+  onFileChanged0(event) {
+    const file = (event.target as HTMLInputElement).files[0];
+    this.form2.patchValue({
+      photo: file
+    });
+    this.form2.get('mainIMG').updateValueAndValidity()
+  }
+  onFileChanged00(event) {
+    const file = (event.target as HTMLInputElement).files[0];
+    this.form2.patchValue({
+      photo: file
+    });
+    this.form2.get('cover').updateValueAndValidity()
+  }
   
   onFileChanged(event:any) {
     if (event.target.files && event.target.files[0]) {
@@ -188,10 +202,30 @@ export class UpdatevComponent implements OnInit {
       console.log(event);
   }
   updateIMG(){
-    const uploadData = new FormData();
-    uploadData.append('mainIMG', this.form2.get('mainIMG').value);
-    uploadData.append('cover', this.form2.get('cover').value);
-    console.log("hey",uploadData);
-     this._service.updateIMG(this.id,uploadData)
-  }
+    const formData = new FormData();
+    formData.append('mainIMG', this.form2.get('mainIMG').value);
+    formData.append('cover', this.form2.get('cover').value);
+     this._upservice.updateIMG(this.id,formData)
+     .subscribe((event: HttpEvent<any>) => {
+      switch (event.type) {
+        case HttpEventType.Sent:
+          console.log('Request has been made!');
+          break;
+        case HttpEventType.ResponseHeader:
+          console.log('Response header has been received!');
+          break;
+        case HttpEventType.UploadProgress:
+          this.progress = Math.round(event.loaded / event.total * 100);
+          console.log(`Uploaded! ${this.progress}%`);
+          break;
+        case HttpEventType.Response:
+          console.log('image successfully uploaded!', event.body);
+          setTimeout(() => {
+            this.progress = 0;
+          }, 1500);
+
+    }
+  })
+ }
+
 }

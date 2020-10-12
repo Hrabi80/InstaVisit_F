@@ -1,7 +1,7 @@
 import { Component, OnInit ,Output,EventEmitter, Input } from '@angular/core';
 import { LoutputService } from '../../../_services/Loutput.service';
 import { ParamService } from '../../../_services/param-service.service'
-import { ActivatedRoute, ParamMap,Router } from '@angular/router';
+import { ActivatedRoute, ParamMap,Router,NavigationEnd } from '@angular/router';
 import { FilterPipe } from '../../../filter.pipe';
 
 @Component({
@@ -26,16 +26,23 @@ export class LouernmComponent implements OnInit {
   pageOfItems: any=[];
 
   constructor(private route: ActivatedRoute,
+              private router : Router,
               private _service: LoutputService,
               private ParamService: ParamService) 
               { }
   
 
   ngOnInit() {
-
+     
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+          return;
+      }
+      window.scrollTo(0, 0)
+  });
     const foo = this.route.snapshot.paramMap.get('foo');
     this.ParamService.foo = foo;
-  
+    
     this._service.getDataNM()
     .subscribe((res) => {
         console.log(res);

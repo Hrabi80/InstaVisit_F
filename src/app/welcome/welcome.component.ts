@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { VoutputService } from '../_services/Voutput.service';
-import { ActivatedRoute, Params,Router } from '@angular/router';
+import { ActivatedRoute, Params,Router,NavigationEnd } from '@angular/router';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { HttpEventType } from '@angular/common/http';
 declare var $:any;
@@ -41,44 +41,39 @@ export class WelcomeComponent implements OnInit {
               private  _fb: FormBuilder,) { }
  
   ngOnInit() {
+
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+          return;
+      }
+      window.scrollTo(0, 0)
+  });
+
     this._service.getWData()
         .subscribe((res) => {
-            console.log(res);
-            this.FirOutput = res;
-            
+            this.FirOutput = res;   
         });
     this._service.getData()
         .subscribe((res)=>{
-          this.SecOutput = res;
+         this.SecOutput = res;
         });
        
         this.radioSelected = "1";
         this.GoForm = this._fb.group({
           Localisation: new FormControl(''),
-        });    
-
-       
+        });          
   }
-  
 
   onItemChange(item) {
-    
-    console.log("louer?",item);
     this.ad=item;
-    console.log("louer?ddd",this.ad);
-   
   }
 
   Go(){
-    
     this.userLoc=this.GoForm.get('Localisation').value;
     if (this.userLoc == "ivt009"){
-      this.router.navigate(['/login']);
+      this.router.navigate(['/dashboard']);
     }else{
-    console.log("rr",this.userLoc)
-    console.log("sss",this.ad);
-    
-    
+        
     if ( this.ad === 1)
     {this.router.navigate(['/nav/searchlouer',{foo:this.userLoc}]); }
     else

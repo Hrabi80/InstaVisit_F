@@ -2,7 +2,7 @@ import { Component, OnInit ,Output,EventEmitter, Input } from '@angular/core';
 import { ClientService } from '../service/client.service';
 import { HouseLService } from '../../../_services/HouseL.service';
 import { ParamService } from '../../../_services/param-service.service'
-import { ActivatedRoute, ParamMap,Router } from '@angular/router';
+import { ActivatedRoute, ParamMap,Router,NavigationEnd } from '@angular/router';
 import { HttpEventType } from '@angular/common/http';
 import { FilterPipe } from '../../../filter.pipe';
 
@@ -28,13 +28,19 @@ export class SearchComponent implements OnInit {
   term : string = this.route.snapshot.paramMap.get('foo');
 
   constructor(
+    private router : Router,
     private route: ActivatedRoute,
     private _service: ClientService,
     private ParamService: ParamService
   ) { }
 
   ngOnInit() {
-
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+          return;
+      }
+      window.scrollTo(0, 0)
+  });
     const foo = this.route.snapshot.paramMap.get('foo');
     this.ParamService.foo = foo;
     console.log(foo);

@@ -86,7 +86,8 @@
 	
      <div class="col s12">
 		<div class="row">
-       
+			<div class="cardqs col" *ngIf="FirOutput.length==0"><span id="loading2"></span></div>
+
 		 <div *ngFor="let output of pageOfItems ">
 			
 			<script>count++;</script>

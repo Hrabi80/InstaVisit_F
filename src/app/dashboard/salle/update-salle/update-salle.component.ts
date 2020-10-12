@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { ClientService } from '../_services/client.service';
 import { AdminService } from '../_services/admin.service';
-import { HttpEventType } from '@angular/common/http';
+import { HttpEventType,HttpEvent } from '@angular/common/http';
 import swal from 'sweetalert2';
 import { map } from '../../../models/map';
 import { equip } from '../../../models/equip'; 
@@ -16,8 +16,10 @@ import { parking } from '../../../models/parking';
 export class UpdateSalleComponent implements OnInit {
 
   id:number;
+  progress: number=0;
   trId:number;
   form: FormGroup;
+  form2 : FormGroup;
   formTransport: FormGroup;
   formFiche: FormGroup;
   formMap: FormGroup;
@@ -28,7 +30,7 @@ export class UpdateSalleComponent implements OnInit {
   Info : any=[];
   Tran : any=[];
   fiche :any=[];
-  Map :Array<map>;
+  Map :any=[];
   mat: any=[];
   Cuisine : any=[];
   Equip : any=[];
@@ -110,6 +112,11 @@ export class UpdateSalleComponent implements OnInit {
       
     });  
 
+    this.form2 = this._fb.group({
+      mainIMG: new FormControl(''),
+      cover : new FormControl(''),
+    })
+
     this.formTransport = this._fb.group({
       metro: new FormControl(''),
       metroST: new FormControl(''),
@@ -127,6 +134,11 @@ export class UpdateSalleComponent implements OnInit {
       bar:new FormControl(''),
       parking:new FormControl('')
     });
+
+    this.formMap = this._fb.group({
+      map: new FormControl(''),
+      virtual : new FormControl('')
+    })
 
     this.formCuisine = this._fb.group({
       plaque: new FormControl(''),
@@ -149,6 +161,47 @@ export class UpdateSalleComponent implements OnInit {
     });
         
   }
+
+  onFileChanged(event:any) {
+    if (event.target.files && event.target.files[0]) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.form2.get('mainIMG').setValue(event.target.files[0]);
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
+       event => { if(event.type === HttpEventType.UploadProgress)
+        {
+            console.log('upload progress : ' + Math.round( event.loaded / event.total )*100 +'%')
+        } 
+        else if(event.type === HttpEventType.Response)
+        {
+          console.log(event);
+        }
+      } 
+      console.log(event);
+  }
+
+  onFileChanged2(event:any) {
+    if (event.target.files && event.target.files[0]) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.form2.get('cover').setValue(event.target.files[0]);
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
+       event => { if(event.type === HttpEventType.UploadProgress)
+        {
+            console.log('upload progress : ' + Math.round( event.loaded / event.total )*100 +'%')
+        } 
+        else if(event.type === HttpEventType.Response)
+        {
+          console.log(event);
+        }
+       }
+      console.log(event);
+  }
+
   alertFire(car:string){
     swal.fire(
       'Updated !',
@@ -161,10 +214,11 @@ export class UpdateSalleComponent implements OnInit {
     this._service.updateSalleInfo(this.id,this.form.value)
       .subscribe((res)=>{
         console.log(res);
+        this.alertFire("Les informations essentielles");
       });
-      this.alertFire("Les informations essentielles");
   }
 
+  
   updateTran(){
     console.log("uptr",this.formTransport.value);
     this._service.updateTransportL(this.trId,this.formTransport.value)
@@ -211,5 +265,32 @@ export class UpdateSalleComponent implements OnInit {
           this.alertFire("Materiels");
       });
   }
+
+  updateIMG(){
+    const formData = new FormData();
+    formData.append('mainIMG', this.form2.get('mainIMG').value);
+    formData.append('cover', this.form2.get('cover').value);
+     this._service.updateIMG(this.id,formData)
+     .subscribe((event: HttpEvent<any>) => {
+      switch (event.type) {
+        case HttpEventType.Sent:
+          console.log('Request has been made!');
+          break;
+        case HttpEventType.ResponseHeader:
+          console.log('Response header has been received!');
+          break;
+        case HttpEventType.UploadProgress:
+          this.progress = Math.round(event.loaded / event.total * 100);
+          console.log(`Uploaded! ${this.progress}%`);
+          break;
+        case HttpEventType.Response:
+          console.log('image successfully uploaded!', event.body);
+          setTimeout(() => {
+            this.progress = 0;
+          }, 1500);
+
+    }
+  })
+ }
 
 }

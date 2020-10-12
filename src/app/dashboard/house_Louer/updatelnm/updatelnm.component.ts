@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { UpdatelnmService } from '../../../_services/updatelnm.service';
-import { HttpEventType } from '@angular/common/http';
+import { HttpEvent, HttpEventType } from '@angular/common/http';
 import swal from 'sweetalert2';
 
 @Component({
@@ -18,6 +18,7 @@ export class UpdatelnmComponent implements OnInit {
   formInfo: FormGroup;
   formMap: FormGroup;
   form2: FormGroup;
+  progress:number=0;
 
   Info : any=[];
   Tran : any=[];
@@ -191,7 +192,27 @@ export class UpdatelnmComponent implements OnInit {
     uploadData.append('mainIMG', this.form2.get('mainIMG').value);
     uploadData.append('cover', this.form2.get('cover').value);
     console.log("hey",uploadData);
-     this._service.updateIMG(this.id,uploadData)
+    this._service.updateIMG(this.id,uploadData)
+    .subscribe((event: HttpEvent<any>) => {
+      switch (event.type) {
+        case HttpEventType.Sent:
+          console.log('Request has been made!');
+          break;
+        case HttpEventType.ResponseHeader:
+          console.log('Response header has been received!');
+          break;
+        case HttpEventType.UploadProgress:
+          this.progress = Math.round(event.loaded / event.total * 100);
+          console.log(`Uploaded! ${this.progress}%`);
+          break;
+        case HttpEventType.Response:
+          console.log('image successfully uploaded!', event.body);
+          setTimeout(() => {
+            this.progress = 0;
+          }, 1500);
+
+    }
+})
   }
 
 }

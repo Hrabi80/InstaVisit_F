@@ -22,6 +22,7 @@ export class VoutputService{
 
 
     getWData(){
+       // setTimeout(()=>{this._http.get(this._url+'/welcomeD');},3000);
         return this._http.get(this._url+'/welcomeD');           
     }
     getData(){

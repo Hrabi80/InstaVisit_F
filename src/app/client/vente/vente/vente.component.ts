@@ -1,7 +1,7 @@
 import { Component, OnInit, Output,EventEmitter, Input } from '@angular/core';
 import { VoutputService } from '../../../_services/Voutput.service';
 import { ParamService } from '../../../_services/param-service.service'
-import { ActivatedRoute, ParamMap,Router } from '@angular/router';
+import { ActivatedRoute, ParamMap,Router,NavigationEnd} from '@angular/router';
 import { FilterPipe } from '../../../filter.pipe';
 import { Filter2Pipe } from '../../../filter2.pipe';
 
@@ -24,10 +24,17 @@ export class VenteComponent implements OnInit {
   term : string = this.route.snapshot.paramMap.get('foo'); 
   FirOutput: any=[];
   constructor(private route: ActivatedRoute,
+              private router : Router,
               private ParamService: ParamService,
               private _service: VoutputService) { }
  
   ngOnInit() {
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+          return;
+      }
+      window.scrollTo(0, 0)
+  });
     const foo = this.route.snapshot.paramMap.get('foo');
     this.ParamService.foo = foo;
 
