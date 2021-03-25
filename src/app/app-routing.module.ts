@@ -38,6 +38,9 @@ import { InfoSComponent} from './dashboard/salle/info/info.component';
 import { SearchComponent} from './client/salle/search/search.component';
 import { SalledetailComponent } from './client/salle/salledetail/salledetail.component';
 import { UpdateSalleComponent } from './dashboard/salle/update-salle/update-salle.component';
+import { InstasComponent } from './dashboard/instas/instas.component';
+import { CoffeeComponent } from './dashboard/instas/coffee/coffee.component';
+import { EditCoffeeComponent } from './dashboard/instas/coffee/edit-coffee/edit-coffee.component';
 
 
 
@@ -133,6 +136,19 @@ const routes: Routes = [
       {
         path: 'messages',
         component: MessagesComponent,   
+      },
+      {
+        path: 'instas',
+        component: InstasComponent,   
+      },
+      {
+        path: 'coffee',
+        component: CoffeeComponent, 
+        children: []  
+      },
+      {
+        path: 'coffee/edit/:id',
+        component: EditCoffeeComponent,   
       },
     ],
     canActivate: [AuthGuard] 
