@@ -105,6 +105,10 @@ import { NG_GAPI_CONFIG } from './_services/_googleServices';
 import { GoogleApiConfig } from './_services/_googleServices/config/GoogleApiConfig';
 import { MobileOverviewVenteComponent } from './comps/mobile-overview-vente/mobile-overview-vente.component';
 import { MobileOverviewLouerComponent } from './comps/mobile-overview-louer/mobile-overview-louer.component';
+import { InstasComponent } from './dashboard/instas/instas.component';
+import { CoffeeComponent } from './dashboard/instas/coffee/coffee.component';
+import { CoffeeService } from './services/CoffeeService/coffee.service';
+import { EditCoffeeComponent } from './dashboard/instas/coffee/edit-coffee/edit-coffee.component';
 
 let gapiClientConfig: NgGapiClientConfig = {
   client_id: "UA-175521849-1",
@@ -169,6 +173,9 @@ let gapiClientConfig: NgGapiClientConfig = {
     UpdateSalleComponent,
     MobileOverviewVenteComponent,
     MobileOverviewLouerComponent,
+    InstasComponent,
+    CoffeeComponent,
+    EditCoffeeComponent,
     // Filter2Pipe
   ],
   imports: [
@@ -207,6 +214,7 @@ let gapiClientConfig: NgGapiClientConfig = {
     VoutputService,
     LoutputService,
     FrontService,
+    CoffeeService,
     JwtInterceptor,
     {
       provide: HTTP_INTERCEPTORS,
