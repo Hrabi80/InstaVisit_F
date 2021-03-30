@@ -109,6 +109,8 @@ import { InstasComponent } from './dashboard/instas/instas.component';
 import { CoffeeComponent } from './dashboard/instas/coffee/coffee.component';
 import { CoffeeService } from './services/CoffeeService/coffee.service';
 import { EditCoffeeComponent } from './dashboard/instas/coffee/edit-coffee/edit-coffee.component';
+import { AddCoffeeComponent } from './dashboard/instas/coffee/add-coffee/add-coffee.component';
+import { CaracCoffeeComponent } from './dashboard/instas/coffee/carac-coffee/carac-coffee.component';
 
 let gapiClientConfig: NgGapiClientConfig = {
   client_id: "UA-175521849-1",
@@ -176,6 +178,8 @@ let gapiClientConfig: NgGapiClientConfig = {
     InstasComponent,
     CoffeeComponent,
     EditCoffeeComponent,
+    AddCoffeeComponent,
+    CaracCoffeeComponent,
     // Filter2Pipe
   ],
   imports: [

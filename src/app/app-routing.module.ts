@@ -41,6 +41,8 @@ import { UpdateSalleComponent } from './dashboard/salle/update-salle/update-sall
 import { InstasComponent } from './dashboard/instas/instas.component';
 import { CoffeeComponent } from './dashboard/instas/coffee/coffee.component';
 import { EditCoffeeComponent } from './dashboard/instas/coffee/edit-coffee/edit-coffee.component';
+import { AddCoffeeComponent } from './dashboard/instas/coffee/add-coffee/add-coffee.component';
+import { CaracCoffeeComponent } from './dashboard/instas/coffee/carac-coffee/carac-coffee.component';
 
 
 
@@ -147,8 +149,16 @@ const routes: Routes = [
         children: []  
       },
       {
+        path: 'coffee/add',
+        component: AddCoffeeComponent,   
+      },
+      {
         path: 'coffee/edit/:id',
         component: EditCoffeeComponent,   
+      },
+      {
+        path: 'coffee/characteristics/:id',
+        component: CaracCoffeeComponent,   
       },
     ],
     canActivate: [AuthGuard] 

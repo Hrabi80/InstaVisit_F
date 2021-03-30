@@ -1,0 +1,292 @@
+<br><br>
+<div class="container">
+    <div class="row">
+         <div class="col s6">
+        <form  [formGroup]="formInfo" action="">
+    <mat-card>
+        <mat-card-content>
+ 
+        <div class="input-field">
+          <input  type="text" class="validate"  formControlName="horaire" required>
+          <label for="first_name">la disponibilité horaire</label>
+        </div> 
+        <div class="input-field">
+            <div class="switch" >
+                <label>
+                  Non 
+                  <input type="checkbox"  formControlName="toilette" required>
+                  <span class="lever"></span>
+                  Avec toilette
+                </label>
+              </div>
+            
+        </div><br>
+        <div class="input-field">
+            <div class="switch" >
+                <label>
+                  Non 
+                  <input type="checkbox"  formControlName="parking" required>
+                  <span class="lever"></span>
+                  Avec parking 
+                </label>
+              </div>
+            
+        </div><br>
+        <div class="input-field">
+            <div class="switch" >
+                <label>
+                  Non 
+                  <input type="checkbox"  formControlName="bar" required>
+                  <span class="lever"></span>
+                  Avec bar
+                </label>
+              </div>
+        </div>
+        <br><br>
+    </mat-card-content>
+    <mat-card-actions>
+        <button class="waves-effect waves-light btn yellow" (click)="newInfo()" [disabled]="clicked1" name="action">
+          Ajouter</button>
+    </mat-card-actions>
+               
+    
+    </mat-card>
+    </form>
+    <br>
+    <!--AA-->
+    <form  [formGroup]="formMap" action="">
+        <mat-card>
+            <mat-card-content>
+     
+    
+            <div class="input-field">
+              <input  type="text" class="validate"  formControlName="map" required>
+              <label for="map">Ajouter la localisation sur map</label>
+            </div> 
+      
+            <div class="input-field">
+                <input  type="text" class="validate"  formControlName="virtual" required>
+                <label for="virtual">Ajouter le lien 360° </label>
+              </div> 
+             
+        </mat-card-content>
+        <mat-card-actions>
+            <button class="waves-effect waves-light btn yellow" (click)="newMap()" [disabled]="clickedMap" name="action">
+              Ajouter</button>
+        </mat-card-actions>
+                   
+        
+        </mat-card>
+        </form>
+        <br>
+        <!--COUCHAGE-->
+        <form  [formGroup]="formMat" action="">
+          <mat-card>
+              <mat-card-content>
+              <div class="input-field">
+                <input  type="number" class="validate"  formControlName="tables" required>
+                <label for="map">nombre des tables</label>
+              </div> 
+        
+              <div class="input-field">
+                  <input  type="number" class="validate"  formControlName="chair" required>
+                  <label for="virtual">nombres des chaises</label>
+              </div>
+              <div class="input-field">
+                <div class="switch" >
+                    <label>
+                      Non 
+                      <input type="checkbox"  formControlName="sono" required>
+                      <span class="lever"></span>
+                      Avec sono
+                    </label>
+                  </div>
+                </div><br>
+               
+          </mat-card-content>
+          <mat-card-actions>
+              <button class="waves-effect waves-light btn yellow" (click)="newMat()" [disabled]="clickedCou" name="action">
+                Ajouter</button>
+          </mat-card-actions>
+          </mat-card>
+          </form>
+    <!--AA-->
+  </div>
+    <form class="col s6" [formGroup]="formTran" action="">
+        <mat-card>
+            <mat-card-content>
+     
+                <div class="input-field">
+                    <input id="first_name" type="text" class="validate"  formControlName="taxiST" hidden>
+                  </div>
+            <div class="input-field">
+              <input id="first_name" type="text" class="validate"  formControlName="taxi" hidden>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="metroST" required>
+                <label for="first_name">Station de metro</label>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="metro" required>
+                <label for="first_name">distance (metro-location)</label>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="louageST" hidden>
+
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="louage" hidden>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="trainST" hidden>
+
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="train" hidden>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="busST" required>
+                <label for="first_name">Station de bus</label>
+            </div>   
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="bus" required>
+                <label for="first_name">distance (Bus-location)</label>
+            </div>    
+       
+            <br><br>
+        </mat-card-content>
+        <mat-card-actions>
+            <button class="waves-effect waves-light btn yellow" (click)="newStation()" [disabled]="clickedTr" name="action">
+              Ajouter</button>
+        </mat-card-actions>
+                    
+        
+        </mat-card>
+        </form>
+
+
+   </div>
+
+   <div class="row">
+     <div class="col s6">
+        <form  [formGroup]="formCuisine" action="">
+            <mat-card>
+                <mat-card-content>
+                    <div class="input-field">
+                        <div class="switch" >
+                            <label>
+                              Non 
+                              <input type="checkbox"  formControlName="four" required>
+                              <span class="lever"></span>
+                              Avec four 
+                            </label>
+                          </div>
+                    </div><br>
+                <div class="input-field">
+                    <div class="switch" >
+                        <label>
+                          Non 
+                          <input type="checkbox"  formControlName="frigo" required>
+                          <span class="lever"></span>
+                          Avec frigo
+                        </label>
+                      </div>
+                    
+                </div><br>
+                <div class="input-field">
+                    <div class="switch" >
+                        <label>
+                          Non 
+                          <input type="checkbox"  formControlName="bac" required>
+                          <span class="lever"></span>
+                          Avec bac evier
+                        </label>
+                      </div>
+                    
+                </div><br> 
+                <div class="input-field">
+                    <div class="switch" >
+                        <label>
+                          Non 
+                          <input type="checkbox"  formControlName="plaque" required>
+                          <span class="lever"></span>
+                          Avec plaque
+                        </label>
+                      </div>
+                    
+                </div><br><br> 
+            </mat-card-content>
+            <mat-card-actions>
+                <button class="waves-effect waves-light btn yellow" (click)="newCuisine()" [disabled]="clickedCui" name="action">
+                  Ajouter</button>
+            </mat-card-actions>
+            </mat-card>
+            </form>
+
+     </div>
+     <div class="col s6">
+        <form  [formGroup]="formEquip" action="">
+            <mat-card>
+                <mat-card-content>
+         
+                    <div class="input-field">
+                        <div class="switch" >
+                            <label>
+                              Non 
+                              <input type="checkbox"  formControlName="water" required>
+                              <span class="lever"></span>
+                              Alimentation eau 
+                            </label>
+                          </div>
+                    </div><br>
+               
+                <div class="input-field">
+                    <div class="switch" >
+                        <label>
+                          Non 
+                          <input type="checkbox"  formControlName="ext" required>
+                          <span class="lever"></span>
+                          Extincteur 
+                        </label>
+                      </div>
+                    
+                </div><br>
+                <div class="input-field">
+                    <div class="switch" >
+                        <label>
+                          Non 
+                          <input type="checkbox"  formControlName="telp" required>
+                          <span class="lever"></span>
+                          Avec telephone
+                        </label>
+                      </div>
+                    
+                </div><br>
+                <div class="input-field">
+                    <div class="switch" >
+                        <label>
+                          Non 
+                          <input type="checkbox"  formControlName="electrique" required>
+                          <span class="lever"></span>
+                          Alimentation électrique 
+                        </label>
+                      </div>
+                    
+                </div><br>
+                <br> 
+            </mat-card-content>
+            <mat-card-actions>
+                <button class="waves-effect waves-light btn yellow" (click)="newEquip()" [disabled]="clickedEqp" name="action">
+                  Ajouter</button>
+            </mat-card-actions>
+            </mat-card>
+            </form>
+ 
+     </div>
+   </div>
+    
+   
+
+
+</div>
+<br><br>

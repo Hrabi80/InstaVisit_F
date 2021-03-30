@@ -21,7 +21,7 @@ export class CoffeeComponent implements OnInit {
   dataSource:MatTableDataSource<any> ;
 
 
-  displayedColumns = ['id', 'name','tel','surface','adress','car','update','ss'];
+  displayedColumns = ['id', 'name','tel','surface','adress','car','new','update','ss'];
   
   constructor(private coffeeService:CoffeeService) { }
 
@@ -35,7 +35,6 @@ export class CoffeeComponent implements OnInit {
     })
 
   }
-/* 
 
   delete(id) {
     swal.fire({
@@ -49,19 +48,19 @@ export class CoffeeComponent implements OnInit {
       cancelButtonText: 'No, keep it'
     }).then((res) => {
       if (res.value) {
-        this._service.delete(id).subscribe(
+        this.coffeeService.deleteCoffee(id).subscribe(
           data => {
         swal.fire(
           'Deleted!',
           'Your file has been deleted.',
           'success'
         );
-        const index = this.dataSource.findIndex(x => x.id ===id);
+     /*    const index = this.dataSource.findIndex(x => x.id ===id);
               this.dataSource.splice(index, 1);
               setTimeout(()=>{
                 this.table.dataSource=this.dataSource;
                 this.table.renderRows();
-              },1500);
+              },1500); */
        });
       }else{
         swal.fire(
@@ -72,6 +71,6 @@ export class CoffeeComponent implements OnInit {
       }
     });
   }
- */
+ 
 }
 
