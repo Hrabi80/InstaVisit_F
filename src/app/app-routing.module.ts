@@ -41,6 +41,10 @@ import { UpdateSalleComponent } from './dashboard/salle/update-salle/update-sall
 import { InstasComponent } from './dashboard/instas/instas.component';
 import { CoffeeComponent } from './dashboard/instas/coffee/coffee.component';
 import { EditCoffeeComponent } from './dashboard/instas/coffee/edit-coffee/edit-coffee.component';
+import { CultureDataTableComponent } from './dashboard/instas/culture/culture-data-table/culture-data-table.component';
+import { AddCultureComponent } from './dashboard/instas/culture/add-culture/add-culture.component';
+import { RestoDataTableComponent } from './dashboard/instas/resto/resto-data-table/resto-data-table.component';
+import { AddRestoComponent } from './dashboard/instas/resto/add-resto/add-resto.component';
 
 
 
@@ -77,6 +81,14 @@ const routes: Routes = [
         component: NewSalleComponent,   
       },
       {
+        path: 'new_insta_culture',
+        component: AddCultureComponent,   
+      },
+      {
+        path: 'new_insta_resto',
+        component: AddRestoComponent,   
+      },
+      {
         path: 'HvData_Table',
         component: NVDataTableComponent,   
       },
@@ -91,6 +103,18 @@ const routes: Routes = [
       {
         path: 'HLM_LISTE',
         component: MeubleDataTableComponent,   
+      },
+      {
+        path: 'HLM_LISTE',
+        component: MeubleDataTableComponent,   
+      },
+      {
+        path: 'CULTURE_LISTE',
+        component: CultureDataTableComponent,   
+      },
+      {
+        path: 'resto_data_table',
+        component: RestoDataTableComponent,   
       },
       {
         path: 'Upload',

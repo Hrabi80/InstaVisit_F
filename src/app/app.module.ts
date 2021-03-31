@@ -109,7 +109,10 @@ import { InstasComponent } from './dashboard/instas/instas.component';
 import { CoffeeComponent } from './dashboard/instas/coffee/coffee.component';
 import { CoffeeService } from './services/CoffeeService/coffee.service';
 import { EditCoffeeComponent } from './dashboard/instas/coffee/edit-coffee/edit-coffee.component';
-
+import { CultureDataTableComponent } from './dashboard/instas/culture/culture-data-table/culture-data-table.component';
+import { AddCultureComponent } from './dashboard/instas/culture/add-culture/add-culture.component';
+import { RestoDataTableComponent } from './dashboard/instas/resto/resto-data-table/resto-data-table.component';
+import { AddRestoComponent } from './dashboard/instas/resto/add-resto/add-resto.component';
 let gapiClientConfig: NgGapiClientConfig = {
   client_id: "UA-175521849-1",
   discoveryDocs: ["https://analyticsreporting.googleapis.com/$discovery/rest?version=v4"],
@@ -176,6 +179,10 @@ let gapiClientConfig: NgGapiClientConfig = {
     InstasComponent,
     CoffeeComponent,
     EditCoffeeComponent,
+    CultureDataTableComponent,
+    AddCultureComponent,
+    RestoDataTableComponent,
+    AddRestoComponent,
     // Filter2Pipe
   ],
   imports: [

@@ -3,10 +3,10 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
-import { HouseVService } from '../../../_services/HouseV.service';
+import { CultureService } from '../_services/culture.service';
 
 // TODO: Replace this with your own data model type
-export interface NVDataTableItem {
+export interface CUDataTableItem {
   name: string;
   id: number;
   adress : string;
@@ -15,12 +15,11 @@ export interface NVDataTableItem {
 }
 
 // TODO: replace this with real data from your application
-const EXAMPLE_DATA: NVDataTableItem[] = [
+const EXAMPLE_DATA: CUDataTableItem[] = [
 
   {id: 1, name: 'korba', adress: '14 Rue Tunis', surface: 500 ,price: 50.000},
   {id: 2, name: 'Ariana' , adress: '14 Rue Tunis', surface: 500 ,price: 75.000},
   {id: 3, name: 'Sousse' , adress: '69 Rue Ibn Haithame', surface: 500 ,price: 200.000},
-  {id: 4, name: 'Sousse' , adress: 'dds Rue sqdqd', surface: 500 ,price: 100.000},
 ];
 
 /**
@@ -28,12 +27,12 @@ const EXAMPLE_DATA: NVDataTableItem[] = [
  * encapsulate all logic for fetching and manipulating the displayed data
  * (including sorting, pagination, and filtering).
  */
-export class NVDataTableDataSource extends DataSource<any> {
-  data: NVDataTableItem[];
+export class CUDataTableDataSource extends DataSource<any> {
+  data: CUDataTableItem[];
   paginator: MatPaginator;
   sort: MatSort;
 
-  constructor(private _service: HouseVService,) {
+  constructor(private _service: CultureService,) {
     super();
   }
 
@@ -42,12 +41,7 @@ export class NVDataTableDataSource extends DataSource<any> {
    * the returned stream emits new items.
    * @returns A stream of the items to be rendered.
    */
-  connect(): Observable<NVDataTableItem[]> {
-    // Combine everything that affects the rendered data into one update
-    // stream for the data-table to consume.
-    
-    // return this._service.getData();
-   
+  connect(): Observable<CUDataTableItem[]> {
     const dataMutations = [
       observableOf(this.data),
       this.paginator.page,
@@ -58,7 +52,6 @@ export class NVDataTableDataSource extends DataSource<any> {
       return this.getPagedData(this.getSortedData(this.data));
     }));
   }
-
   /**
    *  Called when the table is being destroyed. Use this function, to clean up
    * any open connections or free any held resources that were set up during connect.
@@ -69,7 +62,7 @@ export class NVDataTableDataSource extends DataSource<any> {
    * Paginate the data (client-side). If you're using server-side pagination,
    * this would be replaced by requesting the appropriate data from the server.
    */
-  private getPagedData(data: NVDataTableItem[]) {
+  private getPagedData(data: CUDataTableItem[]) {
     const startIndex = this.paginator.pageIndex * this.paginator.pageSize;
     return data.splice(startIndex, this.paginator.pageSize);
   }
@@ -78,7 +71,7 @@ export class NVDataTableDataSource extends DataSource<any> {
    * Sort the data (client-side). If you're using server-side sorting,
    * this would be replaced by requesting the appropriate data from the server.
    */
-  private getSortedData(data: NVDataTableItem[]) {
+  private getSortedData(data: CUDataTableItem[]) {
     if (!this.sort.active || this.sort.direction === '') {
       return data;
     }
