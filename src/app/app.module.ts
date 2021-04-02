@@ -115,6 +115,16 @@ import { RestoDataTableComponent } from './dashboard/instas/resto/resto-data-tab
 import { AddRestoComponent } from './dashboard/instas/resto/add-resto/add-resto.component';
 import { CultureInfoComponent } from './dashboard/instas/culture/culture-info/culture-info.component';
 import { RestoInfoComponent } from './dashboard/instas/resto/resto-info/resto-info.component';
+import { UpdateCultureComponent } from './dashboard/instas/culture/update-culture/update-culture.component';
+import { UpdateRestoComponent } from './dashboard/instas/resto/update-resto/update-resto.component';
+import { LandingComponent } from './welcome/landing/landing.component';
+import { OldLandingComponent } from './welcome/Old/old-landing/old-landing.component';
+import { RestoFiltreComponent } from './client/instaResto/resto-filtre/resto-filtre.component';
+import { RestoDetailComponent } from './client/instaResto/resto-detail/resto-detail.component';
+import { CultureFiltreComponent } from './client/instaCulture/culture-filtre/culture-filtre.component';
+import { CultureDetailComponent } from './client/instaCulture/culture-detail/culture-detail.component';
+import { CoffeeFiltreComponent } from './client/instaCoffee/coffee-filtre/coffee-filtre.component';
+import { CoffeeDetailComponent } from './client/instaCoffee/coffee-detail/coffee-detail.component';
 let gapiClientConfig: NgGapiClientConfig = {
   client_id: "UA-175521849-1",
   discoveryDocs: ["https://analyticsreporting.googleapis.com/$discovery/rest?version=v4"],
@@ -187,6 +197,17 @@ let gapiClientConfig: NgGapiClientConfig = {
     AddRestoComponent,
     CultureInfoComponent,
     RestoInfoComponent,
+    UpdateCultureComponent,
+    UpdateRestoComponent,
+    LandingComponent,
+    OldLandingComponent,
+    RestoFiltreComponent,
+    RestoDetailComponent,
+    CultureFiltreComponent,
+    CultureDetailComponent,
+    CoffeeFiltreComponent,
+    CoffeeDetailComponent,
+
 
     // Filter2Pipe
   ],

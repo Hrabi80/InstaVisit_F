@@ -6,7 +6,8 @@ import { Observable }   from 'rxjs/Observable';
   providedIn: 'root'
 })
 export class AdminService {
-  private _url = environment.api_url + '/api/InstaResto';
+  private _url = environment.api_url + '/api/instaResto';
+  private url2 = environment.api_url + '/api/instaResto/update';
 
   constructor(private _http : HttpClient) { }
 
@@ -29,5 +30,25 @@ export class AdminService {
   }
   AddInfo(id, data){
     return this._http.post(this._url+'/AddFiche/'+id,data);
+  }
+
+  //UPDATE METHODS : 
+
+  updateInfo(id,data){
+    return this._http.put(this.url2+'/info/'+id,data);
+  }
+  errorHandler(error: HttpErrorResponse) {
+    return Observable.throw(error.message || "server error.");
+  }
+
+  updateTransportL(id,data){
+    return this._http.put(this.url2+'/transport/'+id,data);
+  }
+
+  updateMap(id,data){
+    return this._http.put(this.url2+'/map/'+id,data);
+  }
+  updateFiche(id,data){
+    return this._http.put(this.url2+'/fiche/'+id,data);
   }
 }

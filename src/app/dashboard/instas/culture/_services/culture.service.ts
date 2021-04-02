@@ -7,6 +7,7 @@ import { Observable }   from 'rxjs/Observable';
 })
 export class CultureService {
   private _url = environment.api_url + '/api/InstaCulture';
+  private url2 = environment.api_url + '/api/instaCulture/update';
 
   constructor(private _http : HttpClient) { }
 
@@ -29,5 +30,25 @@ export class CultureService {
   }
   AddInfo(id, data){
     return this._http.post(this._url+'/AddFiche/'+id,data);
+  }
+
+  //UPDATE METHODS : 
+
+  updateInfo(id,data){
+    return this._http.put(this.url2+'/info/'+id,data);
+  }
+  errorHandler(error: HttpErrorResponse) {
+    return Observable.throw(error.message || "server error.");
+  }
+
+  updateTransportL(id,data){
+    return this._http.put(this.url2+'/transport/'+id,data);
+  }
+
+  updateMap(id,data){
+    return this._http.put(this.url2+'/map/'+id,data);
+  }
+  updateFiche(id,data){
+    return this._http.put(this.url2+'/fiche/'+id,data);
   }
 }

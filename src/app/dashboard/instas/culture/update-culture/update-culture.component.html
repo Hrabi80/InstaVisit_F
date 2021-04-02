@@ -1,0 +1,190 @@
+<br><br>
+<div class="container">
+    <div class="row">
+         <div class="col s6">
+        <form  [formGroup]="formFiche" action="">
+    <mat-card>
+        <mat-card-content>
+ 
+
+        <div class="input-field">
+          <input  type="text" class="validate"  formControlName="horaire" [(ngModel)]="fiche[0].horaire">
+          <label for="horaire">La disponibilité horaire</label>
+        </div> 
+        <div class="input-field">
+            <div class="switch" >
+                <label>
+                  Non 
+                  <input type="checkbox"  formControlName="toilette" [(ngModel)]="fiche[0].toilette">
+                  <span class="lever"></span>
+                  Avec toilette
+                </label>
+              </div>
+            
+        </div><br>
+        <div class="input-field">
+            <div class="switch" >
+                <label>
+                  Non 
+                  <input type="checkbox"  formControlName="parking" [(ngModel)]="fiche[0].parking">
+                  <span class="lever"></span>
+                  Avec parking 
+                </label>
+              </div>
+            
+        </div><br>
+        <div class="input-field">
+            <div class="switch" >
+                <label>
+                  Non 
+                  <input type="checkbox"  formControlName="bar" [(ngModel)]="fiche[0].bar">
+                  <span class="lever"></span>
+                  Avec bar
+                </label>
+              </div>
+            
+        </div><br><br> 
+    </mat-card-content>
+    <mat-card-actions>
+        <button class="waves-effect waves-light btn yellow" (click)="updateFiche()" name="action">
+          Update</button>
+    </mat-card-actions>
+               
+    
+    </mat-card>
+    </form>
+    <br>
+    <!--AA-->
+    <form  [formGroup]="formMap" action="">
+        <mat-card>
+            <mat-card-content>
+     
+    
+            <div class="input-field">
+              <input  type="text" class="validate"  formControlName="map" [(ngModel)]="Map[0].map">
+            </div> 
+      
+            <div class="input-field">
+                <input  type="text" class="validate"  formControlName="virtual" [(ngModel)]="Map[0].virtualTour">
+              </div> 
+             
+        </mat-card-content>
+        <mat-card-actions>
+            <button class="waves-effect waves-light btn yellow" (click)="updateMap()" name="action">
+              Update</button>
+        </mat-card-actions>
+                   
+        
+        </mat-card>
+        </form>
+    <!--AA-->
+    <!-- Info -->
+    <br>
+    <form [formGroup]="form" action="">
+        <mat-card>
+            <mat-card-content>
+     
+                <div class="input-field">
+                    <input id="first_name" type="text" class="validate"  formControlName="adress" [(ngModel)]="Info.adress">
+                    <label for="first_name">Adress </label>
+                  </div>
+            <div class="input-field">
+              <input id="first_name" type="text" class="validate"  formControlName="city" [(ngModel)]="Info.city" >
+              <label for="first_name">City(Verify before) </label>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="description" [(ngModel)]="Info.description">
+                <label for="first_name">Description</label>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="description2" [(ngModel)]="Info.description2">
+                <label for="first_name">Description2</label>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="description3" [(ngModel)]="Info.description3">
+                <label for="first_name">Description3</label>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="number" class="validate"  formControlName="surface" [(ngModel)]="Info.surface">
+                <label for="first_name">Surface</label>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="responsable" [(ngModel)]="Info.responsable">
+                <label for="first_name">Responsable</label>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="number" class="validate"  formControlName="tel" [(ngModel)]="Info.tel">
+                <label for="first_name">Telephone </label>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="mail" [(ngModel)]="Info.mail">
+                <label for="first_name">E-mail</label>
+            </div>  
+          <br>
+        </mat-card-content>
+        <mat-card-actions>
+            <button class="waves-effect waves-light btn yellow" (click)="updateInfo()"  name="action">
+              Update</button>
+        </mat-card-actions>
+                    
+        
+        </mat-card>
+        </form>
+    <!-- /Info-->
+  </div>
+    <div class="col s6">
+    <form  [formGroup]="formTransport" action="">
+        <mat-card>
+            <mat-card-content>
+  
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="metroST" [(ngModel)]="Tran[0].metroST">
+                <label for="first_name">Station de metro</label>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="metro" [(ngModel)]="Tran[0].metro">
+                <label for="first_name">distance (metro-location)</label>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="louageST" [(ngModel)]="Tran[0].louageST" hidden>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="louage" [(ngModel)]="Tran[0].louage" hidden>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="trainST" [(ngModel)]="Tran[0].trainST" hidden>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="train" [(ngModel)]="Tran[0].train" hidden>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="busST" [(ngModel)]="Tran[0].BusST">
+                <label for="first_name">Station de bus</label>
+            </div>   
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="bus" [(ngModel)]="Tran[0].Bus">
+                <label for="first_name">distance (Bus-location)</label>
+            </div>    
+       
+            <br><br>
+        </mat-card-content>
+        <mat-card-actions>
+            <button class="waves-effect waves-light btn yellow" (click)="updateTran()"  name="action">
+              Update</button>
+        </mat-card-actions>
+                    
+        
+        </mat-card>
+        </form>
+        <br>
+       
+        <!--COUCHAGE-->
+        
+      <!--AA-->
+
+</div>
+ <!--IMAGE-->
+ <br>
+ 
+</div>
+<br><br>
