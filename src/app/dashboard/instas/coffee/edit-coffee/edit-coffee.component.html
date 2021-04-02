@@ -2,7 +2,7 @@
 <div class="container">
     <div class="row">
          <div class="col s6">
-        <form  [formGroup]="formFiche" action="">
+<!--         <form  [formGroup]="formFiche" action="">
     <mat-card>
         <mat-card-content>
  
@@ -52,10 +52,10 @@
                
     
     </mat-card>
-    </form>
+    </form> -->
     <br>
     <!--AA-->
-    <form  [formGroup]="formMap" action="">
+   <!--  <form  [formGroup]="formMap" action="">
         <mat-card>
             <mat-card-content>
      
@@ -76,11 +76,11 @@
                    
         
         </mat-card>
-        </form>
+        </form> -->
     <!--AA-->
     <!-- Info -->
     <br>
-    <form [formGroup]="form" action="">
+    <form *ngIf="Info" [formGroup]="form" action="">
         <mat-card>
             <mat-card-content>
      
@@ -108,10 +108,7 @@
                 <input id="first_name" type="number" class="validate"  formControlName="places" [(ngModel)]="Info.places">
                 <label for="first_name">Nb places </label>
             </div>
-            <div class="input-field">
-                <input id="first_name" type="number" class="validate"  formControlName="price" [(ngModel)]="Info.price">
-                <label for="first_name">Prix</label>
-            </div>
+           
             <div class="input-field">
                 <input id="first_name" type="number" class="validate"  formControlName="surface" [(ngModel)]="Info.surface">
                 <label for="first_name">Surface</label>
@@ -138,9 +135,9 @@
         
         </mat-card>
         </form>
-    <!-- /Info-->
+    
   </div>
-    <div class="col s6">
+    <div class="col s6" *ngIf="Tran.length>0">
     <form  [formGroup]="formTransport" action="">
         <mat-card>
             <mat-card-content>
@@ -187,7 +184,7 @@
         <br>
        
         <!--COUCHAGE-->
-        <form  [formGroup]="formMat" action="">
+      <!--   <form  [formGroup]="formMat" action="">
             <mat-card>
                 <mat-card-content>
          
@@ -222,16 +219,16 @@
             
             </mat-card>
             </form>
-            </div>
+            </div> -->
       <!--AA-->
 
-</div>
+<<!-- /div> -->
  <!--IMAGE-->
- <br>
+ 
  
      <!--IMAGE-->
      <!--MeubleINfo-->
-     <br>
+    <!--  <br>
      <div class="row">
         <div class="col s6">
            <form  [formGroup]="formCuisine" action="">
@@ -348,7 +345,7 @@
                </form>
     
         </div>
-      </div>
+      </div> -->
  
      <!--MeubleInfo-->
 

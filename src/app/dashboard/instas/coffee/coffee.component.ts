@@ -21,14 +21,15 @@ export class CoffeeComponent implements OnInit {
   dataSource:MatTableDataSource<any> ;
 
 
-  displayedColumns = ['id', 'name','tel','surface','adress','car','new','update','ss'];
+  displayedColumns = ['id', 'name','tel','surface','adress','car','update','ss'];
   
   constructor(private coffeeService:CoffeeService) { }
 
   ngOnInit() {
      this.coffeeService.getCoffeeList().subscribe(res=>{
-     
-      this.dataSource=new MatTableDataSource([res])
+      console.log(res)
+      
+      this.dataSource=new MatTableDataSource(res)
 
 
 
@@ -55,12 +56,12 @@ export class CoffeeComponent implements OnInit {
           'Your file has been deleted.',
           'success'
         );
-     /*    const index = this.dataSource.findIndex(x => x.id ===id);
-              this.dataSource.splice(index, 1);
+        const index = this.dataSource.data.findIndex(x => x.id ===id);
+              this.dataSource.data.splice(index, 1);
               setTimeout(()=>{
                 this.table.dataSource=this.dataSource;
                 this.table.renderRows();
-              },1500); */
+              },1500); 
        });
       }else{
         swal.fire(

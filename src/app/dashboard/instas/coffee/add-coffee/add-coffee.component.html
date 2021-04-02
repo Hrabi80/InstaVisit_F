@@ -54,12 +54,7 @@
               <label for="nbPlace">Nb des places</label>
           </div>
       </div>
-      <div class="row">
-          <div class="input-field col s6">
-            <input id="prix" type="number" class="validate"  formControlName="price" required>
-            <label for="prix">Prix</label>
-          </div>
-      </div>
+    
       <div class="row">
           <div class="input-field col s12">
             <textarea id="textarea1" class="materialize-textarea" data-length="160" formControlName="descrip1" required>
@@ -114,6 +109,8 @@
 <mat-card-actions>
     <button class="waves-effect waves-light btn yellow" [disabled]="form.pristine || form.invalid" (click)="newSalle()" name="action">
       Ajouter</button>
+      <button style="margin-left: 40px;" class="waves-effect waves-light btn "  routerLink="/dashboard/coffee" >
+        Annuler </button>
 </mat-card-actions>
             
 

@@ -37,6 +37,7 @@ export class InfoSComponent implements OnInit {
       private router: Router,
       private _service: AdminService,
       private _service2:ClientService
+      
   ) { }
 
   async ngOnInit() {

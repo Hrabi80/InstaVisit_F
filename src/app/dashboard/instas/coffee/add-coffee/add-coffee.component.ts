@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AdminService } from 'src/app/dashboard/salle/_services/admin.service';
+import { CoffeeService } from 'src/app/services/CoffeeService/coffee.service';
 import { LocalisationService } from 'src/app/_services/Localisation.service';
 import Swal from 'sweetalert2';
 declare var $:any;
@@ -26,7 +27,8 @@ export class AddCoffeeComponent implements OnInit {
       private fb:FormBuilder,
       private router:Router,
       private _service: AdminService,
-      private locService:LocalisationService
+      private locService:LocalisationService,
+      private coffeeService:CoffeeService
   ) { }
 
   ngOnInit() {
@@ -56,7 +58,6 @@ export class AddCoffeeComponent implements OnInit {
       loc:['',[Validators.required]],
       main:new FormControl(''),
       cover:new FormControl(''),
-      price:new FormControl(''),
       city: new FormControl(''),
 
     });
@@ -113,7 +114,9 @@ export class AddCoffeeComponent implements OnInit {
   }
 
   newSalle(){
-    const uploadData = new FormData();
+ 
+
+   const uploadData = new FormData();
     uploadData.append('main', this.form.get('main').value);
     uploadData.append('cover', this.form.get('cover').value);
     uploadData.append('name', this.form.get('name').value);
@@ -127,9 +130,39 @@ export class AddCoffeeComponent implements OnInit {
     uploadData.append('descrip3', this.form.get('descrip3').value);
     uploadData.append('nbPlace', this.form.get('nbPlace').value);
     uploadData.append('loc', this.form.get('loc').value);
-    uploadData.append('price', this.form.get('price').value);
-    uploadData.append('surface', this.form.get('surface').value);
-   
+    uploadData.append('surface', this.form.get('surface').value); 
+
+    this.coffeeService.addNewCoffee(uploadData).subscribe(   event => {  if(event.type === HttpEventType.UploadProgress)
+      {
+          console.log('upload progress : ' + Math.round( event.loaded / event.total )*100 +'%')
+      } 
+      else if(event.type === HttpEventType.Response)
+      {
+        console.log(event);
+      } 
+    
+
+      console.log(event);
+      Swal.fire(
+        'Ajouter !',
+        'la café est ajouter à la base de données',
+        'success'
+      ).then(res=>
+        setTimeout(()=>{
+          this.router.navigateByUrl('dashboard/coffee'), 3000;
+        }) 
+      );
+      
+    })
+ /*      if(event.type === HttpEventType.UploadProgress)
+        {
+            console.log('upload progress : ' + Math.round( event.loaded / event.total )*100 +'%')
+        } 
+        else if(event.type === HttpEventType.Response)
+        {
+          console.log(event);
+        }} */
+    
     /*this._service.Add(uploadData)
      .subscribe(
       //(res) => this.uploadResponse = res,
@@ -145,11 +178,7 @@ export class AddCoffeeComponent implements OnInit {
       }
       ); */
       console.log(event);
-      Swal.fire(
-        'Ajouter !',
-        'la café est ajouter à la base de données',
-        'success'
-      );
+    
      /*  setTimeout(()=>{
         this.router.navigateByUrl('dashboard/Salle_Data_Table'), 3000;
       }) */

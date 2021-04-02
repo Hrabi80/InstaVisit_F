@@ -5,7 +5,9 @@ import { ActivatedRoute } from '@angular/router';
 import { AdminService } from 'src/app/dashboard/salle/_services/admin.service';
 import { ClientService } from 'src/app/dashboard/salle/_services/client.service';
 import { map } from 'src/app/models/map';
+import { CoffeeService } from 'src/app/services/CoffeeService/coffee.service';
 import swal from 'sweetalert2';
+import { CoffeeComponent } from '../coffee.component';
 
 @Component({
   selector: 'app-edit-coffee',
@@ -45,57 +47,40 @@ export class EditCoffeeComponent implements OnInit {
     private _service2: ClientService,
     private  _fb: FormBuilder,
     private route: ActivatedRoute,
+    private serviceCoffee:CoffeeService
   ) { }
 
   ngOnInit() {
     this.id = parseInt(this.route.snapshot.paramMap.get('id'));
       console.log(this.id);
+    this.serviceCoffee.getOneCoffee(this.id).subscribe(res=>{
+      console.log(res) 
+      this.Info=res;
+      this.city=this.Info.city;
+      console.log(this.city)
+      console.log("Details caffe :",this.Info);
 
-    this._service2.getDetail(this.id)
-      .subscribe((res)=>{
-        this.Info=res;
-        this.city=this.Info.ciy;
-        console.log("Details salle :",this.Info);
-      });
+    })
+   
+    this.serviceCoffee.GetTransport(this.id).subscribe(res=>{
+      this.Tran=res;
+      this.trId=this.Tran[0].id;
+      console.log("transport :",this.Tran);
 
-      this._service2.getFiche(this.id)
-      .subscribe((res)=>{
-        this.fiche=res;
-        console.log("Fiche :",res);
-      });
+    })
 
-      this._service2.getStation(this.id)
-      .subscribe((res)=>{
-        this.Tran=res;
-        this.trId=this.Tran[0].id;
-        console.log("transport :",this.Tran);
-      });
+   
 
-      this._service2.getMap(this.id)
+  /*     this._service2.getMap(this.id)
       .subscribe((res:Array<map>)=>{
         this.Map=res;
         console.log("map :", this.Map)
       });
-
-      this._service2.getMat(this.id)
-      .subscribe((res)=>{
-        this.mat=res;
-        console.log("materiels", this.mat);
-      });
-
-      this._service2.getCuisine(this.id)
-      .subscribe((res)=>{
-        this.Cuisine=res;
-        console.log("cuisine :", this.Cuisine);
-      });
-
-      this._service2.getEquip(this.id)
-      .subscribe((res)=>{
-        this.Equip=res;
-        console.log("equipement salle :", this.Equip)
-      });  
+ */
 
     this.form = this._fb.group({
+      name: new FormControl(''),
+
       adress: new FormControl(''),
       city: new FormControl(''),
       description:new FormControl(''),
@@ -210,21 +195,29 @@ export class EditCoffeeComponent implements OnInit {
   }
   updateInfo(){
     console.log(this.form.value);
-  /*   this._service.updateSalleInfo(this.id,this.form.value)
-      .subscribe((res)=>{
-        console.log(res);
-        this.alertFire("Les informations essentielles");
-      }); */
+    this.serviceCoffee.UpdateCoffee(this.form.value,this.id).subscribe(res=>{
+      swal.fire(
+        'Updated !',
+      ' sont mis à jour.',
+        'success'
+      );
+      this.alertFire("Les informations essentielles");
+    })
+
+
+    
+    
   }
 
   
   updateTran(){
     console.log("uptr",this.formTransport.value);
-  /*   this._service.updateTransportL(this.trId,this.formTransport.value)
-      .subscribe((res)=>{
-          console.log(res);
-          this.alertFire("Les caractéristiques trasnport");
-      }); */
+    this.serviceCoffee.UpdateTransport(this.trId,this.formTransport.value).subscribe(res=>{
+      this.alertFire("Les caractéristiques trasnport");
+
+
+    })
+ 
   }
 
   updateMap(){
@@ -233,35 +226,6 @@ export class EditCoffeeComponent implements OnInit {
       .subscribe((res)=>{
           console.log(res);
           this.alertFire("map et VT360");
-      }); */
-  }
-
-  updateFiche(){
-   /*  this._service.updateFiche(this.fiche[0].id,this.formFiche.value)
-      .subscribe((res)=>{
-          console.log(res);
-          this.alertFire("Reinseignements techniques");
-      }); */
-  }
-  updateEquip(){
- /*    this._service.updateEquip(this.Equip[0].id,this.formEquip.value)
-      .subscribe((res)=>{
-          console.log(res);
-          this.alertFire("Equipeements");
-      }); */
-  }
-  updateCuisine(){
-   /*  this._service.updateCuisine(this.Cuisine[0].id,this.formCuisine.value)
-      .subscribe((res)=>{
-          console.log(res);
-          this.alertFire("Info cuisines");
-      }); */
-  }
-  updateMat(){
-/*     this._service.updateMat(this.mat[0].id,this.formMat.value)
-      .subscribe((res)=>{
-          console.log(res);
-          this.alertFire("Materiels");
       }); */
   }
 

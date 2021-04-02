@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AdminService } from 'src/app/dashboard/salle/_services/admin.service';
 import { ClientService } from 'src/app/dashboard/salle/_services/client.service';
+import { CoffeeService } from 'src/app/services/CoffeeService/coffee.service';
 import swal from 'sweetalert2';
 
 @Component({
@@ -37,39 +38,29 @@ export class CaracCoffeeComponent implements OnInit {
       private  _fb: FormBuilder,
       private router: Router,
       private _service: AdminService,
-      private _service2:ClientService
+      private _service2:ClientService,
+      private coffeeService:CoffeeService
   ) { }
 
   async ngOnInit() {
     this.id = parseInt(this.route.snapshot.paramMap.get('id'));
     console.log(this.id);
-    this._service2.getFiche(this.id)
-    .subscribe((res)=>{
-        Object.keys(res).length === 0 ? this.clickedTeck =false: this.clickedTeck=true;
-        console.log(this.clickedTeck, "let's see here");
-        this._service2.getStation(this.id)
+   
+   
+        this.coffeeService.GetTransport(this.id)
         .subscribe((res)=>{
+          console.log( Object.keys(res).length)
             Object.keys(res).length === 0 ? this.clickedTr=false: this.clickedTr=true;
-            this._service2.getMap(this.id)
+            this.startercheck();
+            /* this._service2.getMap(this.id)
             .subscribe((res)=>{
                 Object.keys(res).length === 0 ? this.clickedMap=false: this.clickedMap=true;
-                this._service2.getMat(this.id)
-                .subscribe((res)=>{
-                     Object.keys(res).length === 0 ? this.clickedMat=false: this.clickedMat=true;
-                          this._service2.getCuisine(this.id)
-                          .subscribe((res)=>{
-                                Object.keys(res).length === 0 ? this.clickedCui=false: this.clickedCui=true;
-                                this._service2.getEquip(this.id)
-                                .subscribe((res)=>{
-                                      Object.keys(res).length === 0 ? this.clickedEqp=false: this.clickedEqp=true;
-                                      this.startercheck();
-                                });
+                
+                                   
+                                }); */
                           });
-                      });
-                });
-             });
+   
          
-       });
 
 
     this.formTran = this._fb.group({
@@ -119,8 +110,7 @@ export class CaracCoffeeComponent implements OnInit {
   }
 
   startercheck(){
-    if( this.clickedTr && this.clickedMat  && this.clickedTeck && this.clickedMap
-      && this.clickedEqp && this.clickedCui){
+    if( this.clickedTr){
       
         swal.fire(
           'C est deja fait !',
@@ -134,7 +124,7 @@ export class CaracCoffeeComponent implements OnInit {
 
   // ADD METHODS : 
   newStation(){
-    this._service.AddTransport(this.id,this.formTran.value)
+    this.coffeeService.addTransport(this.formTran.value,this.id)
     .subscribe(res => {
       console.log(res);
       swal.fire(
@@ -146,7 +136,7 @@ export class CaracCoffeeComponent implements OnInit {
     
     this.clickedTeck=true;
   }
-
+/* 
   newMap(){
     this._service.AddMap(this.id,this.formMap.value)
     .subscribe(res=>{
@@ -159,59 +149,7 @@ export class CaracCoffeeComponent implements OnInit {
     });
     this.clickedMap=true;
   }
-
-  newInfo(){
-    this._service.AddInfo(this.id,this.formInfo.value)
-    .subscribe(res=>{
-       console.log(res);
-       swal.fire(
-        'AJOUTER !',
-        'Vous ajoutez maintenant les caractéristiques essentielles !',
-        'success'
-      );
-    });
-    
-    this.clickedTeck=true;
-  }
-  newCuisine(){
-    this._service.AddCuisine(this.id,this.formCuisine.value)
-    .subscribe(res => {
-      console.log(res);
-      swal.fire(
-        'AJOUTER !',
-        'Vous ajoutez maintenant les equipements de la cuisine !',
-        'success'
-      );
-    });
-    
-    this.clickedCui=true;
-  }
-
-  newEquip(){
-    this._service.AddEquipment(this.id,this.formEquip.value)
-    .subscribe(res=>{
-       console.log(res);
-       swal.fire(
-        'AJOUTER !',
-        'Vous ajoutez maintenant les equipement du bien à louer!',
-        'success'
-      );
-    });
-    this.clickedEqp=true;
-  }
-
-  newMat(){
-    this._service.AddMat(this.id,this.formMat.value)
-    .subscribe(res=>{
-       console.log(res);
-       swal.fire(
-        'AJOUTER !',
-        'Vous ajoutez maintenant les meubles!',
-        'success'
-      );
-    });
-    this.clickedMap=true;
-  }
+ */
 
 
 }
