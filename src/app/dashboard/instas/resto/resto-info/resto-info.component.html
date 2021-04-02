@@ -1,0 +1,145 @@
+<br><br>
+<div class="container">
+    <div class="row">
+         <div class="col s6">
+        <form  [formGroup]="formInfo" action="">
+    <mat-card>
+        <mat-card-content>
+ 
+        <div class="input-field">
+          <input  type="text" class="validate"  formControlName="horaire" required>
+          <label for="first_name">la disponibilité horaire</label>
+        </div> 
+        <div class="input-field">
+            <div class="switch" >
+                <label>
+                  Non 
+                  <input type="checkbox"  formControlName="toilette" required>
+                  <span class="lever"></span>
+                  Avec toilette
+                </label>
+              </div>
+            
+        </div><br>
+        <div class="input-field">
+            <div class="switch" >
+                <label>
+                  Non 
+                  <input type="checkbox"  formControlName="parking" required>
+                  <span class="lever"></span>
+                  Avec parking 
+                </label>
+              </div>
+            
+        </div><br>
+        <div class="input-field">
+            <div class="switch" >
+                <label>
+                  Non 
+                  <input type="checkbox"  formControlName="bar" required>
+                  <span class="lever"></span>
+                  Avec bar
+                </label>
+              </div>
+        </div>
+        <br><br>
+    </mat-card-content>
+    <mat-card-actions>
+        <button class="waves-effect waves-light btn yellow" (click)="newInfo()" [disabled]="clicked1" name="action">
+          Ajouter</button>
+    </mat-card-actions>
+               
+    
+    </mat-card>
+    </form>
+    <br>
+    <!--AA-->
+    <form  [formGroup]="formMap" action="">
+        <mat-card>
+            <mat-card-content>
+     
+    
+            <div class="input-field">
+              <input  type="text" class="validate"  formControlName="map" required>
+              <label for="map">Ajouter la localisation sur map</label>
+            </div> 
+      
+            <div class="input-field">
+                <input  type="text" class="validate"  formControlName="virtual" required>
+                <label for="virtual">Ajouter le lien 360° </label>
+              </div> 
+             
+        </mat-card-content>
+        <mat-card-actions>
+            <button class="waves-effect waves-light btn yellow" (click)="newMap()" [disabled]="clickedMap" name="action">
+              Ajouter</button>
+        </mat-card-actions>
+                   
+        
+        </mat-card>
+        </form>
+        <br>
+ 
+    <!--AA-->
+  </div>
+    <form class="col s6" [formGroup]="formTran" action="">
+        <mat-card>
+            <mat-card-content>
+     
+                <div class="input-field">
+                    <input id="first_name" type="text" class="validate"  formControlName="taxiST" hidden>
+                  </div>
+            <div class="input-field">
+              <input id="first_name" type="text" class="validate"  formControlName="taxi" hidden>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="metroST" required>
+                <label for="first_name">Station de metro</label>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="metro" required>
+                <label for="first_name">distance (metro-location)</label>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="louageST" hidden>
+
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="louage" hidden>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="trainST" hidden>
+
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="train" hidden>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="busST" required>
+                <label for="first_name">Station de bus</label>
+            </div>   
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="bus" required>
+                <label for="first_name">distance (Bus-location)</label>
+            </div>    
+       
+            <br><br>
+        </mat-card-content>
+        <mat-card-actions>
+            <button class="waves-effect waves-light btn yellow" (click)="newStation()" [disabled]="clickedTr" name="action">
+              Ajouter</button>
+        </mat-card-actions>
+                    
+        
+        </mat-card>
+        </form>
+
+
+   </div>
+
+
+   
+
+
+</div>
+<br><br>

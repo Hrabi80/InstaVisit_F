@@ -19,4 +19,15 @@ export class AdminService {
   Add(data){
     return this._http.post(this._url + '/Add', data , {reportProgress:true , observe:'events'});
   }
+  // Salle details are down :
+  
+  AddTransport(id, data){
+    return this._http.post(this._url+'/AddTransport/'+id,data);
+  }
+  AddMap(id, data){
+    return this._http.post(this._url+'/AddMap/'+id,data);
+  }
+  AddInfo(id, data){
+    return this._http.post(this._url+'/AddFiche/'+id,data);
+  }
 }

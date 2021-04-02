@@ -113,6 +113,8 @@ import { CultureDataTableComponent } from './dashboard/instas/culture/culture-da
 import { AddCultureComponent } from './dashboard/instas/culture/add-culture/add-culture.component';
 import { RestoDataTableComponent } from './dashboard/instas/resto/resto-data-table/resto-data-table.component';
 import { AddRestoComponent } from './dashboard/instas/resto/add-resto/add-resto.component';
+import { CultureInfoComponent } from './dashboard/instas/culture/culture-info/culture-info.component';
+import { RestoInfoComponent } from './dashboard/instas/resto/resto-info/resto-info.component';
 let gapiClientConfig: NgGapiClientConfig = {
   client_id: "UA-175521849-1",
   discoveryDocs: ["https://analyticsreporting.googleapis.com/$discovery/rest?version=v4"],
@@ -183,6 +185,9 @@ let gapiClientConfig: NgGapiClientConfig = {
     AddCultureComponent,
     RestoDataTableComponent,
     AddRestoComponent,
+    CultureInfoComponent,
+    RestoInfoComponent,
+
     // Filter2Pipe
   ],
   imports: [

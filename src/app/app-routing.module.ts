@@ -45,6 +45,8 @@ import { CultureDataTableComponent } from './dashboard/instas/culture/culture-da
 import { AddCultureComponent } from './dashboard/instas/culture/add-culture/add-culture.component';
 import { RestoDataTableComponent } from './dashboard/instas/resto/resto-data-table/resto-data-table.component';
 import { AddRestoComponent } from './dashboard/instas/resto/add-resto/add-resto.component';
+import { CultureInfoComponent } from './dashboard/instas/culture/culture-info/culture-info.component';
+import { RestoInfoComponent } from './dashboard/instas/resto/resto-info/resto-info.component';
 
 
 
@@ -135,6 +137,14 @@ const routes: Routes = [
       {
         path: 'infoSalle/:id',
         component: InfoSComponent,   
+      },
+      {
+        path: 'info_culture/:id',
+        component: CultureInfoComponent,   
+      },
+      {
+        path: 'info_resto/:id',
+        component: RestoInfoComponent,   
       },
       {
         path: 'updateV/:id',
