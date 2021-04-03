@@ -1,0 +1,91 @@
+
+        
+   <br>
+   <div class="ssr">
+    <div class="row">
+      <div class="col ">
+        <mat-form-field appearance="outline" class="ref">
+          <mat-label>Ref</mat-label>
+          <input matInput placeholder="INS000***" [(ngModel)]="ref" >
+          <mat-hint>tapez nombre le ref</mat-hint>
+        </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+      <div class="col " >
+        <mat-form-field appearance="outline">
+          <mat-label>Lieu</mat-label>
+          <input matInput placeholder="Placeholder" value="{{ParamService.foo}}"  [(ngModel)]="term">
+          <mat-icon matSuffix>find_replace</mat-icon>
+          <mat-hint>Hint</mat-hint>
+        </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+      <div class="col ">
+        <label>Nombre de personnes</label>
+        <select class="browser-default" [(ngModel)]="places">
+          <option value=""  selected></option>
+          <option value="100">[0,100]</option>
+          <option value="200">[100,200]</option>
+          <option value="400">[200,400]</option>
+        </select>
+      </div>
+
+      
+    </div>
+     <div class="row">
+       <div class="col">
+          <mat-label>Prix max: </mat-label>
+          <mat-slider
+             thumbLabel
+             [displayWith]="formatLabel"
+             tickInterval="100"
+             min="0"
+             max="10000" [(ngModel)]="maxPrice">
+          </mat-slider>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+       </div>
+      <div class="col">
+          <mat-label>Prix min: </mat-label>
+          <mat-slider
+          thumbLabel
+          [displayWith]="formatLabel2"
+          tickInterval="100"
+          min="0"
+          max="100" [(ngModel)]="minPrice">
+       </mat-slider>
+       &nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+     </div>   
+          
+    </div>    
+   
+   <div class="row ct">
+     
+        
+     <div class="col s12">
+         
+       <div class="row">
+        <div class="cardqs col" *ngIf="FirOutput.length==0"><span id="loading2"></span></div>
+         <div *ngFor="let output of pageOfItems ">
+            <div class="card col ">
+           <div class="card-image waves-effect waves-block waves-light">
+            <a routerLink="/nav/Salledetails/+{{output.id}}">
+             <img class="activatorh" src="https://instavisit.tn/InstaVisit_B/public/images/houses/{{output.main}}"></a>
+           </div> <br>
+           {{output.city }}
+             <span>{{output.price }} DT - {{output.surface }} m²</span> <br>
+             <small> {{output.places }} places</small>
+             <a routerLink="/nav/Salledetails/+{{output.id}}">
+             <i class="material-icons right">filter_none</i></a>
+           <div class="card-content">
+         
+           </div>
+           <div class="card-reveal">
+           </div>
+           </div>
+       </div></div>
+      </div>
+            <div class="pb-0pt-3">
+              <jw-pagination [items]="FirOutput  | filter:term:'city' | filter:ref:'refr' | filter3:places:'places'
+              | filter4:minPrice:'price' | filter3:maxPrice:'price'" (changePage)="onChangePage($event)"></jw-pagination>
+          </div>
+    </div>
+      
