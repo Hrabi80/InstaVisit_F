@@ -43,6 +43,7 @@ import { CoffeeComponent } from './dashboard/instas/coffee/coffee.component';
 import { EditCoffeeComponent } from './dashboard/instas/coffee/edit-coffee/edit-coffee.component';
 import { AddCoffeeComponent } from './dashboard/instas/coffee/add-coffee/add-coffee.component';
 import { CaracCoffeeComponent } from './dashboard/instas/coffee/carac-coffee/carac-coffee.component';
+import { AllCoffeeComponent } from './client/instas/coffee/all-coffee/all-coffee.component';
 
 
 
@@ -239,6 +240,10 @@ const routes: Routes = [
         {
           path: 'all',
           component: AllComponent,
+        },
+        {
+          path: 'coffee',
+          component: AllCoffeeComponent,
         },
       
     
