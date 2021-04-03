@@ -1,1 +1,400 @@
-<p>edit-coffee works!</p>
+<br><br>
+<div class="container">
+  <button style="margin-left: 40px;" class="waves-effect waves-light btn "  routerLink="/dashboard/coffee" >
+    Retour </button><br><br> 
+    <div class="row">
+         <div class="col s6">
+        <form  [formGroup]="formFiche" action="">
+    <mat-card>
+        <mat-card-content>
+ 
+
+        <div class="input-field">
+          <input  type="text" class="validate"  formControlName="horaire" [(ngModel)]="fiche[0].horaire">
+          <label for="horaire">La disponibilité horaire</label>
+        </div> 
+        <div class="input-field">
+            <div class="switch" >
+                <label>
+                  Non 
+                  <input type="checkbox"  formControlName="toilette" [(ngModel)]="fiche[0].toilette">
+                  <span class="lever"></span>
+                  Avec toilette
+                </label>
+              </div>
+            
+        </div><br>
+        <div class="input-field">
+            <div class="switch" >
+                <label>
+                  Non 
+                  <input type="checkbox"  formControlName="parking" [(ngModel)]="fiche[0].parking">
+                  <span class="lever"></span>
+                  Avec parking 
+                </label>
+              </div>
+            
+        </div><br>
+        <div class="input-field">
+            <div class="switch" >
+                <label>
+                  Non 
+                  <input type="checkbox"  formControlName="bar" [(ngModel)]="fiche[0].bar">
+                  <span class="lever"></span>
+                  Avec bar
+                </label>
+              </div>
+            
+        </div><br><br> 
+    </mat-card-content>
+    <mat-card-actions>
+        <button class="waves-effect waves-light btn yellow" (click)="updateFiche()" name="action">
+          Update</button>
+    </mat-card-actions>
+               
+    
+    </mat-card>
+    </form> 
+    <br>
+    <!--AA-->
+     <form  [formGroup]="formMap" action="">
+        <mat-card>
+            <mat-card-content>
+     
+    
+            <div class="input-field">
+              <input  type="text" class="validate"  formControlName="map" [(ngModel)]="Map[0].map">
+            </div> 
+      
+            <div class="input-field">
+                <input  type="text" class="validate"  formControlName="virtual" [(ngModel)]="Map[0].virtualTour">
+              </div> 
+             
+        </mat-card-content>
+        <mat-card-actions>
+            <button class="waves-effect waves-light btn yellow" (click)="updateMap()" name="action">
+              Update</button>
+        </mat-card-actions>
+                   
+        
+        </mat-card>
+        </form> 
+    <!--AA-->
+    <!-- Info -->
+    <br>
+    <form *ngIf="Info" [formGroup]="form" action="">
+        <mat-card>
+            <mat-card-content>
+     
+                <div class="input-field">
+                    <input id="first_name" type="text" class="validate"  formControlName="adress" [(ngModel)]="Info.adress">
+                    <label for="first_name">Adress </label>
+                  </div>
+            <div class="input-field">
+              <input id="first_name" type="text" class="validate"  formControlName="city" [(ngModel)]="Info.city" >
+              <label for="first_name">City(Verify before) </label>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="description" [(ngModel)]="Info.description">
+                <label for="first_name">Description</label>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="description2" [(ngModel)]="Info.description2">
+                <label for="first_name">Description2</label>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="description3" [(ngModel)]="Info.description3">
+                <label for="first_name">Description3</label>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="number" class="validate"  formControlName="places" [(ngModel)]="Info.places">
+                <label for="first_name">Nb places </label>
+            </div>
+           
+            <div class="input-field">
+                <input id="first_name" type="number" class="validate"  formControlName="surface" [(ngModel)]="Info.surface">
+                <label for="first_name">Surface</label>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="responsable" [(ngModel)]="Info.responsable">
+                <label for="first_name">Responsable</label>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="number" class="validate"  formControlName="tel" [(ngModel)]="Info.tel">
+                <label for="first_name">Telephone </label>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="mail" [(ngModel)]="Info.mail">
+                <label for="first_name">E-mail</label>
+            </div>  
+          <br>
+        </mat-card-content>
+        <mat-card-actions>
+            <button class="waves-effect waves-light btn yellow" (click)="updateInfo()"  name="action">
+              Update</button>
+        </mat-card-actions>
+                    
+        
+        </mat-card>
+        </form>
+    
+  </div>
+    <div class="col s6" *ngIf="Tran.length>0">
+    <form  [formGroup]="formTransport" action="">
+        <mat-card>
+            <mat-card-content>
+  
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="metroST" [(ngModel)]="Tran[0].metroST">
+                <label for="first_name">Station de metro</label>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="metro" [(ngModel)]="Tran[0].metro">
+                <label for="first_name">distance (metro-location)</label>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="louageST" [(ngModel)]="Tran[0].louageST" hidden>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="louage" [(ngModel)]="Tran[0].louage" hidden>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="trainST" [(ngModel)]="Tran[0].trainST" hidden>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="train" [(ngModel)]="Tran[0].train" hidden>
+            </div>
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="busST" [(ngModel)]="Tran[0].BusST">
+                <label for="first_name">Station de bus</label>
+            </div>   
+            <div class="input-field">
+                <input id="first_name" type="text" class="validate"  formControlName="bus" [(ngModel)]="Tran[0].Bus">
+                <label for="first_name">distance (Bus-location)</label>
+            </div>    
+       
+            <br><br>
+        </mat-card-content>
+        <mat-card-actions>
+            <button class="waves-effect waves-light btn yellow" (click)="updateTran()"  name="action">
+              Update</button>
+        </mat-card-actions>
+                    
+        
+        </mat-card>
+        </form>
+        <br>
+       
+        <!--COUCHAGE-->
+      <!--   <form  [formGroup]="formMat" action="">
+            <mat-card>
+                <mat-card-content>
+         
+        
+                <div class="input-field">
+                  <input  type="number" class="validate"  formControlName="tables" [(ngModel)]="mat[0].tables">
+                  <label for="map">Nombre des tables</label>
+                </div> 
+          
+                <div class="input-field">
+                    <input  type="number" class="validate"  formControlName="chair" [(ngModel)]="mat[0].chair">
+                    <label for="virtual">Nombre de chaises </label>
+                </div>
+                <div class="input-field">
+                    <div class="switch" >
+                        <label>
+                          Non 
+                          <input type="checkbox"  formControlName="bar" [(ngModel)]="mat[0].sono">
+                          <span class="lever"></span>
+                          Avec Sono
+                        </label>
+                      </div>
+                    
+                </div><br>
+                 
+            </mat-card-content>
+            <mat-card-actions>
+                <button class="waves-effect waves-light btn yellow" (click)="updateMat()" name="action">
+                  Ajouter</button>
+            </mat-card-actions>
+                       
+            
+            </mat-card>
+            </form>
+            </div> -->
+      <!--AA-->
+
+<!-- /div> -->
+ <!--IMAGE-->
+ 
+ 
+     <!--IMAGE-->
+     <!--MeubleINfo-->
+    <!--  <br>
+     <div class="row">
+        <div class="col s6">
+           <form  [formGroup]="formCuisine" action="">
+               <mat-card>
+                   <mat-card-content>
+                       <div class="input-field">
+                           <div class="switch" >
+                               <label>
+                                 Non 
+                                 <input type="checkbox"  formControlName="four" [(ngModel)]="Cuisine[0].four">
+                                 <span class="lever"></span>
+                                 Avec four 
+                               </label>
+                             </div>
+                       </div><br>
+                   <div class="input-field">
+                       <div class="switch" >
+                           <label>
+                             Non 
+                             <input type="checkbox"  formControlName="frigo" [(ngModel)]="Cuisine[0].frigo">
+                             <span class="lever"></span>
+                             Avec frigo
+                           </label>
+                         </div>
+                       
+                   </div><br>
+                   <div class="input-field">
+                       <div class="switch" >
+                           <label>
+                             Non 
+                             <input type="checkbox"  formControlName="bac" [(ngModel)]="Cuisine[0].bac">
+                             <span class="lever"></span>
+                             Avec bac evier
+                           </label>
+                         </div>
+                       
+                   </div><br>
+                   
+                   <div class="input-field">
+                       <div class="switch" >
+                           <label>
+                             Non 
+                             <input type="checkbox"  formControlName="plaque" [(ngModel)]="Cuisine[0].plaque">
+                             <span class="lever"></span>
+                             Avec plaque
+                           </label>
+                         </div>
+                       
+                   </div><br><br> 
+               </mat-card-content>
+               <mat-card-actions>
+                   <button class="waves-effect waves-light btn yellow" (click)="updateCuisine()" name="action">
+                     Ajouter</button>
+               </mat-card-actions>
+               </mat-card>
+               </form>
+   
+        </div>
+        <div class="col s6">
+           <form  [formGroup]="formEquip" action="">
+               <mat-card>
+                   <mat-card-content>
+            
+                       <div class="input-field">
+                           <div class="switch" >
+                               <label>
+                                 Non 
+                                 <input type="checkbox"  formControlName="water" [(ngModel)]="Equip[0].eau">
+                                 <span class="lever"></span>
+                                 Alimentation eaux 
+                               </label>
+                             </div>
+                       </div><br>
+                   <div class="input-field">
+                       <div class="switch" >
+                           <label>
+                             Non 
+                             <input type="checkbox"  formControlName="ext" [(ngModel)]="Equip[0].extincteur">
+                             <span class="lever"></span>
+                              Climatisation
+                           </label>
+                         </div>
+                       
+                   </div><br>
+                   <div class="input-field">
+                       <div class="switch" >
+                           <label>
+                             Non 
+                             <input type="checkbox"  formControlName="telp" [(ngModel)]="Equip[0].tel">
+                             <span class="lever"></span>
+                             Telephone
+                           </label>
+                         </div>
+                       
+                   </div><br>
+                   <div class="input-field">
+                       <div class="switch" >
+                           <label>
+                             Non 
+                             <input type="checkbox"  formControlName="electrique" [(ngModel)]="Equip[0].electrique">
+                             <span class="lever"></span>
+                             Alimentation electrique
+                           </label>
+                         </div>
+                       
+                   </div><br>
+                  <br> 
+               </mat-card-content>
+               <mat-card-actions>
+                   <button class="waves-effect waves-light btn yellow" (click)="updateEquip()" name="action">
+                     Ajouter</button>
+               </mat-card-actions>
+               </mat-card>
+               </form>
+    
+        </div>
+      </div> -->
+ 
+     <!--MeubleInfo-->
+
+
+     <!--update image and cover-->
+      <!--IMAGE-->
+ <br>
+ <form [formGroup]="form2" action="">
+     <mat-card>
+         <mat-card-content>
+
+         <div class="row">
+             <div class="file-field input-field">
+               <div class="btn blue">
+                 <span>Photo</span>
+                 <input type="file" (change)="onFileChanged($event)">
+               </div>
+               <div class="file-path-wrapper">
+                 <input class="file-path validate" type="text" placeholder="Choisit l'image principale">
+               </div>
+             </div>  
+           </div>  
+         
+           <div class="row">
+             <div class="file-field input-field">
+               <div class="btn blue">
+                 <span>Cover photo</span>
+                 <input type="file" (change)="onFileChanged2($event)">
+               </div>
+               <div class="file-path-wrapper">
+                 <input class="file-path validate" type="text" placeholder="Choisit la coverture photo">
+               </div>
+             </div>
+                   
+           </div>     
+    
+         <br> 
+     </mat-card-content>
+     <mat-card-actions>
+         <button class="waves-effect waves-light btn yellow" (click)="updateIMG()"  name="action">
+           Update</button>
+     </mat-card-actions>
+                 
+     
+     </mat-card>
+     </form>
+ <!--IMAGE-->
+
+</div>
+<br><br>

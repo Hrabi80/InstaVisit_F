@@ -27,15 +27,15 @@ export class CoffeeComponent implements OnInit {
 
   ngOnInit() {
      this.coffeeService.getCoffeeList().subscribe(res=>{
-     
-      this.dataSource=new MatTableDataSource([res])
+      console.log(res)
+      
+      this.dataSource=new MatTableDataSource(res)
 
 
 
     })
 
   }
-/* 
 
   delete(id) {
     swal.fire({
@@ -49,19 +49,19 @@ export class CoffeeComponent implements OnInit {
       cancelButtonText: 'No, keep it'
     }).then((res) => {
       if (res.value) {
-        this._service.delete(id).subscribe(
+        this.coffeeService.deleteCoffee(id).subscribe(
           data => {
         swal.fire(
           'Deleted!',
           'Your file has been deleted.',
           'success'
         );
-        const index = this.dataSource.findIndex(x => x.id ===id);
-              this.dataSource.splice(index, 1);
+        const index = this.dataSource.data.findIndex(x => x.id ===id);
+              this.dataSource.data.splice(index, 1);
               setTimeout(()=>{
                 this.table.dataSource=this.dataSource;
                 this.table.renderRows();
-              },1500);
+              },1500); 
        });
       }else{
         swal.fire(
@@ -72,6 +72,6 @@ export class CoffeeComponent implements OnInit {
       }
     });
   }
- */
+ 
 }
 
