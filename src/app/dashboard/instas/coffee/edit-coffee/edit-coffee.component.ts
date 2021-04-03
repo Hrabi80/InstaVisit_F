@@ -69,14 +69,18 @@ export class EditCoffeeComponent implements OnInit {
 
     })
 
-   
+    this.serviceCoffee.GetMap(this.id).subscribe((res:Array<map>)=>{
+      this.Map=res;
+      console.log("map :", this.Map)
 
-  /*     this._service2.getMap(this.id)
-      .subscribe((res:Array<map>)=>{
-        this.Map=res;
-        console.log("map :", this.Map)
-      });
- */
+    })
+
+     
+    this.serviceCoffee.GetFiche(this.id)
+    .subscribe((res)=>{
+      this.fiche=res;
+      console.log("Fiche :",res);
+    });
 
     this.form = this._fb.group({
       name: new FormControl(''),
@@ -222,11 +226,20 @@ export class EditCoffeeComponent implements OnInit {
 
   updateMap(){
     console.log("upparki",this.formMap.value);
-  /*   this._service.updateMap(this.Map[0].id,this.formMap.value)
+    this.serviceCoffee.UpdateMap(this.Map[0].id,this.formMap.value).subscribe(res=>{
+      console.log(res);
+      this.alertFire("map et VT360");
+    })
+  
+  }
+
+  updateFiche(){
+    this.serviceCoffee.UpdateFiche(this.fiche[0].id,this.formFiche.value)
+   
       .subscribe((res)=>{
           console.log(res);
-          this.alertFire("map et VT360");
-      }); */
+          this.alertFire("Reinseignements techniques");
+      });
   }
 
   updateIMG(){

@@ -54,13 +54,48 @@ export class CoffeeService {
     }
     //update Transport of a specific coffee
 
-    UpdateTransport(idCoffee,data){
-      return this.http.put<any[]>(this.databaseURL+"updatetransport/"+idCoffee,data);
+    UpdateTransport(id,data){
+      return this.http.put<any[]>(this.databaseURL+"updatetransport/"+id,data);
 
   }
 
 
+  //get map of a specific coffee
 
+  GetMap(idCoffee){
+    return this.http.get<any[]>(this.databaseURL+"getMap/"+idCoffee);
+    }
+  //add map for Coffee
+
+    addMap(data,idCoffee){
+
+        return this.http.post<any[]>(this.databaseURL+"addmap/"+idCoffee,data);
+      }
+      //update Map of a specific coffee
+
+      UpdateMap(id,data){
+        return this.http.put<any[]>(this.databaseURL+"updatemap/"+id,data);
+  
+    }
+      //get Fiche of a specific coffee
+
+      GetFiche(idCoffee){
+        return this.http.get<any[]>(this.databaseURL+"getfiche/"+idCoffee);
+
+    }
+
+    //add Fiche for Coffee
+
+    addFiche(data,idCoffee){
+
+      return this.http.post<any[]>(this.databaseURL+"addfiche/"+idCoffee,data);
+    }
+      //update fiche of a specific coffee
+
+      UpdateFiche(idFiche,data){
+        return this.http.put<any[]>(this.databaseURL+"updatefiche/"+idFiche,data);
+  
+    }
   }
 
 

@@ -51,13 +51,16 @@ export class CaracCoffeeComponent implements OnInit {
         .subscribe((res)=>{
           console.log( Object.keys(res).length)
             Object.keys(res).length === 0 ? this.clickedTr=false: this.clickedTr=true;
-            this.startercheck();
-            /* this._service2.getMap(this.id)
-            .subscribe((res)=>{
-                Object.keys(res).length === 0 ? this.clickedMap=false: this.clickedMap=true;
-                
-                                   
-                                }); */
+            this.coffeeService.GetMap(this.id)
+            .subscribe(res=>{
+              Object.keys(res).length === 0 ? this.clickedMap=false: this.clickedMap=true;
+              this.coffeeService.GetFiche(this.id)
+              .subscribe(res=>{
+                Object.keys(res).length === 0 ? this.clickedTeck=false: this.clickedTeck=true;
+                  
+              this.startercheck();      
+            })
+          })
                           });
    
          
@@ -110,7 +113,7 @@ export class CaracCoffeeComponent implements OnInit {
   }
 
   startercheck(){
-    if( this.clickedTr){
+    if( this.clickedTr && this.clickedMap && this.clickedTeck){
       
         swal.fire(
           'C est deja fait !',
@@ -124,6 +127,7 @@ export class CaracCoffeeComponent implements OnInit {
 
   // ADD METHODS : 
   newStation(){
+
     this.coffeeService.addTransport(this.formTran.value,this.id)
     .subscribe(res => {
       console.log(res);
@@ -136,20 +140,33 @@ export class CaracCoffeeComponent implements OnInit {
     
     this.clickedTeck=true;
   }
-/* 
+
   newMap(){
-    this._service.AddMap(this.id,this.formMap.value)
-    .subscribe(res=>{
-       console.log(res);
-       swal.fire(
-        'AJOUTER !',
-        'Vous ajoutez maintenant le map et le VT360!',
-        'success'
-      );
-    });
+    this.coffeeService.addMap(this.formMap.value,this.id).subscribe(res=>{
+      console.log(res);
+      swal.fire(
+       'AJOUTER !',
+       'Vous ajoutez maintenant le map et le VT360!',
+       'success'
+     );
+
+    })
+
     this.clickedMap=true;
   }
- */
+ 
 
 
+  newInfo(){
+    this.coffeeService.addFiche(this.formInfo.value,this.id)
+    .subscribe(res=>{
+      console.log(res);
+      swal.fire(
+       'AJOUTER !',
+       'Vous ajoutez maintenant les caractéristiques essentielles !',
+       'success'
+     );
+   });  
+    this.clickedTeck=true;
+  }
 }
