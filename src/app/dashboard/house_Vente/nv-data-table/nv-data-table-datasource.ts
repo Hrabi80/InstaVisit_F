@@ -54,8 +54,8 @@ export class NVDataTableDataSource extends DataSource<any> {
       this.sort.sortChange
     ];
 
-    return merge(...dataMutations).pipe(map(() => {
-      return this.getPagedData(this.getSortedData([...this.data]));
+    return merge(dataMutations).pipe(map(() => {
+      return this.getPagedData(this.getSortedData(this.data));
     }));
   }
 

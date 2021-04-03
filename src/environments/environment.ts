@@ -4,10 +4,10 @@
 
 export const environment = {
   production: true,
-  api_url : 'https://instavisit.tn/InstaVisit_B/public/index.php',
-  m_url: 'https://instavisit.tn/InstaVisit_B/public/index.php',
-  api_url2: 'http://127.0.0.1:8000',
-  m_url2: 'http://127.0.0.1:8000',
+  api_url3 : 'https://instavisit.tn/InstaVisit_B/public/index.php',
+  m_url3: 'https://instavisit.tn/InstaVisit_B/public/index.php',
+  api_url: 'http://127.0.0.1:8000',
+  m_url: 'http://127.0.0.1:8000',
   GAtrackingId:'UA-175521849-1'
 };
 

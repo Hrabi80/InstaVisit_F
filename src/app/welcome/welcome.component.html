@@ -1,35 +1,6 @@
 
 
-<div class="content">
-      <div class="myVideo">
-        <video autoplay muted loop id="myVideo" >
-            <source src="assets/loopV.mp4" type="video/mp4"> 
-        </video>
-        
-      </div>
-  
-        <div class="header" >
-              <form [formGroup]="GoForm" action="">
-                
-                  <div class="title-wrapper">
-                    <h1>
-                        Visitez votre prochain logement depuis<br> 
-                        <span> chez vous.</span>
-                    </h1>
-                  </div>
-                  <div class="radioandform">
-                            <mat-radio-group aria-label="Select an option" >
-                                <mat-radio-button value="1" (change)="onItemChange(1)" class="Fopt" checked ><br><span class="radiotext">A louer</span>  </mat-radio-button>
-                                <mat-radio-button value="2" (change)="onItemChange(2)" class="Sopt"><br><span class="radiotext">A vendre</span>  </mat-radio-button>
-                            </mat-radio-group>
-                            <div class="row Form-box">
-                              <input type="text" class="col l7 m6 s12 search-field " formControlName="Localisation" placeholder="Indiquer lieu,village,adress...">
-                              <button type="button" (click)="Go()"  name="action" class="col l4 m3 s12 search-bt">Rechercher</button>
-                            </div>
-                  </div>
-              </form>
-        </div>  
-</div>
+<app-landing></app-landing>
         
         <!-- WELCOME OUTPUT-->
 

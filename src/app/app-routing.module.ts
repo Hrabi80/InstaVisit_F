@@ -44,6 +44,20 @@ import { EditCoffeeComponent } from './dashboard/instas/coffee/edit-coffee/edit-
 import { AddCoffeeComponent } from './dashboard/instas/coffee/add-coffee/add-coffee.component';
 import { CaracCoffeeComponent } from './dashboard/instas/coffee/carac-coffee/carac-coffee.component';
 import { AllCoffeeComponent } from './client/instas/coffee/all-coffee/all-coffee.component';
+import { CultureDataTableComponent } from './dashboard/instas/culture/culture-data-table/culture-data-table.component';
+import { AddCultureComponent } from './dashboard/instas/culture/add-culture/add-culture.component';
+import { RestoDataTableComponent } from './dashboard/instas/resto/resto-data-table/resto-data-table.component';
+import { AddRestoComponent } from './dashboard/instas/resto/add-resto/add-resto.component';
+import { CultureInfoComponent } from './dashboard/instas/culture/culture-info/culture-info.component';
+import { RestoInfoComponent } from './dashboard/instas/resto/resto-info/resto-info.component';
+import { UpdateCultureComponent } from './dashboard/instas/culture/update-culture/update-culture.component';
+import { UpdateRestoComponent } from './dashboard/instas/resto/update-resto/update-resto.component';
+import { CultureDetailComponent } from './client/instaCulture/culture-detail/culture-detail.component';
+import { CoffeeDetailComponent } from './client/instaCoffee/coffee-detail/coffee-detail.component';
+import { RestoDetailComponent } from './client/instaResto/resto-detail/resto-detail.component';
+import { RestoFiltreComponent } from './client/instaResto/resto-filtre/resto-filtre.component';
+import { CultureFiltreComponent } from './client/instaCulture/culture-filtre/culture-filtre.component';
+import { CoffeeFiltreComponent } from './client/instaCoffee/coffee-filtre/coffee-filtre.component';
 
 
 
@@ -80,6 +94,14 @@ const routes: Routes = [
         component: NewSalleComponent,   
       },
       {
+        path: 'new_insta_culture',
+        component: AddCultureComponent,   
+      },
+      {
+        path: 'new_insta_resto',
+        component: AddRestoComponent,   
+      },
+      {
         path: 'HvData_Table',
         component: NVDataTableComponent,   
       },
@@ -94,6 +116,18 @@ const routes: Routes = [
       {
         path: 'HLM_LISTE',
         component: MeubleDataTableComponent,   
+      },
+      {
+        path: 'HLM_LISTE',
+        component: MeubleDataTableComponent,   
+      },
+      {
+        path: 'CULTURE_LISTE',
+        component: CultureDataTableComponent,   
+      },
+      {
+        path: 'resto_data_table',
+        component: RestoDataTableComponent,   
       },
       {
         path: 'Upload',
@@ -116,6 +150,14 @@ const routes: Routes = [
         component: InfoSComponent,   
       },
       {
+        path: 'info_culture/:id',
+        component: CultureInfoComponent,   
+      },
+      {
+        path: 'info_resto/:id',
+        component: RestoInfoComponent,   
+      },
+      {
         path: 'updateV/:id',
         component: UpdatevComponent,   
       },
@@ -130,6 +172,14 @@ const routes: Routes = [
       {
         path: 'updateSalle/:id',
         component: UpdateSalleComponent,   
+      },
+      {
+        path: 'updateCulture/:id',
+        component: UpdateCultureComponent,   
+      },
+      {
+        path: 'updateResto/:id',
+        component: UpdateRestoComponent,   
       },
       
       {
@@ -189,6 +239,18 @@ const routes: Routes = [
         path: 'Salledetails/:id',
         component: SalledetailComponent,   
       }, 
+      {
+        path: 'insta_culture_detailles/:id',
+        component: CultureDetailComponent,   
+      },
+      {
+        path: 'insta_coffee_detailles/:id',
+        component: CoffeeDetailComponent,   
+      },
+      {
+        path: 'insta_resto_detailles/:id',
+        component: RestoDetailComponent,   
+      }, 
         
       {
         path: 'VirtuelTour',
@@ -217,16 +279,28 @@ const routes: Routes = [
         ],
       },
       {
-        path: 'searchvente',
+        path: 'logement_a_vendre_filtre',
         component: VenteComponent,
       },
        {
-          path: 'searchlouer',
+          path: 'logement_a_louer_filtre',
           component: LouerComponent,
         },
         {
-          path: 'ChercherSalle',
+          path: 'insta_salle_fetes_filtre',
           component: SearchComponent,
+        },
+        {
+          path: 'insta_resto_filtre',
+          component: RestoFiltreComponent,
+        },
+        {
+          path: 'insta_culture_filtre',
+          component: CultureFiltreComponent,
+        },
+        {
+          path: 'insta_cafe_filtre',
+          component: CoffeeFiltreComponent,
         },
         
         {
