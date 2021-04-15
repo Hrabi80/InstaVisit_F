@@ -11,6 +11,7 @@ import { CoffeService } from '../service/coffe.service';
 })
 @Pipe({ name: 'safe' })
 export class CoffeeDetailComponent implements OnInit,PipeTransform {
+    src:string="coffee"
     mapsrc1:any;
     id:number;
     mapsrc:string;
@@ -39,6 +40,7 @@ export class CoffeeDetailComponent implements OnInit,PipeTransform {
         places: "200"
     };
     commute = {
+       
       bus: {
           name: "Bus",
           icon: "directions_bus",
@@ -220,8 +222,7 @@ export class CoffeeDetailComponent implements OnInit,PipeTransform {
       this.coffeeService.getMap(this.id).subscribe((res4:Array<any>)=>{
         console.log("Map",res4);
         this.Map = res4;
-        //this.mapsrc=this.Map[0].map;
-        this.mapsrc="https://goo.gl/maps/wiyPTQqVgCpn2Vpi9"
+        this.mapsrc=this.Map[0].map;
         console.log(this.mapsrc);
       })
     

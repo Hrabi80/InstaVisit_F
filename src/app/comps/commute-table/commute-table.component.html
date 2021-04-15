@@ -1,8 +1,8 @@
 <div style="margin-top: 20px;" class="u-container">
     <div class="u-commute">
         <div *ngFor="let item of gCommuteTable()" class="one-commute-option">
-            <div class="commute-option-head">
-                <div *ngIf="item.name" class="u-button">
+            <div class="commute-option-head" >
+                <div *ngIf="item.name" class="u-button" [ngStyle]="dynamicButtoncClor()">
                     <i class="material-icons">{{item.icon}}</i>
                     <span>{{item.name}}</span>
                 </div>
