@@ -1,1 +1,158 @@
-<p>coffee-detail works!</p>
+<!--COVER SECTION-->
+
+
+<div class="card special" data-offset-bottom="700" data-offset-top="0" data-spy="affix">
+    <div class="card-content">
+        <p><span style="font-size: 1.4rem;font-weight: bold; color:#27607a;">{{info.adress}}, {{info.city}} </span>
+            <br><br>
+            <span style="font-weight: bold !important;">Réf</span> INS000{{info.id}} <br><br>
+        </p>
+    </div>
+    <div class="row">
+        <div class="col">&nbsp;&nbsp;
+            <a class=" mycard waves-effect waves-light btn "> {{info.places}} places </a>
+        </div>
+        <div class="col">
+            <a class="mycard waves-effect waves-light btn ">{{info.surface}} m²</a>
+        </div>
+    </div>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+<br><br>
+</div>
+<div class="cover">
+    <a class="coverA waves-effect waves-light btn-large " rel="noopener noreferrer" href="{{Map[0].virtualTour}}">
+        <i class="material-icons left">add_a_photo</i>
+        Voir la visite virtuelle,les photos et les videos 
+    </a>
+    <img src="https://instavisit.tn/InstaVisit_B/public/images/houses/{{info.cover}}">
+
+</div>
+
+<!--CARD SECTION-->
+
+
+
+<app-mobile-overview-coffee [info]='info' ></app-mobile-overview-coffee>
+
+<div class="row">
+
+    <div class="col s9">
+        <div class="u-container">
+            <div class="u-description-headlines">
+                <h5> Un Café avec {{info.places}} places à {{info.adress}}, {{info.city}} </h5>
+            </div>
+            
+            <div class="u-description-contact">
+                <div class="u-descriptions">
+                    
+                    <p>
+                        {{info.description}}
+                    </p>
+                    <p>
+                        {{info.description2}}
+                    </p>
+                    <p>
+                        {{info.description3}}
+                    </p>
+
+                    <p>
+                        A visiter sur InstaVisit.tn
+                    </p>
+                </div>
+                <div class="card-panel" style="margin-top: 50px;">
+                
+                    <img src="assets/img/Flogo.png">
+                    <div class="card-panel-text">
+                        <div>Veuillez contacter le responsable</div>
+                        <div>Mr/Mrs {{info.responsable}}</div>
+                    </div>
+                
+                    <div class="card-panel-phone">
+                        <i class="small material-icons left" style="font-weight: bold; color:white;">phone </i>
+                        <span class="white-text" style="font-weight: bold;color:white;font-size: 22px; ">{{info.tel}}</span>
+                
+                    </div>
+                
+                </div>
+            </div>
+        </div> 
+    </div>
+</div>
+
+
+<!---->
+<!--CARACTERSITIC SECTION-->
+<div class="sec3">
+    <div class="row">
+        <div class="col s9">
+            <div class="u-container">
+                <div class="u-table">
+                    <div class="u-table-head">
+                        {{data.info.title}}
+                    </div>
+                    <div (click)="ForceShowTableHideMore('info')" [class.force-hide]="forceTable['first']" class="u-table-view-more">
+                        {{data.info.more}}
+                    </div>
+                    <div class="u-table-body" [class.force-show]="forceTable['info']">
+                        <!--We format data.info fields into a [[],[],[]] Array-->
+                        <div *ngFor="let row of pairData('info'); index as i;" class="u-table-row">
+                            <!-- Iterate over each small area of values and titile-->
+                            <div *ngFor="let item of row" [class.greyed-out]="item.value == 'Non'" class="u-table-item">
+                                <div class="u-table-item-icon">
+                                    <i class={{item.class}}>{{item.icon}}</i>
+                                </div>
+                                <div class="u-table-item-text">
+                                    {{item.title}}
+                                </div>
+                                <div class="u-table-item-data">
+                                    {{item.value}}
+                                </div>
+            
+                            </div>
+            
+                        </div>
+            
+                    </div>
+                </div>
+            </div>
+            
+
+            <app-commute-table [commute]="commute" [src]="src"></app-commute-table>
+        </div>
+        
+    </div>
+</div>
+
+
+<div class="sec4">
+    <div class="row">
+        <div class="col s9">
+            <h6>Environnement </h6>
+            <div class="mapouter">
+                <div class="gmap_canvas">
+                    <iframe width="1100" height="500" id="gmap_canvas"
+                        [src]='sanitizer.bypassSecurityTrustResourceUrl(mapsrc)' frameborder="0" scrolling="no"
+                        marginheight="0" marginwidth="0"></iframe><a href="https://www.maps-erstellen.de"></a></div>
+                <style>
+                    .mapouter {
+                        position: relative;
+                        text-align: right;
+                        height: 500px;
+                        width: 600px;
+                    }
+
+                    .gmap_canvas {
+                        overflow: hidden;
+                        background: none !important;
+                        height: 500px;
+                        width: 600px;
+                    }
+                </style>
+            </div></div></div></div>
+           
+
+<!-- Site footer -->
+<!--FOOTER-->
+<app-footer></app-footer>
+
+<!--   /TEST NEW FOOTER-->

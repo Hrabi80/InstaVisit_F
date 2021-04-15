@@ -41,6 +41,9 @@ import { UpdateSalleComponent } from './dashboard/salle/update-salle/update-sall
 import { InstasComponent } from './dashboard/instas/instas.component';
 import { CoffeeComponent } from './dashboard/instas/coffee/coffee.component';
 import { EditCoffeeComponent } from './dashboard/instas/coffee/edit-coffee/edit-coffee.component';
+import { AddCoffeeComponent } from './dashboard/instas/coffee/add-coffee/add-coffee.component';
+import { CaracCoffeeComponent } from './dashboard/instas/coffee/carac-coffee/carac-coffee.component';
+import { AllCoffeeComponent } from './client/instas/coffee/all-coffee/all-coffee.component';
 import { CultureDataTableComponent } from './dashboard/instas/culture/culture-data-table/culture-data-table.component';
 import { AddCultureComponent } from './dashboard/instas/culture/add-culture/add-culture.component';
 import { RestoDataTableComponent } from './dashboard/instas/resto/resto-data-table/resto-data-table.component';
@@ -198,8 +201,16 @@ const routes: Routes = [
         children: []  
       },
       {
+        path: 'coffee/add',
+        component: AddCoffeeComponent,   
+      },
+      {
         path: 'coffee/edit/:id',
         component: EditCoffeeComponent,   
+      },
+      {
+        path: 'coffee/characteristics/:id',
+        component: CaracCoffeeComponent,   
       },
     ],
     canActivate: [AuthGuard] 
@@ -308,6 +319,10 @@ const routes: Routes = [
         {
           path: 'all',
           component: AllComponent,
+        },
+        {
+          path: 'coffee',
+          component: AllCoffeeComponent,
         },
       
     

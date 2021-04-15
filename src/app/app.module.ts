@@ -109,6 +109,10 @@ import { InstasComponent } from './dashboard/instas/instas.component';
 import { CoffeeComponent } from './dashboard/instas/coffee/coffee.component';
 import { CoffeeService } from './services/CoffeeService/coffee.service';
 import { EditCoffeeComponent } from './dashboard/instas/coffee/edit-coffee/edit-coffee.component';
+import { AddCoffeeComponent } from './dashboard/instas/coffee/add-coffee/add-coffee.component';
+import { CaracCoffeeComponent } from './dashboard/instas/coffee/carac-coffee/carac-coffee.component';
+import { AllCoffeeComponent } from './client/instas/coffee/all-coffee/all-coffee.component';
+
 import { CultureDataTableComponent } from './dashboard/instas/culture/culture-data-table/culture-data-table.component';
 import { AddCultureComponent } from './dashboard/instas/culture/add-culture/add-culture.component';
 import { RestoDataTableComponent } from './dashboard/instas/resto/resto-data-table/resto-data-table.component';
@@ -131,6 +135,7 @@ import { LastCultureComponent } from './welcome/last/last-culture/last-culture.c
 import { LastRestoComponent } from './welcome/last/last-resto/last-resto.component';
 import { LastCoffeeComponent } from './welcome/last/last-coffee/last-coffee.component';
 import { ImmoComponent } from './immo/immo.component';
+import { MobileOverviewCoffeeComponent } from './comps/mobile-overview-coffee/mobile-overview-coffee.component';
 let gapiClientConfig: NgGapiClientConfig = {
   client_id: "UA-175521849-1",
   discoveryDocs: ["https://analyticsreporting.googleapis.com/$discovery/rest?version=v4"],
@@ -197,6 +202,9 @@ let gapiClientConfig: NgGapiClientConfig = {
     InstasComponent,
     CoffeeComponent,
     EditCoffeeComponent,
+    AddCoffeeComponent,
+    CaracCoffeeComponent,
+    AllCoffeeComponent,
     CultureDataTableComponent,
     AddCultureComponent,
     RestoDataTableComponent,
@@ -219,6 +227,7 @@ let gapiClientConfig: NgGapiClientConfig = {
     LastRestoComponent,
     LastCoffeeComponent,
     ImmoComponent,
+    MobileOverviewCoffeeComponent,
 
 
     // Filter2Pipe
