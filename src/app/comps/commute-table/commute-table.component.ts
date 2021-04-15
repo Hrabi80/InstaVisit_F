@@ -7,8 +7,19 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CommuteTableComponent implements OnInit {
     @Input() commute = [];
+    @Input() src;
   constructor() { }
+  dynamicButtoncClor(){
+    if(this.src=="coffee"){
+        var myclass={
+            "background":"#e45826"
+    
+        }
+      }
 
+    return myclass;
+
+}
     gCommuteTable() {
         let max = 0;
         // we look for the commute that has the most options
@@ -41,6 +52,7 @@ export class CommuteTableComponent implements OnInit {
     }
 
   ngOnInit() {
+      console.log(this.src)
   }
 
 }
