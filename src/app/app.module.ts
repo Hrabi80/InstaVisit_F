@@ -136,6 +136,10 @@ import { LastRestoComponent } from './welcome/last/last-resto/last-resto.compone
 import { LastCoffeeComponent } from './welcome/last/last-coffee/last-coffee.component';
 import { ImmoComponent } from './immo/immo.component';
 import { MobileOverviewCoffeeComponent } from './comps/mobile-overview-coffee/mobile-overview-coffee.component';
+import { NavCultureComponent } from './nav/nav-culture/nav-culture.component';
+import { NavRestoComponent } from './nav/nav-resto/nav-resto.component';
+import { NavCoffeeComponent } from './nav/nav-coffee/nav-coffee.component';
+import { NavSalleComponent } from './nav/nav-salle/nav-salle.component';
 let gapiClientConfig: NgGapiClientConfig = {
   client_id: "UA-175521849-1",
   discoveryDocs: ["https://analyticsreporting.googleapis.com/$discovery/rest?version=v4"],
@@ -228,6 +232,10 @@ let gapiClientConfig: NgGapiClientConfig = {
     LastCoffeeComponent,
     ImmoComponent,
     MobileOverviewCoffeeComponent,
+    NavCultureComponent,
+    NavRestoComponent,
+    NavCoffeeComponent,
+    NavSalleComponent,
 
 
     // Filter2Pipe

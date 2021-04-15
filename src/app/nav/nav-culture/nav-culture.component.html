@@ -1,0 +1,75 @@
+
+<div class="fixed-header" id="myHeader" #stickyMenu [class.sticky] = "sticky">
+    <mat-toolbar color="yellow" class="fixed" #toolBara >
+      <mat-toolbar-row>
+        <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span>   <a class="brand-logo" routerLink="/nav/welcome">
+          <img id="logo" src="assets/img/navbar/instavisit_culture.png" height="42" width="115" ></a> </span>
+        <span class="example-fill-remaining-space"></span>
+        <div fxShow="true" fxHide.lt-md="true">
+          <!-- The following menu items will be hidden on both SM and XS screen sizes -->
+          <a routerLink="/nav/welcome" mat-button>
+            <mat-icon>streetview</mat-icon>
+            Accueil
+          </a>
+          <a routerLink="/nav/howWeWork" mat-button>
+            <mat-icon>emoji_people</mat-icon>
+            Vous &ecirc;tes proprietaire ?
+          </a>
+        
+          <a routerLink="/nav/about" mat-button>
+            <mat-icon>account_box</mat-icon>
+            A propos
+          </a>
+        </div>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  
+    <mat-sidenav-container fxFlexFill>
+      <mat-sidenav #sidenav>
+        <mat-nav-list>
+          <a routerLink="/nav/welcome" mat-list-item>
+            <mat-icon>streetview</mat-icon>
+            Accueil
+          </a>
+          <a routerLink="/nav/howWeWork" mat-list-item>
+            <mat-icon>emoji_people</mat-icon>
+            Vous  &ecirc;tes proprietaire ?</a>
+            <a routerLink="/nav/ChercherSalle" mat-button>
+              <mat-icon>deck</mat-icon>
+              Salles des fêtes
+            </a>
+          <a routerLink="/nav/about" mat-list-item>
+            <mat-icon>account_box</mat-icon>
+            A propos
+          </a>
+          <a (click)="sidenav.toggle()" mat-list-item>
+            <mat-icon>close</mat-icon> Close
+          </a>
+        </mat-nav-list>
+      </mat-sidenav>
+      
+      <mat-sidenav-content fxFlexFill><router-outlet></router-outlet></mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+ 
+
+  <script>
+    window.onscroll = function() {myFunction()};
+    
+    var header = document.getElementById("myHeader");
+    var sticky = header.offsetTop;
+    
+    function myFunction() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("router-outlet");
+      } else {
+        header.classList.remove("router-outlet");
+      }
+    }
+
+
+    
+    </script>

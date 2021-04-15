@@ -59,6 +59,10 @@ import { RestoFiltreComponent } from './client/instaResto/resto-filtre/resto-fil
 import { CultureFiltreComponent } from './client/instaCulture/culture-filtre/culture-filtre.component';
 import { CoffeeFiltreComponent } from './client/instaCoffee/coffee-filtre/coffee-filtre.component';
 import { ImmoComponent } from './immo/immo.component';
+import { NavCultureComponent } from './nav/nav-culture/nav-culture.component';
+import { NavRestoComponent } from './nav/nav-resto/nav-resto.component';
+import { NavCoffeeComponent } from './nav/nav-coffee/nav-coffee.component';
+import { NavSalleComponent } from './nav/nav-salle/nav-salle.component';
 
 
 
@@ -214,6 +218,59 @@ const routes: Routes = [
       },
     ],
     canActivate: [AuthGuard] 
+  },
+  {
+    path:'instavisit_culture', component:NavCultureComponent,
+    children: [
+      {
+          path: 'detailles/:id',
+          component: CultureDetailComponent,    
+      },
+      {
+        path: 'filtre',
+        component: CultureFiltreComponent,
+      },
+    ]
+  },
+
+  {
+    path:'instavisit_restaurant', component:NavRestoComponent,
+    children: [
+      {
+          path: 'detailles/:id',
+          component: RestoDetailComponent,    
+      },
+      {
+        path: 'filtre',
+        component: RestoFiltreComponent,
+      },
+    ]
+  },
+  {
+    path:'instavisit_cafe', component:NavCoffeeComponent,
+    children: [
+      {
+          path: 'detailles/:id',
+          component: CoffeeDetailComponent,    
+      },
+      {
+        path: 'filtre',
+        component: CoffeeFiltreComponent,
+      },
+    ]
+  },
+  {
+    path:'instavisit_salles_des_fetes', component:NavSalleComponent,
+    children: [
+      {
+          path: 'detailles/:id',
+          component: SalledetailComponent,    
+      },
+      {
+        path: 'filtre',
+        component: SearchComponent,
+      },
+    ]
   },
 
   {
