@@ -125,6 +125,12 @@ import { CultureFiltreComponent } from './client/instaCulture/culture-filtre/cul
 import { CultureDetailComponent } from './client/instaCulture/culture-detail/culture-detail.component';
 import { CoffeeFiltreComponent } from './client/instaCoffee/coffee-filtre/coffee-filtre.component';
 import { CoffeeDetailComponent } from './client/instaCoffee/coffee-detail/coffee-detail.component';
+import { MobileOverviewCultureComponent } from './comps/mobile-overview-culture/mobile-overview-culture.component';
+import { MobileOverviewRestoComponent } from './comps/mobile-overview-resto/mobile-overview-resto.component';
+import { LastCultureComponent } from './welcome/last/last-culture/last-culture.component';
+import { LastRestoComponent } from './welcome/last/last-resto/last-resto.component';
+import { LastCoffeeComponent } from './welcome/last/last-coffee/last-coffee.component';
+import { ImmoComponent } from './immo/immo.component';
 let gapiClientConfig: NgGapiClientConfig = {
   client_id: "UA-175521849-1",
   discoveryDocs: ["https://analyticsreporting.googleapis.com/$discovery/rest?version=v4"],
@@ -207,6 +213,12 @@ let gapiClientConfig: NgGapiClientConfig = {
     CultureDetailComponent,
     CoffeeFiltreComponent,
     CoffeeDetailComponent,
+    MobileOverviewCultureComponent,
+    MobileOverviewRestoComponent,
+    LastCultureComponent,
+    LastRestoComponent,
+    LastCoffeeComponent,
+    ImmoComponent,
 
 
     // Filter2Pipe

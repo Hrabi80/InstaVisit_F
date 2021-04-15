@@ -1,0 +1,29 @@
+
+<div class="ctt">
+    <h4> Nos derniers instaCaffés  <div id="result"></div></h4>
+    <br>
+<div class="row">
+    <div *ngFor="let output of lastCoffee | slice:-4">
+      <div class="card col">
+        <div class="card-image waves-effect waves-block waves-light">
+          <a routerLink="/nav/insta_cafe_filtre/+{{output.id}}">
+         <img class="activatorh" src="https://instavisit.tn/InstaVisit_B/public/images/houses/{{output.mainIMG}}" alt="img"></a>
+        </div><br>
+      {{output.city}}
+      <span>{{output.name}} - {{output.surface}} m²</span> <br>
+      <a routerLink="/nav/insta_culture_detailles/+{{output.id}}">
+        <i class="material-icons right">filter_none</i></a>
+      <div class="card-content">
+    </div>
+
+    <div class="card-reveal">
+     <i class="material-icons right">close</i>
+    </div>
+</div> 
+</div>
+   
+</div>
+<a class="seeMore" routerLink="/nav/insta_cafe_filtre"><i class="material-icons prefix" >chevron_right</i>
+    Voir plus des instas</a>
+
+    </div>

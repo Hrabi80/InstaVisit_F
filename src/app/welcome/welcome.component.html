@@ -15,27 +15,7 @@
 
           <div class="row">
             <div class="cardqs col"><span *ngIf="FirOutput.length==0" id="loading2"></span></div>
-
-             <div *ngFor="let output of FirOutput | slice:-8:-4">
-                  <div class="card col">
-                      <div class="card-image waves-effect waves-block waves-light">
-                        <a routerLink="/nav/lmdetails/+{{output.id}}">
-                       <img class="activatorh" src="https://instaVisit.tn/InstaVisit_B/public/images/houses/{{output.mainIMG}}" alt="img"></a>
-                      </div><br>
-                    {{output.ciy}}
-                    <span>{{output.price}} DT - {{output.surface}} m²</span> <br>
-                    <small> {{output.room_nb}} piéces meublées</small>
-                    <a routerLink="/nav/lmdetails/+{{output.id}}">
-                      <i class="material-icons right">filter_none</i>
-                    </a>
-                    <div class="card-content">
-                  </div>
-             
-                  <div class="card-reveal">
-                   <i class="material-icons right">close</i>
-                  </div>
-             </div> 
-          </div>   
+  
         </div>  
         <div class="row">
         <div *ngFor="let output of FirOutput | slice:-4">
@@ -70,28 +50,7 @@
       
         <div class="row">
           <div class="cardqs col"><span *ngIf="SecOutput.length==0" id="loading2"></span></div>
-           <div *ngFor="let output of SecOutput | slice:-8:-4">
-                <div class="card col">
-                    <div class="card-image waves-effect waves-block waves-light">
-                      <a routerLink="/nav/details/+{{output.id}}">
-                <!--     <img class="activatorh" src="https://instavisit.tn/InstaVisit_B/public/images/houses/{{output.mainIMG}}" alt="img"></a> -->
-                    <img class="activatorh" src="https://instavisit.tn/InstaVisit_B/public/images/houses/{{output.mainIMG}}" alt="img"></a>
-
-                    </div><br>
-                  {{output.city}}
-                  <span>{{output.price}} DT - {{output.surface}} m²</span> <br>
-                  <small> {{output.room_nb}} piéces </small>
-                  <a routerLink="/nav/details/+{{output.id}}">
-                    <i class="material-icons right">filter_none</i>
-                  </a>
-                  <div class="card-content">
-                </div>
-           
-                <div class="card-reveal">
-                 <i class="material-icons right">close</i>
-                </div>
-           </div> 
-        </div>   
+       
       </div>  
       <div class="row">
       <div *ngFor="let output of SecOutput | slice:-4">
@@ -119,6 +78,12 @@
         Voir plus de logements</a>
     </div>
       <!--/VOutput-->
+
+      <!-- Last Culture-->
+      <app-last-culture></app-last-culture>
+      <app-last-resto></app-last-resto>
+      <app-last-coffee></app-last-coffee>
+      <!-- /Last Culture-->
       </div>
         <!-- WELCOME OUTPUT-->
       <!--  WHY INSTAVISIT-->

@@ -5,9 +5,6 @@
     margin-left: 135% !important;
   }
 }
-.fixed-header{
-  z-index: 1000000 !important;
-}
 
 .example-fill-remaining-space {
   /* This fills the remaining space, by using flexbox. 
@@ -188,3 +185,15 @@ code scrolling
     button{
       background-color: yellow;
     }
+
+
+
+
+    .fixed-header{
+      z-index: 1000000 !important;
+      /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1) !important; */
+      -webkit-box-shadow: 0 8px 6px -6px rgb(29, 28, 28);
+        -moz-box-shadow: 0 8px 6px -6px rgb(24, 23, 23);
+        box-shadow: 0 8px 6px -6px rgb(19, 18, 18);
+    }
+    

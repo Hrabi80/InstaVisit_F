@@ -6,6 +6,7 @@ import { ActivatedRoute, ParamMap,Router,NavigationEnd } from '@angular/router';
 import { HttpEventType } from '@angular/common/http';
 import { FilterPipe } from '../../../filter.pipe';
 import { CultureService } from '../service/culture.service';
+import { environment } from "src/environments/environment";
 
 @Component({
   selector: 'app-culture-filtre',

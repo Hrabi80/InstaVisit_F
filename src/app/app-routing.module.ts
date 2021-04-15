@@ -55,6 +55,7 @@ import { RestoDetailComponent } from './client/instaResto/resto-detail/resto-det
 import { RestoFiltreComponent } from './client/instaResto/resto-filtre/resto-filtre.component';
 import { CultureFiltreComponent } from './client/instaCulture/culture-filtre/culture-filtre.component';
 import { CoffeeFiltreComponent } from './client/instaCoffee/coffee-filtre/coffee-filtre.component';
+import { ImmoComponent } from './immo/immo.component';
 
 
 
@@ -220,7 +221,7 @@ const routes: Routes = [
         path: 'ldetails/:id',
         component: LdetailsComponent,   
       },
-       {
+      {
         path: 'lmdetails/:id',
         component: LmdetailsComponent,   
       }, 
@@ -299,6 +300,10 @@ const routes: Routes = [
         {
           path: 'searchvente',
           component: VenteComponent,
+        },
+        {
+          path: 'instavisit_immobilier',
+          component: ImmoComponent,
         },
         {
           path: 'all',
