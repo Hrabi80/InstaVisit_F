@@ -4,14 +4,14 @@
    <br>
    <div class="ssr">
     <div class="row">
-      <div class="col ">
+      <div class="col col-lg-2">
         <mat-form-field appearance="outline" class="ref">
           <mat-label>Ref</mat-label>
           <input matInput placeholder="IV00***" [(ngModel)]="ref" >
           <mat-hint>tapez nombre de ***</mat-hint>
         </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;
       </div>
-      <div class="col " >
+      <div class="col col-lg-3 " >
         <mat-form-field appearance="outline">
           <mat-label>Lieu</mat-label>
           <input matInput placeholder="Placeholder" value="{{ParamService.foo}}" [(ngModel)]="term" >
@@ -19,7 +19,7 @@
           <mat-hint>Hint</mat-hint>
         </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;
       </div>
-      <div class="col ">
+      <div class="col col-lg-2">
         <label>Nombre de chambre</label>
         <select class="browser-default" [(ngModel)]="room">
           <option value=""  selected>S+</option>
@@ -34,7 +34,7 @@
 	   
     </div>
      <div class="row">
-       <div class="col">
+       <div class="col col-lg-3">
           <mat-label>Prix max: </mat-label>
           <mat-slider
              thumbLabel
@@ -45,7 +45,7 @@
           </mat-slider>
           &nbsp;&nbsp;&nbsp;&nbsp;
        </div>
-      <div class="col">
+      <div class="col col col-lg-3">
           <mat-label>Prix min: </mat-label>
           <mat-slider
           thumbLabel
@@ -56,7 +56,7 @@
        </mat-slider>
        &nbsp;&nbsp;&nbsp;&nbsp;
       </div>
-      <div class="col">
+      <div class="col col col-lg-3">
 		<mat-label>Surface max: </mat-label>
 		<mat-slider
 		   thumbLabel
@@ -66,7 +66,7 @@
 		   max="2000" [(ngModel)]="maxSurface">
 		</mat-slider>
 	  </div>
-	  <div class="col">
+	  <div class="col col col-lg-3">
 		<mat-label>Surface min: </mat-label>
 		<mat-slider
 		   thumbLabel
@@ -81,38 +81,23 @@
          
     </div>    
    
-   <div class="row ct">
+   <div class="ct">
      
-	
-     <div class="col s12">
-		<div class="row">
-			<div class="cardqs col" *ngIf="FirOutput.length==0"><span id="loading2"></span></div>
-
-		 <div *ngFor="let output of pageOfItems ">
-			
-			<script>count++;</script>
-            <div class="card col ">
-           <div class="card-image waves-effect waves-block waves-light">
-			<a routerLink="/nav/details/+{{output.id}}">
-             <img class="activatorh" src="https://instavisit.tn/InstaVisit_B/public/images/houses/{{output.mainIMG}}"></a>
-           </div> <br>
-           {{output.city }}
-             <span>{{output.price }} DT - {{output.surface }} m²</span> <br>
-             <small> {{output.piece }} piéces</small>
-             <a routerLink="/nav/details/+{{output.id}}">
-             <i class="material-icons right">filter_none</i></a>
-           <div class="card-content">
-         
-           </div>
-           <div class="card-reveal">
-           </div>
-           </div>
-	   </div>
-	  
-			 
-      </div> 
-	  
-	</div>
+    <div class="row cards-container">
+      <div class="cardqs col" *ngIf="FirOutput.length==0"><span id="loading2"></span></div>
+      <div *ngFor="let output of pageOfItems ">
+        <div class="card" style="width: 18rem;">
+          <img src="assets/img/house.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"> {{output.city}}</h5>
+            <span>{{output.surface }} m²</span>
+            <p class="card-text">{{output.description}}</p>
+            <a routerLink="/instavisit_immobilier/detailles/+{{output.id}}" class="btn btn-primary">Détails</a>
+          </div>
+        </div>
+      </div>
+     
+    </div>
 	<div class="pb-0pt-3">
         <jw-pagination2 [items]="FirOutput  | filter:term:'city' | filter:ref:'refr' | filter:room:'RoomNB'
 		| filter4:minPrice:'price' | filter3:maxPrice:'price' | filter4:minSurface:'surface' | filter3:maxSurface:'surface'" (changePage)="onChangePage($event)"></jw-pagination2>
@@ -142,162 +127,3 @@
 
 
 
-
-
-
-
-
-
-
-
-  <!-- OLD VENTE-->    
-  <!--
-<br>
-<div class="row spanel">
-	
-		<div class="col s12 m5">
-		  <div class="card-panel ">
-			  <div class="semi">
-				  <img src="assets/img/search.png">
-			  </div>
-              <br>
-				<div class="input-field">
-						<input id="last_name" type="text" class="validate">
-						<label for="last_name">Lieu</label>
-				</div>
-				<div class="input-field">
-						<input id="last_name" type="text" class="validate">
-						<label for="last_name">Prix max</label>
-				</div>
-				<div class="input-field">
-						<input id="last_name" type="text" class="validate">
-						<label for="last_name">Prix min</label>
-				</div>
-				<div class="input-field">
-						<input id="last_name" type="text" class="validate">
-						<label for="last_name">Surface min</label>
-				</div><div class="input-field">
-						<input id="last_name" type="text" class="validate">
-						<label for="last_name">Surface max</label>
-				</div>
-   
-		  </div>
-		</div>
-	  </div>
-
-<div class="row ct">
-  <div class="col s10">
-		  
-		<div class="row">
-			<div *ngFor="let output of FirOutput ">
-			   <div class="card col ">
-				<div class="card-image waves-effect waves-block waves-light">
-				  <img class="activatorh" src="http://127.0.0.1:8000/images/houses/{{output.mainIMG}}">
-				</div> <br>
-				{{output.city }}
-					<span>{{output.price }} dt - {{output.surface }} m²</span> <br>
-					<small> {{output.RoomNB }} piéces meublé-3eme etage</small>
-					<a routerLink="/nav/details/+{{output.id}}">
-					<i class="material-icons right">filter_none</i></a>
-				<div class="card-content">
-			
-				</div>
-				<div class="card-reveal">
-				</div>
-			  </div>
-		</div></div>
-		
-  </div>
-</div>
-
-
- -->  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--  OLD SEARCH BOX  -->
-<!--
-<br>
-<div class="containers">
-
-  <div class="row Sbox"> 
-   
-    <div class="wrap col s4 m4 l4 xl4">
-	  <div class="search">
-		 <input type="text" class="searchTerm filter-input" [(ngModel)]="term" placeholder="  Entrez un lieu"  >
-	  </div>
-	</div>
-
-	<div class="wrap col s3 m3 l4 xl4">
-		<div class="search">
-		   <input type="text" class="searchTerm" [(ngModel)]="termSurf" placeholder="  Surface min en m²">
-		</div>
-	</div>
-
-	<div class="wrap col s4 m4 l4 xl4">
-		<div class="search">
-		   <input type="text" class="searchTerm" [(ngModel)]="termPrice" placeholder="  Prix max en DT" >
-		   <button class="searchButton">Chercher</button>
-		</div>
-	</div>	  
-	
-  </div>
-  
-
-</div>
-
--->
-
-
-               <!--  OLD SEARCH BOX  -->
-			   <!--  OLD FILTER  -->
-			   
-			   <!--
-  <div class="ct">
-	<h4> Les derniers biens à louer  </h4>
-	<br>
-	<div class="row"> 
-	   <div *ngFor="let output of FirOutput | filter:term:'city'">
-			<div class="col s3">
-			  <img src="http://127.0.0.1:8000/images/houses/{{output.mainIMG}}" alt="img">
-			  {{output.city }}
-			  <span>{{output.price }} dt - {{output.surface}} m²</span> <br>
-			  <small> {{output.RoomNB}} piéces meublé-3eme etage</small>
-			</div>
-	   </div> 
-	</div>   
-  </div>  
--->
-  
-              <!--  /OLD FILTER  -->

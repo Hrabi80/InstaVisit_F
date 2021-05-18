@@ -3,14 +3,14 @@
    <br>
    <div class="ssr">
     <div class="row">
-      <div class="col ">
+      <div class="col  col-lg-2">
         <mat-form-field appearance="outline" class="ref">
           <mat-label>Ref</mat-label>
           <input matInput placeholder="INS000***" [(ngModel)]="ref" >
           <mat-hint>tapez nombre le ref</mat-hint>
         </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;
       </div>
-      <div class="col " >
+      <div class="col  col-lg-3" >
         <mat-form-field appearance="outline">
           <mat-label>Lieu</mat-label>
           <input matInput placeholder="Placeholder" value="{{ParamService.foo}}"  [(ngModel)]="term">
@@ -26,35 +26,35 @@
           
     </div>    
    
-   <div class="row ct">
-     
-        
-     <div class="col s12">
-         
-       <div class="row">
-        <div class="cardqs col" *ngIf="FirOutput.length==0"><span id="loading2"></span></div>
-         <div *ngFor="let output of pageOfItems ">
-            <div class="card col ">
-           <div class="card-image waves-effect waves-block waves-light">
-            <a routerLink="/instavisit_cafe/detailles/+{{output.id}}">
-             <img class="activatorh" src="https://instavisit.tn/InstaVisit_B/public/images/houses/{{output.main}}"></a>
-           </div> <br>
-           {{output.city }}
-             <span>  {{output.surface }} m²</span> <br>
-             <small> </small>
-             <a routerLink="/instavisit_cafe/detailles/+{{output.id}}">
-             <i class="material-icons right">filter_none</i></a>
-           <div class="card-content">
-         
-           </div>
-           <div class="card-reveal">
-           </div>
-           </div>
-       </div></div>
+   <div class="ct">
+
+    <div class="row cards-container">
+      <div class="cardqs col" *ngIf="FirOutput.length==0"><span id="loading2"></span></div>
+      <div *ngFor="let output of pageOfItems ">
+        <div class="card" style="width: 18rem;">
+          <img src="assets/img/house.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"> {{output.city}}</h5>
+            <span>{{output.surface }} m²</span>
+            <p class="card-text">{{output.description}}</p>
+            <a routerLink="/instavisit_cafe/detailles/+{{output.id}}" class="btn btn-primary">Détails</a>
+          </div>
+        </div>
       </div>
-            <div class="pb-0pt-3">
-              <jw-pagination [items]="FirOutput  | filter:term:'city' | filter:ref:'refr'
-              " (changePage)="onChangePage($event)"></jw-pagination>
+     
+    </div>
+
+
+     
+       
+    <div class="pb-0pt-3">
+              <jw-pagination2 [items]="FirOutput  | filter:term:'city' | filter:ref:'refr'
+              " (changePage)="onChangePage($event)"></jw-pagination2>
           </div>
     </div>
       
+
+    <!--
+                   <img class="activatorh" src="https://instavisit.tn/InstaVisit_B/public/images/houses/{{output.main}}"></a>
+
+    -->

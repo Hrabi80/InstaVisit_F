@@ -2,7 +2,11 @@
 
 @media(max-width: 480px){
   .brand-logo{
-    margin-left: 135% !important;
+    margin-left: 110% !important;
+  }
+  #logo{
+    height:30px;
+    width:77px;
   }
 }
 
@@ -182,12 +186,7 @@ code scrolling
     right: 100%;
     border: none !important; }
 
-    button{
-      background-color: yellow;
-    }
-
-
-
+   
 
     .fixed-header{
       z-index: 1000000 !important;
@@ -196,4 +195,23 @@ code scrolling
         -moz-box-shadow: 0 8px 6px -6px rgb(24, 23, 23);
         box-shadow: 0 8px 6px -6px rgb(19, 18, 18);
     }
+
+    #logo{
+      height:45px;
+      width:130px;
+    }
+
+
+    .mat-form-field + .mat-form-field {
+      margin-left: 8px;
+    }
+
+    mat-menu img{
+      max-width: 20px;
+      max-height: 20px;
+    }
+
     
+   
+    
+  

@@ -34,7 +34,7 @@ font-weight: bold;
   text-transform: lowercase;
   position: absolute;
   background-color : #b34180 ;
-  color: black;
+  color: white;
 }
 .special{
   width: 23%;
@@ -79,18 +79,7 @@ p{
     margin:0px !important;
 }
 
-.card-panel{
-  background-color: #b34180 ;
-  width: 88%;
-}
-.card-panel-text {
-  text-align: center;
-  color: rgb(75, 71, 71);
-  margin-bottom: 16px;
-}
-.card-panel-text span{
-color: #27607a;
-}
+
 span .white-text{
   margin:15px;
 }
@@ -151,42 +140,7 @@ table{
     margin: 4px 0;
 }
 
-.card-panel{
-  background-color: #00b28e;
-  width: 35%;
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-}
-.u-table-head{
-    color:#00b28e ;
-}
 
- .card-panel img{
-    
-    border-radius: 50%;
-    height: 130px;
-    width: 130px;
-    margin-top: -70px;
-    border: 5px solid #eee;
-    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
-    display: block;
-    margin-bottom: 16px;
-}
-
-.card-panel-text {
-  text-align: center;
-  color: rgb(75, 71, 71);
-  margin-bottom: 16px;
-}
-.card-panel-text span{
-color: #27607a;
-}
-
-.card-panel-phone {
-    display: flex;
-    align-items: center;
-}
 
 th {
     font-size: 18px;
@@ -367,9 +321,7 @@ td.table-text-item {
       width: 100%;
       margin-bottom: 50px;
   }
-  .card-panel {
-      width: 100%
-  }
+
 
   .u-container {
       width: 90%;
@@ -393,14 +345,25 @@ td.table-text-item {
         width: 100%;
         margin-bottom: 5px;
     }
+}
 
 
-    .u-description-contact p{
-        
-        text-align: center;
-        vertical-align: middle;
-        line-height: 18px;
-        padding-right: 22px !important; 
-        
+
+@media(min-width: 860px){
+    .sec4{
+        padding: 2%;
+    }
+}
+
+@media(max-width : 860px){
+    .sec4{
+        padding: 1%;
+        width: 100vw;
+        max-height: 320px;
+        margin-bottom: 3px;
+    }
+    .iframe{
+        width: 100%;
+        margin-bottom: 5px;
     }
 }

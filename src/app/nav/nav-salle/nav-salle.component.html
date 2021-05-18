@@ -6,7 +6,7 @@
           <mat-icon>menu</mat-icon>
         </button>
         <span>   <a class="brand-logo" routerLink="/nav/welcome">
-          <img id="logo" src="assets/img/navbar/instavisit_salle.png" height="42" width="115" ></a> </span>
+          <img id="logo" src="assets/img/navbar/instavisit_salle.png" height="45" width="130"></a> </span>
         <span class="example-fill-remaining-space"></span>
         <div fxShow="true" fxHide.lt-md="true">
           <!-- The following menu items will be hidden on both SM and XS screen sizes -->
@@ -14,6 +14,31 @@
             <mat-icon>streetview</mat-icon>
             Accueil
           </a>
+          <a mat-button [matMenuTriggerFor]="animals">
+            <mat-icon>
+              expand_more
+            </mat-icon>
+            Nos instas
+          </a>
+          
+              <mat-menu #animals="matMenu">
+                <a mat-menu-item routerLink="/instavisit_culture/filtre">Instavisit culture</a>
+                <a mat-menu-item routerLink="/instavisit_restaurant/filtre">Instavisit Restaurant</a>
+                <a mat-menu-item routerLink="/instavisit_cafe/filtre">Instavisit café</a>
+                <button mat-menu-item [matMenuTriggerFor]="invertebrates">Instavisit immobilier</button>
+                <a mat-menu-item routerLink="/instavisit_salles_des_fetes/filtre">Instavisit salle des fêtes</a>
+              </mat-menu>
+
+              <mat-menu #invertebrates="matMenu">
+                <a mat-menu-item [matMenuTriggerFor]="louer">Logement à louer</a>
+                <a mat-menu-item routerLink="/nav/logement_a_vendre_filtre">Logement à vendre</a>
+              </mat-menu>
+
+
+              <mat-menu #louer="matMenu">
+                <a mat-menu-item routerLink="/nav/logement_a_louer_filtre">Logements meublés</a>
+                <a mat-menu-item routerLink="/nav/searchlouerNonMeuble">Logements non meublés</a>
+              </mat-menu>
           <a routerLink="/nav/howWeWork" mat-button>
             <mat-icon>emoji_people</mat-icon>
             Vous &ecirc;tes proprietaire ?

@@ -35,6 +35,10 @@ import { MatSliderModule } from '@angular/material';
 import { MatCardModule } from '@angular/material/card';
 import { MatRadioModule } from  '@angular/material';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { MatExpansionModule } from '@angular/material/expansion';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 import { JwPaginationComponent } from './jw-pagination/jw-pagination.component';
 import { JwPaginationModule } from 'jw-angular-pagination';
@@ -94,6 +98,9 @@ import { ChartsModule } from 'ng2-charts';
 import { Angulartics2Module } from 'angulartics2';
 import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 import {ModuleWithProviders, Provider} from '@angular/core';
+import {MatMenuModule} from '@angular/material/menu';
+import { DropdownModule } from 'angular-custom-dropdown';
+
 
 /*
 import {GoogleAuthService} from './_services/_googleServices/GoogleAuthService';
@@ -112,6 +119,7 @@ import { EditCoffeeComponent } from './dashboard/instas/coffee/edit-coffee/edit-
 import { AddCoffeeComponent } from './dashboard/instas/coffee/add-coffee/add-coffee.component';
 import { CaracCoffeeComponent } from './dashboard/instas/coffee/carac-coffee/carac-coffee.component';
 import { AllCoffeeComponent } from './client/instas/coffee/all-coffee/all-coffee.component';
+import {MatSelectModule} from '@angular/material/select';
 
 import { CultureDataTableComponent } from './dashboard/instas/culture/culture-data-table/culture-data-table.component';
 import { AddCultureComponent } from './dashboard/instas/culture/add-culture/add-culture.component';
@@ -140,6 +148,12 @@ import { NavCultureComponent } from './nav/nav-culture/nav-culture.component';
 import { NavRestoComponent } from './nav/nav-resto/nav-resto.component';
 import { NavCoffeeComponent } from './nav/nav-coffee/nav-coffee.component';
 import { NavSalleComponent } from './nav/nav-salle/nav-salle.component';
+import { StarterComponent } from './welcome/starter/starter.component';
+import { WhyinstaComponent } from './welcome/whyinsta/whyinsta.component';
+import { DropDownButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
+import { enableRipple } from '@syncfusion/ej2-base';
+import { NavImmobilierComponent } from './nav/nav-immobilier/nav-immobilier.component';
+
 let gapiClientConfig: NgGapiClientConfig = {
   client_id: "UA-175521849-1",
   discoveryDocs: ["https://analyticsreporting.googleapis.com/$discovery/rest?version=v4"],
@@ -148,7 +162,7 @@ let gapiClientConfig: NgGapiClientConfig = {
       "https://www.googleapis.com/auth/analytics"
   ].join(" ")
 };
-
+enableRipple(true);
 @NgModule({
   declarations: [
     AppComponent,
@@ -236,12 +250,17 @@ let gapiClientConfig: NgGapiClientConfig = {
     NavRestoComponent,
     NavCoffeeComponent,
     NavSalleComponent,
+    StarterComponent,
+    WhyinstaComponent,
+    NavImmobilierComponent,
 
 
     // Filter2Pipe
   ],
   imports: [
     
+    NgbDropdownModule,
+    DropDownButtonModule,
     BrowserModule,
     GalleryModule,
     ChartsModule,
@@ -254,9 +273,9 @@ let gapiClientConfig: NgGapiClientConfig = {
     HttpClientModule,
     FormsModule, 
     ReactiveFormsModule , 
-    BrowserAnimationsModule,
+    BrowserAnimationsModule,MatSelectModule,
     MatButtonModule, MatCheckboxModule, LayoutModule, MatSliderModule,MatRadioModule,MatStepperModule,
-    MatToolbarModule, MatSidenavModule, MatIconModule,MatFormFieldModule,MatInputModule,
+    MatToolbarModule, MatSidenavModule,MatMenuModule, MatIconModule,MatFormFieldModule,MatInputModule,MatExpansionModule,
     MatListModule,MatCardModule, MatTableModule, MatPaginatorModule, MatSortModule,FlexLayoutModule,
    // GoogleApiConfig,
     GoogleApiModule.forRoot({

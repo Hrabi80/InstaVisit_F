@@ -26,7 +26,7 @@ export class CoffeeComponent implements OnInit {
   constructor(private coffeeService:CoffeeService) { }
 
   ngOnInit() {
-     this.coffeeService.getCoffeeList().subscribe(res=>{
+     this.coffeeService.getData().subscribe(res=>{
       console.log(res)
       
       this.dataSource=new MatTableDataSource(res)

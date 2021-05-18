@@ -1,8 +1,16 @@
 
-
-<app-landing></app-landing>
+<app-starter></app-starter> 
+<app-landing></app-landing> 
+<app-whyinsta></app-whyinsta>
         
-        <!-- WELCOME OUTPUT-->
+
+
+
+
+
+
+
+        <!-- WELCOME OUTPUT
 
       <div class="kk">
         <br><br>  
@@ -24,7 +32,8 @@
               <a routerLink="/nav/lmdetails/+{{output.id}}">
                 <img class="activatorh" src="https://instavisit.tn/InstaVisit_B/public/images/houses/{{output.mainIMG}}" alt="img"></a>
             <!-- <img class="activatorh" src="https://instavisit.tn/InstaVisit_B/public/images/houses/{{output.mainIMG}}" alt="img"></a> -->
-            </div><br>
+        <!--  
+          </div><br>
           {{output.ciy}}
           <span>{{output.price}} DT - {{output.surface}} m²</span> <br>
           <small> {{output.piece}} pieces meublées</small>
@@ -44,6 +53,7 @@
           Voir plus de logements</a>
       </div>  
       <!--VOutput-->
+      <!--
       <div class="ctt">
         <h4> Les derniers biens à vendre  <div id="result"></div></h4>
         <br>
@@ -80,19 +90,21 @@
       <!--/VOutput-->
 
       <!-- Last Culture-->
+      <!--
       <app-last-culture></app-last-culture>
       <app-last-resto></app-last-resto>
       <app-last-coffee></app-last-coffee>
       <!-- /Last Culture-->
-      </div>
+     <!--- </div>
         <!-- WELCOME OUTPUT-->
       <!--  WHY INSTAVISIT-->
-            
+       <!--     
   <div class="why">
     <h4 >Pourquoi InstaVistit ? </h4><br>
     <div class="row">
       <div class="col s3 studentimages">
         <!--<img src="assets/img/student2.png">-->
+        <!--
         <img src='{{allImages.students[activeStudent]}}' alt="students">
       </div>
       <div class="col s9">
@@ -174,16 +186,3 @@
       <br>
       <app-footer></app-footer>
 
- 
-<script>
-  $(document).ready(function(){
-  var screenWidth = $(window).width();
-  // if window width is smaller than 800 remove the autoplay attribute
-  // from the video
-  if (screenWidth < 570){
-        $('myVideo').removeAttr('autoplay');
-  } else {
-    $('myVideo').attr('autoplay');
-  }
-});
-</script>

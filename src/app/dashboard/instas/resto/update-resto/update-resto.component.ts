@@ -171,4 +171,29 @@ export class UpdateRestoComponent implements OnInit {
           this.alertFire("Les informations essentielles");
         });
       }
+
+      updateTran(){
+        this._service.updateTransportL(this.id,this.formTransport.value)
+        .subscribe((res)=>{
+          console.log(res);
+          this.alertFire("Les info transport");
+        });
+      }
+
+      updateFiche(){
+        this._service.updateFiche(this.id,this.formFiche.value)
+        .subscribe((res)=>{
+          console.log(res);
+          this.alertFire("Fiche technique");
+        });
+      }
+
+      updateMap(){
+        this._service.updateMap(this.id,this.formMap.value)
+        .subscribe((res)=>{
+          console.log(res);
+          this.alertFire("MapInfo");
+        });
+      }
+      
 }

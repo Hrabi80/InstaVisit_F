@@ -1,90 +1,146 @@
-.landing{
-  background-image: url("/assets/img/bg/bg3.png");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100vw;
-  min-height: 100vh;
-  display: flex;
+#about {
+  padding: 100px 0px;
+  position: relative;
+  z-index: 9;
 }
-.cards-list {
-    z-index: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    height: 90vh;
+
+@media (max-width: 992px) {
+  .features-item {
+    margin-bottom: 45px;
   }
-  
-  .card {
-    margin: 30px auto;
-    width: 150px;
-    height: 150px;
-    border-radius: 40px;
-    box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
-    cursor: pointer;
-    transition: 0.4s;
+}
+
+.features-item {
+  border-radius: 5px;
+  padding: 60px 30px;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.features-item h2 {
+  z-index: 9;
+  position: absolute;
+  top: 15px;
+  left: 45px;
+  font-size: 70px;
+  font-weight: 500;
+  color: #e9eefd;
+}
+
+.features-item img {
+  z-index: 10;
+  position: relative;
+  max-width: 75px;
+  max-height: 90px;
+  margin-bottom: 40px;
+
+}
+
+.features-item h4 {
+  margin-top: 0px;
+  font-size: 22px;
+  color: #1e1e1e;
+  margin-bottom: 25px;
+}
+
+.features-item .main-button {
+  margin-top: 35px;
+  display: inline-block;
+}
+
+
+
+a.main-button-slider {
+  font-size: 14px;
+  border-radius: 25px;
+  padding: 15px 25px;
+  background-color: #fba70b;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+a.main-button-slider:hover {
+  background-color: #f1556a;
+}
+
+a.main-button {
+  font-size: 14px;
+  border-radius: 25px;
+  padding: 15px 25px;
+  background-color: #fba70b;
+  text-transform: uppercase;
+  color: rgb(46, 45, 45);
+  font-weight: 600;
+  letter-spacing: 1px;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+a.main-button:hover {
+  background-color: #f1556a;
+}
+
+button.main-button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 25px;
+  padding: 15px 25px;
+  background-color: #fba70b;
+  text-transform: uppercase;
+  color: black;
+  font-weight: 600;
+  letter-spacing: 1px;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+
+a.main-button.coffehover:hover{
+  background-color: #e45826 !important;
+}
+a.main-button.culturehover:hover{
+  background-color: #9ff031 !important;
+}
+a.main-button.immohover:hover{
+  background-color: #31326f ;
+}
+a.main-button.restohover:hover{
+  background-color: #b34180 ;
+}
+a.main-button.sallehover:hover{
+  background-color: #EF5350  ;
+}
+
+@media(max-width: 500px){
+  .features-item {
+    max-width: 90%;
+    height: 90%;
   }
-  
-  .card .card_image {
-    width: inherit;
-    height: inherit;
-    border-radius: 40px;
+
+  .features-item h2 {
+    z-index: 9;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 40px;
+    font-weight: 300;
+    color: #e9eefd;
   }
-  
-  .card .card_image img {
-    width: inherit;
-    height: inherit;
-    border-radius: 40px;
-    object-fit: cover;
-  }
-  
-  .card .card_title {
-    text-align: center;
-    border-radius: 0px 0px 40px 40px;
-    font-family: sans-serif;
-    font-weight: bold;
-    font-size: 28px;
-    margin-top: -80px;
-    height: 40px;
-  }
-  
-  .card:hover {
-    transform: scale(0.9, 0.9);
-    box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
-      -5px -5px 30px 15px rgba(0,0,0,0.22);
-  }
-  
-  .title-white {
-    color: white;
-  }
-  
-  .title-black {
-    color: black;
-  }
-  
-  @media all and (max-width: 500px) {
-    .card-list {
-      /* On small screens, we are no longer using row direction but column */
-      flex-direction: column;
-    }
-  }
-  
-  
-  /*
-  .card {
-    margin: 30px auto;
-    width: 300px;
-    height: 300px;
-    border-radius: 40px;
-    background-image: url('https://i.redd.it/b3esnz5ra34y.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-repeat: no-repeat;
-  box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
-    transition: 0.4s;
-  }
-  */
+}
+
+.component-container{
+  all: initial;
+  all: unset;
+}

@@ -75,18 +75,6 @@ u-description-contact{
       margin:0px !important;
   }
   
-  .card-panel{
-    background-color: #00b28e;
-    width: 88%;
-  }
-  .card-panel-text {
-    text-align: center;
-    color: rgb(75, 71, 71);
-    margin-bottom: 16px;
-}
-.card-panel-text span{
-  color: #27607a;
-}
   span .white-text{
     margin:15px;
   }
@@ -147,42 +135,7 @@ u-description-contact{
       margin: 4px 0;
   }
 
-  .card-panel{
-    background-color: #00b28e;
-    width: 35%;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-  }
-  .u-table-head{
-      color:#00b28e ;
-  }
 
-   .card-panel img{
-      
-      border-radius: 50%;
-      height: 130px;
-      width: 130px;
-      margin-top: -70px;
-      border: 5px solid #eee;
-      box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
-      display: block;
-      margin-bottom: 16px;
-  }
-
-  .card-panel-text {
-    text-align: center;
-    color: rgb(75, 71, 71);
-    margin-bottom: 16px;
-}
-.card-panel-text span{
-  color: #27607a;
-}
-
-  .card-panel-phone {
-      display: flex;
-      align-items: center;
-  }
 
   th {
       font-size: 18px;
@@ -363,9 +316,6 @@ u-description-contact{
         width: 100%;
         margin-bottom: 50px;
     }
-    .card-panel {
-        width: 100%
-    }
 
     .u-container {
         width: 90%;
@@ -378,6 +328,9 @@ u-description-contact{
   }
 
 
+/* 
+culture + fete -- black
+*/
 
   ::ng-deep .commute-option-head .u-button {
     padding: 8px;

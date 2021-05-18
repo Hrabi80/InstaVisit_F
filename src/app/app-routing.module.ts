@@ -63,6 +63,7 @@ import { NavCultureComponent } from './nav/nav-culture/nav-culture.component';
 import { NavRestoComponent } from './nav/nav-resto/nav-resto.component';
 import { NavCoffeeComponent } from './nav/nav-coffee/nav-coffee.component';
 import { NavSalleComponent } from './nav/nav-salle/nav-salle.component';
+import { NavImmobilierComponent } from './nav/nav-immobilier/nav-immobilier.component';
 
 
 
@@ -219,6 +220,56 @@ const routes: Routes = [
     ],
     canActivate: [AuthGuard] 
   },
+
+  {
+    path:'instavisit_immobilier', component:NavImmobilierComponent,
+    children: [
+      {
+          path: 'detailles/:id',
+          component: CultureDetailComponent,    
+      },
+      {
+        path: 'filtre',
+        component: CultureFiltreComponent,
+      },
+      {
+        path: 'immobilier',
+        component: ImmoComponent,
+      },
+      {
+        path: 'detailles/:id',
+        component: DetailsComponent,   
+      },
+      {
+       path: 'ldetailles/:id',
+       component: LdetailsComponent,   
+     },
+     {
+       path: 'lmdetailles/:id',
+       component: LmdetailsComponent,   
+     },
+     {
+      path: 'searchvente',
+      component: VenteComponent,
+    },
+    {
+      path: 'immobilier',
+      component: ImmoComponent,
+    },
+    {
+      path: 'logement_a_vendre_filtre',
+      component: VenteComponent,
+    },
+     {
+        path: 'logement_a_louer_filtre',
+        component: LouerComponent,
+      },
+      {
+        path: 'searchlouerNonMeuble',
+        component: LouernmComponent,
+      },
+    ]
+  },
   {
     path:'instavisit_culture', component:NavCultureComponent,
     children: [
@@ -370,7 +421,7 @@ const routes: Routes = [
           component: VenteComponent,
         },
         {
-          path: 'instavisit_immobilier',
+          path: 'immobilier',
           component: ImmoComponent,
         },
         {

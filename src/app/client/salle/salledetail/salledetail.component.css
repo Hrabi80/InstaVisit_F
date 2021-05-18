@@ -1,3 +1,9 @@
+
+
+.component-container{
+    all: initial;
+    all: unset;
+}
 h5{
     color: rgb(104, 102, 102);
     margin: 37px;
@@ -60,6 +66,8 @@ u-description-contact{
     display: none;
     right: 20px;
   }
+
+  
   @media(min-width: 860px){
     .sec4{
         margin-left: 5%;
@@ -115,9 +123,7 @@ u-description-contact{
       color: rgb(10, 131, 230);
       font-size: 1.5rem;
   }
-  .mapouter{
-      margin-left: 34px;
-  }
+
 
  
 
@@ -393,4 +399,24 @@ u-description-contact{
         width: 100%;
         margin-bottom: 5px;
     }
+}
+
+.card .special {
+    z-index: 9999999999999999 !important;
+    position: absolute;
+}
+
+
+/*map */
+.mapouter{
+    margin-left: -150px !important;
+    width: 60vw;
+    height: 40vh;
+    position: relative;
+    text-align: right;
+}
+
+.gmap_canvas {
+    overflow: hidden;
+    background: none !important;
 }
