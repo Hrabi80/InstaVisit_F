@@ -21,8 +21,8 @@ u-description-contact{
     font-family: Helvetica, Arial, sans-serif;
     text-transform: lowercase;
     height: 40px;
-    background-color: #1b2337;
-    Color: #9ff031;
+    background-color: #9ff031;
+    Color: black;
 }
 .coverA{
     margin-top:200px;
@@ -33,8 +33,8 @@ u-description-contact{
     font-family: Helvetica, Arial, sans-serif;
     text-transform: lowercase;
     position: absolute;
-    background-color : #9ff031;
-    color: black;
+    background-color : black;
+    color: #9ff031;
 }
 .special{
     width: 23%;

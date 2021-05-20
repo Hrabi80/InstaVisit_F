@@ -224,10 +224,7 @@ const routes: Routes = [
   {
     path:'instavisit_immobilier', component:NavImmobilierComponent,
     children: [
-      {
-          path: 'detailles/:id',
-          component: CultureDetailComponent,    
-      },
+     
       {
         path: 'filtre',
         component: CultureFiltreComponent,
@@ -249,7 +246,7 @@ const routes: Routes = [
        component: LmdetailsComponent,   
      },
      {
-      path: 'searchvente',
+      path: 'logement_a_vendre_filtre',
       component: VenteComponent,
     },
     {

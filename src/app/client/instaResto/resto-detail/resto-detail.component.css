@@ -21,8 +21,8 @@ font-weight: bold;
   font-family: Helvetica, Arial, sans-serif;
   text-transform: lowercase;
   height: 40px;
-  background-color: #1b2337;
-  Color: #b34180 ;
+  background-color: #b34180;
+  Color: black ;
 }
 .coverA{
   margin-top:200px;
@@ -33,8 +33,8 @@ font-weight: bold;
   font-family: Helvetica, Arial, sans-serif;
   text-transform: lowercase;
   position: absolute;
-  background-color : #b34180 ;
-  color: white;
+  background-color : black ;
+  color: #b34180;
 }
 .special{
   width: 23%;
@@ -132,7 +132,7 @@ table{
     margin: auto;
 }
 .u-descriptions {
-    
+    margin-left: 15%;
     width: 80%;
 }
 
