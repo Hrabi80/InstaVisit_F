@@ -1,10 +1,11 @@
+
+/*#31326f*/
 h5{
     color: rgb(104, 102, 102);
     margin: 37px;
-    font-family: "Comic Sans MS", cursive, sans-serif;
 }
-.orange-text{
-    color: #27607a;
+u-description-contact{
+    margin-right: -10% ;
 }
 .cover img{
   width: 100%;
@@ -22,8 +23,8 @@ h5{
     font-family: Helvetica, Arial, sans-serif;
     text-transform: lowercase;
     height: 40px;
-    background-color: #1b2337;
-    Color: #fab50b;
+    background-color: #31326f;
+    Color: black;
 }
 .coverA{
     margin-top:200px;
@@ -34,16 +35,25 @@ h5{
     font-family: Helvetica, Arial, sans-serif;
     text-transform: lowercase;
     position: absolute;
-    background-color : #fab50b;
-    color: black;
+    background-color : black;
+    color: #31326f;
 }
 .special{
     width: 23%;
     margin-left: 70%;
     margin-right: 2px;
 }
+.u-table-view-more-many{
+    cursor:pointer;
+    color:#00b28e;
+}
+.u-table-many{
+    cursor: pointer;
+}
 .card{
   position:fixed;
+  width: 330px;
+
 }
 .card .affix {
     top: 20px;
@@ -52,15 +62,11 @@ h5{
     display: none;
     right: 20px;
   }
-  @media(min-width: 860px){
-    .sec4{
-        margin-left: 5%;
-    }
-}
+ 
   h6{
     font-size: 18px;
     font-weight: bold;
-    color: #00b28e;   
+    color: #00b28e;  
     margin: 37px;
   }
   p{
@@ -70,7 +76,6 @@ h5{
   .col{
       margin:0px !important;
   }
- 
   
   span .white-text{
     margin:15px;
@@ -86,9 +91,6 @@ h5{
       background-color: rgb(241, 245, 247);
       font-size: 1.1rem;
   }
-  .u-table-view-more{
-      cursor:pointer;
-  }
   .gras{
     font-size: 1.4rem;
     text-transform: capitalize;
@@ -103,10 +105,12 @@ h5{
       margin-left: 34px;
   }
 
-  .u-table-head{
-    color:#00b28e ;
-}
+ 
 
+  .main {
+    line-height: normal;
+    font-size: auto;
+  }
   .u-description-headlines {
       max-width: 760px;
       margin: 0 auto 20px auto;
@@ -132,7 +136,130 @@ h5{
   .u-descriptions h5, .u-descriptions p {
       margin: 4px 0;
   }
-  .card-panel{
+
+
+
+  th {
+      font-size: 18px;
+      padding: 10px 8px;
+  }
+  td {
+      font-size: 16px;
+      padding: 10px 8px;
+  }
+
+  td.table-text-item {
+      width: 40%;
+      
+  }
+  .td-icon-text {
+      width: 100%;
+      display: flex;
+      align-items: center;
+  }
+  .td-icon-text  i {
+      margin-right: 6px;
+  }
+  /* TEST NEW FOOTER */
+.u-container {
+      width: 100%;
+  }  
+  .u-table, .u-table-many {
+      margin: 0 auto;
+      width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      -webkit-box-shadow: 0 15px 35px rgba(0,108,86,0.1), 0 5px 15px rgba(0,0,0,0.07);
+        box-shadow: 0 15px 35px rgba(0,108,86,0.1), 0 5px 15px rgba(0,0,0,0.07);
+        max-width: 760px;
+  }
+
+  .u-table-head {
+      width: 100%;
+      padding: 12px 10px;
+      font-size: 18px;
+      font-weight: bold;
+      background-color: #F4F6F9;
+  }
+  .u-table-view-more, .u-table-view-more-many {
+      display: none;
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+  }
+  .u-table-view-more-many {
+      display: block;
+      max-width: 760px;
+    margin: auto;
+    background: #F4F6F9;
+    box-shadow: 0 15px 35px rgba(0,108,86,0.1), 0 5px 15px rgba(0,0,0,0.07);
+    -webkit-box-shadow: 0 15px 35px rgba(0,108,86,0.1), 0 5px 15px rgba(0,0,0,0.07);
+}
+  .u-table-body, .u-table-body-many {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: 1;
+  }
+  .u-table-row, .u-table-row-many {
+      width: 100%;
+      display: flex;
+      background-color: #F4F6F9;
+      padding: 5px 10px;
+  }
+  .u-table-row:nth-of-type(odd), .u-table-row-many:nth-of-type(odd) {
+      background-color: #ffffff;
+  }
+  .u-table-item, .u-table-item-many {
+      width: 50%;
+      display: flex;
+      padding: 0 3px;
+      
+  }
+  .greyed-out {
+      color: grey;
+  }
+  .u-table-item-text {
+      flex-grow: 1;
+      font-weight: bold;
+
+  }
+  .u-table-item-text, .u-table-item-data {
+      font-size: 16px;
+      
+  }
+
+  .u-table-item-data, .u-table-item-data-many {
+      width: 20%;
+      min-width: 36px;
+      text-align: center;
+  }
+
+  .u-table-item-icon {
+      width: 12%;
+      min-width: 36px;
+      text-align: center;
+  }
+  .u-table-head.stations {
+      display: flex;
+      background-color: white;
+  }
+  .u-table-head-item  {
+      display: flex;
+      justify-content: flex-start;;
+      width: 50%;
+      
+
+  }
+  .u-table-head-item .u-button {
+      display: flex;
+      padding: 0.5em;
+      border-radius: 12px;
+      background-color: #F4F6F9;
+  }
+
+   .card-panel{
     background-color: #00b28e;
     width: 35%;
     display: flex;
@@ -164,86 +291,7 @@ h5{
       display: flex;
       align-items: center;
   }
-
-
-  td.table-text-item {
-      width: 40%;
-      
-  }
-  .td-icon-text {
-      width: 100%;
-      display: flex;
-      align-items: center;
-  }
-  .td-icon-text  i {
-      margin-right: 6px;
-  }
-  .u-container {
-      width: 100%;
-  }
-  .u-table {
-      margin: 0 auto;
-      width: 100%;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      -webkit-box-shadow: 0 15px 35px rgba(0,108,86,0.1), 0 5px 15px rgba(0,0,0,0.07);
-        box-shadow: 0 15px 35px rgba(0,108,86,0.1), 0 5px 15px rgba(0,0,0,0.07);
-        max-width: 760px;
-  }
-
-  .u-table-head {
-      width: 100%;
-      padding: 12px 10px;
-      font-size: 18px;
-      font-weight: bold;
-      background-color: #F4F6F9;
-  }
-  .u-table-view-more {
-      display: none;
-      width: 100%;
-      padding: 10px;
-      font-size: 14px;
-  }
-  .u-table-body {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      flex-wrap: 1;
-  }
-  .u-table-row {
-      width: 100%;
-      display: flex;
-      background-color: #F4F6F9;
-      padding: 5px 10px;
-  }
-  .u-table-row:nth-of-type(odd) {
-      background-color: #ffffff;
-  }
-  .u-table-item {
-      width: 50%;
-      display: flex;
-      padding: 0 3px;
-      
-  }
-  .greyed-out {
-      color: grey;
-  }
-  .u-table-item-text {
-      flex-grow: 1;
-      font-weight: bold;
-
-  }
-  .u-table-item-text, .u-table-item-data {
-      font-size: 16px;
-      
-  }
-
-  .u-table-item-data {
-      width: 20%;
-      min-width: 36px;
-      text-align: center;
-  }
+  
 
   .sec3 {
       background-color: #F4F6F9 !important;
@@ -266,6 +314,14 @@ h5{
     .u-table-item {
         flex-direction: column;
     }
+    .u-table-row-many {
+        flex-direction: column;
+        padding: 0;
+    }
+    .u-table-item-many {
+        width: 100%;
+        padding: 4px 0;
+    }
     .u-table-head {
         font-size: 16px;
     }
@@ -276,38 +332,67 @@ h5{
       font-size: 13px;
       
   }
+  .sec4{
+      margin-bottom: 25px !important;
+  }
+  
   }
 
+  
   @media only screen and (max-width: 890px) {
-      .col.s8 {
-          width: 100% !important;
-      }
-    .card.special {
-        display: none;
+    .col.s8 {
+        width: 100% !important;
     }
-    .u-description-contact {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .u-descriptions {
-        width: 100%;
-        margin-bottom: 50px;
-    }
-    .card-panel {
-        width: 100%
-    }
-
-    .u-container {
-        width: 90%;
-        margin: 0 auto;
-    }
-    .coverA{
-        width: 290px;
-    }
+  .card.special {
+      display: none;
+  }
+  .u-description-contact {
+      flex-direction: column;
+      align-items: center;
   }
 
-  @media(max-width : 860px){
+  .u-descriptions {
+      width: 100%;
+      margin-bottom: 50px;
+  }
+  .card-panel {
+      width: 100%
+  }
+
+  .u-container {
+      width: 90%;
+      margin: 0 auto;
+  }
+
+  .coverA{
+      width: 290px;
+  }
+}
+
+
+/* 
+culture + fete -- black
+*/
+
+  ::ng-deep .commute-option-head .u-button {
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    border-radius: 16px;
+    background: #31326f !important;
+    color: rgb(24, 24, 24);
+}
+iframe{
+    width:1100px;
+     height:500px;
+}
+@media(min-width: 860px){
+    .sec4{
+        padding: 2%;
+    }
+}
+
+@media(max-width : 860px){
     .sec4{
         padding: 1%;
         width: 100vw;
@@ -319,3 +404,5 @@ h5{
         margin-bottom: 5px;
     }
 }
+
+

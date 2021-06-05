@@ -238,7 +238,7 @@ const routes: Routes = [
         component: DetailsComponent,   
       },
       {
-       path: 'ldetailles/:id',
+       path: 'logement_non_meubledetailles/:id',
        component: LdetailsComponent,   
      },
      {
@@ -250,21 +250,18 @@ const routes: Routes = [
       component: VenteComponent,
     },
     {
+      path: 'logement_a_louer_non_meuble_filtre',
+      component: LouernmComponent,
+    },
+    {
+      path: 'logement_a_louer_filtre',
+      component: LouerComponent,
+    },
+    {
       path: 'immobilier',
       component: ImmoComponent,
     },
-    {
-      path: 'logement_a_vendre_filtre',
-      component: VenteComponent,
-    },
-     {
-        path: 'logement_a_louer_filtre',
-        component: LouerComponent,
-      },
-      {
-        path: 'searchlouerNonMeuble',
-        component: LouernmComponent,
-      },
+     
     ]
   },
   {

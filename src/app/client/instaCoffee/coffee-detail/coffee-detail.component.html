@@ -17,12 +17,12 @@
         </div>
     </div>
     &nbsp;&nbsp;&nbsp;&nbsp;
-<br><br>
+    <br><br>
 </div>
 <div class="cover">
     <a class="coverA waves-effect waves-light btn-large " rel="noopener noreferrer" href="{{Map[0].virtualTour}}">
         <i class="material-icons left">add_a_photo</i>
-        Voir la visite virtuelle,les photos et les videos 
+        Voir la visite virtuelle,les photos et les videos
     </a>
     <img src="https://instavisit.tn/InstaVisit_B/public/images/houses/{{info.cover}}">
 
@@ -32,7 +32,7 @@
 
 
 
-<app-mobile-overview-coffee [info]='info' ></app-mobile-overview-coffee>
+<app-mobile-overview-coffee [info]='info'></app-mobile-overview-coffee>
 
 <div class="row">
 
@@ -41,10 +41,10 @@
             <div class="u-description-headlines">
                 <h5> Un Café avec {{info.places}} places à {{info.adress}}, {{info.city}} </h5>
             </div>
-            
+
             <div class="u-description-contact">
                 <div class="u-descriptions">
-                    
+
                     <p>
                         {{info.description}}
                     </p>
@@ -59,9 +59,9 @@
                         A visiter sur InstaVisit.tn
                     </p>
                 </div>
-               
+
             </div>
-        </div> 
+        </div>
     </div>
 </div>
 
@@ -76,7 +76,8 @@
                     <div class="u-table-head">
                         {{data.info.title}}
                     </div>
-                    <div (click)="ForceShowTableHideMore('info')" [class.force-hide]="forceTable['first']" class="u-table-view-more">
+                    <div (click)="ForceShowTableHideMore('info')" [class.force-hide]="forceTable['first']"
+                        class="u-table-view-more">
                         {{data.info.more}}
                     </div>
                     <div class="u-table-body" [class.force-show]="forceTable['info']">
@@ -93,19 +94,19 @@
                                 <div class="u-table-item-data">
                                     {{item.value}}
                                 </div>
-            
+
                             </div>
-            
+
                         </div>
-            
+
                     </div>
                 </div>
             </div>
-            
-<!--
+
+            <!--
             <app-commute-table [commute]="commute" [src]="src"></app-commute-table> -->
         </div>
-        
+
     </div>
 </div>
 
@@ -114,28 +115,17 @@
     <div class="row">
         <div class="col col-sm-9 col-lg-9">
             <h6>Environnement </h6>
+
             <div class="mapouter">
                 <div class="gmap_canvas">
-                    <iframe width="1100" height="500" id="gmap_canvas"
-                        [src]='sanitizer.bypassSecurityTrustResourceUrl(mapsrc)' frameborder="0" scrolling="no"
-                        marginheight="0" marginwidth="0"></iframe><a href="https://www.maps-erstellen.de"></a></div>
-                <style>
-                    .mapouter {
-                        position: relative;
-                        text-align: right;
-                        height: 500px;
-                        width: 600px;
-                    }
+                <iframe  id="gmap_canvas" 
+                [src]='sanitizer.bypassSecurityTrustResourceUrl(mapsrc)' frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.maps-erstellen.de"></a></div><style>.mapouter{position:relative;text-align:right;}.gmap_canvas {overflow:hidden;background:none!important;}</style>
+              </div>
 
-                    .gmap_canvas {
-                        overflow: hidden;
-                        background: none !important;
-                        height: 500px;
-                        width: 600px;
-                    }
-                </style>
-            </div></div></div></div>
-           
+        </div>
+    </div>
+</div>
+
 
 <!-- Site footer -->
 <!--FOOTER-->

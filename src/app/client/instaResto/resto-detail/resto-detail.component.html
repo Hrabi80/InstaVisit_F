@@ -1,35 +1,34 @@
-
 <!--COVER SECTION-->
 
- 
-<div class="card special"  data-offset-bottom="700" data-offset-top="0" data-spy="affix">
-  <div class="card-content">
-    <p><span style="font-size: 1.4rem;font-weight: bold;">{{info.adress}}, {{info.city}} </span>
-        <br><br>
-       <span style="font-size: 35px ; font-weight : bold;"> {{info.name}}</span><br>
-       </p>
-  </div>
- <div class="row">
-   <div class="col">&nbsp;&nbsp;
-    <a class=" mycard waves-effect waves-light btn ">{{info.tel}}</a>
-   </div>
-   <div class="col">
-    <a class="mycard waves-effect waves-light btn ">{{info.surface}} m²</a>
-   </div>
- </div>
- &nbsp;&nbsp;&nbsp;&nbsp;
+
+<div class="card special" data-offset-bottom="700" data-offset-top="0" data-spy="affix">
+    <div class="card-content">
+        <p><span style="font-size: 1.4rem;font-weight: bold;">{{info.adress}}, {{info.city}} </span>
+            <br><br>
+            <span style="font-size: 35px ; font-weight : bold;"> {{info.name}}</span><br>
+        </p>
+    </div>
+    <div class="row">
+        <div class="col">&nbsp;&nbsp;
+            <a class=" mycard waves-effect waves-light btn ">{{info.tel}}</a>
+        </div>
+        <div class="col">
+            <a class="mycard waves-effect waves-light btn ">{{info.surface}} m²</a>
+        </div>
+    </div>
+    &nbsp;&nbsp;&nbsp;&nbsp;
 </div>
 <div class="cover">
     <a class="coverA waves-effect waves-light btn-large " rel="noopener noreferrer" href="{{Map[0].virtualTour}}">
         <i class="material-icons left">add_a_photo</i>
         Voir la visite virtuelle,les photos et les videos
-      </a>
-<img src="https://instavisit.tn/InstaVisit_B/public/images/houses/{{info.cover}}">
+    </a>
+    <img src="https://instavisit.tn/InstaVisit_B/public/images/houses/{{info.cover}}">
 
 </div>
 
 <app-mobile-overview-resto [info]='info'></app-mobile-overview-resto>
-  <!--CARD SECTION-->
+<!--CARD SECTION-->
 
 <div class="row">
 
@@ -40,8 +39,8 @@
                 <h6>À propos</h6>
             </div>
 
-            <div class="u-descriptions"  style="padding-right: 20px;">
-                <div class="container">
+            <div class="u-description-contact">
+                <div class="u-descriptions">
                     <p>
                         {{info.description}}
                     </p>
@@ -51,18 +50,18 @@
                     <p>
                         {{info.description3}}
                     </p>
-                    <p style="padding-right: 20px;">
+                    <p >
                         {{info.description4}}
                     </p>
-                    <p style="padding-right: 20px;">
+                    <p >
                         A visiter sur InstaVisit.tn
                     </p>
                 </div>
-                
+
             </div>
 
             <div class="u-description-contact">
-               
+
             </div>
         </div>
 
@@ -111,29 +110,43 @@
         </div>
     </div>
 </div>
-  
-  
-  
-  
-  
-  <div class="sec4">
-      <div class="row">
-        <div class="col col-sm-9 col-lg-9">
+
+
+
+
+
+<div class="sec4">
+    <div class="row">
+        <div class="col col-sm-8 col-lg-8">
             <h6>Environnement </h6>
             <div class="mapouter">
                 <div class="gmap_canvas">
-                <iframe id="gmap_canvas" 
-                [src]='sanitizer.bypassSecurityTrustResourceUrl(mapsrc)' frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.maps-erstellen.de"></a></div><style>.mapouter{position:relative;text-align:right;}.gmap_canvas {overflow:hidden;background:none!important;}</style></div>
-                
-    <br> <br>
-    </div> 
-    <div class="col s3"></div>
-  </div>   
+                    <iframe id="gmap_canvas" [src]='sanitizer.bypassSecurityTrustResourceUrl(mapsrc)' frameborder="0"
+                        scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+                        href="https://www.maps-erstellen.de"></a>
+                </div>
+                <style>
+                    .mapouter {
+                        position: relative;
+                        text-align: right;
+                    }
+
+                    .gmap_canvas {
+                        overflow: hidden;
+                        background: none !important;
+                    }
+                </style>
+            </div>
+
+            <br> <br>
+        </div>
+        <div class="col s3"></div>
+    </div>
 </div>
-  
-  
-    <!-- Site footer -->
-             <!--FOOTER-->
+
+
+<!-- Site footer -->
+<!--FOOTER-->
 <app-footer></app-footer>
 
- <!--   /TEST NEW FOOTER-->   
+<!--   /TEST NEW FOOTER-->

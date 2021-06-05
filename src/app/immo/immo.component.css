@@ -29,7 +29,10 @@
   
   .hero-section{
     align-items: flex-start;
-    background-image: linear-gradient(15deg, #ffffff 30%, #fab50b 120%);
+    background-image: url('/assets/img/logement.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*background-image: linear-gradient(15deg, #ffffff 30%, #fab50b 120%);*/
     display: flex;
     min-height: 100vh;
     justify-content: center;

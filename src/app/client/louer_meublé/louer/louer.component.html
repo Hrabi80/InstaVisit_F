@@ -3,14 +3,14 @@
    <br>
    <div class="ssr">
     <div class="row">
-      <div class="col ">
+      <div class="col  col-lg-2">
         <mat-form-field appearance="outline" class="ref">
           <mat-label>Ref</mat-label>
           <input matInput placeholder="INLN000***" [(ngModel)]="ref" >
           <mat-hint>tapez nombre le ref</mat-hint>
         </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;
       </div>
-      <div class="col " >
+      <div class="col col-lg-3" >
         <mat-form-field appearance="outline">
           <mat-label>Lieu</mat-label>
           <input matInput placeholder="Placeholder" value="{{ParamService.foo}}"  [(ngModel)]="term">
@@ -18,7 +18,7 @@
           <mat-hint>Hint</mat-hint>
         </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;
       </div>
-      <div class="col ">
+      <div class="col col-lg-2">
         <label>Nombre de chambre</label>
         <select class="browser-default" [(ngModel)]="room">
           <option value=""  selected>S+</option>
@@ -34,7 +34,7 @@
       
     </div>
      <div class="row">
-       <div class="col">
+       <div class="col col-lg-3">
           <mat-label>Prix max: </mat-label>
           <mat-slider
              thumbLabel
@@ -45,7 +45,7 @@
           </mat-slider>
           &nbsp;&nbsp;&nbsp;&nbsp;
        </div>
-      <div class="col">
+      <div class="col  col-lg-3">
           <mat-label>Prix min: </mat-label>
           <mat-slider
           thumbLabel
@@ -56,8 +56,8 @@
        </mat-slider>
        &nbsp;&nbsp;&nbsp;&nbsp;
       </div>
-      <div class="col">
-        <a routerLink="/instavisit_immobilier/searchlouerNonMeuble" mat-raised-button color="primary" style="background-color: black; color: #FDA701;">Biens non meublés <i class="material-icons">keyboard_arrow_right</i></a>
+      <div class="col col-lg-3">
+        <a routerLink="/instavisit_immobilier/logement_a_louer_non_meuble_filtre" mat-raised-button color="primary" style="background-color: black; color: #FDA701;">Biens non meublés <i class="material-icons">keyboard_arrow_right</i></a>
         <!--
           <select class="browser-default" >
             <option  [value]="Z" disabled selected>type</option>
@@ -69,33 +69,27 @@
           
     </div>    
    
-   <div class="row ct">
+   <div class="ct">
      
         
-     <div class="col s12">
+     
          
-       <div class="row">
-        <div class="cardqs col" *ngIf="FirOutput.length==0"><span id="loading2"></span></div>
-
-         <div *ngFor="let output of pageOfItems ">
-            <div class="card col ">
-           <div class="card-image waves-effect waves-block waves-light">
-            <a routerLink="/nav/lmdetails/+{{output.id}}">
-             <img class="activatorh" src="https://instavisit.tn/InstaVisit_B/public/images/houses/{{output.mainIMG}}"></a>
-           </div> <br>
-           {{output.ciy }}
-             <span>{{output.price }} DT - {{output.surface }} m²</span> <br>
-             <small> {{output.piece }} piéces meublées</small>
-             <a routerLink="/nav/lmdetails/+{{output.id}}">
-             <i class="material-icons right">filter_none</i></a>
-           <div class="card-content">
-         
-           </div>
-           <div class="card-reveal">
-           </div>
-           </div>
-       </div></div>
+    <div class="row cards-container">
+      <div class="cardqs col" *ngIf="FirOutput.length==0"><span id="loading2"></span></div>
+      <div *ngFor="let output of pageOfItems ">
+        <div class="card" style="width: 18rem;">
+          <img src="assets/img/house.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"> {{output.ciy}}</h5>
+            <span>{{output.surface }} m²</span>
+            <p class="card-text">{{output.description}}</p>
+            <a routerLink="/instavisit_immobilier/lmdetailles/+{{output.id}}" class="btn btn-primary">Détails</a>
+          </div>
+        </div>
       </div>
+     
+    </div>
+      
             <div class="pb-0pt-3">
               <jw-pagination2 [items]="FirOutput  | filter:term:'ciy' | filter:ref:'refr' | filter:room:'room_nb'
               | filter4:minPrice:'price' | filter3:maxPrice:'price'" (changePage)="onChangePage($event)"></jw-pagination2>

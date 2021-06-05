@@ -18,7 +18,7 @@
         </div>
     </div>
     &nbsp;&nbsp;&nbsp;&nbsp;
-    <span style="font-weight: bold;">Disponibilité : </span>Immédiate<br><br>
+    
 </div>
 <div class="cover">
     <a class="coverA waves-effect waves-light btn-large" target="_blank" rel="noopener noreferrer" href="{{Map[0].virtualTour}}">
@@ -33,7 +33,7 @@
 
 <div class="row">
 
-<div class="col s9">
+<div class="col col-lg-9 col-sm-9">
     <div class="u-container">
         <div class="u-description-headlines">
             <h5> A louer un S+{{info.room_nb}} à {{info.adress}}, {{info.city}} </h5>
@@ -85,7 +85,7 @@
 
 <div class="sec3">
     <div class="row">
-        <div class="col s9">
+        <div class="col col-lg-9 col-sm-9">
             <div class="u-container">
                 <div class="u-table">
                     <div class="u-table-head">
@@ -125,26 +125,10 @@
 
 <div class="sec4">
     <div class="row">
-        <div class="col s9">
+        <div class="col col-lg-8 col-sm-8">
             <h6>Environnement </h6>
             
-            <div class="mapouter">
-                <div class="gmap_canvas">
-                   <iframe id="gmap_canvas"
-                        [src]='sanitizer.bypassSecurityTrustResourceUrl(mapsrc)' frameborder="0" scrolling="no"
-                        marginheight="0" marginwidth="0"></iframe><a href="https://www.maps-erstellen.de"></a></div>
-                <style>
-                    .mapouter {
-                        position: relative;
-                        text-align: right;
-                    }
-
-                    .gmap_canvas {
-                        overflow: hidden;
-                        background: none !important;
-                    }
-                </style>
-            </div>
+           
             <br> <br>
         </div>
         <div class="col s3">
